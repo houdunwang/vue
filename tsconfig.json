@@ -9,7 +9,23 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "lib": ["esnext", "dom"]
+    "lib": ["esnext", "dom"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "#/*": ["./types/*"]
+    },
+    "types": ["element-plus/global", "echarts", "lodash"]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "vite.config.ts",
+    "vite/**/*.ts",
+    "mock/**/*.ts",
+    "types/**/*.d.ts",
+    "types/**/*.ts"
+  ]
 }

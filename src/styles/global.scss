@@ -1,0 +1,14 @@
+.hd-input {
+  @apply border w-full rounded-sm py-1 px-2 outline-none border-gray-200 placeholder:text-xs focus:ring-2 ring-offset-2 ring-violet-600 duration-300 focus:border-white;
+}
+
+.hd-error {
+  @apply rounded-md bg-pink-500 text-white text-xs px-2 py-1 mt-2;
+}
+
+.hd-button {
+  @apply bg-violet-700 text-white py-2 px-4 rounded-md hover:bg-violet-500 duration-300;
+  &.hd-danger {
+    @apply bg-fuchsia-700 hover:bg-fuchsia-500;
+  }
+}
