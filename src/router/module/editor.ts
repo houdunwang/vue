@@ -3,7 +3,7 @@ export default {
   name: 'editor',
   path: '/editor',
   component: () => import('@/layouts/admin.vue'),
-  meta: { auth: true, menu: { title: '编辑器', icon: 'fas fa-baseball-ball' } },
+  meta: { auth: true, menu: { title: '编辑器', icon: 'Editor' } },
   children: [
     {
       name: 'base',

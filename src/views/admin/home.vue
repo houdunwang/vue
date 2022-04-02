@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, nextTick } from 'vue';
 import { echart1, echart2 } from './echart'
+import * as echarts from 'echarts'
 interface ICard {
 	title: string,
 	price: number,
@@ -28,7 +29,7 @@ nextTick(() => {
 			<el-card
 				shadow="hover"
 				:body-style="{ padding: '20px' }"
-				v-for="(card,index) of cards"
+				v-for="(card, index) of cards"
 				:key="index"
 				class="cursor-pointer"
 			>

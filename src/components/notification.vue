@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { nextTick } from 'process';
-import { ref } from 'vue';
+import { ref, nextTick } from 'vue';
 
 const activeName = ref('site')
 const show = ref(false)

@@ -41,7 +41,13 @@ export default {
 
 					<HdButton class="w-full" />
 					<div class="flex justify-center mt-3">
-						<i class="fab fa-weixin bg-green-600 text-white rounded-full p-1 cursor-pointer"></i>
+						<icon-wechat
+							theme="outline"
+							size="24"
+							fill="#ffffff"
+							class="fab fa-weixin bg-green-600 text-white rounded-full p-1 cursor-pointer"
+						/>
+						<!-- <i class="fab fa-weixin bg-green-600 text-white rounded-full p-1 cursor-pointer"></i> -->
 					</div>
 				</div>
 				<div class="flex gap-2 justify-center mt-5">

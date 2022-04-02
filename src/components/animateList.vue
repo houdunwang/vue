@@ -9,7 +9,7 @@ interface props {
 }
 
 const props = withDefaults(defineProps<props>(), {
-	tag: null,
+	tag: undefined,
 	duration: .5,
 	delay: .2
 })
@@ -24,7 +24,7 @@ const enter = (el: RendererElement) => {
 	gsap.to(el, {
 		opacity: 1,
 		duration: props.duration,
-		delay: el.dataset.index * props.delay
+		delay: el.dataset.index * props.delay!
 	})
 }
 </script>

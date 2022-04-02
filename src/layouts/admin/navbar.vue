@@ -6,8 +6,14 @@ import Notification from '@/components/notification.vue';
 import Breadcrumb from '@/components/breadcrumb.vue';
 
 const user = userStore();
+
+// 全屏
+let isFullScreen = false
 const fullScreen = () => {
-	document.documentElement.requestFullscreen()
+	isFullScreen === false ?
+		document.documentElement.requestFullscreen() : document.exitFullscreen();
+	isFullScreen = !isFullScreen
+
 }
 </script>
 
@@ -22,7 +28,8 @@ const fullScreen = () => {
 		</div>
 		<div class="flex justify-center items-center relative cursor-pointer">
 			<Notification class="mr-8" />
-			<i class="fas fa-border-none mr-8" @click="fullScreen"></i>
+			<icon-full-screen-one @click="fullScreen" class="mr-8" />
+			<!-- <i class="fas fa-border-none mr-8" @click="fullScreen"></i> -->
 			<div class="group relative">
 				<div class="flex justify-center items-center">
 					<img :src="user.info?.avatar" class="w-8 h-8 rounded-full object-cover" />
@@ -32,15 +39,19 @@ const fullScreen = () => {
 					class="group-hover:block absolute right-0 top-full z-50 bg-white shadow-sm px-5 whitespace-nowrap border rounded-md hidden"
 				>
 					<div class="flex items-center cursor-pointer border-b py-3">
-						<a class="far fa-folder-open"></a>
+						<!-- <a class="far fa-folder-open"></a> -->
+						<icon-log />
 						<span class="text-xs text-gray-600 ml-2">文档资料</span>
 					</div>
 					<div class="flex items-center cursor-pointer py-3">
-						<a class="fas fa-home"></a>
+						<!-- <a class="fas fa-home"></a> -->
+						<icon-home-two />
 						<span class="text-xs text-gray-600 ml-2">网站首页</span>
 					</div>
 					<div class="flex items-center cursor-pointer py-3" @click="utils.user.logout()">
-						<a class="fas fa-sign-out-alt"></a>
+						<!-- <a class="fas fa-sign-out-alt"></a> -->
+						<icon-logout />
+
 						<span class="text-xs text-gray-600 ml-2">退出登录</span>
 					</div>
 				</section>

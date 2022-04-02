@@ -7,12 +7,7 @@ article().then(({ result }) => articles.value = result)
 <template>
 	<div class="article">
 		<AnimateList tag="ul" :duration="1" :delay="2">
-			<li
-				:data-index="index"
-				v-for="(article, index) of articles"
-				:key="article.id"
-				@click="del(index)"
-			>{{ article.title }}</li>
+			<li :data-index="index" v-for="(article, index) of articles" :key="article.id">{{ article.title }}</li>
 		</AnimateList>
 	</div>
 </template>

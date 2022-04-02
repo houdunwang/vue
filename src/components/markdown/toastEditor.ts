@@ -1,16 +1,16 @@
 import { uploadImage } from '@/apis/uploadApi'
-
+import Editor from '@toast-ui/editor'
 export default class {
-  editor: toastui.Editor
+  editor: Editor
   isFullscreen: boolean = false
   constructor(el: string, initialValue: string, public height: string) {
-    this.editor = new toastui.Editor({
-      el: document.querySelector(el),
+    this.editor = new Editor({
+      el: document.querySelector(el)!,
       initialEditType: 'markdown',
       previewStyle: 'vertical',
       height: height,
       initialValue: initialValue,
-      toolbarItems: this.toolbar(),
+      toolbarItems: this.toolbar() as [],
     })
     this.ImageHook()
   }
