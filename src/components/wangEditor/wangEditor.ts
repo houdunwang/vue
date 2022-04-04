@@ -1,4 +1,5 @@
-import wangEditor from "wangeditor"
+import wangEditor from 'wangeditor'
+
 export default class {
   editor: wangEditor
   constructor(el: string, callback: Function, config: { [key: string]: any }) {
@@ -17,6 +18,7 @@ export default class {
   uploadImage() {
     return {
       customInsert: function (insertImgFn: Function, result: any) {
+        // console.log(result)
         insertImgFn(result.result.url)
       },
     }

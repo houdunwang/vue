@@ -15,14 +15,14 @@ const props = withDefaults(defineProps<Props>(), {
 
 const emit = defineEmits(['update:modelValue'])
 nextTick(() => {
-	new wangEditor("#editor", (newHtml: string) => {
+	new wangEditor("#wangEditor", (newHtml: string) => {
 		emit('update:modelValue', newHtml)
 	}, props)
 })
 </script>
 
 <template>
-	<div id="editor"></div>
+	<div id="wangEditor"></div>
 </template>
 
 <style lang="scss">

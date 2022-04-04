@@ -44,10 +44,10 @@ export default {
 						<icon-wechat
 							theme="outline"
 							size="24"
-							fill="#ffffff"
+							fill="#fff"
 							class="fab fa-weixin bg-green-600 text-white rounded-full p-1 cursor-pointer"
 						/>
-						<!-- <i class="fab fa-weixin bg-green-600 text-white rounded-full p-1 cursor-pointer"></i> -->
+						<!-- <i ></i> -->
 					</div>
 				</div>
 				<div class="flex gap-2 justify-center mt-5">

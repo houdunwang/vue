@@ -2,19 +2,19 @@
 import menuService from '@/composables/menu'
 import { watch } from 'vue';
 import { useRoute } from 'vue-router';
-import * as icons from '@icon-park/vue-next'
-
+import * as icons from '@icon-park/vue-next';
 const route = useRoute()
 
-let a = 22 as unknown
 watch(route, () => menuService.setCurrentMenu(route), { immediate: true })
+
 </script>
 
 <template>
 	<div class="admin-menu" :class="{ close: menuService.close.value }">
 		<div class="menu w-[200px] bg-gray-800">
-			<div class="logo flex items-center">
-				<icon-home theme="outline" size="24" fill="#dcdcdc" class="mr-2" />
+			<div class="logo">
+				<icon-home theme="outline" size="18" fill="#dcdcdc" class="mr-2" />
+				<!-- <i class="fas fa-robot text-fuchsia-300 mr-2 text-[25px]"></i> -->
 				<span class="text-md">晚八点直播</span>
 			</div>
 			<!-- 菜单 -->
@@ -22,6 +22,7 @@ watch(route, () => menuService.setCurrentMenu(route), { immediate: true })
 				<dl v-for="(menu, index) of menuService.menus.value" :key="index">
 					<dt @click="menuService.toggleParentMenu(menu)">
 						<section>
+							<!-- <i :class="menu.icon"></i> -->
 							<component :is="icons[menu.icon!]" size="18" fill="#dcdcdc" class="mr-2" />
 							<span class="text-md">{{ menu.title }}</span>
 						</section>
