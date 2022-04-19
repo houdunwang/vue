@@ -8,8 +8,8 @@ export default [
       return {
         code: 200,
         message: '请示成功',
-        type: 'success',
-        result: new Array(10).fill('').map((article, index) => {
+        status: 'success',
+        data: new Array(10).fill('').map((article, index) => {
           return {
             id: index + 1,
             title: Random.ctitle(),

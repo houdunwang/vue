@@ -1,4 +1,4 @@
-import { IconType } from "@icon-park/vue-next/es/all"
+import { IconType } from '@icon-park/vue-next/es/all'
 
 interface Menu {
   title?: string

@@ -6,8 +6,8 @@ import setupPinia from './pinia'
 import setupIconPark from './iconpark'
 
 export function setupPlugins(app: App) {
-  setupTailwindcss()
-  setupElementPlus()
-  setupPinia(app)
-  setupIconPark(app)
+    setupTailwindcss()
+    setupElementPlus()
+    setupPinia(app)
+    setupIconPark(app)
 }

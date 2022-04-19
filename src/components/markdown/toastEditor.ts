@@ -71,7 +71,7 @@ export default class {
 
       const response = await uploadImage(form)
 
-      callback(response.result.url, blob.name)
+      callback(response.data.url, blob.name)
     })
   }
 }

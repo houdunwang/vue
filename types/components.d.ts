@@ -6,12 +6,6 @@ declare module 'vue' {
   export interface GlobalComponents {
     AnimateList: typeof import('./../src/components/animateList.vue')['default']
     Breadcrumb: typeof import('./../src/components/breadcrumb.vue')['default']
-    ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
-    ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
-    ElCard: typeof import('element-plus/es')['ElCard']
-    ElTabPane: typeof import('element-plus/es')['ElTabPane']
-    ElTabs: typeof import('element-plus/es')['ElTabs']
-    ElTag: typeof import('element-plus/es')['ElTag']
     HdButton: typeof import('./../src/components/hd/button.vue')['default']
     HdInput: typeof import('./../src/components/hd/input.vue')['default']
     HdLink: typeof import('./../src/components/hd/link.vue')['default']
