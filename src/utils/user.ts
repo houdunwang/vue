@@ -1,7 +1,7 @@
 import { ILoginForm } from './../apis/types/user'
 import utils from '@/utils'
 import userApi from '@/apis/userApi'
-import { CacheEnum } from '@/enum/cacheEnum'
+import { CacheEnum } from '@/enum/CacheEnum'
 import store from './store'
 import router from '@/router'
 import userStroe from '@/store/userStroe'

@@ -1,7 +1,7 @@
 export interface IUser {
   name: string
   age: number
-  avatar_url: string
+  avatar: string
   permissions: string[]
 }
 

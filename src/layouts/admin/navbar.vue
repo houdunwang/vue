@@ -40,8 +40,8 @@ document.addEventListener('fullscreenchange', (e) => {
       <div class="group relative">
         <div class="flex justify-center items-center">
           <ElImage
-            v-if="user.info?.avatar_url"
-            :src="user.info?.avatar_url"
+            v-if="user.info?.avatar"
+            :src="user.info?.avatar"
             fit="cover"
             class="w-8 h-8 rounded-full border-white" />
           <span class="ml-1 text-sm text-gray-600">{{ user.info?.name }}</span>

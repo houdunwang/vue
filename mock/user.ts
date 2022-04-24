@@ -12,7 +12,7 @@ export default [
         data: {
           name: '向军大叔',
           age: 18,
-          avatar_url: '/images/xj.jpg',
+          avatar: '/images/xj.jpg',
           permissions: ['article_edit', 'markdown_editor', 'base_editor'],
         },
       }
