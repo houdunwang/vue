@@ -28,20 +28,36 @@ export default {
 
 <template>
   <Form class @submit="onSubmit" :validation-schema="schema" #default="{ errors }">
-    <div class="w-[720px] translate-y-32 md:translate-y-0 bg-white md:grid grid-cols-2 rounded-md shadow-md overflow-hidden">
+    <div
+      class="w-[720px] translate-y-32 md:translate-y-0 bg-white md:grid grid-cols-2 rounded-md shadow-md overflow-hidden">
       <div class="p-6 flex flex-col justify-between">
         <div>
           <h2 class="text-center text-gray-700 text-lg mt-3">会员登录</h2>
           <div class="mt-8">
-            <Field name="account" value="2300071698@qq.com" class="hd-input" label="帐号" placeholder="请输入邮箱或手机号" />
+            <Field
+              name="account"
+              value="2300071698@qq.com"
+              class="hd-input"
+              label="帐号"
+              placeholder="请输入邮箱或手机号" />
             <div v-if="errors.account" class="hd-error">请输入邮箱或手机号</div>
-            <Field name="password" value="admin888" class="hd-input mt-3" label="密码" type="password" placeholder="请输入登录密码" />
+            <Field
+              name="password"
+              value="admin888"
+              class="hd-input mt-3"
+              label="密码"
+              type="password"
+              placeholder="请输入登录密码" />
             <ErrorMessage name="password" as="div" class="hd-error" />
           </div>
 
           <HdButton class="w-full" />
           <div class="flex justify-center mt-3">
-            <icon-wechat theme="outline" size="24" fill="#fff" class="fab fa-weixin bg-green-600 text-white rounded-full p-1 cursor-pointer" />
+            <icon-wechat
+              theme="outline"
+              size="24"
+              fill="#fff"
+              class="fab fa-weixin bg-green-600 text-white rounded-full p-1 cursor-pointer" />
             <!-- <i ></i> -->
           </div>
         </div>

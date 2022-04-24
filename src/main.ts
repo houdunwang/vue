@@ -7,25 +7,23 @@ import '@/styles/global.scss'
 import 'animate.css'
 
 class Main {
-    public async bootstrap() {
-        const app = this.app()
-        await this.initData()
-        await router.isReady()
-        app.mount('#app')
-    }
-
-    //初始应用
-    private app(): AppType {
-        const app = createApp(App)
-        setupPlugins(app)
-        setupRouter(app)
-        return app
-    }
-
-    //初始应用数据
-    private async initData() {
-        await userStore().getUserInfo()
-    }
+  public async bootstrap() {
+    const app = this.app()
+    await this.initData()
+    await router.isReady()
+    app.mount('#app')
+  }
+  //初始应用
+  private app(): AppType {
+    const app = createApp(App)
+    setupPlugins(app)
+    setupRouter(app)
+    return app
+  }
+  //初始应用数据
+  private async initData() {
+    await userStore().getUserInfo()
+  }
 }
 
 new Main().bootstrap()

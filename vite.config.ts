@@ -10,7 +10,7 @@ export default defineConfig(({ command, mode }) => {
 
   return {
     plugins: [...setupPlugins(isBuild, env), visualizer()],
-    base: isBuild ? '/dist' : '',
+    // base: isBuild ? '/dist' : '',
     resolve: {
       alias,
     },

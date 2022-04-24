@@ -1,4 +1,5 @@
-import { CacheEnum } from './../../enum/cacheEnum'
+import { RouteEnum } from '../../enum/RouteEnum'
+import { CacheEnum } from '../../enum/CacheEnum'
 import store from '@/utils/store'
 import router from '@/router'
 import axios, { AxiosRequestConfig } from 'axios'
@@ -52,7 +53,7 @@ export default class Axios {
         switch (status) {
           case 401:
             store.remove(CacheEnum.TOKEN_NAME)
-            router.push({ name: 'login' })
+            router.push({ name: RouteEnum.LOGIN })
             break
         }
         return Promise.reject(error)

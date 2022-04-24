@@ -1,14 +1,15 @@
+import store from '@/utils/store'
 import { RouteLocationNormalized, RouteLocationNormalizedLoaded, RouteRecordRaw } from 'vue-router'
 import { IMenu } from '#/menu'
 import { ref } from 'vue'
 import router from '@/router'
 import utils from '@/utils'
-import { CacheEnum } from '@/enum/cacheEnum'
+import { CacheEnum } from '@/enum/CacheEnum'
 
 class Menu {
   public menus = ref<IMenu[]>([])
   public history = ref<IMenu[]>([])
-  public close = ref(false)
+  public close = ref(store.get('menuCloseState') ?? false)
   public route = ref(null as null | RouteLocationNormalized)
 
   constructor() {
@@ -18,11 +19,11 @@ class Menu {
 
   private getHistoryMenu() {
     const routes = [] as RouteRecordRaw[]
-    router.getRoutes().map(r => routes.push(...r.children))
+    router.getRoutes().map((r) => routes.push(...r.children))
 
     let menus: IMenu[] = utils.store.get(CacheEnum.HISTORY_MENU) ?? []
-    return menus.filter(m => {
-      return routes.some(r => r.name == m.route)
+    return menus.filter((m) => {
+      return routes.some((r) => r.name == m.route)
     })
   }
 
@@ -37,7 +38,7 @@ class Menu {
     this.route.value = route
 
     const menu: IMenu = { ...route.meta?.menu, route: route.name as string }
-    const isHas = this.history.value.some(menu => menu.route == route.name)
+    const isHas = this.history.value.some((menu) => menu.route == route.name)
     if (!isHas) this.history.value.unshift(menu)
     if (this.history.value.length > 10) {
       this.history.value.pop()
@@ -47,18 +48,19 @@ class Menu {
   }
 
   toggleParentMenu(menu: IMenu) {
-    this.menus.value.forEach(m => {
+    this.menus.value.forEach((m) => {
       m.isClick = false
       if (m == menu) m.isClick = true
     })
   }
   toggleState() {
     this.close.value = !this.close.value
+    store.set('menuCloseState', this.close.value)
   }
   setCurrentMenu(route: RouteLocationNormalizedLoaded) {
-    this.menus.value.forEach(m => {
+    this.menus.value.forEach((m) => {
       m.isClick = false
-      m.children?.forEach(c => {
+      m.children?.forEach((c) => {
         c.isClick = false
         if (c.route == route.name) {
           m.isClick = true
@@ -71,17 +73,17 @@ class Menu {
   getMenuByRoute() {
     return router
       .getRoutes()
-      .filter(route => route.children.length && route.meta.menu)
-      .map(route => {
+      .filter((route) => route.children.length && route.meta.menu)
+      .map((route) => {
         let menu: IMenu = { ...route.meta?.menu }
         menu.children = route.children
-          .filter(route => route.meta?.menu)
-          .map(route => {
+          .filter((route) => route.meta?.menu)
+          .map((route) => {
             return { ...route.meta?.menu, route: route.name }
           }) as IMenu[]
         return menu
       })
-      .filter(menu => menu.children?.length) as IMenu[]
+      .filter((menu) => menu.children?.length) as IMenu[]
   }
 }
 

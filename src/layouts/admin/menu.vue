@@ -2,6 +2,7 @@
 import menuService from '@/composables/menu'
 import { watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { RouteEnum } from '@/enum/RouteEnum'
 import * as icons from '@icon-park/vue-next'
 const route = useRoute()
 
@@ -9,11 +10,16 @@ watch(route, () => menuService.setCurrentMenu(route), { immediate: true })
 </script>
 
 <template>
-  <div class="admin-menu" :class="{ close: menuService.close.value }">
+  <div class="admin-menu z-50" :class="{ close: menuService.close.value }">
     <div class="menu w-[200px] bg-gray-800">
-      <div class="logo">
-        <icon-home theme="outline" size="18" fill="#dcdcdc" class="mr-2" />
-        <span class="text-md">晚八点直播</span>
+      <div class="logo cursor-pointer">
+        <icon-home
+          theme="outline"
+          size="18"
+          fill="#dcdcdc"
+          class="mr-2"
+          @click="$router.push({ name: RouteEnum.HOME })" />
+        <span class="text-md cursor-pointer" @click="$router.push({ name: RouteEnum.ADMIN })">晚八点直播</span>
       </div>
       <!-- 菜单 -->
       <div class="container">
@@ -24,11 +30,23 @@ watch(route, () => menuService.setCurrentMenu(route), { immediate: true })
               <span class="text-md">{{ menu.title }}</span>
             </section>
             <section>
-              <i class="fas fa-angle-down duration-300" :class="{ 'rotate-180': menu.isClick }"></i>
+              <icon-up
+                theme="filled"
+                size="24"
+                fill="#555"
+                strokeLinejoin="bevel"
+                strokeLinecap="butt"
+                :class="{ 'rotate-180': menu.isClick }"
+                class="duration-300" />
+              <!-- <i class="fas fa-angle-down duration-300" :class="{ 'rotate-180': menu.isClick }"></i> -->
             </section>
           </dt>
           <dd :class="!menu.isClick || menuService.close.value ? 'hidden' : 'block'">
-            <div :class="{ active: cmenu.isClick }" v-for="(cmenu, key) of menu.children" :key="key" @click="$router.push({ name: cmenu.route })">
+            <div
+              :class="{ active: cmenu.isClick }"
+              v-for="(cmenu, key) of menu.children"
+              :key="key"
+              @click="$router.push({ name: cmenu.route })">
               {{ cmenu?.title }}
             </div>
           </dd>
@@ -83,10 +101,10 @@ watch(route, () => menuService.setCurrentMenu(route), { immediate: true })
   .admin-menu {
     &.close {
       .menu {
-        width: 0px;
+        width: auto;
 
         .logo {
-          @apply justify-center;
+          @apply mr-0 justify-center;
 
           i {
             @apply mr-0;
@@ -94,11 +112,19 @@ watch(route, () => menuService.setCurrentMenu(route), { immediate: true })
 
           span {
             @apply hidden;
+            &.i-icon {
+              @apply mr-0 block;
+            }
           }
         }
 
         .container {
           dl {
+            &:hover {
+              dd {
+                @apply block absolute left-full top-[0px] w-[200px] bg-gray-700 px-2;
+              }
+            }
             dt {
               @apply flex justify-center;
 
@@ -109,6 +135,9 @@ watch(route, () => menuService.setCurrentMenu(route), { immediate: true })
 
                 span {
                   @apply hidden;
+                  &.i-icon {
+                    @apply mr-0 block;
+                  }
                 }
 
                 &:nth-of-type(2) {
@@ -116,10 +145,10 @@ watch(route, () => menuService.setCurrentMenu(route), { immediate: true })
                 }
               }
             }
-
-            &:hover {
-              dd {
-                @apply block absolute left-full top-[0px] w-[200px] bg-gray-700;
+            dd {
+              padding: 0 !important;
+              div {
+                @apply m-0 rounded-none;
               }
             }
           }

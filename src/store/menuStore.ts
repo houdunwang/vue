@@ -1,4 +1,4 @@
-import { CacheEnum } from './../enum/cacheEnum'
+import { CacheEnum } from '../enum/CacheEnum'
 import utils from '@/utils'
 import { RouteLocationNormalized } from 'vue-router'
 import { IMenu } from '#/menu'
@@ -24,7 +24,7 @@ export default defineStore('menu', {
       if (!route.meta?.menu) return
 
       const menu: IMenu = { ...route.meta?.menu, route: route.name as string }
-      const isHas = this.historyMenu.some(menu => menu.route == route.name)
+      const isHas = this.historyMenu.some((menu) => menu.route == route.name)
       if (!isHas) this.historyMenu.unshift(menu)
       if (this.historyMenu.length > 10) {
         this.historyMenu.pop()
@@ -36,17 +36,17 @@ export default defineStore('menu', {
     getMenuByRoute() {
       this.menus = router
         .getRoutes()
-        .filter(route => route.children.length && route.meta.menu)
-        .map(route => {
+        .filter((route) => route.children.length && route.meta.menu)
+        .map((route) => {
           let menu: IMenu = { ...route.meta?.menu }
           menu.children = route.children
-            .filter(route => route.meta?.menu)
-            .map(route => {
+            .filter((route) => route.meta?.menu)
+            .map((route) => {
               return { ...route.meta?.menu, route: route.name }
             }) as IMenu[]
           return menu
         })
-        .filter(menu => menu.children?.length) as IMenu[]
+        .filter((menu) => menu.children?.length) as IMenu[]
     },
   },
 })

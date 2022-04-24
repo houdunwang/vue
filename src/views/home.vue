@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import utils from '@/utils'
+import { RouteEnum } from '@/enum/routeEnum'
 </script>
 
 <template>
@@ -7,10 +8,10 @@ import utils from '@/utils'
     <img src="/images/xj.jpg" class="w-40 h-40 object-cover rounded-full border-8 border-white mb-5" />
     <div>
       <router-link :to="{ name: 'admin.home' }" class="hd-button">后台管理</router-link>
-      <router-link v-if="!utils.user.isLogin()" :to="{ name: 'login' }" class="hd-button hd-danger ml-3">用户登录</router-link>
+      <router-link v-if="!utils.user.isLogin()" :to="{ name: RouteEnum.LOGIN }" class="hd-button hd-danger ml-3"
+        >用户登录</router-link
+      >
     </div>
     <div class="text-gray-300 text-xs font-mono drop-shadow-md mt-6">每晚八点直播，欢迎来共同学习技术</div>
   </div>
 </template>
-
-<style lang="scss"></style>
