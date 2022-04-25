@@ -1,54 +1,62 @@
 <script setup lang="ts">
-import userApi from '@/apis/userApi'
-import { CacheEnum } from '@/enum/cacheEnum'
-import { http } from '@/plugins/axios'
 import v from '@/plugins/validate'
 import utils from '@/utils'
-import { useRouter } from 'vue-router'
-const router = useRouter()
 
-const { Form, Field, ErrorMessage } = v
+const { yup, useForm, useField, useFields } = v
 
 const schema = {
-  account: { required: true, regex: /.+@.+|\d{11}/ },
-  password: { required: true, min: 3 },
+  account: yup
+    .string()
+    .required()
+    .matches(/^\d{11}|.+@.+$/, '请输入邮箱或手机号')
+    .label('帐号'),
+  password: yup.string().required().min(3, '密码不能少于3位').label('密码'),
 }
 
-const onSubmit = async (values: any) => {
-  // await http.request({ url: `sanctum/csrf-cookie`, method: "get" });
+const { handleSubmit, errors, values } = useForm({
+  initialValues: {
+    account: '2300071698@qq.com',
+    password: 'admin888',
+  },
+  validationSchema: schema,
+})
+useFields(Object.keys(schema))
+
+const onSubmit = handleSubmit(async (values: any) => {
   utils.user.login(values)
-}
-</script>
-
-<script lang="ts">
-export default {
-  route: { name: 'login', meta: { guest: true } },
-}
+})
 </script>
 
 <template>
-  <Form class @submit="onSubmit" :validation-schema="schema" #default="{ errors }">
+  <form class @submit="onSubmit">
     <div
       class="w-[720px] translate-y-32 md:translate-y-0 bg-white md:grid grid-cols-2 rounded-md shadow-md overflow-hidden">
       <div class="p-6 flex flex-col justify-between">
         <div>
           <h2 class="text-center text-gray-700 text-lg mt-3">会员登录</h2>
           <div class="mt-8">
-            <Field
+            <HdInput v-model="values.account" />
+            <!-- {{ accountError }} -->
+            <HdError :error="errors.account" />
+
+            <HdInput v-model="values.password" class="mt-3" />
+            <HdError :error="errors.password" />
+            <!-- {{ passwordError }} -->
+            <!-- <Field
               name="account"
-              value="2300071698@qq.com"
+              value="admin@sdklsdklds"
               class="hd-input"
               label="帐号"
               placeholder="请输入邮箱或手机号" />
-            <div v-if="errors.account" class="hd-error">请输入邮箱或手机号</div>
-            <Field
+            <div v-if="errors.account" class="hd-error">请输入邮箱或手机号</div> -->
+            <!-- <Field
               name="password"
               value="admin888"
               class="hd-input mt-3"
               label="密码"
               type="password"
               placeholder="请输入登录密码" />
-            <ErrorMessage name="password" as="div" class="hd-error" />
+            <ErrorMessage name="password" as="div" class="hd-error" /> -->
           </div>
 
           <HdButton class="w-full" />
@@ -71,7 +79,7 @@ export default {
         <img src="/images/login.jpg" class="absolute h-full w-full object-cover" />
       </div>
     </div>
-  </Form>
+  </form>
 </template>
 
 <style lang="scss">
