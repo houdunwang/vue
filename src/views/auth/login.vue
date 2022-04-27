@@ -38,7 +38,7 @@ const onSubmit = handleSubmit(async (values: any) => {
             <FormInput v-model="values.account" />
             <FormVeeValidateError :error="errors.account" />
 
-            <FormInput v-model="values.password" class="mt-3" />
+            <FormInput v-model="values.password" class="mt-3" type="password" />
             <FormVeeValidateError :error="errors.password" />
           </div>
 
