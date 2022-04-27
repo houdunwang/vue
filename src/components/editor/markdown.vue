@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { nextTick } from 'vue'
 import ToastEditor from './toastEditor'
-
+import '@toast-ui/editor/dist/toastui-editor.css'
 interface IProps {
   modelValue?: string
   height?: number
@@ -29,7 +29,7 @@ nextTick(() => {
 </template>
 
 <style lang="scss">
-@import 'https://uicdn.toast.com/editor/latest/toastui-editor.min.css';
+// @import 'https://uicdn.toast.com/editor/latest/toastui-editor.min.css';
 
 #markdownEditor {
   @apply bg-white;

@@ -2,8 +2,6 @@
 import userStore from '@/store/userStroe'
 import utils from '@/utils'
 import menuService from '@/composables/menu'
-import Notification from '@/components/notification.vue'
-import Breadcrumb from '@/components/breadcrumb.vue'
 import { RouteEnum } from '@/enum/RouteEnum'
 
 const user = userStore()
@@ -31,10 +29,10 @@ document.addEventListener('fullscreenchange', (e) => {
           class="cursor-pointer" />
         <icon-menu-unfold-one theme="filled" size="24" fill="#10ad57" v-else class="cursor-pointer" />
       </div>
-      <Breadcrumb class="hidden md:block" />
+      <HdBreadcrumb class="hidden md:block" />
     </div>
     <div class="flex justify-center items-center relative cursor-pointer">
-      <Notification class="mr-8" />
+      <HdNotification class="mr-8" />
       <icon-off-screen theme="outline" size="24" fill="#333" @click="fullScreen" class="mr-5" v-if="isFullScreen" />
       <icon-full-screen-one theme="outline" size="24" fill="#333" @click="fullScreen" class="mr-5" v-else />
       <div class="group relative">

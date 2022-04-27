@@ -6,9 +6,9 @@ article().then(({ data }) => (articles.value = data))
 
 <template>
   <div class="article">
-    <AnimateList tag="ul" :duration="1" :delay="2">
+    <HdAnimateList tag="ul" :duration="1" :delay="2">
       <li :data-index="index" v-for="(article, index) of articles" :key="article.id">{{ article.title }}</li>
-    </AnimateList>
+    </HdAnimateList>
   </div>
 </template>
 

@@ -2,7 +2,7 @@
 import v from '@/plugins/validate'
 import utils from '@/utils'
 
-const { yup, useForm, useField, useFields } = v
+const { yup, useForm, useFields } = v
 
 const schema = {
   account: yup
@@ -35,38 +35,20 @@ const onSubmit = handleSubmit(async (values: any) => {
         <div>
           <h2 class="text-center text-gray-700 text-lg mt-3">会员登录</h2>
           <div class="mt-8">
-            <HdInput v-model="values.account" />
-            <!-- {{ accountError }} -->
-            <HdError :error="errors.account" />
+            <FormInput v-model="values.account" />
+            <FormVeeValidateError :error="errors.account" />
 
-            <HdInput v-model="values.password" class="mt-3" />
-            <HdError :error="errors.password" />
-            <!-- {{ passwordError }} -->
-            <!-- <Field
-              name="account"
-              value="admin@sdklsdklds"
-              class="hd-input"
-              label="帐号"
-              placeholder="请输入邮箱或手机号" />
-            <div v-if="errors.account" class="hd-error">请输入邮箱或手机号</div> -->
-            <!-- <Field
-              name="password"
-              value="admin888"
-              class="hd-input mt-3"
-              label="密码"
-              type="password"
-              placeholder="请输入登录密码" />
-            <ErrorMessage name="password" as="div" class="hd-error" /> -->
+            <FormInput v-model="values.password" class="mt-3" />
+            <FormVeeValidateError :error="errors.password" />
           </div>
 
-          <HdButton class="w-full" />
+          <FormButton class="w-full" />
           <div class="flex justify-center mt-3">
             <icon-wechat
               theme="outline"
               size="24"
               fill="#fff"
               class="fab fa-weixin bg-green-600 text-white rounded-full p-1 cursor-pointer" />
-            <!-- <i ></i> -->
           </div>
         </div>
         <div class="flex gap-2 justify-center mt-5">
