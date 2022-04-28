@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import userStore from '@/store/userStroe'
+import userStore from '@/store/userStore'
 import utils from '@/utils'
-import menuService from '@/composables/menu'
+import menuService from '@/composables/useMenu'
 import { RouteEnum } from '@/enum/RouteEnum'
 
 const user = userStore()
@@ -63,5 +63,3 @@ document.addEventListener('fullscreenchange', (e) => {
     </div>
   </div>
 </template>
-
-<style lang="scss"></style>

@@ -16,5 +16,8 @@ export default defineStore('userStore', {
         this.info = await userApi.info().then((r) => r.data)
       }
     },
+    resetInfo() {
+      this.info = null
+    },
   },
 })

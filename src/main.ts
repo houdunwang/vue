@@ -1,4 +1,4 @@
-import userStore from '@/store/userStroe'
+import userStore from '@/store/userStore'
 import { App as AppType, createApp } from 'vue'
 import App from './App.vue'
 import router, { setupRouter } from '@/router'

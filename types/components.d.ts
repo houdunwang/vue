@@ -4,9 +4,6 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    AnimateList: typeof import('./../src/components/animateList.vue')['default']
-    Breadcrumb: typeof import('./../src/components/breadcrumb.vue')['default']
-    EditorEditor: typeof import('./../src/components/editor/editor.vue')['default']
     EditorMarkdown: typeof import('./../src/components/editor/markdown.vue')['default']
     EditorWangEditor: typeof import('./../src/components/editor/wangEditor.vue')['default']
     ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
@@ -21,18 +18,7 @@ declare module 'vue' {
     FormVeeValidateError: typeof import('./../src/components/form/veeValidateError.vue')['default']
     HdAnimateList: typeof import('./../src/components/hd/animateList.vue')['default']
     HdBreadcrumb: typeof import('./../src/components/hd/breadcrumb.vue')['default']
-    HdButton: typeof import('./../src/components/hd/button.vue')['default']
-    HdError: typeof import('./../src/components/hd/error.vue')['default']
-    HdInput: typeof import('./../src/components/hd/input.vue')['default']
-    HdLink: typeof import('./../src/components/hd/link.vue')['default']
     HdNotification: typeof import('./../src/components/hd/notification.vue')['default']
-    HdValidateErrorMessage: typeof import('./../src/components/hd/validateErrorMessage.vue')['default']
-    HdVeeValidateError: typeof import('./../src/components/hd/veeValidateError.vue')['default']
-    MarkdownEditor: typeof import('./../src/components/markdown/editor.vue')['default']
-    MarkdownMarkdown: typeof import('./../src/components/markdown/markdown.vue')['default']
-    Notification: typeof import('./../src/components/notification.vue')['default']
-    WangEditor: typeof import('./../src/components/wang/editor.vue')['default']
-    WangEditorEditor: typeof import('./../src/components/wangEditor/editor.vue')['default']
   }
 }
 

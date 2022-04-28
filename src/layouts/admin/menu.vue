@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import menuService from '@/composables/menu'
+import menuService from '@/composables/useMenu'
 import { watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { RouteEnum } from '@/enum/RouteEnum'

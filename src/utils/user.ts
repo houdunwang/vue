@@ -4,7 +4,7 @@ import userApi from '@/apis/userApi'
 import { CacheEnum } from '@/enum/CacheEnum'
 import store from './store'
 import router from '@/router'
-import userStroe from '@/store/userStroe'
+import userStore from '@/store/userStore'
 import { http } from '@/plugins/axios'
 
 export function isLogin(): boolean {
@@ -13,10 +13,10 @@ export function isLogin(): boolean {
 
 export async function login(values: ILoginForm) {
   const { data } = await userApi.login(values)
-  console.log(data)
+
   store.set(CacheEnum.TOKEN_NAME, data.token)
 
-  userStroe().getUserInfo()
+  userStore().getUserInfo()
 
   const routeName = store.get(CacheEnum.REDIRECT_ROUTE_NAME) ?? 'home'
 
@@ -24,11 +24,8 @@ export async function login(values: ILoginForm) {
 }
 
 export async function logout() {
-  if (!utils.env.VITE_MOCK_ENABLE) {
-    await http.request({ url: 'logout', method: 'get' })
-  }
+  userStore().resetInfo()
 
-  userStroe().info = null
   store.remove(CacheEnum.TOKEN_NAME)
   router.push({ name: 'home' })
 }

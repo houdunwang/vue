@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import menu from '@/composables/menu'
+import menu from '@/composables/useMenu'
 import { RouteEnum } from '@/enum/RouteEnum'
 const route = menu.route.value
 </script>
