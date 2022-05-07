@@ -1,9 +1,10 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
   '@icon-park/vue-next': ^1.3.6
   '@toast-ui/editor': ^3.1.4
   '@types/lodash': ^4.14.181
+  '@types/mockjs': ^1.0.6
   '@types/prosemirror-commands': ^1.0.4
   '@types/prosemirror-inputrules': ^1.0.4
   '@types/prosemirror-model': ^1.16.1
@@ -18,6 +19,7 @@ specifiers:
   animate.css: ^4.1.1
   autoprefixer: ^10.4.4
   axios: ^0.24.0
+  dayjs: ^1.11.1
   echarts: ^5.3.2
   element-plus: ^1.3.0-beta.10
   gsap: ^3.10.3
@@ -53,15 +55,16 @@ dependencies:
   '@vee-validate/i18n': 4.5.11
   '@vee-validate/rules': 4.5.11
   '@wangeditor/editor': 5.0.0
-  '@wangeditor/editor-for-vue': 5.1.10_f478d1d5d688cfa6da85397a10127b5a
+  '@wangeditor/editor-for-vue': 5.1.10_6r4ndvowrdh2nwufhf5baet3li
   animate.css: 4.1.1
   axios: 0.24.0
+  dayjs: mirrors.tencent.com/dayjs/1.11.1
   echarts: 5.3.2
   element-plus: 1.3.0-beta.10_vue@3.2.33
   gsap: 3.10.3
   lodash: mirrors.tencent.com/lodash/4.17.21
   mockjs: mirrors.tencent.com/mockjs/1.1.0
-  pinia: mirrors.tencent.com/pinia/2.0.13_typescript@4.6.3+vue@3.2.33
+  pinia: mirrors.tencent.com/pinia/2.0.13_ifhmkzsxec62ezvqv7qmanm4bq
   vee-validate: 4.5.11_vue@3.2.33
   vue: mirrors.tencent.com/vue/3.2.33
   vue-router: mirrors.tencent.com/vue-router/4.0.14_vue@3.2.33
@@ -70,6 +73,7 @@ dependencies:
 
 devDependencies:
   '@types/lodash': 4.14.181
+  '@types/mockjs': 1.0.6
   '@types/prosemirror-inputrules': 1.0.4
   '@vitejs/plugin-vue': 2.3.1_vite@2.9.5+vue@3.2.33
   autoprefixer: mirrors.tencent.com/autoprefixer/10.4.4_postcss@8.4.12
@@ -80,7 +84,7 @@ devDependencies:
   tailwindcss: mirrors.tencent.com/tailwindcss/3.0.24
   typescript: mirrors.tencent.com/typescript/4.6.3
   unplugin-auto-import: 0.5.11_vite@2.9.5+webpack@5.72.0
-  unplugin-vue-components: 0.17.21_83298cc9d1ace117312ca78455de4e89
+  unplugin-vue-components: 0.17.21_qmuyzsorvtqromjmu6cflxsore
   vite: mirrors.tencent.com/vite/2.9.5_sass@1.50.0
   vite-plugin-mock: mirrors.tencent.com/vite-plugin-mock/2.9.6_mockjs@1.1.0+vite@2.9.5
   vue-tsc: mirrors.tencent.com/vue-tsc/0.29.8_typescript@4.6.3
@@ -564,7 +568,7 @@ packages:
       vue-demi: mirrors.tencent.com/vue-demi/0.12.5_vue@3.2.33
     dev: false
 
-  /@wangeditor/basic-modules/1.0.0_63d5770696338ea0da7a982bbac5bb7d:
+  /@wangeditor/basic-modules/1.0.0_mpkxobuwgohkbwt2tav3vrn3pu:
     resolution: {integrity: sha512-s+xkK6UbQg7ALzd6IxpnYdxMOZMOj6v4lPYYF0xVE5yjGsoZ1Ez/meTSH7MErE4lH/8ZAt2opfEe5B4jhgVBvg==}
     peerDependencies:
       '@wangeditor/core': 1.x
@@ -574,7 +578,7 @@ packages:
       slate: ^0.72.0
       snabbdom: ^3.1.0
     dependencies:
-      '@wangeditor/core': 1.0.0_7337c107346b94648b698fa36fa29756
+      '@wangeditor/core': 1.0.0_om34cbzunokgjc3jr6rw7iuxky
       dom7: 3.0.0
       is-url: 1.2.4
       lodash.throttle: 4.1.1
@@ -583,7 +587,7 @@ packages:
       snabbdom: 3.4.0
     dev: false
 
-  /@wangeditor/code-highlight/1.0.0_5ea451efa64d3eab3533ea5c4b91bf55:
+  /@wangeditor/code-highlight/1.0.0_l2sfd35gju7kwnjt5joexen7ku:
     resolution: {integrity: sha512-1l97wm9K2GKcENDNrHgPa+9qPkXtvcyxHnMvmIxxLe8VoPcc8URQDf7FO2ZQYkGqsZiL6NdYgVT79gRh9vLsUQ==}
     peerDependencies:
       '@wangeditor/core': 1.x
@@ -591,14 +595,14 @@ packages:
       slate: ^0.72.0
       snabbdom: ^3.1.0
     dependencies:
-      '@wangeditor/core': 1.0.0_7337c107346b94648b698fa36fa29756
+      '@wangeditor/core': 1.0.0_om34cbzunokgjc3jr6rw7iuxky
       dom7: 3.0.0
       prismjs: 1.27.0
       slate: 0.72.8
       snabbdom: 3.4.0
     dev: false
 
-  /@wangeditor/core/1.0.0_7337c107346b94648b698fa36fa29756:
+  /@wangeditor/core/1.0.0_om34cbzunokgjc3jr6rw7iuxky:
     resolution: {integrity: sha512-rHtDLEWbfyGjK8oQPfk+O0OckhsDc4nDulaci9hSR69+KqcIQAc6s7qkoUEuMuGax+Q3Csg8yDCGogWDQ7OPQA==}
     peerDependencies:
       '@uppy/core': ^2.1.1
@@ -638,7 +642,7 @@ packages:
       snabbdom: 3.4.0
     dev: false
 
-  /@wangeditor/editor-for-vue/5.1.10_f478d1d5d688cfa6da85397a10127b5a:
+  /@wangeditor/editor-for-vue/5.1.10_6r4ndvowrdh2nwufhf5baet3li:
     resolution: {integrity: sha512-OdtMnMt0HpYriY1+Efo3KHviUB5zwlZIaHypNw5MPRn8uFq3MFLET5u8pbB/PiEF5Ff88YAp7T9Xw1dvJzT8sA==}
     peerDependencies:
       '@wangeditor/editor': '>=5.0.0'
@@ -653,13 +657,13 @@ packages:
     dependencies:
       '@uppy/core': 2.1.8
       '@uppy/xhr-upload': 2.0.7_@uppy+core@2.1.8
-      '@wangeditor/basic-modules': 1.0.0_63d5770696338ea0da7a982bbac5bb7d
-      '@wangeditor/code-highlight': 1.0.0_5ea451efa64d3eab3533ea5c4b91bf55
-      '@wangeditor/core': 1.0.0_7337c107346b94648b698fa36fa29756
-      '@wangeditor/list-module': 1.0.0_5ea451efa64d3eab3533ea5c4b91bf55
-      '@wangeditor/table-module': 1.0.0_48d8603ea74e605219572c671264fef2
-      '@wangeditor/upload-image-module': 1.0.0_eced5c993c2c9e859ada8168a262842e
-      '@wangeditor/video-module': 1.0.0_eb4c525c4e9f1772d1f19ae4727f81e2
+      '@wangeditor/basic-modules': 1.0.0_mpkxobuwgohkbwt2tav3vrn3pu
+      '@wangeditor/code-highlight': 1.0.0_l2sfd35gju7kwnjt5joexen7ku
+      '@wangeditor/core': 1.0.0_om34cbzunokgjc3jr6rw7iuxky
+      '@wangeditor/list-module': 1.0.0_l2sfd35gju7kwnjt5joexen7ku
+      '@wangeditor/table-module': 1.0.0_jdmgapvhjzqfegkxfrtrezh66i
+      '@wangeditor/upload-image-module': 1.0.0_5twvzgj4fspilgw2qfukeyuefy
+      '@wangeditor/video-module': 1.0.0_5ngfexcot4lxfuprtlshe74b4i
       dom7: 3.0.0
       is-hotkey: 0.2.0
       lodash.camelcase: 4.3.0
@@ -674,7 +678,7 @@ packages:
       snabbdom: 3.4.0
     dev: false
 
-  /@wangeditor/list-module/1.0.0_5ea451efa64d3eab3533ea5c4b91bf55:
+  /@wangeditor/list-module/1.0.0_l2sfd35gju7kwnjt5joexen7ku:
     resolution: {integrity: sha512-kRh8qqmebqCBJAiINFJnfQP6hA0wBqKOVWcSaQgUiDRC2PRf91HQrCjdza8xeaNzB+/qAPLbz/lmp+ru/1v1Yg==}
     peerDependencies:
       '@wangeditor/core': 0.x
@@ -682,13 +686,13 @@ packages:
       slate: ^0.72.0
       snabbdom: ^3.1.0
     dependencies:
-      '@wangeditor/core': 1.0.0_7337c107346b94648b698fa36fa29756
+      '@wangeditor/core': 1.0.0_om34cbzunokgjc3jr6rw7iuxky
       dom7: 3.0.0
       slate: 0.72.8
       snabbdom: 3.4.0
     dev: false
 
-  /@wangeditor/table-module/1.0.0_48d8603ea74e605219572c671264fef2:
+  /@wangeditor/table-module/1.0.0_jdmgapvhjzqfegkxfrtrezh66i:
     resolution: {integrity: sha512-+DDRjKgBJn24oczx6skEjP5ApggThzTxG8I9tbGmEF3wPQFmidiW+OEiMON57bqMMmQ51qMVeYl1vL4BcYm3ew==}
     peerDependencies:
       '@wangeditor/core': 0.x
@@ -698,7 +702,7 @@ packages:
       slate: ^0.72.0
       snabbdom: ^3.1.0
     dependencies:
-      '@wangeditor/core': 1.0.0_7337c107346b94648b698fa36fa29756
+      '@wangeditor/core': 1.0.0_om34cbzunokgjc3jr6rw7iuxky
       dom7: 3.0.0
       lodash.isequal: 4.5.0
       nanoid: mirrors.tencent.com/nanoid/3.3.2
@@ -706,7 +710,7 @@ packages:
       snabbdom: 3.4.0
     dev: false
 
-  /@wangeditor/upload-image-module/1.0.0_eced5c993c2c9e859ada8168a262842e:
+  /@wangeditor/upload-image-module/1.0.0_5twvzgj4fspilgw2qfukeyuefy:
     resolution: {integrity: sha512-WaxtlgxfEP7/+Qo4JA0wOtEBn4uqNRDoWPshbzB25J0KeMaHpst9DvpqCjMxYBzjYjtJoEhYeyazvrT/vnzzzA==}
     peerDependencies:
       '@uppy/core': ^2.0.3
@@ -720,15 +724,15 @@ packages:
     dependencies:
       '@uppy/core': 2.1.8
       '@uppy/xhr-upload': 2.0.7_@uppy+core@2.1.8
-      '@wangeditor/basic-modules': 1.0.0_63d5770696338ea0da7a982bbac5bb7d
-      '@wangeditor/core': 1.0.0_7337c107346b94648b698fa36fa29756
+      '@wangeditor/basic-modules': 1.0.0_mpkxobuwgohkbwt2tav3vrn3pu
+      '@wangeditor/core': 1.0.0_om34cbzunokgjc3jr6rw7iuxky
       dom7: 3.0.0
       lodash.foreach: 4.5.0
       slate: 0.72.8
       snabbdom: 3.4.0
     dev: false
 
-  /@wangeditor/video-module/1.0.0_eb4c525c4e9f1772d1f19ae4727f81e2:
+  /@wangeditor/video-module/1.0.0_5ngfexcot4lxfuprtlshe74b4i:
     resolution: {integrity: sha512-TBN+aUWVFR4Og1+usqLsVZQ/SbFVy238SnZcJ6fanhm1VAFbi8CMU40OO9iXmFcVNe0yh+8EPvNuULNgb0f5xA==}
     peerDependencies:
       '@uppy/core': ^2.1.4
@@ -741,7 +745,7 @@ packages:
     dependencies:
       '@uppy/core': 2.1.8
       '@uppy/xhr-upload': 2.0.7_@uppy+core@2.1.8
-      '@wangeditor/core': 1.0.0_7337c107346b94648b698fa36fa29756
+      '@wangeditor/core': 1.0.0_om34cbzunokgjc3jr6rw7iuxky
       dom7: 3.0.0
       nanoid: mirrors.tencent.com/nanoid/3.3.2
       slate: 0.72.8
@@ -969,6 +973,186 @@ packages:
       ext: 1.6.0
     dev: false
 
+  /esbuild-android-64/0.14.36:
+    resolution: {integrity: sha512-jwpBhF1jmo0tVCYC/ORzVN+hyVcNZUWuozGcLHfod0RJCedTDTvR4nwlTXdx1gtncDqjk33itjO+27OZHbiavw==}
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [android]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-android-arm64/0.14.36:
+    resolution: {integrity: sha512-/hYkyFe7x7Yapmfv4X/tBmyKnggUmdQmlvZ8ZlBnV4+PjisrEhAvC3yWpURuD9XoB8Wa1d5dGkTsF53pIvpjsg==}
+    engines: {node: '>=12'}
+    cpu: [arm64]
+    os: [android]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-darwin-64/0.14.36:
+    resolution: {integrity: sha512-kkl6qmV0dTpyIMKagluzYqlc1vO0ecgpviK/7jwPbRDEv5fejRTaBBEE2KxEQbTHcLhiiDbhG7d5UybZWo/1zQ==}
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-darwin-arm64/0.14.36:
+    resolution: {integrity: sha512-q8fY4r2Sx6P0Pr3VUm//eFYKVk07C5MHcEinU1BjyFnuYz4IxR/03uBbDwluR6ILIHnZTE7AkTUWIdidRi1Jjw==}
+    engines: {node: '>=12'}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-freebsd-64/0.14.36:
+    resolution: {integrity: sha512-Hn8AYuxXXRptybPqoMkga4HRFE7/XmhtlQjXFHoAIhKUPPMeJH35GYEUWGbjteai9FLFvBAjEAlwEtSGxnqWww==}
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [freebsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-freebsd-arm64/0.14.36:
+    resolution: {integrity: sha512-S3C0attylLLRiCcHiJd036eDEMOY32+h8P+jJ3kTcfhJANNjP0TNBNL30TZmEdOSx/820HJFgRrqpNAvTbjnDA==}
+    engines: {node: '>=12'}
+    cpu: [arm64]
+    os: [freebsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-linux-32/0.14.36:
+    resolution: {integrity: sha512-Eh9OkyTrEZn9WGO4xkI3OPPpUX7p/3QYvdG0lL4rfr73Ap2HAr6D9lP59VMF64Ex01LhHSXwIsFG/8AQjh6eNw==}
+    engines: {node: '>=12'}
+    cpu: [ia32]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-linux-64/0.14.36:
+    resolution: {integrity: sha512-vFVFS5ve7PuwlfgoWNyRccGDi2QTNkQo/2k5U5ttVD0jRFaMlc8UQee708fOZA6zTCDy5RWsT5MJw3sl2X6KDg==}
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-linux-arm/0.14.36:
+    resolution: {integrity: sha512-NhgU4n+NCsYgt7Hy61PCquEz5aevI6VjQvxwBxtxrooXsxt5b2xtOUXYZe04JxqQo+XZk3d1gcr7pbV9MAQ/Lg==}
+    engines: {node: '>=12'}
+    cpu: [arm]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-linux-arm64/0.14.36:
+    resolution: {integrity: sha512-24Vq1M7FdpSmaTYuu1w0Hdhiqkbto1I5Pjyi+4Cdw5fJKGlwQuw+hWynTcRI/cOZxBcBpP21gND7W27gHAiftw==}
+    engines: {node: '>=12'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-linux-mips64le/0.14.36:
+    resolution: {integrity: sha512-hZUeTXvppJN+5rEz2EjsOFM9F1bZt7/d2FUM1lmQo//rXh1RTFYzhC0txn7WV0/jCC7SvrGRaRz0NMsRPf8SIA==}
+    engines: {node: '>=12'}
+    cpu: [mips64el]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-linux-ppc64le/0.14.36:
+    resolution: {integrity: sha512-1Bg3QgzZjO+QtPhP9VeIBhAduHEc2kzU43MzBnMwpLSZ890azr4/A9Dganun8nsqD/1TBcqhId0z4mFDO8FAvg==}
+    engines: {node: '>=12'}
+    cpu: [ppc64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-linux-riscv64/0.14.36:
+    resolution: {integrity: sha512-dOE5pt3cOdqEhaufDRzNCHf5BSwxgygVak9UR7PH7KPVHwSTDAZHDoEjblxLqjJYpc5XaU9+gKJ9F8mp9r5I4A==}
+    engines: {node: '>=12'}
+    cpu: [riscv64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-linux-s390x/0.14.36:
+    resolution: {integrity: sha512-g4FMdh//BBGTfVHjF6MO7Cz8gqRoDPzXWxRvWkJoGroKA18G9m0wddvPbEqcQf5Tbt2vSc1CIgag7cXwTmoTXg==}
+    engines: {node: '>=12'}
+    cpu: [s390x]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-netbsd-64/0.14.36:
+    resolution: {integrity: sha512-UB2bVImxkWk4vjnP62ehFNZ73lQY1xcnL5ZNYF3x0AG+j8HgdkNF05v67YJdCIuUJpBuTyCK8LORCYo9onSW+A==}
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [netbsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-openbsd-64/0.14.36:
+    resolution: {integrity: sha512-NvGB2Chf8GxuleXRGk8e9zD3aSdRO5kLt9coTQbCg7WMGXeX471sBgh4kSg8pjx0yTXRt0MlrUDnjVYnetyivg==}
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [openbsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-sunos-64/0.14.36:
+    resolution: {integrity: sha512-VkUZS5ftTSjhRjuRLp+v78auMO3PZBXu6xl4ajomGenEm2/rGuWlhFSjB7YbBNErOchj51Jb2OK8lKAo8qdmsQ==}
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [sunos]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-windows-32/0.14.36:
+    resolution: {integrity: sha512-bIar+A6hdytJjZrDxfMBUSEHHLfx3ynoEZXx/39nxy86pX/w249WZm8Bm0dtOAByAf4Z6qV0LsnTIJHiIqbw0w==}
+    engines: {node: '>=12'}
+    cpu: [ia32]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-windows-64/0.14.36:
+    resolution: {integrity: sha512-+p4MuRZekVChAeueT1Y9LGkxrT5x7YYJxYE8ZOTcEfeUUN43vktSn6hUNsvxzzATrSgq5QqRdllkVBxWZg7KqQ==}
+    engines: {node: '>=12'}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-windows-arm64/0.14.36:
+    resolution: {integrity: sha512-fBB4WlDqV1m18EF/aheGYQkQZHfPHiHJSBYzXIo8yKehek+0BtBwo/4PNwKGJ5T0YK0oc8pBKjgwPbzSrPLb+Q==}
+    engines: {node: '>=12'}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
   /esbuild/0.11.3:
     resolution: {integrity: sha512-BzVRHcCtFepjS9WcqRjqoIxLqgpK21a8J4Zi4msSGxDxiXVO1IbcqT1KjhdDDnJxKfe7bvzZrvMEX+bVO0Elcw==}
     hasBin: true
@@ -1008,6 +1192,14 @@ packages:
       statuses: mirrors.tencent.com/statuses/1.5.0
       unpipe: mirrors.tencent.com/unpipe/1.0.0
     dev: true
+
+  /fsevents/2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
 
   /gsap/3.10.3:
     resolution: {integrity: sha512-O4P5mC6awoo0uSemZ1kS1Nm52I4/3gC8gy6ws6VFXvR1KmA4oRlBY/ZI4+LWsH0MoSDZrpwNyF9FAkB37UTGVg==}
@@ -1299,7 +1491,7 @@ packages:
       - webpack
     dev: true
 
-  /unplugin-vue-components/0.17.21_83298cc9d1ace117312ca78455de4e89:
+  /unplugin-vue-components/0.17.21_qmuyzsorvtqromjmu6cflxsore:
     resolution: {integrity: sha512-jkXksUF6zkNbzHQbw1DdrsQyVoMZGESRZDIGd9x7nUP+65nHdpBCY/JmlxSjKbuTrOwfMsk6FQFa0RpRueOCKg==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -1681,7 +1873,7 @@ packages:
       normalize-path: mirrors.tencent.com/normalize-path/3.0.0
       readdirp: mirrors.tencent.com/readdirp/3.6.0
     optionalDependencies:
-      fsevents: mirrors.tencent.com/fsevents/2.3.2
+      fsevents: 2.3.2
     dev: true
 
   mirrors.tencent.com/chrome-trace-event/1.0.3:
@@ -1940,226 +2132,6 @@ packages:
     engines: {node: '>=0.12'}
     dev: true
 
-  mirrors.tencent.com/esbuild-android-64/0.14.36:
-    resolution: {integrity: sha512-jwpBhF1jmo0tVCYC/ORzVN+hyVcNZUWuozGcLHfod0RJCedTDTvR4nwlTXdx1gtncDqjk33itjO+27OZHbiavw==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild-android-64/-/esbuild-android-64-0.14.36.tgz}
-    name: esbuild-android-64
-    version: 0.14.36
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [android]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  mirrors.tencent.com/esbuild-android-arm64/0.14.36:
-    resolution: {integrity: sha512-/hYkyFe7x7Yapmfv4X/tBmyKnggUmdQmlvZ8ZlBnV4+PjisrEhAvC3yWpURuD9XoB8Wa1d5dGkTsF53pIvpjsg==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild-android-arm64/-/esbuild-android-arm64-0.14.36.tgz}
-    name: esbuild-android-arm64
-    version: 0.14.36
-    engines: {node: '>=12'}
-    cpu: [arm64]
-    os: [android]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  mirrors.tencent.com/esbuild-darwin-64/0.14.36:
-    resolution: {integrity: sha512-kkl6qmV0dTpyIMKagluzYqlc1vO0ecgpviK/7jwPbRDEv5fejRTaBBEE2KxEQbTHcLhiiDbhG7d5UybZWo/1zQ==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild-darwin-64/-/esbuild-darwin-64-0.14.36.tgz}
-    name: esbuild-darwin-64
-    version: 0.14.36
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  mirrors.tencent.com/esbuild-darwin-arm64/0.14.36:
-    resolution: {integrity: sha512-q8fY4r2Sx6P0Pr3VUm//eFYKVk07C5MHcEinU1BjyFnuYz4IxR/03uBbDwluR6ILIHnZTE7AkTUWIdidRi1Jjw==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild-darwin-arm64/-/esbuild-darwin-arm64-0.14.36.tgz}
-    name: esbuild-darwin-arm64
-    version: 0.14.36
-    engines: {node: '>=12'}
-    cpu: [arm64]
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  mirrors.tencent.com/esbuild-freebsd-64/0.14.36:
-    resolution: {integrity: sha512-Hn8AYuxXXRptybPqoMkga4HRFE7/XmhtlQjXFHoAIhKUPPMeJH35GYEUWGbjteai9FLFvBAjEAlwEtSGxnqWww==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild-freebsd-64/-/esbuild-freebsd-64-0.14.36.tgz}
-    name: esbuild-freebsd-64
-    version: 0.14.36
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [freebsd]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  mirrors.tencent.com/esbuild-freebsd-arm64/0.14.36:
-    resolution: {integrity: sha512-S3C0attylLLRiCcHiJd036eDEMOY32+h8P+jJ3kTcfhJANNjP0TNBNL30TZmEdOSx/820HJFgRrqpNAvTbjnDA==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild-freebsd-arm64/-/esbuild-freebsd-arm64-0.14.36.tgz}
-    name: esbuild-freebsd-arm64
-    version: 0.14.36
-    engines: {node: '>=12'}
-    cpu: [arm64]
-    os: [freebsd]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  mirrors.tencent.com/esbuild-linux-32/0.14.36:
-    resolution: {integrity: sha512-Eh9OkyTrEZn9WGO4xkI3OPPpUX7p/3QYvdG0lL4rfr73Ap2HAr6D9lP59VMF64Ex01LhHSXwIsFG/8AQjh6eNw==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild-linux-32/-/esbuild-linux-32-0.14.36.tgz}
-    name: esbuild-linux-32
-    version: 0.14.36
-    engines: {node: '>=12'}
-    cpu: [ia32]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  mirrors.tencent.com/esbuild-linux-64/0.14.36:
-    resolution: {integrity: sha512-vFVFS5ve7PuwlfgoWNyRccGDi2QTNkQo/2k5U5ttVD0jRFaMlc8UQee708fOZA6zTCDy5RWsT5MJw3sl2X6KDg==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild-linux-64/-/esbuild-linux-64-0.14.36.tgz}
-    name: esbuild-linux-64
-    version: 0.14.36
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  mirrors.tencent.com/esbuild-linux-arm/0.14.36:
-    resolution: {integrity: sha512-NhgU4n+NCsYgt7Hy61PCquEz5aevI6VjQvxwBxtxrooXsxt5b2xtOUXYZe04JxqQo+XZk3d1gcr7pbV9MAQ/Lg==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild-linux-arm/-/esbuild-linux-arm-0.14.36.tgz}
-    name: esbuild-linux-arm
-    version: 0.14.36
-    engines: {node: '>=12'}
-    cpu: [arm]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  mirrors.tencent.com/esbuild-linux-arm64/0.14.36:
-    resolution: {integrity: sha512-24Vq1M7FdpSmaTYuu1w0Hdhiqkbto1I5Pjyi+4Cdw5fJKGlwQuw+hWynTcRI/cOZxBcBpP21gND7W27gHAiftw==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild-linux-arm64/-/esbuild-linux-arm64-0.14.36.tgz}
-    name: esbuild-linux-arm64
-    version: 0.14.36
-    engines: {node: '>=12'}
-    cpu: [arm64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  mirrors.tencent.com/esbuild-linux-mips64le/0.14.36:
-    resolution: {integrity: sha512-hZUeTXvppJN+5rEz2EjsOFM9F1bZt7/d2FUM1lmQo//rXh1RTFYzhC0txn7WV0/jCC7SvrGRaRz0NMsRPf8SIA==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild-linux-mips64le/-/esbuild-linux-mips64le-0.14.36.tgz}
-    name: esbuild-linux-mips64le
-    version: 0.14.36
-    engines: {node: '>=12'}
-    cpu: [mips64el]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  mirrors.tencent.com/esbuild-linux-ppc64le/0.14.36:
-    resolution: {integrity: sha512-1Bg3QgzZjO+QtPhP9VeIBhAduHEc2kzU43MzBnMwpLSZ890azr4/A9Dganun8nsqD/1TBcqhId0z4mFDO8FAvg==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild-linux-ppc64le/-/esbuild-linux-ppc64le-0.14.36.tgz}
-    name: esbuild-linux-ppc64le
-    version: 0.14.36
-    engines: {node: '>=12'}
-    cpu: [ppc64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  mirrors.tencent.com/esbuild-linux-riscv64/0.14.36:
-    resolution: {integrity: sha512-dOE5pt3cOdqEhaufDRzNCHf5BSwxgygVak9UR7PH7KPVHwSTDAZHDoEjblxLqjJYpc5XaU9+gKJ9F8mp9r5I4A==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild-linux-riscv64/-/esbuild-linux-riscv64-0.14.36.tgz}
-    name: esbuild-linux-riscv64
-    version: 0.14.36
-    engines: {node: '>=12'}
-    cpu: [riscv64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  mirrors.tencent.com/esbuild-linux-s390x/0.14.36:
-    resolution: {integrity: sha512-g4FMdh//BBGTfVHjF6MO7Cz8gqRoDPzXWxRvWkJoGroKA18G9m0wddvPbEqcQf5Tbt2vSc1CIgag7cXwTmoTXg==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild-linux-s390x/-/esbuild-linux-s390x-0.14.36.tgz}
-    name: esbuild-linux-s390x
-    version: 0.14.36
-    engines: {node: '>=12'}
-    cpu: [s390x]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  mirrors.tencent.com/esbuild-netbsd-64/0.14.36:
-    resolution: {integrity: sha512-UB2bVImxkWk4vjnP62ehFNZ73lQY1xcnL5ZNYF3x0AG+j8HgdkNF05v67YJdCIuUJpBuTyCK8LORCYo9onSW+A==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild-netbsd-64/-/esbuild-netbsd-64-0.14.36.tgz}
-    name: esbuild-netbsd-64
-    version: 0.14.36
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [netbsd]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  mirrors.tencent.com/esbuild-openbsd-64/0.14.36:
-    resolution: {integrity: sha512-NvGB2Chf8GxuleXRGk8e9zD3aSdRO5kLt9coTQbCg7WMGXeX471sBgh4kSg8pjx0yTXRt0MlrUDnjVYnetyivg==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild-openbsd-64/-/esbuild-openbsd-64-0.14.36.tgz}
-    name: esbuild-openbsd-64
-    version: 0.14.36
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [openbsd]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  mirrors.tencent.com/esbuild-sunos-64/0.14.36:
-    resolution: {integrity: sha512-VkUZS5ftTSjhRjuRLp+v78auMO3PZBXu6xl4ajomGenEm2/rGuWlhFSjB7YbBNErOchj51Jb2OK8lKAo8qdmsQ==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild-sunos-64/-/esbuild-sunos-64-0.14.36.tgz}
-    name: esbuild-sunos-64
-    version: 0.14.36
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [sunos]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  mirrors.tencent.com/esbuild-windows-32/0.14.36:
-    resolution: {integrity: sha512-bIar+A6hdytJjZrDxfMBUSEHHLfx3ynoEZXx/39nxy86pX/w249WZm8Bm0dtOAByAf4Z6qV0LsnTIJHiIqbw0w==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild-windows-32/-/esbuild-windows-32-0.14.36.tgz}
-    name: esbuild-windows-32
-    version: 0.14.36
-    engines: {node: '>=12'}
-    cpu: [ia32]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  mirrors.tencent.com/esbuild-windows-64/0.14.36:
-    resolution: {integrity: sha512-+p4MuRZekVChAeueT1Y9LGkxrT5x7YYJxYE8ZOTcEfeUUN43vktSn6hUNsvxzzATrSgq5QqRdllkVBxWZg7KqQ==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild-windows-64/-/esbuild-windows-64-0.14.36.tgz}
-    name: esbuild-windows-64
-    version: 0.14.36
-    engines: {node: '>=12'}
-    cpu: [x64]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  mirrors.tencent.com/esbuild-windows-arm64/0.14.36:
-    resolution: {integrity: sha512-fBB4WlDqV1m18EF/aheGYQkQZHfPHiHJSBYzXIo8yKehek+0BtBwo/4PNwKGJ5T0YK0oc8pBKjgwPbzSrPLb+Q==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild-windows-arm64/-/esbuild-windows-arm64-0.14.36.tgz}
-    name: esbuild-windows-arm64
-    version: 0.14.36
-    engines: {node: '>=12'}
-    cpu: [arm64]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
-
   mirrors.tencent.com/esbuild/0.14.36:
     resolution: {integrity: sha512-HhFHPiRXGYOCRlrhpiVDYKcFJRdO0sBElZ668M4lh2ER0YgnkLxECuFe7uWCf23FrcLc59Pqr7dHkTqmRPDHmw==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esbuild/-/esbuild-0.14.36.tgz}
     name: esbuild
@@ -2168,26 +2140,26 @@ packages:
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      esbuild-android-64: mirrors.tencent.com/esbuild-android-64/0.14.36
-      esbuild-android-arm64: mirrors.tencent.com/esbuild-android-arm64/0.14.36
-      esbuild-darwin-64: mirrors.tencent.com/esbuild-darwin-64/0.14.36
-      esbuild-darwin-arm64: mirrors.tencent.com/esbuild-darwin-arm64/0.14.36
-      esbuild-freebsd-64: mirrors.tencent.com/esbuild-freebsd-64/0.14.36
-      esbuild-freebsd-arm64: mirrors.tencent.com/esbuild-freebsd-arm64/0.14.36
-      esbuild-linux-32: mirrors.tencent.com/esbuild-linux-32/0.14.36
-      esbuild-linux-64: mirrors.tencent.com/esbuild-linux-64/0.14.36
-      esbuild-linux-arm: mirrors.tencent.com/esbuild-linux-arm/0.14.36
-      esbuild-linux-arm64: mirrors.tencent.com/esbuild-linux-arm64/0.14.36
-      esbuild-linux-mips64le: mirrors.tencent.com/esbuild-linux-mips64le/0.14.36
-      esbuild-linux-ppc64le: mirrors.tencent.com/esbuild-linux-ppc64le/0.14.36
-      esbuild-linux-riscv64: mirrors.tencent.com/esbuild-linux-riscv64/0.14.36
-      esbuild-linux-s390x: mirrors.tencent.com/esbuild-linux-s390x/0.14.36
-      esbuild-netbsd-64: mirrors.tencent.com/esbuild-netbsd-64/0.14.36
-      esbuild-openbsd-64: mirrors.tencent.com/esbuild-openbsd-64/0.14.36
-      esbuild-sunos-64: mirrors.tencent.com/esbuild-sunos-64/0.14.36
-      esbuild-windows-32: mirrors.tencent.com/esbuild-windows-32/0.14.36
-      esbuild-windows-64: mirrors.tencent.com/esbuild-windows-64/0.14.36
-      esbuild-windows-arm64: mirrors.tencent.com/esbuild-windows-arm64/0.14.36
+      esbuild-android-64: 0.14.36
+      esbuild-android-arm64: 0.14.36
+      esbuild-darwin-64: 0.14.36
+      esbuild-darwin-arm64: 0.14.36
+      esbuild-freebsd-64: 0.14.36
+      esbuild-freebsd-arm64: 0.14.36
+      esbuild-linux-32: 0.14.36
+      esbuild-linux-64: 0.14.36
+      esbuild-linux-arm: 0.14.36
+      esbuild-linux-arm64: 0.14.36
+      esbuild-linux-mips64le: 0.14.36
+      esbuild-linux-ppc64le: 0.14.36
+      esbuild-linux-riscv64: 0.14.36
+      esbuild-linux-s390x: 0.14.36
+      esbuild-netbsd-64: 0.14.36
+      esbuild-openbsd-64: 0.14.36
+      esbuild-sunos-64: 0.14.36
+      esbuild-windows-32: 0.14.36
+      esbuild-windows-64: 0.14.36
+      esbuild-windows-arm64: 0.14.36
     dev: true
 
   mirrors.tencent.com/escalade/3.1.1:
@@ -2303,16 +2275,6 @@ packages:
     name: fraction.js
     version: 4.2.0
     dev: true
-
-  mirrors.tencent.com/fsevents/2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/fsevents/-/fsevents-2.3.2.tgz}
-    name: fsevents
-    version: 2.3.2
-    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
 
   mirrors.tencent.com/function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/function-bind/-/function-bind-1.1.1.tgz}
@@ -2754,7 +2716,7 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
-  mirrors.tencent.com/pinia/2.0.13_typescript@4.6.3+vue@3.2.33:
+  mirrors.tencent.com/pinia/2.0.13_ifhmkzsxec62ezvqv7qmanm4bq:
     resolution: {integrity: sha512-B7rSqm1xNpwcPMnqns8/gVBfbbi7lWTByzS6aPZ4JOXSJD4Y531rZHDCoYWBwLyHY/8hWnXljgiXp6rRyrofcw==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/pinia/-/pinia-2.0.13.tgz}
     id: mirrors.tencent.com/pinia/2.0.13
     name: pinia
@@ -3008,7 +2970,7 @@ packages:
     dev: true
 
   mirrors.tencent.com/regenerator-runtime/0.13.9:
-    resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz}
+    resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz}
     name: regenerator-runtime
     version: 0.13.9
     dev: false
@@ -3051,7 +3013,7 @@ packages:
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: mirrors.tencent.com/fsevents/2.3.2
+      fsevents: 2.3.2
     dev: true
 
   mirrors.tencent.com/run-parallel/1.2.0:
@@ -3383,7 +3345,7 @@ packages:
       rollup: mirrors.tencent.com/rollup/2.70.2
       sass: mirrors.tencent.com/sass/1.50.0
     optionalDependencies:
-      fsevents: mirrors.tencent.com/fsevents/2.3.2
+      fsevents: 2.3.2
     dev: true
 
   mirrors.tencent.com/void-elements/3.1.0:

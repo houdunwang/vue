@@ -1,4 +1,4 @@
-import { ConfigEnv, defineConfig, loadEnv } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import alias from './vite/alias'
 import { parseEnv } from './vite/util'
 import setupPlugins from './vite/plugins'
@@ -10,11 +10,14 @@ export default defineConfig(({ command, mode }) => {
 
   return {
     plugins: [...setupPlugins(isBuild, env), visualizer()],
-    // base: isBuild ? '/dist' : '',
+    //静态文件 url 前缀
+    base: isBuild ? '/dist/' : '/',
     resolve: {
       alias,
     },
     build: {
+      //编译文件生成目录
+      outDir: '../public/dist/',
       rollupOptions: {
         emptyOutDir: true,
         output: {
@@ -31,7 +34,10 @@ export default defineConfig(({ command, mode }) => {
         '/api': {
           target: env.VITE_MOCK_ENABLE ? '/' : env.VITE_API_URL,
           changeOrigin: true,
-          // rewrite: (path: string) => path.replace(/^\/api/, ''),
+        },
+        '/captcha/api/math': {
+          target: env.VITE_MOCK_ENABLE ? '/' : env.VITE_API_URL,
+          changeOrigin: true,
         },
       },
     },

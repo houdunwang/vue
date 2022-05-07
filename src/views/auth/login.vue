@@ -1,48 +1,41 @@
 <script setup lang="ts">
-import v from '@/plugins/validate'
+import useCaptcha from '@/composables/useCaptcha'
+import errorStore from '@/store/errorStore'
 import utils from '@/utils'
+import Footer from './footer.vue'
 
-const { yup, useForm, useFields } = v
-
-const schema = {
-  account: yup
-    .string()
-    .required()
-    .matches(/^\d{11}|.+@.+$/, '请输入邮箱或手机号')
-    .label('帐号'),
-  password: yup.string().required().min(3, '密码不能少于3位').label('密码'),
+const form = reactive({ account: '2300071698@qq.com', password: 'admin888', captcha_code: '', captcha_key: '' })
+const storeError = errorStore()
+const { loadCaptcha } = useCaptcha()
+const onSubmit = async () => {
+  await utils.user.login(form)
 }
-
-const { handleSubmit, errors, values } = useForm({
-  initialValues: {
-    account: '2300071698@qq.com',
-    password: 'admin888',
-  },
-  validationSchema: schema,
-})
-useFields(Object.keys(schema))
-
-const onSubmit = handleSubmit(async (values: any) => {
-  utils.user.login(values)
-})
 </script>
 
 <template>
-  <form class @submit="onSubmit">
+  <form class @submit.prevent="onSubmit">
     <div
-      class="w-[720px] translate-y-32 md:translate-y-0 bg-white md:grid grid-cols-2 rounded-md shadow-md overflow-hidden">
+      class="w-[720px] translate-y-32 md:translate-y-0 bg-gray-50 md:grid grid-cols-2 rounded-md shadow-md overflow-hidden">
       <div class="p-6 flex flex-col justify-between">
         <div>
-          <h2 class="text-center text-gray-700 text-lg mt-3">会员登录</h2>
+          <h2 class="text-center text-gray-700 text-lg mt-3">用户登录</h2>
           <div class="mt-8">
-            <FormInput v-model="values.account" />
-            <FormVeeValidateError :error="errors.account" />
+            <FormInput v-model="form.account" placeholder="请输入邮箱或手机号" />
+            <FormError name="account" />
 
-            <FormInput v-model="values.password" class="mt-3" type="password" />
-            <FormVeeValidateError :error="errors.password" />
+            <FormInput
+              v-model="form.password"
+              class="mt-3"
+              type="password"
+              placeholder="请输入登录密码"
+              v-clearError="'password'" />
+            <FormError name="password" />
+
+            <!-- <HdCaptcha v-model:captcha_code="form.captcha_code" v-model:captcha_key="form.captcha_key" class="mt-2" /> -->
           </div>
 
-          <FormButton class="w-full" />
+          <FormButton class="w-full mt-3 primary" :disabled="storeError.hasError">登录</FormButton>
+
           <div class="flex justify-center mt-3">
             <icon-wechat
               theme="outline"
@@ -51,11 +44,7 @@ const onSubmit = handleSubmit(async (values: any) => {
               class="fab fa-weixin bg-green-600 text-white rounded-full p-1 cursor-pointer" />
           </div>
         </div>
-        <div class="flex gap-2 justify-center mt-5">
-          <a href="#" class="text-xs text-gray-700">会员注册</a>
-          <a href="#" class="text-xs text-gray-700">找回密码</a>
-          <a href="#" class="text-xs text-gray-700">找回密码</a>
-        </div>
+        <Footer />
       </div>
       <div class="hidden md:block relative">
         <img src="/images/login.jpg" class="absolute h-full w-full object-cover" />

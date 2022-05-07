@@ -11,18 +11,18 @@ export default {
     }
     localStorage.setItem(key, JSON.stringify(cache))
   },
-  get(key: string): any {
+  get(key: string, defaultValue: any = null): any {
     const cacheStore = localStorage.getItem(key)
     if (cacheStore) {
       const cache = JSON.parse(cacheStore)
       const expire = cache?.expire
       if (expire && expire < new Date().getTime()) {
         localStorage.removeItem(key)
-        return null
+        return defaultValue
       }
       return cache.data
     }
-    return null
+    return defaultValue
   },
   remove(key: string) {
     localStorage.removeItem(key)

@@ -32,4 +32,32 @@ export default [
       }
     },
   },
+  {
+    url: '/api/register',
+    method: 'post',
+    response: () => {
+      return {
+        code: 200,
+        message: '注册成功',
+        status: 'success',
+        data: {
+          token: Random.string(10),
+        },
+      }
+    },
+  },
+  {
+    url: '/api/account/forget-password',
+    method: 'post',
+    response: () => {
+      return {
+        code: 200,
+        message: '登录成功',
+        status: 'success',
+        data: {
+          token: Random.string(10),
+        },
+      }
+    },
+  },
 ] as MockMethod[]

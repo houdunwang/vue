@@ -3,6 +3,9 @@ import { CacheEnum } from '../../enum/CacheEnum'
 import store from '@/utils/store'
 import router from '@/router'
 import axios, { AxiosRequestConfig } from 'axios'
+import errorStore from '@/store/errorStore'
+import { ElMessage } from 'element-plus'
+// import { MessagePlugin } from 'tdesign-vue-next'
 
 export default class Axios {
   private instance
@@ -30,13 +33,14 @@ export default class Axios {
   private interceptorsRequest() {
     this.instance.interceptors.request.use(
       (config: AxiosRequestConfig) => {
+        errorStore().resetError()
         config.headers = {
           Accept: 'application/json',
           Authorization: `Bearer ${store.get(CacheEnum.TOKEN_NAME)}`,
         }
         return config
       },
-      (error) => {
+      (error: any) => {
         return Promise.reject(error)
       },
     )
@@ -48,13 +52,22 @@ export default class Axios {
       },
       (error) => {
         const {
-          response: { status },
+          response: { status, data },
         } = error
+
         switch (status) {
           case 401:
             store.remove(CacheEnum.TOKEN_NAME)
             router.push({ name: RouteEnum.LOGIN })
             break
+          case 422:
+            errorStore().setErrors(error.response.data.errors)
+            break
+          default:
+            const { message } = data
+            if (message) {
+              ElMessage({ type: 'error', message: message })
+            }
         }
         return Promise.reject(error)
       },

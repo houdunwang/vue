@@ -1,8 +1,8 @@
 import { CacheEnum } from '../enum/CacheEnum'
-import userApi from '@/apis/userApi'
 import store from '@/utils/store'
 import { defineStore } from 'pinia'
 import { IUser } from '@/apis/types/user'
+import { apiInfo } from '@/apis/userApi'
 
 export default defineStore('userStore', {
   state: () => {
@@ -13,7 +13,7 @@ export default defineStore('userStore', {
   actions: {
     async getUserInfo() {
       if (store.get(CacheEnum.TOKEN_NAME)) {
-        this.info = await userApi.info().then((r) => r.data)
+        this.info = await apiInfo().then((r) => r.data)
       }
     },
     resetInfo() {

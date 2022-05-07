@@ -1,18 +1,55 @@
-import { ILogin, ILoginForm, IUser } from './types/user'
+import { IUser } from './types/user'
 import { http } from '@/plugins/axios'
 
-function info() {
+export function apiInfo() {
   return http.request<IUser>({
     url: `user/info`,
   })
 }
 
-export function login(data: ILoginForm) {
-  return http.request<ILogin>({
+export interface ILoginAndRegisterResponse {
+  user: IUser
+  token: string
+}
+
+export interface ILoginForm {
+  account: string
+  password: string
+}
+
+export function apiLogin(data: ILoginForm) {
+  return http.request<ILoginAndRegisterResponse>({
     url: `login`,
     method: 'post',
     data,
   })
 }
 
-export default { info, login }
+export interface IRegisterForm {
+  account: string
+  password: string
+  password_confirmation: string
+  code: string
+}
+
+export function apiRegister(data: IRegisterForm) {
+  return http.request<ILoginAndRegisterResponse>({
+    url: `register`,
+    method: 'post',
+    data,
+  })
+}
+
+export interface IForgetPassword {
+  account: string
+  password: string
+  password_confirmation: string
+  code: string
+}
+export function apiForgetPassword(data: IForgetPassword) {
+  return http.request<ILoginAndRegisterResponse>({
+    url: 'account/forget-password',
+    method: 'post',
+    data,
+  })
+}

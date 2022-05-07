@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { apiForgetPassword } from '@/apis/userApi'
 import errorStore from '@/store/errorStore'
 import utils from '@/utils'
 import Footer from './footer.vue'
@@ -15,7 +16,7 @@ const store = errorStore()
 watch(form, () => store.resetError())
 
 const onSubmit = async () => {
-  await utils.user.register(form)
+  await utils.user.forgetPassword(form)
 }
 </script>
 
@@ -25,20 +26,20 @@ const onSubmit = async () => {
       class="w-[720px] translate-y-32 md:translate-y-0 bg-gray-50 md:grid grid-cols-2 rounded-md shadow-md overflow-hidden">
       <div class="p-6 flex flex-col justify-between">
         <div>
-          <h2 class="text-center text-gray-700 text-lg mt-3">会员注册</h2>
+          <h2 class="text-center text-gray-700 text-lg mt-3">找回密码</h2>
           <div class="mt-8">
             <FormInput v-model="form.account" placeholder="邮箱或手机号" v-clearError="'account'" />
             <FormError name="account" />
 
-            <FormInput v-model="form.password" class="mt-3" type="password" placeholder="密码" />
+            <FormInput v-model="form.password" class="mt-3" type="password" placeholder="请输入新密码" />
             <FormError name="password" />
 
-            <FormInput v-model="form.password_confirmation" class="mt-3" type="password" placeholder="确认密码" />
+            <FormInput v-model="form.password_confirmation" class="mt-3" type="password" placeholder="再次输入密码" />
 
-            <!-- <HdCode class="mt-2" :account="form.account" v-model:code="form.code" type="notExist" /> -->
+            <!-- <HdCode class="mt-2" :account="form.account" v-model:code="form.code" type="exist" /> -->
           </div>
 
-          <FormButton class="w-full primary mt-2" :disabled="store.hasError">注册</FormButton>
+          <FormButton class="w-full primary mt-2" :disabled="store.hasError">确定修改</FormButton>
 
           <div class="flex justify-center mt-3">
             <icon-wechat
@@ -51,7 +52,7 @@ const onSubmit = async () => {
         <Footer />
       </div>
       <div class="hidden md:block relative">
-        <img src="/images/register.jpg" class="absolute h-full w-full object-cover" />
+        <img src="/images/forget-password.jpg" class="absolute h-full w-full object-cover" />
       </div>
     </div>
   </form>
