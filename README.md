@@ -27,10 +27,10 @@
 使用git下载项目
 
 ```
-#github
+//github
 git clone https://github.com/houdunwang/vue.git
 
-#gitee
+//gitee
 git clone https://gitee.com/houdunren/vue.git
 ```
 
@@ -39,14 +39,29 @@ git clone https://gitee.com/houdunren/vue.git
 安装依赖包
 
 ```
-#npm
+//npm
 npm install
 
-#yarn 
+//yarn 
 yarn 
 
-#pnpm
+//pnpm
 pnpm install
+```
+
+
+
+运行项目
+
+```
+//npm
+npm run dev
+
+//yarn 
+yarn run dev 
+
+//pnpm
+pnpm run dev
 ```
 
 
