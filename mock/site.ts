@@ -118,7 +118,7 @@ export default [
     response: () => {
       return {
         data: {
-          title: '需四议治金',
+          title: '后盾人',
           url: 'http://pnncyrhtu.fm/vbbc',
           user_id: 1,
           config: {
@@ -142,7 +142,7 @@ export default [
     response: () => {
       return {
         data: {
-          title: '需四议治金',
+          title: '后盾人',
           url: 'http://pnncyrhtu.fm/vbbc',
           user_id: 1,
           config: {
@@ -166,7 +166,7 @@ export default [
     response: () => {
       return {
         data: {
-          title: '需四议治金',
+          title: '后盾人',
           url: 'http://pnncyrhtu.fm/vbbc',
           user_id: 1,
           config: {
