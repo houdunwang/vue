@@ -1,13 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-const content = ref('abc')
+const text = ref('')
 </script>
 
 <template>
-  <div class>
-    <EditorMarkdown v-model="content" :height="300" placeholder="请输入markdown内容" />
-    {{ content }}
+  <EditorMarkdown v-model="text" />
+  <div class="p-3 border bg-gray-100">
+    {{ text }}
   </div>
 </template>
-
-<style lang="scss"></style>

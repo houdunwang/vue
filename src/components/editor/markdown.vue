@@ -1,49 +1,32 @@
 <script setup lang="ts">
-import { nextTick } from 'vue'
-import ToastEditor from './toastEditor'
-import '@toast-ui/editor/dist/toastui-editor.css'
-interface IProps {
-  modelValue?: string
-  height?: number
-  placeholder?: string
+import { uploadImage } from '@/apis/upload'
+const { modelValue } = defineProps<{
+  modelValue: any
+}>()
+
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: any): void
+}>()
+const text = ref(modelValue)
+
+watch(text, (value) => {
+  emit('update:modelValue', value)
+})
+
+const handleUploadImage = async (event: any, insertImage: any, files: any) => {
+  const form = new FormData()
+  form.append('file', files[0])
+  const { data } = await uploadImage(form)
+
+  insertImage({ url: data.url })
 }
-
-const props = withDefaults(defineProps<IProps>(), {
-  modelValue: '',
-  height: 500,
-  placeholder: '',
-})
-
-const emit = defineEmits(['update:modelValue'])
-
-nextTick(() => {
-  const toastUi = new ToastEditor('#markdownEditor', `${props.modelValue}`, `${props.height}px`)
-  toastUi.editor.on('change', (type: string) => {
-    emit('update:modelValue', toastUi.editor[type == 'markdown' ? 'getMarkdown' : 'getHTML']())
-  })
-})
 </script>
 
 <template>
-  <div id="markdownEditor"></div>
+  <v-md-editor
+    :value="modelValue"
+    v-model="text"
+    :disabled-menus="[]"
+    height="400px"
+    @upload-image="handleUploadImage" />
 </template>
-
-<style lang="scss">
-// @import 'https://uicdn.toast.com/editor/latest/toastui-editor.min.css';
-
-#markdownEditor {
-  @apply bg-white;
-  .toastui-editor-mode-switch {
-    display: none !important;
-  }
-  .fullscreen {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: #fff;
-    @apply z-10;
-  }
-}
-</style>

@@ -1,4 +1,3 @@
-import userStore from '@/store/userStore'
 import { App as AppType, createApp } from 'vue'
 import App from './App.vue'
 import router, { setupRouter } from '@/router'
@@ -10,7 +9,6 @@ import registerDirective from './directive'
 class Main {
   public async bootstrap() {
     const app = this.app()
-    await this.initData()
     await router.isReady()
     app.mount('#app')
   }
@@ -22,10 +20,6 @@ class Main {
 
     registerDirective(app)
     return app
-  }
-  //初始应用数据
-  private async initData() {
-    await userStore().getUserInfo()
   }
 }
 

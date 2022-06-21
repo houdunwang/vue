@@ -1,10 +1,7 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
-	<router-view />
+  <router-view />
 </template>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

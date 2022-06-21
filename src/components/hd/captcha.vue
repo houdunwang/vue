@@ -10,8 +10,13 @@ const emit = defineEmits(['update:captcha_code', 'update:captcha_key'])
 
 const { captcha, loadCaptcha } = useCaptcha()
 
+const code = ref('')
 watch(captcha, () => {
   emit('update:captcha_key', captcha.value?.key)
+})
+
+watch(code, () => {
+  emit('update:captcha_code', code.value)
 })
 
 loadCaptcha()
@@ -20,11 +25,7 @@ loadCaptcha()
 <template>
   <div class="">
     <div class="flex justify-between">
-      <FormInput
-        placeholder="请输入验证码"
-        :value="props.captcha_code"
-        v-clearError="'captcha_code'"
-        @input="emit('update:captcha_code',($event.target as HTMLInputElement).value)" />
+      <FormInputComponent placeholder="请输入验证码" v-model="code" v-clearError="'captcha_code'" />
       <img :src="captcha?.img" class="rounded-md cursor-pointer ml-1" @click="loadCaptcha" />
     </div>
     <FormError name="captcha_code" />

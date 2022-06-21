@@ -1,15 +1,20 @@
 <script setup lang="ts">
+import { login } from '@/apis/auth'
 import useCaptcha from '@/composables/useCaptcha'
 import errorStore from '@/store/errorStore'
-import utils from '@/utils'
+import { loginAndRegisterCallback, request } from '@/utils/helper'
 import Footer from './footer.vue'
 
 const form = reactive({ account: '2300071698@qq.com', password: 'admin888', captcha_code: '', captcha_key: '' })
+
 const storeError = errorStore()
 const { loadCaptcha } = useCaptcha()
-const onSubmit = async () => {
-  await utils.user.login(form)
-}
+
+const onSubmit = request(async () => {
+  // loadCaptcha()
+  const { data } = await login(form)
+  loginAndRegisterCallback(data)
+})
 </script>
 
 <template>
@@ -20,10 +25,10 @@ const onSubmit = async () => {
         <div>
           <h2 class="text-center text-gray-700 text-lg mt-3">用户登录</h2>
           <div class="mt-8">
-            <FormInput v-model="form.account" placeholder="请输入邮箱或手机号" />
+            <FormInputComponent v-model="form.account" placeholder="请输入邮箱或手机号" />
             <FormError name="account" />
 
-            <FormInput
+            <FormInputComponent
               v-model="form.password"
               class="mt-3"
               type="password"
@@ -34,7 +39,7 @@ const onSubmit = async () => {
             <!-- <HdCaptcha v-model:captcha_code="form.captcha_code" v-model:captcha_key="form.captcha_key" class="mt-2" /> -->
           </div>
 
-          <FormButton class="w-full mt-3 primary" :disabled="storeError.hasError">登录</FormButton>
+          <FormButtonComponent class="w-full mt-3 primary">登录</FormButtonComponent>
 
           <div class="flex justify-center mt-3">
             <icon-wechat
@@ -53,7 +58,7 @@ const onSubmit = async () => {
   </form>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 form {
   @apply bg-slate-300 h-screen flex justify-center items-start md:items-center p-5;
 }

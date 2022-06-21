@@ -17,7 +17,6 @@ export default () => {
         await apiCode(account)
     }
     store.set('codeSendTime', dayjs())
-    ElMessage({ type: 'success', message: '验证码已发送' })
   }
 
   const sendTime = () => {

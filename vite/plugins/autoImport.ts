@@ -6,23 +6,14 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 export default function autoImport(plugins: Plugin[]) {
   plugins.push(
     AutoImport({
-      resolvers: [
-        ElementPlusResolver(),
-        // TDesignResolver({
-        //   library: 'vue-next',
-        // }),
-      ],
+      resolvers: [ElementPlusResolver()],
       imports: ['vue', 'vue-router'],
       //为true时在项目根目录自动创建
       dts: 'types/auto-imports.d.ts',
     }),
     Components({
-      resolvers: [
-        ElementPlusResolver(),
-        // TDesignResolver({
-        //   library: 'vue-next',
-        // }),
-      ],
+      extensions: ['vue'],
+      resolvers: [ElementPlusResolver()],
       dirs: ['src/components'],
       //组件名称包含目录，防止同名组件冲突
       directoryAsNamespace: true,

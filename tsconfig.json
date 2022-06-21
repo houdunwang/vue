@@ -20,7 +20,6 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
-    "src/**/*.tsx",
     "src/**/*.vue",
     "vite.config.ts",
     "vite/**/*.ts",

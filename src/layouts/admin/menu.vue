@@ -38,7 +38,6 @@ watch(route, () => menuService.setCurrentMenu(route), { immediate: true })
                 strokeLinecap="butt"
                 :class="{ 'rotate-180': menu.isClick }"
                 class="duration-300" />
-              <!-- <i class="fas fa-angle-down duration-300" :class="{ 'rotate-180': menu.isClick }"></i> -->
             </section>
           </dt>
           <dd :class="!menu.isClick || menuService.close.value ? 'hidden' : 'block'">
@@ -72,7 +71,7 @@ watch(route, () => menuService.setCurrentMenu(route), { immediate: true })
         @apply text-gray-300 text-sm relative p-4;
 
         dt {
-          @apply text-sm flex justify-between cursor-pointer items-center;
+          @apply text-sm flex justify-between cursor-pointer items-center opacity-80;
 
           section {
             @apply flex items-center;
@@ -85,10 +84,10 @@ watch(route, () => menuService.setCurrentMenu(route), { immediate: true })
 
         dd {
           div {
-            @apply py-3 pl-4 my-2 text-white rounded-md cursor-pointer duration-300 hover:bg-violet-500 bg-gray-700;
+            @apply opacity-80 text-sm py-3 pl-4 my-2 text-white rounded-md cursor-pointer duration-300 hover:bg-violet-500 hover:opacity-100 bg-gray-700;
 
             &.active {
-              @apply bg-violet-700;
+              @apply bg-violet-700 opacity-100;
             }
           }
         }

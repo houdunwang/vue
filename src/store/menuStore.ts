@@ -1,14 +1,14 @@
 import { CacheEnum } from '../enum/CacheEnum'
 import utils from '@/utils'
 import { RouteLocationNormalized } from 'vue-router'
-import { IMenu } from '#/menu'
+import { RouteMenu } from '#/router'
 import { defineStore } from 'pinia'
 import router from '@/router'
 export default defineStore('menu', {
   state: () => {
     return {
-      menus: [] as IMenu[],
-      historyMenu: [] as IMenu[],
+      menus: [] as RouteMenu[],
+      historyMenu: [] as RouteMenu[],
     }
   },
   actions: {
@@ -16,14 +16,14 @@ export default defineStore('menu', {
       this.getMenuByRoute()
       this.historyMenu = utils.store.get(CacheEnum.HISTORY_MENU) ?? []
     },
-    removeHistoryMenu(menu: IMenu) {
+    removeHistoryMenu(menu: RouteMenu) {
       const index = this.historyMenu.indexOf(menu)
       this.historyMenu.splice(index, 1)
     },
     addHistoryMenu(route: RouteLocationNormalized) {
       if (!route.meta?.menu) return
 
-      const menu: IMenu = { ...route.meta?.menu, route: route.name as string }
+      const menu: RouteMenu = { ...route.meta?.menu, route: route.name as string }
       const isHas = this.historyMenu.some((menu) => menu.route == route.name)
       if (!isHas) this.historyMenu.unshift(menu)
       if (this.historyMenu.length > 10) {
@@ -38,15 +38,15 @@ export default defineStore('menu', {
         .getRoutes()
         .filter((route) => route.children.length && route.meta.menu)
         .map((route) => {
-          let menu: IMenu = { ...route.meta?.menu }
+          let menu: RouteMenu = { ...route.meta?.menu }
           menu.children = route.children
             .filter((route) => route.meta?.menu)
             .map((route) => {
               return { ...route.meta?.menu, route: route.name }
-            }) as IMenu[]
+            }) as RouteMenu[]
           return menu
         })
-        .filter((menu) => menu.children?.length) as IMenu[]
+        .filter((menu) => menu.children?.length) as RouteMenu[]
     },
   },
 })

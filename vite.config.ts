@@ -3,23 +3,27 @@ import alias from './vite/alias'
 import { parseEnv } from './vite/util'
 import setupPlugins from './vite/plugins'
 import { visualizer } from 'rollup-plugin-visualizer'
+import vue from '@vitejs/plugin-vue'
 
 export default defineConfig(({ command, mode }) => {
   const isBuild = command == 'build'
   const env = parseEnv(loadEnv(mode, process.cwd()))
 
   return {
-    plugins: [...setupPlugins(isBuild, env), visualizer()],
+    plugins: [vue({ reactivityTransform: true }), ...setupPlugins(isBuild, env), visualizer()],
     //静态文件 url 前缀
     base: isBuild ? '/dist/' : '/',
     resolve: {
       alias,
     },
+    optimizeDeps: {
+      include: ['@kangc/v-md-editor/lib/theme/vuepress.js'],
+    },
     build: {
       //编译文件生成目录
       outDir: '../public/dist/',
+      emptyOutDir: true,
       rollupOptions: {
-        emptyOutDir: true,
         output: {
           manualChunks(id: string) {
             if (id.includes('node_modules')) {
@@ -30,6 +34,7 @@ export default defineConfig(({ command, mode }) => {
       },
     },
     server: {
+      //open: true, //直接打开浏览器
       proxy: {
         '/api': {
           target: env.VITE_MOCK_ENABLE ? '/' : env.VITE_API_URL,

@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import errorStore from '@/store/errorStore'
 
-const props = defineProps<{ name: string }>()
+const { name } = defineProps<{ name: string }>()
 
 const store = errorStore()
 </script>
 
 <template>
-  <div class="hd-error" v-show="store.getError(props.name)">
-    {{ store.getError(props.name) }}
+  <div class="hd-error" v-show="store.getError(name)">
+    {{ store.getError(name) }}
   </div>
 </template>
 

@@ -1,3 +1,4 @@
+import userStore from '@/store/userStore'
 import store from '@/utils/store'
 import { CacheEnum } from '../enum/CacheEnum'
 import util from '@/utils'
@@ -7,15 +8,16 @@ import errorStore from '@/store/errorStore'
 class Guard {
   constructor(private router: Router) {}
 
-  public run() {
+  public async run() {
     this.router.beforeEach(this.beforeEach.bind(this))
   }
 
   private async beforeEach(to: RouteLocationNormalized, from: RouteLocationNormalized) {
     errorStore().resetError()
+    this.loadInitData()
 
     if (to.meta.auth && !this.token()) {
-      store.set(CacheEnum.REDIRECT_ROUTE_NAME, to.name)
+      store.set(CacheEnum.REDIRECT_ROUTE_NAME, to.fullPath)
       return { name: 'login' }
     }
 
@@ -24,6 +26,12 @@ class Guard {
 
   private token(): string | null {
     return util.store.get(CacheEnum.TOKEN_NAME)
+  }
+
+  private loadInitData() {
+    if (store.get(CacheEnum.TOKEN_NAME)) {
+      userStore().getUserInfo()
+    }
   }
 }
 

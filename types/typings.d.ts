@@ -1,19 +1,23 @@
-declare namespace toastui {
-  class Editor {
-    constructor(options: any)
-    getMarkdown: () => string
-    getHTML: () => string
-    on: (event: string, callback: Function) => void
-    removeHook: (type: string) => void
-    addHook: (type: string, handler: Function) => void
-    setHeight: (height: string) => void
-    focus: () => void
-  }
+//请求响应结构
+interface ResponseResult<T> {
+  code: number
+  message: string
+  status: 'success' | 'error'
+  data: T
 }
 
-declare class wangEditor {
-  constructor(el: string)
-  create: () => void
-  config: { [key: string]: any }
-  txt: { [key: string]: any }
+//分页请求响应结构
+interface ResponsePageResult<T> {
+  data: T[]
+  links: { url?: string; label: string; active: boolean }
+  meta: {
+    current_page: number
+    from: number
+    last_page: number
+    links: { first: string; last: string; prev?: any; next?: any }[]
+    path: string
+    per_page: number
+    to: number
+    total: number
+  }
 }

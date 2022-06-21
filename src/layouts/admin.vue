@@ -21,7 +21,7 @@ watch(
     <MenuComponet />
 
     <div class="content bg-gray-100 grid grid-rows-[auto_1fr]">
-      <div class>
+      <div>
         <Navbar />
         <HistoryLink />
       </div>
@@ -32,7 +32,9 @@ watch(
             class="animate__animated"
             :enter-active-class="route.meta.enterClass ?? 'animate__fadeInRight'"
             :leave-active-class="route.meta.leaveClass ?? 'animate__fadeOutLeft'">
-            <component :is="Component" class="absolute w-full" />
+            <div class="absolute w-full">
+              <component :is="Component" />
+            </div>
           </Transition>
         </router-view>
       </div>

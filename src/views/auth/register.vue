@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import { register } from '@/apis/auth'
 import errorStore from '@/store/errorStore'
-import utils from '@/utils'
 import Footer from './footer.vue'
 
 const form = reactive({
@@ -15,7 +15,7 @@ const store = errorStore()
 watch(form, () => store.resetError())
 
 const onSubmit = async () => {
-  await utils.user.register(form)
+  await register(form)
 }
 </script>
 
@@ -27,18 +27,22 @@ const onSubmit = async () => {
         <div>
           <h2 class="text-center text-gray-700 text-lg mt-3">会员注册</h2>
           <div class="mt-8">
-            <FormInput v-model="form.account" placeholder="邮箱或手机号" v-clearError="'account'" />
+            <FormInputComponent v-model="form.account" placeholder="邮箱或手机号" v-clearError="'account'" />
             <FormError name="account" />
 
-            <FormInput v-model="form.password" class="mt-3" type="password" placeholder="密码" />
+            <FormInputComponent v-model="form.password" class="mt-3" type="password" placeholder="密码" />
             <FormError name="password" />
 
-            <FormInput v-model="form.password_confirmation" class="mt-3" type="password" placeholder="确认密码" />
+            <FormInputComponent
+              v-model="form.password_confirmation"
+              class="mt-3"
+              type="password"
+              placeholder="确认密码" />
 
-            <!-- <HdCode class="mt-2" :account="form.account" v-model:code="form.code" type="notExist" /> -->
+            <HdValidateCode class="mt-2" :account="form.account" v-model:code="form.code" type="notExist" />
           </div>
 
-          <FormButton class="w-full primary mt-2" :disabled="store.hasError">注册</FormButton>
+          <FormButtonComponent class="w-full primary mt-2">注册</FormButtonComponent>
 
           <div class="flex justify-center mt-3">
             <icon-wechat
@@ -57,7 +61,7 @@ const onSubmit = async () => {
   </form>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 form {
   @apply bg-slate-300 h-screen flex justify-center items-start md:items-center p-5;
 }

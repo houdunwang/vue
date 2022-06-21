@@ -25,11 +25,6 @@ const routes = [
     meta: { guest: true },
   },
   {
-    path: '/article',
-    name: 'article',
-    component: () => import('@/views/article.vue'),
-  },
-  {
     path: '/:any(.*)',
     name: 'notFound',
     component: () => import('@/views/errors/404.vue'),

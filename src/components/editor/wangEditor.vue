@@ -41,12 +41,6 @@ const toolbarConfig: Partial<IToolbarConfig> = {
   excludeKeys: ['group-video', 'undo', 'redo'],
 }
 
-//打印菜单配置
-// setTimeout(() => {
-//   const toolbar = DomEditor.getToolbar(editorRef.value)
-//   console.log(toolbar)
-// }, 1000)
-
 const editorConfig: Partial<IEditorConfig> = {
   MENU_CONF: {
     uploadImage: {
