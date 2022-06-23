@@ -124,54 +124,6 @@ export default [
       return {
         data: [
           {
-            id: 3,
-            title: '商城',
-            name: 'Shop',
-            version: '1.0',
-            author: '向军大叔',
-            preview: 'http://hdcms-php.test/addons/Shop/preview.jpeg',
-            install: false,
-            created_at: '2022-06-20T08:08:10.000000Z',
-            updated_at: '2022-06-20T08:08:10.000000Z',
-            permission: [
-              {
-                title: '文章管理',
-                name: 'article',
-                items: [
-                  {
-                    title: '文章列表',
-                    name: 'article_list',
-                  },
-                  {
-                    title: '添加文章',
-                    name: 'article_add',
-                  },
-                  {
-                    title: '编辑文章',
-                    name: 'article_edit',
-                  },
-                  {
-                    title: '删除文章',
-                    name: 'article_delete',
-                  },
-                ],
-              },
-            ],
-            config: {
-              name: 'Shop',
-              version: '1.0',
-              title: '商城',
-              author: '向军大叔',
-            },
-            pivot: {
-              site_id: 1,
-              module_id: 3,
-              created_at: '2022-06-20T08:08:10.000000Z',
-              updated_at: '2022-06-20T09:14:31.000000Z',
-              is_default: 1,
-            },
-          },
-          {
             id: 1,
             title: '博客',
             name: 'Blog',
