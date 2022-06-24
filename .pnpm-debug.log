@@ -3,20 +3,12 @@
     "selected": 1
   },
   "1 error pnpm": {
-    "code": "ELIFECYCLE",
-    "errno": "ENOENT",
-    "syscall": "spawn",
-    "file": "sh",
-    "pkgid": "router@0.0.0",
-    "stage": "dev",
-    "script": "vite",
-    "pkgname": "router",
+    "code": "ERR_PNPM_MISSING_PACKAGE_NAME",
     "err": {
       "name": "pnpm",
-      "message": "router@0.0.0 dev: `vite`\nspawn ENOENT",
-      "code": "ELIFECYCLE",
-      "stack": "pnpm: router@0.0.0 dev: `vite`\nspawn ENOENT\n    at ChildProcess.<anonymous> (/Users/hd/Library/pnpm/global/5/.pnpm/pnpm@7.2.1/node_modules/pnpm/dist/pnpm.cjs:93917:22)\n    at ChildProcess.emit (node:events:520:28)\n    at maybeClose (node:internal/child_process:1092:16)\n    at Process.ChildProcess._handle.onexit (node:internal/child_process:302:5)"
+      "message": "`pnpm add` requires the package name",
+      "code": "ERR_PNPM_MISSING_PACKAGE_NAME",
+      "stack": "pnpm: `pnpm add` requires the package name\n    at Object.handler [as add] (/Users/hd/.nvm/versions/node/v16.15.1/lib/node_modules/pnpm/dist/pnpm.cjs:123454:15)\n    at /Users/hd/.nvm/versions/node/v16.15.1/lib/node_modules/pnpm/dist/pnpm.cjs:187853:51\n    at async run (/Users/hd/.nvm/versions/node/v16.15.1/lib/node_modules/pnpm/dist/pnpm.cjs:187829:34)\n    at async runPnpm (/Users/hd/.nvm/versions/node/v16.15.1/lib/node_modules/pnpm/dist/pnpm.cjs:188047:5)\n    at async /Users/hd/.nvm/versions/node/v16.15.1/lib/node_modules/pnpm/dist/pnpm.cjs:188039:7"
     }
-  },
-  "2 warn pnpm:global": " Local package.json exists, but node_modules missing, did you mean to install?"
+  }
 }
