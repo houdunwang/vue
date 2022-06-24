@@ -9,7 +9,7 @@ import setupMarkdown from './markdown'
 
 export function setupPlugins(app: App) {
   setupTailwindcss()
-  setupElementPlus()
+  setupElementPlus(app)
   setupPinia(app)
   setupIconPark(app)
   setupDayjs()
