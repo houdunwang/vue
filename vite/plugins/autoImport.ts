@@ -17,7 +17,7 @@ export default function autoImport(plugins: Plugin[]) {
       extensions: ['vue'],
       resolvers: [
         ElementPlusResolver({
-          importStyle: false,
+          // importStyle: false,
         }),
         //自动导入图标
         IconsResolver({

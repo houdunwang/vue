@@ -1,4 +1,4 @@
-import { defineConfig, loadEnv, optimizeDeps } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import fs from 'fs'
 import alias from './vite/alias'
 import { parseEnv } from './vite/util'
