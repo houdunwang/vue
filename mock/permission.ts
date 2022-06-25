@@ -38,7 +38,7 @@ export default [
             name: 'Blog',
             version: '1.0',
             author: '后盾人',
-            preview: 'http://hdcms-php.test/addons/Blog/preview.jpeg',
+            preview: '/addons/Blog/preview.jpeg',
             install: false,
             created_at: '2022-06-20T08:08:10.000000Z',
             updated_at: '2022-06-20T08:08:10.000000Z',

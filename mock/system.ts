@@ -13,7 +13,7 @@ export default [
           id: 1,
           title: '后盾人',
           tel: null,
-          logo: 'http://hdcms-php.test/static/logo.png',
+          logo: '/static/logo.png',
           email: null,
           address: null,
           wechat: null,

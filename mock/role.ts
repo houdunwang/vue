@@ -18,8 +18,8 @@ export default [
           },
         ],
         links: {
-          first: 'http://hdcms-php.test/api/site/1/role?page=1',
-          last: 'http://hdcms-php.test/api/site/1/role?page=1',
+          first: '/api/site/1/role?page=1',
+          last: '/api/site/1/role?page=1',
           prev: null,
           next: null,
         },
@@ -34,7 +34,7 @@ export default [
               active: false,
             },
             {
-              url: 'http://hdcms-php.test/api/site/1/role?page=1',
+              url: '/api/site/1/role?page=1',
               label: '1',
               active: true,
             },
@@ -44,7 +44,7 @@ export default [
               active: false,
             },
           ],
-          path: 'http://hdcms-php.test/api/site/1/role',
+          path: '/api/site/1/role',
           per_page: 100,
           to: 2,
           total: 2,

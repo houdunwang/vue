@@ -7,14 +7,14 @@ import { visualizer } from 'rollup-plugin-visualizer'
 import vue from '@vitejs/plugin-vue'
 
 //预构建的文件
-const optimizeDepsIncludes = ['element-plus/es']
-fs.readdirSync('node_modules/element-plus/es/components').map((dirname) => {
-  fs.access(`node_modules/element-plus/es/components/${dirname}/style/css.mjs`, (err) => {
-    if (!err) {
-      optimizeDepsIncludes.push(`element-plus/es/components/${dirname}/style/css`)
-    }
-  })
-})
+// const optimizeDepsIncludes = ['element-plus/es']
+// fs.readdirSync('node_modules/element-plus/es/components').map((dirname) => {
+//   fs.access(`node_modules/element-plus/es/components/${dirname}/style/css.mjs`, (err) => {
+//     if (!err) {
+//       optimizeDepsIncludes.push(`element-plus/es/components/${dirname}/style/css`)
+//     }
+//   })
+// })
 
 export default defineConfig(({ command, mode }) => {
   const isBuild = command == 'build'
@@ -27,9 +27,9 @@ export default defineConfig(({ command, mode }) => {
     resolve: {
       alias,
     },
-    optimizeDeps: {
-      include: optimizeDepsIncludes,
-    },
+    // optimizeDeps: {
+    //   include: optimizeDepsIncludes,
+    // },
     build: {
       //编译文件生成目录
       outDir: '../public/dist/',

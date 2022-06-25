@@ -16,13 +16,11 @@ export default function autoImport(plugins: Plugin[]) {
     Components({
       extensions: ['vue'],
       resolvers: [
-        ElementPlusResolver({
-          // importStyle: false,
-        }),
+        // ElementPlusResolver({}),
         //自动导入图标
-        IconsResolver({
-          enabledCollections: ['ep'],
-        }),
+        // IconsResolver({
+        //   enabledCollections: ['ep'],
+        // }),
       ],
       dirs: ['src/components'],
       //组件名称包含目录，防止同名组件冲突
@@ -30,8 +28,8 @@ export default function autoImport(plugins: Plugin[]) {
       //指定类型声明文件，为true时在项目根目录创建
       dts: 'types/components.d.ts',
     }),
-    Icons({
-      autoInstall: true,
-    }),
+    // Icons({
+    //   autoInstall: true,
+    // }),
   )
 }

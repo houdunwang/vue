@@ -41,7 +41,7 @@ export default [
         status: 'success',
         message: '',
         data: {
-          avatar: 'http://hdcms-php.test/static/avatar.jpeg',
+          avatar: '/static/avatar.jpeg',
           id: 1,
           name: '向军大叔',
           sex: 1,
@@ -78,7 +78,7 @@ export default [
     response: () => {
       return {
         data: {
-          avatar: 'http://hdcms-php.test/static/avatar.jpeg',
+          avatar: '/static/avatar.jpeg',
           id: 1,
           name: '向军大叔',
           sex: 1,
@@ -115,7 +115,7 @@ export default [
       return {
         data: [
           {
-            avatar: 'http://hdcms-php.test/static/avatar.jpeg',
+            avatar: '/static/avatar.jpeg',
             id: 1,
             name: '向军大叔',
             sex: 1,
@@ -143,7 +143,7 @@ export default [
             is_super_admin: true,
           },
           {
-            avatar: 'http://hdcms-php.test/static/avatar.jpeg',
+            avatar: '/static/avatar.jpeg',
             id: 2,
             name: '后盾人',
             sex: 1,
@@ -172,8 +172,8 @@ export default [
           },
         ],
         links: {
-          first: 'http://hdcms-php.test/api/user?page=1',
-          last: 'http://hdcms-php.test/api/user?page=1',
+          first: '/api/user?page=1',
+          last: '/api/user?page=1',
           prev: null,
           next: null,
         },
@@ -188,7 +188,7 @@ export default [
               active: false,
             },
             {
-              url: 'http://hdcms-php.test/api/user?page=1',
+              url: '/api/user?page=1',
               label: '1',
               active: true,
             },
@@ -198,7 +198,7 @@ export default [
               active: false,
             },
           ],
-          path: 'http://hdcms-php.test/api/user',
+          path: '/api/user',
           per_page: 10,
           to: 2,
           total: 2,

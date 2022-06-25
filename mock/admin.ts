@@ -7,7 +7,7 @@ export default [
       return {
         data: [
           {
-            avatar: 'http://hdcms-php.test/static/avatar.jpeg',
+            avatar: '/static/avatar.jpeg',
             id: 1,
             name: '向军大叔',
             sex: 1,
@@ -58,8 +58,8 @@ export default [
           },
         ],
         links: {
-          first: 'http://hdcms-php.test/api/site/1/admin?page=1',
-          last: 'http://hdcms-php.test/api/site/1/admin?page=1',
+          first: '/api/site/1/admin?page=1',
+          last: '/api/site/1/admin?page=1',
           prev: null,
           next: null,
         },
@@ -74,7 +74,7 @@ export default [
               active: false,
             },
             {
-              url: 'http://hdcms-php.test/api/site/1/admin?page=1',
+              url: '/api/site/1/admin?page=1',
               label: '1',
               active: true,
             },
@@ -84,7 +84,7 @@ export default [
               active: false,
             },
           ],
-          path: 'http://hdcms-php.test/api/site/1/admin',
+          path: '/api/site/1/admin',
           per_page: 15,
           to: 2,
           total: 2,
@@ -101,7 +101,7 @@ export default [
         status: 'success',
         message: '',
         data: {
-          avatar: 'http://hdcms-php.test/static/avatar.jpeg',
+          avatar: '/static/avatar.jpeg',
           id: 1,
           name: '向军大叔',
           sex: 1,
