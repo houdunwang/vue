@@ -8,7 +8,7 @@ import IconsResolver from 'unplugin-icons/resolver'
 export default function autoImport(plugins: Plugin[]) {
   plugins.push(
     AutoImport({
-      resolvers: [ElementPlusResolver()],
+      // resolvers: [ElementPlusResolver()],
       imports: ['vue', 'vue-router'],
       //为true时在项目根目录自动创建
       dts: 'types/auto-imports.d.ts',
@@ -16,9 +16,9 @@ export default function autoImport(plugins: Plugin[]) {
     Components({
       extensions: ['vue'],
       resolvers: [
-        ElementPlusResolver({
-          importStyle: 'css',
-        }),
+        // ElementPlusResolver({
+        //   importStyle: 'css',
+        // }),
         //自动导入图标
         // IconsResolver({
         //   enabledCollections: ['ep'],
