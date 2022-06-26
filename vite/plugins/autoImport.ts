@@ -16,7 +16,9 @@ export default function autoImport(plugins: Plugin[]) {
     Components({
       extensions: ['vue'],
       resolvers: [
-        // ElementPlusResolver({}),
+        ElementPlusResolver({
+          importStyle: 'css',
+        }),
         //自动导入图标
         // IconsResolver({
         //   enabledCollections: ['ep'],
