@@ -94,8 +94,18 @@ pnpm update -g
 
 如果只想在项目中使用 houdunren-vue，使用npx是简单的
 
+首先在项目中安装 houdunren-vue
+
 ```
-npm houdunren-vue
+pnpm add houdunren-vue
+#或
+npm install houdunren-vue
+```
+
+然后执行命令安装项目
+
+```
+npx houdunren-vue
 ```
 
 
