@@ -28,7 +28,6 @@ const load = async (page: any, params: any) => {
 }
 
 const tableAction = async (model: UserModel, command: string) => {
-  console.log(command)
   switch (command) {
     case 'setRole':
       router.push({ name: `admin.role`, params: { sid, id: model.id } })

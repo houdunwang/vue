@@ -6,7 +6,6 @@ const router = useRouter()
 const { sid, rid } = defineProps<{ sid: any; rid: any }>()
 
 const role = reactive(await roleFind(sid, rid))
-console.log(role)
 
 const onSubmit = async (model: RoleModel) => {
   try {

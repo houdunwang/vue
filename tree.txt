@@ -1,0 +1,181 @@
+.
+├── LICENSE
+├── README.md
+├── assets
+│   ├── bilibli.jpg
+│   ├── douyin.png
+│   ├── image-20220424180043074.png
+│   ├── image-20220424180107767.png
+│   ├── image-20220424180121053.png
+│   ├── image-20220424180204449.png
+│   ├── image-20220424193919149.png
+│   ├── image-20220622000908020.png
+│   ├── image-20220622000936212.png
+│   ├── image-20220622001112329.png
+│   ├── image-20220622001142245.png
+│   ├── image-20220622001219309.png
+│   ├── image-20220622001232854.png
+│   └── xj.jpg
+├── auto-imports.d.ts
+├── cli
+│   ├── index.js
+│   ├── node_modules
+│   │   ├── chalk.lnk
+│   │   ├── figlet.lnk
+│   │   ├── inquirer.lnk
+│   │   ├── nanospinner.lnk
+│   │   ├── obtain-git-repo.lnk
+│   │   ├── prettier.lnk
+│   │   └── terminal-link.lnk
+│   ├── package-lock.json
+│   ├── package.json
+│   └── pnpm-lock.yaml
+├── components.d.ts
+├── index.html
+├── mock
+│   ├── admin.ts
+│   ├── article.ts
+│   ├── module.ts
+│   ├── permission.ts
+│   ├── role.ts
+│   ├── site.ts
+│   ├── system.ts
+│   ├── upload.ts
+│   └── user.ts
+├── package.json
+├── pnpm-lock.yaml
+├── postcss.config.js
+├── public
+│   ├── favicon.ico
+│   ├── images
+│   │   ├── admin.jpg
+│   │   ├── forget-password.jpg
+│   │   ├── login.jpg
+│   │   ├── logo.png
+│   │   ├── register.jpg
+│   │   └── xj.jpg
+│   └── static
+│       ├── avatar.jpeg
+│       ├── logo.png
+│       └── preview.jpeg
+├── src
+│   ├── App.vue
+│   ├── apis
+│   │   ├── SiteModule.ts
+│   │   ├── admin.ts
+│   │   ├── auth.ts
+│   │   ├── codeApi.ts
+│   │   ├── commonApi.ts
+│   │   ├── module.ts
+│   │   ├── role.ts
+│   │   ├── rolePermission.ts
+│   │   ├── site.ts
+│   │   ├── sitePermission.ts
+│   │   ├── system.ts
+│   │   ├── upload.ts
+│   │   └── user.ts
+│   ├── assets
+│   │   └── logo.png
+│   ├── column
+│   │   └── user.ts
+│   ├── components
+│   │   ├── editor
+│   │   ├── form
+│   │   ├── hd
+│   │   ├── module
+│   │   ├── site
+│   │   ├── upload
+│   │   └── user
+│   ├── composables
+│   │   ├── useCaptcha.ts
+│   │   ├── useCode.ts
+│   │   ├── useMenu.ts
+│   │   └── useRequest.ts
+│   ├── config
+│   │   ├── form.ts
+│   │   └── table.ts
+│   ├── directive
+│   │   └── index.ts
+│   ├── enum
+│   │   ├── RouteEnum.ts
+│   │   └── cacheEnum.ts
+│   ├── layouts
+│   │   ├── admin
+│   │   ├── admin.vue
+│   │   ├── auth.vue
+│   │   ├── editor.vue
+│   │   ├── error.vue
+│   │   ├── member.vue
+│   │   ├── system
+│   │   └── system.vue
+│   ├── main.ts
+│   ├── plugins
+│   │   ├── axios
+│   │   ├── dayjs
+│   │   ├── elementui
+│   │   ├── iconpark
+│   │   ├── index.ts
+│   │   ├── markdown
+│   │   ├── pinia
+│   │   ├── tailwindcss
+│   │   └── validate
+│   ├── router
+│   │   ├── autoload
+│   │   ├── guard.ts
+│   │   ├── index.ts
+│   │   ├── module
+│   │   └── routes.ts
+│   ├── store
+│   │   ├── errorStore.ts
+│   │   ├── menuStore.ts
+│   │   ├── systemStore.ts
+│   │   └── userStore.ts
+│   ├── styles
+│   │   └── global.scss
+│   ├── utils
+│   │   ├── env.ts
+│   │   ├── helper.ts
+│   │   ├── index.ts
+│   │   ├── store.ts
+│   │   └── user.ts
+│   └── views
+│       ├── admin
+│       ├── auth
+│       ├── editor
+│       ├── errors
+│       ├── home.vue
+│       ├── member
+│       ├── module
+│       ├── role
+│       ├── rolePermission
+│       ├── site
+│       ├── siteAdmin
+│       ├── siteModule
+│       ├── system
+│       └── user
+├── stats.html
+├── tailwind.config.js
+├── tree.txt
+├── tsconfig.json
+├── types
+│   ├── auto-imports.d.ts
+│   ├── components.d.ts
+│   ├── markdown.ts
+│   ├── model.d.ts
+│   ├── module.d.ts
+│   ├── router.d.ts
+│   ├── typings.d.ts
+│   └── viteEnv.d.ts
+├── vite
+│   ├── alias.ts
+│   ├── optimizeDeps.ts
+│   ├── plugins
+│   │   ├── autoImport.ts
+│   │   ├── index.ts
+│   │   └── mock.ts
+│   └── util.ts
+├── vite.config.ts
+├── yarn-error.log
+└── yarn.lock
+
+58 directories, 120 files

@@ -2,8 +2,6 @@
 import userStore from '@/store/userStore'
 import { logout } from '@/utils/helper'
 const user = userStore()
-
-console.log(user.info)
 </script>
 
 <template>
