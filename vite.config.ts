@@ -35,11 +35,11 @@ export default defineConfig(({ command, mode }) => {
       host: true,
       proxy: {
         '/api': {
-          target: env.VITE_MOCK_ENABLE ? '/' : env.VITE_API_URL,
+          target:  env.VITE_API_URL,
           changeOrigin: true,
         },
         '/captcha/api/math': {
-          target: env.VITE_MOCK_ENABLE ? '/' : env.VITE_API_URL,
+          target:  env.VITE_API_URL,
           changeOrigin: true,
         },
       },

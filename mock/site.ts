@@ -105,9 +105,9 @@ export default [
             { url: null, label: '\u4e0b\u4e00\u9875 »', active: false },
           ],
           path: '/api/site',
-          per_page: 10,
-          to: 2,
-          total: 2,
+          per_page: 1,
+          to: 1,
+          total: 1,
         },
       }
     },

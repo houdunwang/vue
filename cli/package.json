@@ -1,7 +1,7 @@
 {
 	"name": "houdunren-vue",
 	"description": "后盾人前端脚手架",
-	"version": "1.0.3",
+	"version": "1.0.15",
 	"license": "MIT",
 	"bin": {
 		"houdunren-vue": "index.js"
@@ -14,7 +14,12 @@
 	"type": "module",
 	"keywords": [
 		"houdunren-vue",
-		"向军大叔"
+		"向军大叔",
+		"vue3",
+		"pinia",
+		"typescript",
+		"后盾人",
+		"houdunren.com"
 	],
 	"files": [
 		"index.js",

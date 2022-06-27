@@ -9,12 +9,6 @@ await Promise.all([systemStore().load()])
 
 const storeSystem = systemStore()
 useTitle(storeSystem.data.title)
-const co = ref(null)
-onMounted(() => {
-  // watch(co, (component: any) => {
-  console.log(co.value)
-  // })
-})
 </script>
 
 <template>
@@ -29,9 +23,6 @@ onMounted(() => {
       </router-view>
     </div>
 
-    <div class="" ref="co">
-      <el-button type="primary" size="default" v-for="i of 10">{{ i }}</el-button>
-    </div>
     <Copyright class="mb-5" />
   </div>
 </template>
