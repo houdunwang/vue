@@ -84,7 +84,7 @@ export default [
     url: '/api/user',
     method: 'get',
     response: () => {
-      return createPaginate(data, 10)
+      return createPaginate(data)
     },
   },
 ] as MockMethod[]

@@ -17,7 +17,9 @@ export default () => {
   //路由跳转
   const go = (route: RouteRecordRaw) => {
     if (history.value.length == 20) history.value.pop()
-    history.value.unshift(route)
+    const isExist = history.value.find((h) => h.name == route.name)
+    if (!isExist) history.value.unshift(route)
+
     router.push(route)
   }
   return { routes, show, go, history }
