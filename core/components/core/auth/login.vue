@@ -2,7 +2,8 @@
 import { login } from '@@/apis/auth'
 import useCaptcha from '@@/composables/useCaptcha'
 import errorStore from '@@/store/errorStore'
-import { loginAndRegisterCallback, request } from '@@/utils/helper'
+import env from '@@/utils/env'
+import { loginCallback, request } from '@@/utils/helper'
 import Footer from './footer.vue'
 
 const form = reactive({ account: '2300071698@qq.com', password: 'admin888', captcha_code: '', captcha_key: '' })
@@ -11,9 +12,10 @@ const storeError = errorStore()
 const { loadCaptcha } = useCaptcha()
 
 const onSubmit = request(async () => {
-  loadCaptcha()
+  if (!env.VITE_MOCK_ENABLE) loadCaptcha()
+
   const { data } = await login(form)
-  loginAndRegisterCallback(data)
+  loginCallback(data.token)
 })
 </script>
 
@@ -39,6 +41,7 @@ const onSubmit = request(async () => {
             <CoreHdCaptcha
               v-model:captcha_code="form.captcha_code"
               v-model:captcha_key="form.captcha_key"
+              v-if="!env.VITE_MOCK_ENABLE"
               class="mt-2" />
           </div>
 

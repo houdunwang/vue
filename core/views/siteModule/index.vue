@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import env from '@@/utils/env'
 import { isSuperAdmin, access } from '@@/utils/helper'
 const { sid } = defineProps<{ sid: any }>()
 
-const { loadModuleList, addModule, redirectModuleAdmin, setDefaultModule, delModule, modules } = useSiteModule()
+const { loadModuleList, addModule, setDefaultModule, delModule, modules } = useSiteModule()
 const { getSiteByParams, site } = useSite()
 await getSiteByParams()
 await loadModuleList(sid)
@@ -10,6 +11,11 @@ await loadModuleList(sid)
 const defaultModule = async (module: ModuleModel) => {
   await setDefaultModule(sid, module)
   getSiteByParams()
+}
+
+//跳转到模块后台
+const redirectModuleAdmin = (module: ModuleModel) => {
+  window.open(env.VITE_MOCK_ENABLE ? '/admin' : `/${module.name}/admin`)
 }
 </script>
 

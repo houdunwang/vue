@@ -30,17 +30,11 @@ export default () => {
     await setSiteDefaultModule(sid, module.id)
   }
 
-  //跳转到模块后台
-  const redirectModuleAdmin = (module: ModuleModel) => {
-    window.open(`/${module.name}/admin`)
-  }
-
   return {
     modules,
     loadModuleList,
     addModule,
     delModule,
     setDefaultModule,
-    redirectModuleAdmin,
   }
 }

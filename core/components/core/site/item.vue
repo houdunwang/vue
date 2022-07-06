@@ -49,7 +49,7 @@ const props = defineProps<{ site: SiteModel }>()
           <icon-permissions theme="outline" strokeLinejoin="bevel" strokeLinecap="butt" />
           角色管理
         </router-link>
-        <router-link :to="{ name: 'admin.index', params: { sid: site.id } }" v-access:admin-list="site">
+        <router-link :to="{ name: 'site.admin.index', params: { sid: site.id } }" v-access:admin-list="site">
           <icon-avatar theme="outline" strokeLinejoin="bevel" strokeLinecap="butt" />
           管理员设置
         </router-link>

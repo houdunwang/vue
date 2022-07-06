@@ -1,9 +1,13 @@
 import { RouteRecordRaw } from 'vue-router'
 export default {
-  path: '/core/setting',
+  path: '/core/system',
   component: () => import('@@/layouts/system.vue'),
   meta: { auth: true },
   children: [
+    {
+      path: '/system',
+      redirect: { name: 'site.index' },
+    },
     {
       name: 'system.index',
       path: 'index',

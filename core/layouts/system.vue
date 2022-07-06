@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import navbarVue from './admin/navbar.vue'
-import TopMenu from './admin/topMenu.vue'
-import Copyright from './admin/copyright.vue'
+import navbarVue from './system/navbar.vue'
+import TopMenu from './system/topMenu.vue'
+import Copyright from './system/copyright.vue'
 import systemStore from '@@/store/systemStore'
 import userStore from '@@/store/userStore'
 
 await Promise.all([userStore().getUserInfo(), systemStore().load()])
-
 const storeSystem = systemStore()
 </script>
 

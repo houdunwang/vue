@@ -1,4 +1,5 @@
 import { CacheEnum } from '@@/enum/CacheEnum'
+import router from '@@/router'
 import useStore from '@@/store/userStore'
 import store from './store'
 
@@ -19,13 +20,20 @@ export async function logout() {
   location.href = '/'
 }
 
-//登录与注册后记录token
-export async function loginAndRegisterCallback(data: { token: string }) {
-  store.set(CacheEnum.TOKEN_NAME, data.token)
+/**
+ * 登录与注册后记录token
+ * @param token
+ */
+export async function loginCallback(token: string) {
+  store.set(CacheEnum.TOKEN_NAME, token)
   location.href = store.get(CacheEnum.REDIRECT_ROUTE_NAME, '/')
 }
 
-//限制点击频繁请求
+/**
+ * 限制点击频繁请求
+ * @param fn 回调函数
+ * @returns
+ */
 export function request(fn: (args: any) => Promise<any>) {
   let isSubmit = false
   return (args: any) => {
@@ -35,6 +43,12 @@ export function request(fn: (args: any) => Promise<any>) {
   }
 }
 
+/**
+ * 权限判断
+ * @param name 权限标识
+ * @param site 站点
+ * @returns
+ */
 export function access(name: string, site: SiteModel): boolean {
   const storeUser = useStore()
   if (isSuperAdmin() || site.user_id == storeUser.info?.id) {
@@ -42,4 +56,9 @@ export function access(name: string, site: SiteModel): boolean {
   }
 
   return Boolean(storeUser.permissions.find((permission) => permission.name == name))
+}
+
+//根据URL生成样式类名
+export function className() {
+  return router.currentRoute.value.fullPath.replace(/\//g, '-').replace(/^\-|\-$/g, '')
 }

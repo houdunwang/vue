@@ -26,7 +26,7 @@ export default (plugins: Plugin[]) => {
           }
         },
       ],
-      extensions: ['vue'],
+      extensions: ['vue', 'tsx'],
       dirs: ['src/components', 'core/components'],
       //组件名称包含目录，防止同名组件冲突
       directoryAsNamespace: true,
