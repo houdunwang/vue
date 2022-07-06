@@ -4,7 +4,7 @@
 
 ## 项目预览
 
-![image-20220424180043074](./core/assets/image-20220424180043075.jpg)
+![image-20220424180043074](./core/assets/image-202204241800430745.jpg)
 
 ![image-20220706223510626](./core/assets/image-20220706223510625.jpg)
 
