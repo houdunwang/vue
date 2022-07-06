@@ -96,4 +96,13 @@ export default [
       }
     },
   },
+  {
+    url: '/api/site/1/module/1/set_default',
+    method: 'get',
+    response: () => {
+      return {
+        message: '模块设置成功',
+      }
+    },
+  },
 ] as MockMethod[]
