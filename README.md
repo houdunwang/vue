@@ -4,15 +4,13 @@
 
 ## 项目预览
 
-![image-20220424180043074](./core/assets/image-20220424180043074.png)
+![image-20220424180043074](./core/assets/image-20220424180043075.png)
 
-![image-20220706223510626](./core/assets/image-20220706223510626.png)
+![image-20220706223510626](./core/assets/image-20220706223510625.png)
 
 ![image-20220424193919149](./core/assets/image-20220706223604418.png)
 
 ![image-20220706223650063](./core/assets/image-20220706223650063.png)
-
-
 
 ## 安装项目
 
@@ -37,9 +35,7 @@ npm install -g houdunren-vue
 ? 请输入目录名 (houdunren-vue)
 ```
 
-
-
-**Git下载**
+**Git 下载**
 
 使用 git 下载项目也是可以的
 
@@ -63,8 +59,6 @@ yarn
 #pnpm
 pnpm install
 ```
-
-
 
 ## 每晚直播
 
