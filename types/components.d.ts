@@ -62,7 +62,6 @@ declare module '@vue/runtime-core' {
     ElTabs: typeof import('element-plus/es')['ElTabs']
     ElTag: typeof import('element-plus/es')['ElTag']
     ElUpload: typeof import('element-plus/es')['ElUpload']
-    IconAllApplication: typeof import('@icon-park/vue-next')['AllApplication']
     IconApplicationOne: typeof import('@icon-park/vue-next')['ApplicationOne']
     IconAvatar: typeof import('@icon-park/vue-next')['Avatar']
     IconBlocksAndArrows: typeof import('@icon-park/vue-next')['BlocksAndArrows']

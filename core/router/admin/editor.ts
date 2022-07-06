@@ -1,10 +1,10 @@
-import { DashboardOne } from '@icon-park/vue-next'
+import { DocDetail } from '@icon-park/vue-next'
 import { RouteRecordRaw } from 'vue-router'
 export default {
   name: 'editor',
   path: '/editor',
   component: () => import('@@/layouts/admin.vue'),
-  meta: { order: 2, auth: true, menu: { title: '编辑器', icon: DashboardOne } },
+  meta: { order: 2, auth: true, menu: { title: '编辑器', icon: DocDetail } },
   children: [
     {
       name: 'admin.wangEditor',

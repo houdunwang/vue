@@ -1,11 +1,11 @@
-import { Caution } from '@icon-park/vue-next'
+import { ErrorComputer } from '@icon-park/vue-next'
 import { RouteRecordRaw } from 'vue-router'
 
 export default {
   name: 'error',
   path: '/core/error',
-  component: () => import('@@/layouts/admin.vue'),
-  meta: { order: 3, auth: true, menu: { title: '错误页面', icon: Caution } },
+  component: () => import('@@/App.vue'),
+  meta: { order: 3, auth: true, menu: { title: '错误页面', icon: ErrorComputer } },
   children: [
     {
       name: 'error.404',
