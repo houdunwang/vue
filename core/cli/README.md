@@ -1,9 +1,5 @@
 ## 前端脚手架
 
-> 向军大叔晚八点在 [抖音](https://live.douyin.com/houdunren) 和 [bilibli](https://space.bilibili.com/282190994) 直播，欢迎大家光临直播间交流。
-
-[![xj-small](https://github.com/houdunwang/vue/raw/master/assets/xj.jpg)](https://github.com/houdunwang/vue/blob/master/assets/xj.jpg)
-
 houdunren-vue帮助大家加快前端项目的开发，本项目提供了前端开发的很多基础功能。使用 vite、typescript、vue3、element-plus、pinia、vue-router、axios、tailwindcss等技术开发。
 
 ### 在线文档
@@ -26,6 +22,20 @@ houdunren-vue帮助大家加快前端项目的开发，本项目提供了前端�
 - 多个后台管理界面
 - 移动端自适应用
 - 基于token身份验证
+
+## 项目预览
+
+
+
+![image-20220424180043074](https://raw.githubusercontent.com/houdunwang/vue/master/core/assets/image-202204241800430745.jpg)
+
+![image-20220706223510626](https://raw.githubusercontent.com/houdunwang/vue/master/core/assets/image-20220706223510625.jpg)
+
+![image-20220424193919149](https://raw.githubusercontent.com/houdunwang/vue/master/core/assets/image-20220706223604418.jpg)
+
+![image-20220706223650063](https://raw.githubusercontent.com/houdunwang/vue/master/core/assets/image-20220706223650063.jpg)
+
+
 
 ## 安装项目
 
@@ -98,32 +108,16 @@ $ npm install
 $ npm run dev
 ```
 
-## 项目预览
 
-[![image-20220424180043074](https://github.com/houdunwang/vue/raw/master/assets/image-20220424180043074.png)](https://github.com/houdunwang/vue/blob/master/assets/image-20220424180043074.png)
-
-[![image-20220424193919149](https://github.com/houdunwang/vue/raw/master/assets/image-20220424193919149.png)](https://github.com/houdunwang/vue/blob/master/assets/image-20220424193919149.png)
-
-[![image-20220622000908020](https://github.com/houdunwang/vue/raw/master/assets/image-20220622000908020.png)](https://github.com/houdunwang/vue/blob/master/assets/image-20220622000908020.png)
-
-[![image-20220622000936212](https://github.com/houdunwang/vue/raw/master/assets/image-20220622000936212.png)](https://github.com/houdunwang/vue/blob/master/assets/image-20220622000936212.png)
-
-[![image-20220622001112329](https://github.com/houdunwang/vue/raw/master/assets/image-20220622001112329.png)](https://github.com/houdunwang/vue/blob/master/assets/image-20220622001112329.png)
-
-[![image-20220622001142245](https://github.com/houdunwang/vue/raw/master/assets/image-20220622001142245.png)](https://github.com/houdunwang/vue/blob/master/assets/image-20220622001142245.png)
-
-[![image-20220622001219309](https://github.com/houdunwang/vue/raw/master/assets/image-20220622001219309.png)](https://github.com/houdunwang/vue/blob/master/assets/image-20220622001219309.png)
-
-[![image-20220622001232854](https://github.com/houdunwang/vue/raw/master/assets/image-20220622001232854.png)](https://github.com/houdunwang/vue/blob/master/assets/image-20220622001232854.png)
 
 ## 每晚直播
 
-作者向军大叔会在每晚八点进行直播，与大家交流技术与生活。
+向军大叔会在每晚八点进行直播，与大家交流技术与生活。
 
-[![image-20210216220804022](https://github.com/houdunwang/vue/raw/master/assets/xj.jpg)](https://github.com/houdunwang/vue/blob/master/assets/xj.jpg)
+<img src="./assets/xj.jpg" alt="image-20210216220804022" style="zoom:50%;" />
 
 请扫描下方二维码进入直播间，我们一起交流成长。
 
-| 抖音                                                         | Bilibili                                                     |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [![image-20210216220804022](https://github.com/houdunwang/vue/raw/master/assets/douyin.png)](https://github.com/houdunwang/vue/blob/master/assets/douyin.png) | [![image-20210216220804022](https://github.com/houdunwang/vue/raw/master/assets/bilibli.jpg)](https://github.com/houdunwang/vue/blob/master/assets/bilibli.jpg) |
+| 抖音                                            | Bilibili                                         |
+| ----------------------------------------------- | ------------------------------------------------ |
+| ![image-20210216220804022](./assets/douyin.jpg) | ![image-20210216220804022](./assets/bilibli.jpg) |
