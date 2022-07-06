@@ -4,13 +4,13 @@
 
 ## 项目预览
 
-![image-20220424180043074](./core/assets/image-20220424180043075.png)
+![image-20220424180043074](./core/assets/image-20220424180043075.jpg)
 
-![image-20220706223510626](./core/assets/image-20220706223510625.png)
+![image-20220706223510626](./core/assets/image-20220706223510625.jpg)
 
-![image-20220424193919149](./core/assets/image-20220706223604418.png)
+![image-20220424193919149](./core/assets/image-20220706223604418.jpg)
 
-![image-20220706223650063](./core/assets/image-20220706223650063.png)
+![image-20220706223650063](./core/assets/image-20220706223650063.jpg)
 
 ## 安装项目
 
@@ -70,4 +70,4 @@ pnpm install
 
 | 抖音                                                 | Bilibili                                              |
 | ---------------------------------------------------- | ----------------------------------------------------- |
-| ![image-20210216220804022](./core/assets/douyin.png) | ![image-20210216220804022](./core/assets/bilibli.jpg) |
+| ![image-20210216220804022](./core/assets/douyin.jpg) | ![image-20210216220804022](./core/assets/bilibli.jpg) |
