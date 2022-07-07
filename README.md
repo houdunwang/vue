@@ -25,13 +25,13 @@ houdunren-vue 帮助大家加快前端项目的开发，本项目提供了前端
 
 ## 项目预览
 
-![image-20220424180043074](./core/assets/image-202204241800430745.jpg)
+![image-20220424180043074](https://raw.githubusercontent.com/houdunwang/vue/master/core/assets/image-202204241800430745.jpg)
 
-![image-20220706223510626](./core/assets/image-20220706223510625.jpg)
+![image-20220706223510626](https://raw.githubusercontent.com/houdunwang/vue/master/core/assets/image-20220706223510625.jpg)
 
-![image-20220424193919149](./core/assets/image-20220706223604418.jpg)
+![image-20220424193919149](https://raw.githubusercontent.com/houdunwang/vue/master/core/assets/image-20220706223604418.jpg)
 
-![image-20220706223650063](./core/assets/image-20220706223650063.jpg)
+![image-20220706223650063](https://raw.githubusercontent.com/houdunwang/vue/master/core/assets/image-20220706223650063.jpg)
 
 ## 安装项目
 
