@@ -1,22 +1,28 @@
 import { Router, RouteRecordRaw, RouteRecordNormalized } from 'vue-router'
 import userStore from '@@/store/userStore'
+import env from '@@/utils/env'
 
+//注册路由
 function autoloadModuleRoutes(): RouteRecordNormalized[] {
-  const coreModules = import.meta.globEager('./module/**/*.ts')
-  const adminModules = import.meta.globEager('./admin/**/*.ts')
-  const appModules = import.meta.globEager('../../src/router/*.ts')
   const routes = [] as RouteRecordNormalized[]
 
-  ;[coreModules, appModules, adminModules].map((modules) =>
-    Object.keys(modules).forEach((key) => {
-      routes.push(modules[key].default)
-    }),
-  )
+  if (env.VITE_REGISTER_CORE_ROUTE) {
+    register(routes, import.meta.globEager('./module/**/*.ts'))
+    register(routes, import.meta.globEager('./admin/**/*.ts'))
+  }
+  register(routes, import.meta.globEager('../../src/router/*.ts'))
 
   return routes
 }
 
-export default function (router: Router) {
+//绑定路由
+function register(routes: RouteRecordNormalized[], modules: Record<string, any>) {
+  Object.keys(modules).forEach((key) => {
+    routes.push(modules[key].default)
+  })
+}
+
+export default (router: Router) => {
   const user = userStore()
   let routes = autoloadModuleRoutes().map((route) => {
     //根据权限过滤
