@@ -1,7 +1,7 @@
 {
     "name": "houdunren-vue",
     "description": "后盾人前端脚手架",
-    "version": "1.0.26",
+    "version": "1.0.29",
     "license": "MIT",
     "bin": {
         "houdunren-vue": "index.js"
