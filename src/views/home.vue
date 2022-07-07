@@ -7,7 +7,10 @@ import { isLogin } from '@@/utils/helper'
   <div class="h-screen w-screen bg-gray-700 flex flex-col justify-center items-center">
     <img src="/images/xj.jpg" class="w-40 h-40 object-cover rounded-full border-8 border-white mb-5" />
     <div>
-      <CoreFormButtonComponent @click="$router.push({ name: 'site' })" class="danger">后台管理</CoreFormButtonComponent>
+      <CoreFormButtonComponent @click="$router.push({ name: 'core' })" class="danger">系统管理</CoreFormButtonComponent>
+      <CoreFormButtonComponent @click="$router.push({ name: 'admin' })" class="success ml-2">
+        模块后台
+      </CoreFormButtonComponent>
       <CoreFormButtonComponent v-if="!isLogin()" class="primary ml-2" @click="$router.push({ name: RouteEnum.LOGIN })">
         用户登录
       </CoreFormButtonComponent>

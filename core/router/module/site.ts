@@ -7,6 +7,7 @@ export default {
   meta: { auth: true },
   children: [
     {
+      name: 'core',
       path: '/core',
       redirect: { name: 'site.index' },
     },

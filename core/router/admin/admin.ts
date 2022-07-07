@@ -8,8 +8,7 @@ export default {
   meta: { order: 1, auth: true, menu: { title: 'Dashboard', icon: DashboardOne } },
   children: [
     {
-      name: 'admin.index',
-      path: '',
+      path: 'index',
       component: () => import('@@/admin/home/index.vue'),
       meta: { menu: { title: '工作台' } },
     },
