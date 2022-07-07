@@ -17,9 +17,7 @@ figlet('houdunren.com', async function (err, data) {
   //打印文字图案
   console.log(data)
   //可点击链接
-  const douyin = terminalLink('抖音', 'https://www.houdunren.com')
-  const bilibli = terminalLink('bilibli', 'https://www.houdunren.com')
-  console.log(chalk.green(`欢迎使用后盾人前端脚手架，向军大叔每晚8点在${douyin}与${bilibli}直播`))
+  console.log(chalk.green(`欢迎使用后盾人前端脚手架，向军大叔每晚8点在抖音与B站直播，请搜索【后盾人】关注`))
 
   //询问用户
   const message = await inquirer.prompt({
