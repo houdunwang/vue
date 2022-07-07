@@ -10,7 +10,7 @@ export default function setupPlugins(isBuild: boolean, env: ImportMetaEnv) {
   setupVue(plugins, isBuild, env)
   setupVisualizer(plugins, isBuild, env)
   setupMockPlugin(plugins, isBuild, env)
-  autoImport(plugins)
+  autoImport(plugins, isBuild, env)
 
   return plugins
 }

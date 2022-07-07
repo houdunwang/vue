@@ -4,7 +4,7 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver, VueUseComponentsResolver, NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 
 //自动导入插件
-export default (plugins: Plugin[]) => {
+export default (plugins: Plugin[], isBuild: boolean, env: ImportMetaEnv) => {
   plugins.push(
     AutoImport({
       resolvers: [ElementPlusResolver()],
