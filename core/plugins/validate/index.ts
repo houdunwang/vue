@@ -5,6 +5,8 @@ import yup from './yup'
 import zh_CN from '@vee-validate/i18n/dist/locale/zh_CN.json'
 // loadLocaleFromURL('https://unpkg.com/@vee-validate/i18n@4.1.0/dist/locale/zh_CN.json')
 
+export default () => {}
+
 veeValidate.configure({
   // validateOnInput: true,
   generateMessage: localize('zh_CN', zh_CN),
@@ -17,5 +19,4 @@ Object.keys(rules).forEach((key) => {
 const useFields = (fields: string[]) => {
   fields.forEach((field) => veeValidate.useField(field))
 }
-
-export default { yup, ...veeValidate, useFields }
+export { yup, veeValidate, useFields }

@@ -7,10 +7,7 @@ import '@kangc/v-md-editor/lib/theme/style/vuepress.css'
 
 import Prism from 'prismjs'
 
-export default function setupMarkdown(app: App) {
-  VueMarkdownEditor.use(vuepressTheme, {
-    Prism,
-  })
-
+export default (app: App) => {
+  VueMarkdownEditor.use(vuepressTheme, { Prism })
   app.use(VueMarkdownEditor)
 }
