@@ -1,13 +1,17 @@
-import { deleteSite, siteFind, getSiteList } from '@@/apis/site'
+import { deleteSite, siteFind, getSiteList, addSite, updateSite } from '@@/apis/site'
 import router from '@@/router'
-import { Ref } from 'vue'
 
 export default () => {
-  const sites = ref() as unknown as Ref<ResponsePageResult<SiteModel>>
+  const sites = ref<ResponsePageResult<SiteModel>>()
+  const site = ref<SiteModel>()
+  const sid = router.currentRoute.value.params.sid as any
 
-  const site = ref() as unknown as Ref<SiteModel>
+  const load = async () => {
+    sites.value = await getSiteList()
+  }
+
   //根据参数获取站点
-  const getSiteByParams = async () => {
+  const currentSite = async () => {
     const sid = router.currentRoute.value.params.sid
     site.value = await siteFind(sid)
   }
@@ -15,13 +19,18 @@ export default () => {
   //删除站点
   const del = async (id: number) => {
     await deleteSite(id)
-
-    sites.value.data = sites.value.data.filter((s) => s.id != id)
+    load()
   }
 
-  const getList = async () => {
-    sites.value = await getSiteList()
+  const add = async (model: SiteModel) => {
+    site.value = await addSite(model)
+    router.push({ name: 'site.index' })
   }
 
-  return { getSiteByParams, del, getList, site, sites }
+  const update = async () => {
+    site.value = await updateSite(site.value!)
+    router.push({ name: 'site.index' })
+  }
+
+  return { sid, sites, site, currentSite, del, load, add, update }
 }

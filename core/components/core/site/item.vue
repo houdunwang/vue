@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { isSuperAdmin, access } from '@@/utils/helper'
+import { isSuperAdmin } from '@@/utils/helper'
 import dayjs from 'dayjs'
 
 const emit = defineEmits(['del'])
@@ -53,10 +53,10 @@ const props = defineProps<{ site: SiteModel }>()
           <icon-avatar theme="outline" strokeLinejoin="bevel" strokeLinecap="butt" />
           管理员设置
         </router-link>
-        <router-link :to="{ name: 'site.config', params: { id: site.id } }" v-access:site-config="site">
+        <router-link :to="{ name: 'site.config', params: { sid: site.id } }" v-access:site-config="site">
           <icon-config theme="outline" strokeLinejoin="bevel" strokeLinecap="butt" /> 站点配置
         </router-link>
-        <router-link :to="{ name: 'site.edit', params: { id: site.id } }" v-access:site-edit="site">
+        <router-link :to="{ name: 'site.edit', params: { sid: site.id } }" v-access:site-edit="site">
           <icon-editor theme="outline" strokeLinejoin="bevel" strokeLinecap="butt" />
           编辑站点
         </router-link>

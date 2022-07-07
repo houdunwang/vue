@@ -9,13 +9,11 @@ export default {
     {
       name: 'site.admin.index',
       path: '',
-      props: true,
       component: () => import('@@/views/siteAdmin/index.vue'),
     },
     {
       name: 'site.admin.role',
       path: ':id',
-      props: true,
       component: () => import('@@/views/siteAdmin/role.vue'),
     },
   ],

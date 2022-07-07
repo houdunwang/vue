@@ -51,9 +51,8 @@ export function request(fn: (args: any) => Promise<any>) {
  */
 export function access(name: string, site: SiteModel): boolean {
   const storeUser = useStore()
-  if (isSuperAdmin() || site.user_id == storeUser.info?.id) {
-    return true
-  }
+
+  if (isSuperAdmin() || site.user_id == storeUser.info?.id) return true
 
   return Boolean(storeUser.permissions.find((permission) => permission.name == name))
 }

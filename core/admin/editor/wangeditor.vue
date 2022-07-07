@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import router from '@@/router'
 import { ref } from 'vue'
-const content = ref('<p>后盾人</p>')
-
-console.log(router.currentRoute.value.fullPath.replace(/\//g, '-').replace(/^\-|\-$/g, ''))
+const content = ref('后盾人')
 </script>
 
 <template>

@@ -33,7 +33,6 @@ interface UserModel {
 //角色模型
 type RoleModel = {
   id: number
-  title: string
   name: string
   site_id: number
   guard_name: string

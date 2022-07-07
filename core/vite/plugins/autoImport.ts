@@ -1,7 +1,7 @@
 import { Plugin } from 'vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver, VueUseComponentsResolver } from 'unplugin-vue-components/resolvers'
+import { ElementPlusResolver, VueUseComponentsResolver, NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 
 //自动导入插件
 export default (plugins: Plugin[]) => {
@@ -18,6 +18,7 @@ export default (plugins: Plugin[]) => {
       resolvers: [
         //element-plus组件按需导入
         ElementPlusResolver(),
+        NaiveUiResolver(),
         VueUseComponentsResolver(),
         //针对iconpark图标按需导入
         (componentName) => {

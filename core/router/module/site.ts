@@ -22,12 +22,12 @@ export default {
     },
     {
       name: 'site.edit',
-      path: 'site/:id',
+      path: 'site/:sid',
       component: () => import('@@/views/site/edit.vue'),
     },
     {
       name: 'site.config',
-      path: 'config/:id',
+      path: 'config/:sid',
       component: () => import('@@/views/site/config.vue'),
     },
   ],

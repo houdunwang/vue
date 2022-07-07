@@ -1,21 +1,19 @@
 <script setup lang="ts">
 import env from '@@/utils/env'
 import { isSuperAdmin, access } from '@@/utils/helper'
-const { sid } = defineProps<{ sid: any }>()
 
-const { loadModuleList, addModule, setDefaultModule, delModule, modules } = useSiteModule()
-const { getSiteByParams, site } = useSite()
-await getSiteByParams()
-await loadModuleList(sid)
-
-const defaultModule = async (module: ModuleModel) => {
-  await setDefaultModule(sid, module)
-  getSiteByParams()
-}
+const { add, get, modules, setDefault, del } = useSiteModule()
+const { currentSite, site } = useSite()
+await Promise.all([currentSite(), get()])
 
 //跳转到模块后台
 const redirectModuleAdmin = (module: ModuleModel) => {
   window.open(env.VITE_MOCK_ENABLE ? '/admin' : `/${module.name}/admin`)
+}
+
+const setDefaultModule = async (id: any) => {
+  await setDefault(id)
+  currentSite()
 }
 </script>
 
@@ -25,7 +23,7 @@ const redirectModuleAdmin = (module: ModuleModel) => {
       { label: '站点列表', route: { name: 'site.index' } },
       { label: `【${site}】站点模块设置`, route: { name: `site.module.index` } },
     ]" />
-  <CoreModuleSelectModule @select="addModule(sid, $event)" class="mb-2" v-if="isSuperAdmin()" />
+  <CoreModuleSelectModule @select="add" class="mb-2" v-if="isSuperAdmin()" />
 
   <section v-if="modules.data.length">
     <div v-for="module of modules.data" :key="module.id">
@@ -34,14 +32,16 @@ const redirectModuleAdmin = (module: ModuleModel) => {
       <div class="py-2 bg-gray-200 border-t mt-3 w-full flex justify-center">
         <el-button-group>
           <el-button type="primary" size="small" @click="redirectModuleAdmin(module)">进入模块</el-button>
-          <el-button type="danger" size="small" @click="delModule(site.id, module)" v-if="isSuperAdmin()">
-            删除模块
-          </el-button>
-          <template v-if="access('system-module-set-default', site)">
-            <el-button type="success" size="small" @click="defaultModule(module)" v-if="module.id == site.module_id">
+          <el-button type="danger" size="small" @click="del(module.id)" v-if="isSuperAdmin()"> 删除模块 </el-button>
+          <template v-if="access('system-module-set-default', site!)">
+            <el-button
+              type="success"
+              size="small"
+              @click="setDefaultModule(module.id)"
+              v-if="module.id == site?.module_id">
               取消默认模块
             </el-button>
-            <el-button type="info" size="small" @click="defaultModule(module)" v-else> 设为默认模块 </el-button>
+            <el-button type="info" size="small" @click="setDefaultModule(module.id)" v-else> 设为默认模块 </el-button>
           </template>
         </el-button-group>
       </div>

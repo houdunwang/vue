@@ -1,20 +1,22 @@
 <script setup lang="ts">
-import { getModuleList } from '@@/apis/module'
 import { moduleTableColumns } from '@@/config/table'
 
 const emit = defineEmits<{ (e: 'select', module: any): void }>()
+const { load, modules } = useModule()
+await Promise.all([load()])
 
-let dialog = $ref(false)
+let dialog = ref(false)
+
 const select = (model: any) => {
   emit('select', model)
-  dialog = false
+  dialog.value = false
 }
 </script>
 
 <template>
   <div class="">
     <el-dialog title="选择模块" v-model="dialog" custom-class="dialog">
-      <CoreHdTableComponent :columns="moduleTableColumns" :api="getModuleList">
+      <CoreHdTableComponent :data="modules?.data" :columns="moduleTableColumns">
         <template #button="{ model }">
           <el-button type="primary" size="default" @click="select(model)">选择模块</el-button>
         </template>

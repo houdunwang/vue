@@ -46,8 +46,10 @@ interface TableColumnsType {
   tag_field?: string
 }
 
-interface TableButtonType {
+interface TableButton {
   title: string
-  command: string
   type?: 'primary' | 'success' | 'info' | 'warning' | 'danger'
+  permission?: string
+  action?: (model: any) => void
+  component?: any
 }

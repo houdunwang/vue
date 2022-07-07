@@ -1,19 +1,23 @@
 import { http } from '@@/plugins/axios'
 
 export function addSite(data: Record<string, any>) {
-  return http.request({
-    url: '/site',
-    method: 'POST',
-    data,
-  })
+  return http
+    .request<SiteModel>({
+      url: '/site',
+      method: 'POST',
+      data,
+    })
+    .then((r) => r.data)
 }
 
 export function updateSite(data: Record<string, any>) {
-  return http.request({
-    url: `/site/${data.id}`,
-    method: 'PUT',
-    data,
-  })
+  return http
+    .request<SiteModel>({
+      url: `/site/${data.id}`,
+      method: 'PUT',
+      data,
+    })
+    .then((r) => r.data)
 }
 
 export function getSiteList() {

@@ -1,13 +1,14 @@
 <script setup lang="ts">
-const { site, role } = defineProps<{ site: SiteModel; role?: RoleModel }>()
+const { site, role } = defineProps<{ site?: SiteModel; role?: RoleModel }>()
 </script>
 
 <template>
   <CoreHdTab
+    v-if="site"
     :tabs="[
       { label: '站点列表', route: { name: 'site.index' } },
       {
-        label: `站点【${site?.title}】角色列表`,
+        label: `站点角色列表`,
         route: { name: 'role.index', params: { sid: site.id } },
         permission: { name: 'role-list', site },
       },
@@ -17,23 +18,27 @@ const { site, role } = defineProps<{ site: SiteModel; role?: RoleModel }>()
         permission: { name: 'role-add', site },
       },
       {
-        label: `编辑【${role?.name}】角色`,
+        label: `编辑角色`,
         route: { name: 'role.edit' },
         current: true,
         permission: { name: 'edit-list', site },
       },
       {
-        label: `设置【${role?.name}】角色权限`,
+        label: `设置角色权限`,
         route: { name: 'role.permission' },
         current: true,
         permission: { name: 'role-permission-set', site },
       },
       {
         label: `管理员列表`,
-        route: { name: 'admin.index', params: { sid: site.id } },
+        route: { name: 'site.admin.index', params: { sid: site.id } },
         permission: { name: 'admin-list', site },
+      },
+      {
+        label: `权限设置`,
+        route: { name: 'site.role.permission', params: { sid: site.id } },
+        permission: { name: 'admin-list', site },
+        current: true,
       },
     ]" />
 </template>
-
-<style lang="scss"></style>

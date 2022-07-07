@@ -7,7 +7,6 @@ export default {
     {
       name: 'site.module.index',
       path: 'site/module/index',
-      props: true,
       component: () => import('@@/views/siteModule/index.vue'),
     },
   ],

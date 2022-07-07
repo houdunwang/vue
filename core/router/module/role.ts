@@ -15,13 +15,16 @@ export default {
       name: 'role.add',
       path: 'add',
       component: () => import('@@/views/role/add.vue'),
-      props: true,
     },
     {
       name: 'role.edit',
-      path: 'edit/:rid',
+      path: 'edit/:id',
       component: () => import('@@/views/role/edit.vue'),
-      props: true,
+    },
+    {
+      name: 'site.role.permission',
+      path: ':id/permission',
+      component: () => import('@@/views/role/permission.vue'),
     },
   ],
 } as RouteRecordRaw

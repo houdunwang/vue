@@ -12,5 +12,3 @@ const { sid, role } = defineProps<{ sid?: any; role?: any }>()
       { label: `设置【${role?.title}】角色权限`, route: { name: 'role.permission.edit' }, current: true },
     ]" />
 </template>
-
-<style lang="scss"></style>

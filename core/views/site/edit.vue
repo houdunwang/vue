@@ -1,21 +1,12 @@
 <script setup lang="ts">
-import { siteFind, updateSite } from '@@/apis/site'
 import { siteForm } from '@@/config/form'
-import router from '@@/router'
-import { request } from '@@/utils/helper'
 import Tab from './components/tab.vue'
-const route = useRoute()
-const model = ref(await siteFind(route.params?.id))
 
-const onSubmit = request(async () => {
-  await updateSite(model.value)
-  router.push({ name: 'site.index' })
-})
+const { update, site, currentSite } = useSite()
+await currentSite()
 </script>
 
 <template>
   <Tab />
-  <CoreFormFieldList :model="model" :fields="siteForm.base" @submit="onSubmit" />
+  <CoreFormFieldList :model="site" :fields="siteForm.base" @submit="update" />
 </template>
-
-<style lang="scss"></style>

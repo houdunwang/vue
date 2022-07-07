@@ -64,27 +64,6 @@ export default [
                   },
                 ],
               },
-              {
-                title: '评论管理',
-                items: [
-                  {
-                    title: '添加评论',
-                    name: 'S1_Blog_add_comment',
-                  },
-                  {
-                    title: '添加文章',
-                    name: 'S1_Blog_article_add',
-                  },
-                  {
-                    title: '编辑文章',
-                    name: 'S1_Blog_article_edit',
-                  },
-                  {
-                    title: '删除文章',
-                    name: 'S1_Blog_article_delete',
-                  },
-                ],
-              },
             ],
             config: {
               name: 'Blog',

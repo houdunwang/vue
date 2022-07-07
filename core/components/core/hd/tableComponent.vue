@@ -2,59 +2,43 @@
 import dayjs from 'dayjs'
 import { ArrowDown } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
+
 const {
-  api,
+  data,
   buttons,
   buttonWidth,
   buttonType = 'drop',
   columns,
-  searchShow = true,
 } = defineProps<{
-  api: (page: number, params?: Record<keyof any, any>) => Promise<ResponsePageResult<any>>
-  buttons?: TableButtonType[]
+  data?: Record<string, any>[]
+  buttons?: TableButton[]
   buttonWidth?: number
   buttonType?: 'drop' | 'default'
   columns: TableColumnsType[]
-  searchShow?: boolean
 }>()
 
 const emit = defineEmits<{
   (e: 'action', model: any, command: string): void
+  (e: 'search', params: { searchFields: string[]; searchContent: string }): void
 }>()
-
-// 加载分页数据
-let response = $ref(await api(1))
-const load = async (page: number = 1) => {
-  response = await api(page)
-}
 
 //搜索
 let searchFields = $ref(columns && columns.filter((item) => item.search == true).map((item) => item.prop))
 let searchContent = $ref('')
 const search = async () => {
   if (!searchFields.length) return ElMessage.error('请选择搜索类型')
-  response = await api(1, { searchFields, searchContent })
+  emit('search', { searchFields: searchFields, searchContent: searchContent })
 }
 
 //按钮事件
 const buttonClientEvent = async (args: any) => {
-  emit('action', args.model, args.command)
+  buttons?.[args.command]?.action?.call(null, args.model)
 }
-
-let buttonColumnWidth = computed(() => {
-  if (!buttonWidth && buttons?.length) {
-    return (
-      [...buttons].reduce((width: number, btn: TableButtonType) => {
-        return (width += btn.title.length * 15 + 32)
-      }, 0) + 24
-    )
-  }
-})
 </script>
 
 <template>
-  <div class="">
-    <div class="grid grid-cols-[auto_1fr_auto] items-center bg-white p-2 border rounded-sm mb-2" v-if="searchShow">
+  <div v-if="data">
+    <div class="grid grid-cols-[auto_1fr_auto] items-center bg-white p-2 border rounded-sm mb-2">
       <el-select v-model="searchFields" collapse-tags placeholder="请选择字段" filterable class="mr-1" multiple>
         <el-option
           v-for="item in columns"
@@ -76,7 +60,7 @@ let buttonColumnWidth = computed(() => {
       </el-button-group>
     </div>
 
-    <el-table :data="response.data" border stripe :highlight-current-row="true" style="width: 100%">
+    <el-table :data="data" border stripe :highlight-current-row="true" style="width: 100%">
       <el-table-column
         v-for="col in columns"
         :fixed="col.fixed || false"
@@ -127,45 +111,19 @@ let buttonColumnWidth = computed(() => {
           </el-button>
           <template #dropdown>
             <el-dropdown-menu>
-              <el-dropdown-item
-                v-for="(item, key) in buttons"
-                :key="key"
-                :command="{ model: row, command: item.command }">
-                {{ item.title }}
-              </el-dropdown-item>
+              <template v-for="(item, key) in buttons" :key="key">
+                <el-dropdown-item :command="{ model: row, command: key }">
+                  {{ item.title }}
+                </el-dropdown-item>
+              </template>
             </el-dropdown-menu>
           </template>
         </el-dropdown>
       </el-table-column>
 
-      <el-table-column
-        align="center"
-        :width="buttonWidth || buttonColumnWidth"
-        #default="{ row }"
-        v-if="buttons && buttonType == 'default'"
-        fixed="right"
-        id="buttonGroup">
-        <el-button-group>
-          <el-button
-            :type="item.type || 'default'"
-            v-for="(item, key) in buttons"
-            @click="emit('action', row, item.command)">
-            {{ item.title }}
-          </el-button>
-        </el-button-group>
-      </el-table-column>
       <el-table-column :width="buttonWidth" #default="{ row }" v-if="$slots.button" align="center" fixed="right">
         <slot name="button" :model="row" v-if="row.id" />
       </el-table-column>
     </el-table>
-
-    <el-pagination
-      @current-change="load"
-      background
-      layout="prev, pager, next"
-      :total="response.meta.total"
-      :page-size="response.meta.per_page"
-      class="mt-3"
-      :hide-on-single-page="true" />
   </div>
 </template>

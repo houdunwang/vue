@@ -1,17 +1,11 @@
 <script setup lang="ts">
-import { request } from '@@/utils/helper'
 import { siteForm } from '@@/config/form'
 import Tab from './components/tab.vue'
-import { addSite } from '@@/apis/site'
-import router from '@@/router'
 
-const onSubmit = request(async (model: any) => {
-  await addSite(model)
-  router.push({ name: 'site.index' })
-})
+const { add } = useSite()
 </script>
 
 <template>
   <Tab />
-  <CoreFormFieldList :fields="siteForm.base" @submit="onSubmit" />
+  <CoreFormFieldList :fields="siteForm.base" @submit="add" />
 </template>
