@@ -1,6 +1,8 @@
 {
-    "name": "router",
-    "version": "0.0.0",
+    "name": "houdunren-vue",
+    "description": "后盾人前端脚手架",
+    "version": "1.0.20",
+    "license": "MIT",
     "scripts": {
         "dev": "vite",
         "build-js": "vite build",

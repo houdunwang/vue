@@ -4,7 +4,7 @@ houdunren-vue 帮助大家加快前端项目的开发，本项目提供了前端
 
 ### 在线文档
 
-请查看[在线手册](https://doc.houdunren.com/houdunren-vue/1%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html)学习使用，也希望大家在[后盾人](https://www.houdunren.com/)网站对反馈该项目的问题。
+请查看[在线手册](https://doc.houdunren.com/houdunren-vue/1%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html)学习使用，也希望大家在[后盾人](https://www.houdunren.com/)反馈项目问题。
 
 ## 版本库
 
@@ -108,10 +108,10 @@ $ npm run dev
 
 向军大叔会在每晚八点进行直播，与大家交流技术与生活。
 
-<img src="./core/assets/xj.jpg" alt="image-20210216220804022" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/houdunwang/vue/master/core/assets/xj.jpg" alt="image-20210216220804022" style="zoom:50%;" />
 
 请扫描下方二维码进入直播间，我们一起交流成长。
 
-| 抖音                                                 | Bilibili                                              |
-| ---------------------------------------------------- | ----------------------------------------------------- |
-| ![image-20210216220804022](./core/assets/douyin.jpg) | ![image-20210216220804022](./core/assets/bilibli.jpg) |
+| 抖音 | Bilibili |
+| --- | --- |
+| ![image-20210216220804022](https://raw.githubusercontent.com/houdunwang/vue/master/core/assets/douyin.jpg) | ![image-20210216220804022](https://raw.githubusercontent.com/houdunwang/vue/master/core/assets/bilibli.jpg) |
