@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { updateAllSiteInitData } from '@@/apis/site'
+import { coreUpdate } from '@@/apis/core'
 import { isSuperAdmin } from '@@/utils/helper'
 </script>
 
@@ -22,7 +22,7 @@ import { isSuperAdmin } from '@@/utils/helper'
 
     <section>
       <CoreHdFullscreen class="text-[#7ed321] hidden md:flex" />
-      <ElButton type="success" size="small" @click="updateAllSiteInitData"> 更新所有站点数据 </ElButton>
+      <ElButton type="success" size="small" @click="coreUpdate"> 更新系统数据 </ElButton>
       <CoreUserDrop class="text-gray-200 ml-2" />
     </section>
   </main>

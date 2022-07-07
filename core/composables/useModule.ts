@@ -11,7 +11,6 @@ export default () => {
     modules.value = await api.getModuleList()
   }
 
-  //删除站点
   const del = async (id: number) => {
     await ElMessageBox.confirm('确定删除吗?')
     await api.delModule(id)
@@ -23,5 +22,5 @@ export default () => {
     router.push({ name: 'module.index' })
   }
 
-  return { sid, modules, module, del, load, add }
+  return { sid, modules, module, load, add, del }
 }

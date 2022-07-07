@@ -37,9 +37,9 @@ export function deleteSite(id: number) {
   })
 }
 
-//更新所有站点数据 权限表|同步本地模块到数据表
-export function updateAllSiteInitData() {
-  return http.request({
-    url: `update_all_site_data`,
-  })
-}
+// //更新所有站点数据 权限表|同步本地模块到数据表
+// export function updateAllSiteInitData() {
+//   return http.request({
+//     url: `update_all_site_data`,
+//   })
+// }

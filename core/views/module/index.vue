@@ -7,7 +7,11 @@ await load()
 
 <template>
   <Tab />
-  <el-alert title="删除模块将删除模块的所有文件与数据" show-icon type="warning" effect="light"></el-alert>
+  <el-alert
+    title="模块删除后请点击顶部【更新站点数据】按钮，如果删除失败请手动删除"
+    show-icon
+    type="warning"
+    effect="light" />
 
   <CoreHdTableComponent :data="modules?.data" :columns="moduleTableColumns" :button-width="100">
     <template #button="{ model }">
