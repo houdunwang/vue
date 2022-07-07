@@ -21,21 +21,13 @@
     "types": ["element-plus/global", "echarts", "lodash", "web-bluetooth", "naive-ui/volar"]
   },
   "include": [
-    "core/vite/**/*.ts",
-
+    "vite.config.ts",
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.vue",
-
-    "types/*.d.ts",
-    "types/*.ts",
-    "vite.config.ts",
-
     "core/**/*.ts",
     "core/**/*.d.ts",
-    "core/**/*.vue",
-    "core/types/*.ts",
-    "core/types/*.d.ts"
+    "core/**/*.vue"
   ],
   "exclude": ["node_modules", "dist"]
 }
