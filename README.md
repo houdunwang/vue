@@ -41,7 +41,24 @@ houdunren-vue 帮助大家加快前端项目的开发，本项目提供了前端
 
 安装后修改.env 文件内容: **VITE_MOCK_ENABLE=true**，这样可以使用 mock 数据查看效果，如果你有后台数据记得设置为**false**。
 
+### GIT
+
+通过 [github](https://github.com/houdunwang/vue) 或 [gitee](https://gitee.com/houdunren/vue) 下载源码进行安装
+
+```
+$ git clone https://gitee.com/houdunren/vue houdunren-vue
+$ cd houdunren-vue
+$ npm install
+$ npm run dev
+```
+
+
+
 ### CLI
+
+向军大叔编写了 `houdunren-vue` 命令，帮助你进行项目安装。
+
+**全局安装**
 
 首先全局安装 `houdunren-vue` 命令
 
@@ -69,7 +86,9 @@ npm install
 npm run dev
 ```
 
-### npx
+
+
+**项目安装**
 
 如果只想在项目中使用 houdunren-vue，使用 npx 是简单的
 
@@ -85,17 +104,6 @@ npm install houdunren-vue
 
 ```
 npx houdunren-vue
-```
-
-### GIT
-
-你也通过 [github](https://github.com/houdunwang/vue) 或 [gitee](https://gitee.com/houdunren/vue) 下载源码进行安装。
-
-```
-$ git clone https://gitee.com/houdunren/vue houdunren-vue
-$ cd houdunren-vue
-$ npm install
-$ npm run dev
 ```
 
 
