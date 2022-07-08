@@ -41,7 +41,7 @@ const setDefaultModule = async (id: any) => {
               size="small"
               @click="setDefaultModule(module.id)"
               v-if="module.id == site?.module_id">
-              取消默认模块
+              默认模块
             </el-button>
             <el-button type="info" size="small" @click="setDefaultModule(module.id)" v-else> 设为默认模块 </el-button>
           </template>

@@ -6,7 +6,7 @@ import env from '@@/utils/env'
 function autoloadModuleRoutes(): RouteRecordNormalized[] {
   const routes = [] as RouteRecordNormalized[]
 
-  if (env.DEV || env.VITE_BUILD_CORE_ROUTE) {
+  if (env.DEV || (!env.DEV && env.VITE_BUILD_CORE_ROUTE)) {
     register(routes, import.meta.globEager('./module/**/*.ts'))
     register(routes, import.meta.globEager('./admin/**/*.ts'))
   }

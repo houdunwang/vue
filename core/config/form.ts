@@ -54,6 +54,7 @@ export const systemForm = {
 export const siteForm = {
   base: [
     { title: '标题', name: 'title', type: 'input', error_name: 'title' },
+    { title: '域名', name: 'url', type: 'input', error_name: 'url' },
     { title: '网站标志', name: 'logo', type: 'image' },
     { title: '联系电话', name: 'tel', type: 'input' },
     { title: '企业邮箱', name: 'email', type: 'input' },

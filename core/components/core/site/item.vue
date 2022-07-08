@@ -28,8 +28,9 @@ const props = defineProps<{ site: SiteModel }>()
       </section>
     </header>
     <main>
-      <icon-connection-point theme="filled" :strokeWidth="2" />
-      <span class="truncate w-60 overflow-hidden"> {{ props.site.title }} </span>
+      <el-image :src="props.site.logo" fit="cover" :lazy="true" class="w-10 rounded-md" v-if="props.site.logo" />
+      <icon-connection-point theme="filled" :strokeWidth="2" v-else />
+      <span class="truncate w-60 overflow-hidden block"> {{ props.site.title }} </span>
     </main>
     <footer class="">
       <section class="flex font-bold">
@@ -92,7 +93,7 @@ const props = defineProps<{ site: SiteModel }>()
   main {
     @apply flex  items-center px-5 py-8 text-gray-600;
     :first-of-type {
-      @apply mr-1 text-3xl text-gray-600;
+      @apply mr-2 text-3xl text-gray-600;
     }
     span {
       @apply text-2xl font-light;
