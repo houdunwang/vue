@@ -22,7 +22,7 @@ export default defineConfig(({ command, mode }) => {
     },
     build: {
       //编译文件生成目录
-      outDir: 'dist',
+      outDir: '../dist',
       emptyOutDir: true,
       rollupOptions: {
         output: {
