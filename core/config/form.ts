@@ -77,6 +77,15 @@ export const moduleForm = [
   { title: '英文标识', name: 'name', error_name: 'name', placeholder: '模块的英文标识' },
   { title: '开发者', name: 'author', error_name: 'author', placeholder: '开发者名称' },
   { title: '版本号', name: 'version', error_name: 'version', value: '1.0.0' },
+  {
+    title: '后台管理',
+    name: 'admin',
+    type: 'radio',
+    options: [
+      ['是', true],
+      ['否', false],
+    ],
+  },
 ] as FormFieldType[]
 
 export const roleForm = [
