@@ -15,8 +15,10 @@ watch(show, () => {
       <CoreHdBreadcrumb class="hidden md:block" />
     </div>
     <div class="flex justify-center items-center relative cursor-pointer">
-      <CoreHdFullscreen class="hidden md:flex" />
-      <CoreUserDrop class="text-gray-600" />
+      <router-link to="/" class="mr-2 text-sm text-gray-600 md:hidden">网站首页</router-link>
+      <router-link :to="{ name: 'core' }" class="mr-2 text-sm text-gray-600">系统平台</router-link>
+      <CoreHdFullscreen class="hidden md:flex mr-3 text-gray-600" />
+      <CoreUserDrop class="text-gray-500" />
     </div>
   </div>
 </template>

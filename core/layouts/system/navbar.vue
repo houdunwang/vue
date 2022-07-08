@@ -25,7 +25,7 @@ import { isSuperAdmin } from '@@/utils/helper'
     </section>
 
     <section>
-      <CoreHdFullscreen class="text-[#7ed321] hidden md:flex" />
+      <CoreHdFullscreen class="text-[#7ed321] hidden md:flex mr-3" />
       <ElButton type="success" size="small" @click="coreUpdate"> 更新系统数据 </ElButton>
       <CoreUserDrop class="text-gray-200 ml-2" />
     </section>
