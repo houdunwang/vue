@@ -81,6 +81,7 @@ export const moduleForm = [
     title: '后台管理',
     name: 'admin',
     type: 'radio',
+    value: true,
     options: [
       ['是', true],
       ['否', false],
