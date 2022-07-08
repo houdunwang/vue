@@ -1,6 +1,8 @@
-## 项目介绍 
+## 项目介绍
 
 houdunren-vue 帮助大家加快前端项目的开发，本项目提供了前端开发的很多基础功能。使用 vite、typescript、vue3、element-plus、pinia、vue-router、axios、tailwindcss 等技术开发。
+
+> 希望大家为本项目加个 Star，这样我们会更有动力，谢谢你。
 
 **项目特点**
 
@@ -15,25 +17,17 @@ houdunren-vue 帮助大家加快前端项目的开发，本项目提供了前端
 - 移动端自适应用
 - 基于 token 身份验证
 
-
-
 **在线文档**
 
 请查看[在线手册](https://doc.houdunren.com/houdunren-vue/1%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html)学习使用，也希望大家在[后盾人](https://www.houdunren.com/)反馈项目问题。
-
-
 
 ### 作者
 
 开发者 [向军大叔](https://www.houdunren.com) 从事编程多年的老程序员，晚 8 点在抖音与 B 站直播，欢迎光临。
 
-
-
 ### 版本库
 
 我会将项目提交到 [github](https://github.com/houdunwang/vue) 与 [gitee](https://gitee.com/houdunren/vue) 两个版本库。
-
-
 
 ## 安装项目
 
@@ -51,8 +45,6 @@ $ cd houdunren-vue
 $ npm install
 $ npm run dev
 ```
-
-
 
 ### CLI
 
@@ -86,8 +78,6 @@ npm install
 npm run dev
 ```
 
-
-
 **项目安装**
 
 如果只想在项目中使用 houdunren-vue，使用 npx 是简单的
@@ -106,13 +96,9 @@ npm install houdunren-vue
 npx houdunren-vue
 ```
 
-
-
 ## 更新项目
 
 从 [github](https://github.com/houdunwang/vue) 或 [gitee](https://gitee.com/houdunren/vue) 下载项目，然后替换除 **src** 目录以外的文件。
-
-
 
 ## 项目预览
 
@@ -123,8 +109,6 @@ npx houdunren-vue
 ![image-20220424193919149](./core/assets/image-20220706223604418.jpg)
 
 ![image-20220706223650063](./core/assets/image-20220706223650063.jpg)
-
-
 
 ## 每晚直播
 
@@ -137,4 +121,3 @@ npx houdunren-vue
 | 抖音                                                 | Bilibili                                              |
 | ---------------------------------------------------- | ----------------------------------------------------- |
 | ![image-20210216220804022](./core/assets/douyin.jpg) | ![image-20210216220804022](./core/assets/bilibli.jpg) |
-
