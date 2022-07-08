@@ -2,9 +2,17 @@
 
 houdunren-vue 帮助大家加快前端项目的开发，本项目提供了前端开发的很多基础功能。使用 vite、typescript、vue3、element-plus、pinia、vue-router、axios、tailwindcss 等技术开发。
 
+### 项目作者
+
+开发者 [向军大叔](https://www.houdunren.com) 一个从事编程多年的老程序员，每晚8点会在抖音与B站直播，欢迎你的到来。
+
+
+
 ### 在线文档
 
 请查看[在线手册](https://doc.houdunren.com/houdunren-vue/1%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html)学习使用，也希望大家在[后盾人](https://www.houdunren.com/)反馈项目问题。
+
+
 
 ## 版本库
 
@@ -33,9 +41,7 @@ houdunren-vue 帮助大家加快前端项目的开发，本项目提供了前端
 
 ![image-20220706223650063](./core/assets/image-20220706223650063.jpg)
 
-##
 
-##
 
 ## 安装项目
 
