@@ -1,20 +1,8 @@
-## 前端脚手架
+## 项目介绍 
 
 houdunren-vue 帮助大家加快前端项目的开发，本项目提供了前端开发的很多基础功能。使用 vite、typescript、vue3、element-plus、pinia、vue-router、axios、tailwindcss 等技术开发。
 
-### 项目作者
-
-开发者 [向军大叔](https://www.houdunren.com) 从事编程多年的老程序员，晚8点在抖音与B站直播，欢迎光临。
-
-### 在线文档
-
-请查看[在线手册](https://doc.houdunren.com/houdunren-vue/1%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html)学习使用，也希望大家在[后盾人](https://www.houdunren.com/)网站反馈项目问题。
-
-## 版本库
-
-我会将项目提交到 [github](https://github.com/houdunwang/vue) 与 [gitee](https://gitee.com/houdunren/vue) 两个版本库。
-
-## 项目特点
+**项目特点**
 
 - 组件自动加载
 - 提供丰富的组件
@@ -27,15 +15,25 @@ houdunren-vue 帮助大家加快前端项目的开发，本项目提供了前端
 - 移动端自适应用
 - 基于 token 身份验证
 
-## 项目预览
 
-![image-20220424180043074](https://raw.githubusercontent.com/houdunwang/vue/master/core/assets/image-202204241800430745.jpg)
 
-![image-20220706223510626](https://raw.githubusercontent.com/houdunwang/vue/master/core/assets/image-20220706223510625.jpg)
+**在线文档**
 
-![image-20220424193919149](https://raw.githubusercontent.com/houdunwang/vue/master/core/assets/image-20220706223604418.jpg)
+请查看[在线手册](https://doc.houdunren.com/houdunren-vue/1%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html)学习使用，也希望大家在[后盾人](https://www.houdunren.com/)反馈项目问题。
 
-![image-20220706223650063](https://raw.githubusercontent.com/houdunwang/vue/master/core/assets/image-20220706223650063.jpg)
+
+
+### 作者
+
+开发者 [向军大叔](https://www.houdunren.com) 从事编程多年的老程序员，晚 8 点在抖音与 B 站直播，欢迎光临。
+
+
+
+### 版本库
+
+我会将项目提交到 [github](https://github.com/houdunwang/vue) 与 [gitee](https://gitee.com/houdunren/vue) 两个版本库。
+
+
 
 ## 安装项目
 
@@ -43,7 +41,9 @@ houdunren-vue 帮助大家加快前端项目的开发，本项目提供了前端
 
 安装后修改.env 文件内容: **VITE_MOCK_ENABLE=true**，这样可以使用 mock 数据查看效果，如果你有后台数据记得设置为**false**。
 
-### 全局 CLI
+
+
+### CLI
 
 首先全局安装 `houdunren-vue` 命令
 
@@ -82,6 +82,8 @@ npm update -g
 pnpm update -g
 ```
 
+
+
 ### npx
 
 如果只想在项目中使用 houdunren-vue，使用 npx 是简单的
@@ -100,7 +102,9 @@ npm install houdunren-vue
 npx houdunren-vue
 ```
 
-### GIT 安装
+
+
+### GIT
 
 你也通过 [github](https://github.com/houdunwang/vue) 或 [gitee](https://gitee.com/houdunren/vue) 下载源码进行安装。
 ```
@@ -109,6 +113,20 @@ $ cd houdunren-vue
 $ npm install
 $ npm run dev
 ```
+
+
+
+## 项目预览
+
+![image-20220424180043074](https://raw.githubusercontent.com/houdunwang/vue/master/core/assets/image-202204241800430745.jpg)
+
+![image-20220706223510626](https://raw.githubusercontent.com/houdunwang/vue/master/core/assets/image-20220706223510625.jpg)
+
+![image-20220424193919149](https://raw.githubusercontent.com/houdunwang/vue/master/core/assets/image-20220706223604418.jpg)
+
+![image-20220706223650063](https://raw.githubusercontent.com/houdunwang/vue/master/core/assets/image-20220706223650063.jpg)
+
+
 
 ## 每晚直播
 
