@@ -37,6 +37,8 @@ houdunren-vue 帮助大家加快前端项目的开发，本项目提供了前端
 
 现在我们来安装前端脚手架项目，我介绍三种安装方式
 
+安装后修改.env 文件内容: **VITE_MOCK_ENABLE=true**，这样可以使用 mock 数据查看效果，如果你有后台数据记得设置为**false**。
+
 ### 全局 CLI
 
 首先全局安装 `houdunren-vue` 命令
@@ -97,7 +99,6 @@ npx houdunren-vue
 ### GIT 安装
 
 你也通过 [github](https://github.com/houdunwang/vue) 或 [gitee](https://gitee.com/houdunren/vue) 下载源码进行安装。
-
 ```
 $ git clone https://gitee.com/houdunren/vue houdunren-vue
 $ cd houdunren-vue
