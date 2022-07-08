@@ -2,12 +2,19 @@ import { MockMethod } from 'vite-plugin-mock'
 import { createPaginate } from './helper'
 const data = {
   id: 1,
-  title: '博客',
+  title: '博客@@',
   name: 'Blog',
   version: '1.0',
   author: '后盾人',
   preview: '/images/xj.jpg',
   install: false,
+  config: {
+    title: '博客',
+    name: 'Blog',
+    version: '1.0',
+    author: '后盾人',
+    admin: true,
+  },
   created_at: '2022-06-20T08:08:10.000000Z',
   updated_at: '2022-06-20T08:08:10.000000Z',
 }

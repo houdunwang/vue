@@ -5,8 +5,8 @@ import env from '@@/utils/env'
 //注册路由
 function autoloadModuleRoutes(): RouteRecordNormalized[] {
   const routes = [] as RouteRecordNormalized[]
-
-  if (env.VITE_REGISTER_CORE_ROUTE) {
+  console.log(env)
+  if (!env.DEV && env.VITE_BUILD_CORE_ROUTE) {
     register(routes, import.meta.globEager('./module/**/*.ts'))
     register(routes, import.meta.globEager('./admin/**/*.ts'))
   }

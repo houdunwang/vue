@@ -31,7 +31,9 @@ const setDefaultModule = async (id: any) => {
       <h4>{{ module.title }}</h4>
       <div class="py-2 bg-gray-200 border-t mt-3 w-full flex justify-center">
         <el-button-group>
-          <el-button type="primary" size="small" @click="redirectModuleAdmin(module)">进入模块</el-button>
+          <el-button type="primary" size="small" @click="redirectModuleAdmin(module)" v-if="module.config.admin">
+            进入模块
+          </el-button>
           <el-button type="danger" size="small" @click="del(module.id)" v-if="isSuperAdmin()"> 删除模块 </el-button>
           <template v-if="access('system-module-set-default', site!)">
             <el-button

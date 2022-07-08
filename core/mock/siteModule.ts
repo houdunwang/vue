@@ -10,6 +10,13 @@ const data = {
   install: false,
   created_at: '2022-06-20T08:08:10.000000Z',
   updated_at: '2022-06-20T08:08:10.000000Z',
+  config: {
+    title: '博客',
+    name: 'Blog',
+    version: '1.0',
+    author: '后盾人',
+    admin: true,
+  },
   permission: [
     {
       title: '文章管理',
@@ -54,12 +61,6 @@ const data = {
       ],
     },
   ],
-  config: {
-    name: 'Blog',
-    version: '1.0',
-    title: '博客',
-    author: '后盾人',
-  },
   pivot: {
     site_id: 1,
     module_id: 1,
