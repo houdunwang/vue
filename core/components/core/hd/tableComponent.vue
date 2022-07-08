@@ -77,7 +77,7 @@ const buttonClientEvent = async (args: any) => {
             :preview-src-list="[row[col.prop]!]"
             :src="row[col.prop]"
             fit="cover"
-            class="rounded-md" />
+            class="w-10 h-10 rounded-lg" />
         </template>
         <template v-else-if="col.type === 'radio'">
           <span v-for="c in col.options" v-show="c[1] == row[col.prop]">

@@ -6,6 +6,10 @@ import { isSuperAdmin } from '@@/utils/helper'
 <template>
   <main>
     <section>
+      <a href="/" target="_blank">
+        <icon-home theme="outline" strokeLinejoin="bevel" strokeLinecap="butt" />
+        网站首页
+      </a>
       <router-link :to="{ name: 'module.index' }" v-if="isSuperAdmin()">
         <icon-system theme="outline" strokeLinejoin="bevel" strokeLinecap="butt" />
         模块管理

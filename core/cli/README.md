@@ -63,6 +63,7 @@ pnpm add -g houdunren-vue
 cd hd
 npm install
 npm run dev
+修改.env文件: VITE_MOCK_ENABLE=true
 ```
 
 **更新命令**

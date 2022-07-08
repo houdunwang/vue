@@ -48,6 +48,7 @@ figlet('houdunren.com', async function (err, data) {
         console.log(chalk.white(`cd ${message.dirname}`))
         console.log(chalk.white('npm install'))
         console.log(chalk.white('npm run dev'))
+        console.log(chalk.white('修改.env文件: VITE_MOCK_ENABLE=true'))
         return
       }
     })
