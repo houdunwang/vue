@@ -1,8 +1,7 @@
 import { DocDetail } from '@icon-park/vue-next'
 import { RouteRecordRaw } from 'vue-router'
 export default {
-  name: 'core/addon/editor',
-  path: '/editor',
+  path: '/core/addon/editor',
   component: () => import('@@/layouts/admin.vue'),
   meta: { order: 2, auth: true, menu: { title: '编辑器', icon: DocDetail } },
   children: [

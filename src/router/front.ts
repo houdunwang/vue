@@ -1,11 +1,11 @@
 import { RouteRecordRaw } from 'vue-router'
 export default {
-  //addon需要替换为你的模块名
-  path: '/addon/front',
+  //Blog需要替换为你的模块名
+  path: '/Blog/front',
   component: () => import('@/App.vue'),
   children: [
     {
-      name: 'front',
+      name: 'home',
       path: '',
       //模块是站点默认模块时，即通过域名直接访问模块时需要以下设置
       //建议保持以下设置存在
