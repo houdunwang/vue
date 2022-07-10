@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { coreUpdate } from '@@/apis/core'
-import { isSuperAdmin } from '@@/utils/helper'
+import { coreUpdate } from '#/apis/core'
+import { isSuperAdmin } from '#/utils/helper'
 </script>
 
 <template>

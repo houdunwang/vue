@@ -1,4 +1,4 @@
-import { http } from '@@/plugins/axios'
+import { http } from '#/plugins/axios'
 
 export function getModuleList(page = 1, params = {}) {
   return http.request<ModuleModel, ResponsePageResult<ModuleModel>>({

@@ -1,4 +1,4 @@
-import { http } from '@@/plugins/axios'
+import { http } from '#/plugins/axios'
 
 export function getUserList(page = 1, params: Record<any, any> = {}) {
   return http.request<UserModel[], ResponsePageResult<UserModel>>({

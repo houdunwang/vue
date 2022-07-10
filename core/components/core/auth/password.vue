@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { forgetPassword } from '@@/apis/auth'
-import errorStore from '@@/store/errorStore'
+import { forgetPassword } from '#/apis/auth'
+import errorStore from '#/store/errorStore'
 import Footer from './footer.vue'
 
 const form = reactive({

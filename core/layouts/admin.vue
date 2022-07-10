@@ -4,9 +4,9 @@ import Navbar from './admin/navbar.vue'
 import HistoryLink from './admin/historyLink.vue'
 import { useRoute } from 'vue-router'
 import { watch } from 'vue'
-import menu from '@@/composables/useMenu'
-import systemStore from '@@/store/systemStore'
-import userStore from '@@/store/userStore'
+import menu from '#/composables/useMenu'
+import systemStore from '#/store/systemStore'
+import userStore from '#/store/userStore'
 
 const route = useRoute()
 

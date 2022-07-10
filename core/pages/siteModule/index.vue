@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import env from '@@/utils/env'
-import { isSuperAdmin, access } from '@@/utils/helper'
+import env from '#/utils/env'
+import { isSuperAdmin, access } from '#/utils/helper'
 
 const { add, get, modules, setDefault, del } = useSiteModule()
 const { currentSite, site } = useSite()

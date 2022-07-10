@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { register } from '@@/apis/auth'
-import errorStore from '@@/store/errorStore'
+import { register } from '#/apis/auth'
+import errorStore from '#/store/errorStore'
 import Footer from './footer.vue'
 
 const form = reactive({

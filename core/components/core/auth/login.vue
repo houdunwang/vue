@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { login } from '@@/apis/auth'
-import useCaptcha from '@@/composables/useCaptcha'
-import errorStore from '@@/store/errorStore'
-import env from '@@/utils/env'
-import { loginCallback, request } from '@@/utils/helper'
+import { login } from '#/apis/auth'
+import useCaptcha from '#/composables/useCaptcha'
+import errorStore from '#/store/errorStore'
+import env from '#/utils/env'
+import { loginCallback, request } from '#/utils/helper'
 import Footer from './footer.vue'
 
 const form = reactive({ account: '2300071698@qq.com', password: 'admin888', captcha_code: '', captcha_key: '' })

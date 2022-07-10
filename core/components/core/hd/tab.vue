@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { access } from '@@/utils/helper'
+import { access } from '#/utils/helper'
 import { TabsPaneContext } from 'element-plus'
 
 const router = useRouter()

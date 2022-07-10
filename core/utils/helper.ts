@@ -1,6 +1,6 @@
-import { CacheEnum } from '@@/enum/CacheEnum'
-import router from '@@/router'
-import useStore from '@@/store/userStore'
+import { CacheEnum } from '#/enum/CacheEnum'
+import router from '#/router'
+import useStore from '#/store/userStore'
 import store from './store'
 
 //是否是超级管理员

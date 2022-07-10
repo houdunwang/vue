@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { uploadImage } from '@@/apis/upload'
+import { uploadImage } from '#/apis/upload'
 const { modelValue, height = '300px' } = defineProps<{ modelValue: string; height?: string }>()
 const emit = defineEmits(['update:modelValue'])
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import systemStore from '@@/store/systemStore'
+import systemStore from '#/store/systemStore'
 
 const store = systemStore()
 </script>

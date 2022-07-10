@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { RouteEnum } from '@@/enum/RouteEnum'
-import router from '@@/router'
+import { RouteEnum } from '#/enum/RouteEnum'
+import router from '#/router'
 const route = router.currentRoute
 </script>
 

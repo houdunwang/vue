@@ -1,5 +1,5 @@
-import { addSiteModule, getSiteModuleList, removeSiteModule, setSiteDefaultModule } from '@@/apis/siteModule'
-import router from '@@/router'
+import { addSiteModule, getSiteModuleList, removeSiteModule, setSiteDefaultModule } from '#/apis/siteModule'
+import router from '#/router'
 import { ElMessageBox } from 'element-plus'
 import { Ref } from 'vue'
 

@@ -1,4 +1,4 @@
-import { getSystem } from '@@/apis/system'
+import { getSystem } from '#/apis/system'
 import { defineStore } from 'pinia'
 
 export default defineStore('system', {

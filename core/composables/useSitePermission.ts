@@ -1,5 +1,5 @@
-import { getSitePermission } from '@@/apis/sitePermission'
-import router from '@@/router'
+import { getSitePermission } from '#/apis/sitePermission'
+import router from '#/router'
 
 export default () => {
   const permissions = ref()

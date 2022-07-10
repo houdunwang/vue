@@ -1,6 +1,6 @@
 import { Router, RouteRecordRaw, RouteRecordNormalized } from 'vue-router'
-import userStore from '@@/store/userStore'
-import env from '@@/utils/env'
+import userStore from '#/store/userStore'
+import env from '#/utils/env'
 
 //注册路由
 function autoloadModuleRoutes(): RouteRecordNormalized[] {

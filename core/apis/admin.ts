@@ -1,4 +1,4 @@
-import { http } from '@@/plugins/axios'
+import { http } from '#/plugins/axios'
 
 export function getAdminList(site: any, page = 1, params = {}) {
   return http.request<UserModel, ResponsePageResult<UserModel>>({

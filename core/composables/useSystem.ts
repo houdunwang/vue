@@ -1,4 +1,4 @@
-import { getSystem, updateSystem } from '@@/apis/system'
+import { getSystem, updateSystem } from '#/apis/system'
 
 export default () => {
   const system = ref<SystemModel>()

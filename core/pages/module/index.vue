@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { moduleTableColumns } from '@@/config/table'
+import { moduleTableColumns } from '#/config/table'
 import Tab from './tab.vue'
 const { load, modules, del } = useModule()
 await load()

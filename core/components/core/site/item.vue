@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { isSuperAdmin } from '@@/utils/helper'
+import { isSuperAdmin } from '#/utils/helper'
 import dayjs from 'dayjs'
 
 const emit = defineEmits(['del'])

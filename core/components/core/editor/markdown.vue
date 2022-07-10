@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { uploadImage } from '@@/apis/upload'
+import { uploadImage } from '#/apis/upload'
 const { modelValue } = defineProps<{
   modelValue: any
 }>()

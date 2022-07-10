@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { roleTableColumns } from '@@/config/table'
-import router from '@@/router'
+import { roleTableColumns } from '#/config/table'
+import router from '#/router'
 import tab from './tab.vue'
 
 const { site, currentSite } = useSite()

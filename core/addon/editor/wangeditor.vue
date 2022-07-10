@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import router from '@@/router'
+import router from '#/router'
 import { ref } from 'vue'
 const content = ref('后盾人')
 </script>

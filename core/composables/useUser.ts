@@ -1,5 +1,5 @@
-import * as api from '@@/apis/user'
-import router from '@@/router'
+import * as api from '#/apis/user'
+import router from '#/router'
 
 export default () => {
   const users = ref<ResponsePageResult<UserModel>>()

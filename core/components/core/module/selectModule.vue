@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { moduleTableColumns } from '@@/config/table'
+import { moduleTableColumns } from '#/config/table'
 
 const emit = defineEmits<{ (e: 'select', module: any): void }>()
 const { load, modules } = useModule()

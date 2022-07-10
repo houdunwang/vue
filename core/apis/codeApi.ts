@@ -1,4 +1,4 @@
-import { http } from '@@/plugins/axios'
+import { http } from '#/plugins/axios'
 
 export interface ICaptcha {
   key: string

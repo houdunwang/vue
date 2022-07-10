@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { isSuperAdmin } from '@@/utils/helper'
+import { isSuperAdmin } from '#/utils/helper'
 
 const { sites, del, load } = useSite()
 await load()

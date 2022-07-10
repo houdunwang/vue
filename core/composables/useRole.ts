@@ -1,5 +1,5 @@
-import * as api from '@@/apis/role'
-import router from '@@/router'
+import * as api from '#/apis/role'
+import router from '#/router'
 import { ElMessageBox } from 'element-plus'
 
 export default () => {

@@ -1,5 +1,5 @@
-import { access } from '@@/utils/helper'
-import { siteFind } from '@@/apis/site'
+import { access } from '#/utils/helper'
+import { siteFind } from '#/apis/site'
 
 export default {
   async mounted(el: HTMLElement, binding: any) {

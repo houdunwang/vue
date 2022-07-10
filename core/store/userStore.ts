@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { currentUserInfo } from '@@/apis/user'
+import { currentUserInfo } from '#/apis/user'
 
 export default defineStore('userStore', {
   state: () => {

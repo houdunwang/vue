@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { userForm } from '@@/config/form'
+import { userForm } from '#/config/form'
 
 const { user } = defineProps<{
   user?: UserModel

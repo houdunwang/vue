@@ -1,5 +1,5 @@
-import { deleteSite, siteFind, getSiteList, addSite, updateSite } from '@@/apis/site'
-import router from '@@/router'
+import { deleteSite, siteFind, getSiteList, addSite, updateSite } from '#/apis/site'
+import router from '#/router'
 
 export default () => {
   const sites = ref<ResponsePageResult<SiteModel>>()

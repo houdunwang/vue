@@ -2,8 +2,8 @@
 import navbarVue from './system/navbar.vue'
 import TopMenu from './system/topMenu.vue'
 import Copyright from './system/copyright.vue'
-import systemStore from '@@/store/systemStore'
-import userStore from '@@/store/userStore'
+import systemStore from '#/store/systemStore'
+import userStore from '#/store/userStore'
 
 await Promise.all([userStore().getUserInfo(), systemStore().load()])
 const storeSystem = systemStore()

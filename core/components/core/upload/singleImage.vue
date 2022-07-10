@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { Plus } from '@element-plus/icons-vue'
-import { uploadImage } from '@@/apis/upload'
+import { uploadImage } from '#/apis/upload'
 
 const props = defineProps<{
   modelValue: string | null

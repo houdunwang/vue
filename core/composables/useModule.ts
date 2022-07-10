@@ -1,6 +1,6 @@
-import * as api from '@@/apis/module'
+import * as api from '#/apis/module'
 import { ElMessageBox } from 'element-plus'
-import router from '@@/router'
+import router from '#/router'
 
 export default () => {
   const modules = ref<ResponsePageResult<ModuleModel>>()

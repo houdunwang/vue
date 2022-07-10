@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { RouteEnum } from '@@/enum/RouteEnum'
-import router from '@@/router'
-import { isLogin } from '@@/utils/helper'
+import { RouteEnum } from '#/enum/RouteEnum'
+import router from '#/router'
+import { isLogin } from '#/utils/helper'
 </script>
 
 <template>

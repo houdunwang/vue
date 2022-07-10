@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { siteForm } from '@@/config/form'
+import { siteForm } from '#/config/form'
 
 const { currentSite, site, update } = useSite()
 await currentSite()

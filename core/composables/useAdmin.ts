@@ -1,5 +1,5 @@
-import * as api from '@@/apis/admin'
-import router from '@@/router'
+import * as api from '#/apis/admin'
+import router from '#/router'
 import { ElMessageBox } from 'element-plus'
 
 export default () => {
@@ -32,7 +32,7 @@ export default () => {
     router.push({ name: 'site.admin.index', query: { sid } })
   }
   const current = async () => {
-     await find(id)
+    await find(id)
   }
   return { admins, admin, load, del, add, current, setRole, find }
 }

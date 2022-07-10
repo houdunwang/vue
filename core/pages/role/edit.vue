@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { roleForm } from '@@/config/form'
+import { roleForm } from '#/config/form'
 import TabVue from './tab.vue'
 
 const { site, currentSite } = useSite()

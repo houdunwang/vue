@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { systemForm } from '@@/config/form'
+import { systemForm } from '#/config/form'
 
 const { find, system, update } = useSystem()
 await find()

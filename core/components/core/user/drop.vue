@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import userStore from '@@/store/userStore'
-import { logout } from '@@/utils/helper'
+import userStore from '#/store/userStore'
+import { logout } from '#/utils/helper'
 const user = userStore()
 </script>
 

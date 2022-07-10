@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import systemStore from '@@/store/systemStore'
-import { isSuperAdmin, logout } from '@@/utils/helper'
+import systemStore from '#/store/systemStore'
+import { isSuperAdmin, logout } from '#/utils/helper'
 const storeSystem = systemStore()
 </script>
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { siteForm } from '@@/config/form'
+import { siteForm } from '#/config/form'
 import Tab from './components/tab.vue'
 
 const { add } = useSite()

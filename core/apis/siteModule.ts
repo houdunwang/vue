@@ -1,4 +1,4 @@
-import { http } from '@@/plugins/axios'
+import { http } from '#/plugins/axios'
 
 //获取站点模块列表
 export function getSiteModuleList(sid: any) {

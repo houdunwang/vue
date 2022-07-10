@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouteEnum } from '@@/enum/RouteEnum'
+import { RouteEnum } from '#/enum/RouteEnum'
 const { routes, show, go } = useMenu()
 
 onMounted(() => {

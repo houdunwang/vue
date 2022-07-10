@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import errorStore from '@@/store/errorStore'
+import errorStore from '#/store/errorStore'
 
 const { name } = defineProps<{ name: string }>()
 

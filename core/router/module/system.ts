@@ -1,7 +1,7 @@
 import { RouteRecordRaw } from 'vue-router'
 export default {
   path: '/core/system',
-  component: () => import('@@/layouts/system.vue'),
+  component: () => import('#/layouts/system.vue'),
   meta: { auth: true },
   children: [
     {
@@ -11,17 +11,17 @@ export default {
     {
       name: 'system.index',
       path: 'index',
-      component: () => import('@@/pages/system/index.vue'),
+      component: () => import('#/pages/system/index.vue'),
     },
     {
       name: 'user.index',
       path: 'user',
-      component: () => import('@@/pages/user/index.vue'),
+      component: () => import('#/pages/user/index.vue'),
     },
     {
       name: 'system.edit',
       path: 'edit',
-      component: () => import('@@/pages/system/edit.vue'),
+      component: () => import('#/pages/system/edit.vue'),
     },
   ],
 } as RouteRecordRaw

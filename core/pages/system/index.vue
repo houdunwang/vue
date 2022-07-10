@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { isSuperAdmin } from '@@/utils/helper'
+import { isSuperAdmin } from '#/utils/helper'
 </script>
 
 <template>

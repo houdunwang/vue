@@ -1,6 +1,6 @@
 import { ElMessage } from 'element-plus'
-import { apiCodeToExistUser, apiCodeToNoExistUser, apiCode } from '@@/apis/codeApi'
-import store from '@@/utils/store'
+import { apiCodeToExistUser, apiCodeToNoExistUser, apiCode } from '#/apis/codeApi'
+import store from '#/utils/store'
 import dayjs from 'dayjs'
 
 export type ICodeSendType = 'any' | 'exist' | 'notExist'

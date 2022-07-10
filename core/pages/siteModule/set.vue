@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { siteFind } from '@@/apis/site'
-import { addSiteModule, getSiteModuleList, removeSiteModule, setSiteDefaultModule } from '@@/apis/siteModule'
-import { moduleTableColumns } from '@@/config/table'
+import { siteFind } from '#/apis/site'
+import { addSiteModule, getSiteModuleList, removeSiteModule, setSiteDefaultModule } from '#/apis/siteModule'
+import { moduleTableColumns } from '#/config/table'
 import { ElMessageBox } from 'element-plus'
 const { sid } = defineProps<{ sid: any }>()
 

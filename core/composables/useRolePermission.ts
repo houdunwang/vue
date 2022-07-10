@@ -1,5 +1,5 @@
-import * as api from '@@/apis/rolePermission'
-import router from '@@/router'
+import * as api from '#/apis/rolePermission'
+import router from '#/router'
 
 export default () => {
   const sid = router.currentRoute.value.query.sid as any

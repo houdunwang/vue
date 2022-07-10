@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import useCaptcha from '@@/composables/useCaptcha'
+import useCaptcha from '#/composables/useCaptcha'
 
 const props = defineProps({
   captcha_code: String,

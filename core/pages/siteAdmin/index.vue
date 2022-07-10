@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { adminTableColumns } from '@@/config/table'
+import { adminTableColumns } from '#/config/table'
 import TabVue from './tab.vue'
 
 const router = useRouter()

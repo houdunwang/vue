@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import useCode, { ICodeSendType } from '@@/composables/useCode'
+import useCode, { ICodeSendType } from '#/composables/useCode'
 
 const props = withDefaults(defineProps<{ account: string; code: string; type?: ICodeSendType }>(), {
   account: '',

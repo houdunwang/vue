@@ -1,4 +1,4 @@
-import errorStore from '@@/store/errorStore'
+import errorStore from '#/store/errorStore'
 
 export default {
   mounted(el: HTMLElement, binding: any) {

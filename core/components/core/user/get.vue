@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { userTableColumns } from '@@/config/table'
+import { userTableColumns } from '#/config/table'
 const { load, users } = useUser()
 const emit = defineEmits(['select'])
 await load()

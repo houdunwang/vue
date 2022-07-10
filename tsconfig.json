@@ -14,9 +14,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "#/*": ["./types/*"],
-      "@@/*": ["./core/*"],
-      "##/*": ["./core/types/*"]
+      "#/*": ["./core/*"]
     },
     "types": ["element-plus/global", "echarts", "lodash", "web-bluetooth", "naive-ui/volar"]
   },
@@ -27,9 +25,7 @@
     "src/**/*.vue",
     "core/**/*.ts",
     "core/**/*.d.ts",
-    "core/**/*.vue",
-    "types/*.ts",
-    "types/*.d.ts"
+    "core/**/*.vue"
   ],
   "exclude": ["node_modules", "dist"]
 }
