@@ -60,12 +60,15 @@ type ModuleModel = {
   version: string
   author: string
   preview: string
+  admin: boolean
+  front: boolean
   config: {
     name: string
     version: string
     title: string
     author: string
     admin: boolean
+    front: boolean
   }
   permissions: {
     title: string

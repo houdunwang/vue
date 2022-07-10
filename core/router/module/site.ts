@@ -7,13 +7,9 @@ export default {
   meta: { auth: true },
   children: [
     {
-      name: 'core',
-      path: '/core',
-      redirect: { name: 'site.index' },
-    },
-    {
       name: 'site.index',
       path: '',
+      alias: '/core',
       component: () => import('@@/views/site/index.vue'),
     },
     {

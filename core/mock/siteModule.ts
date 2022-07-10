@@ -10,12 +10,15 @@ const data = {
   install: false,
   created_at: '2022-06-20T08:08:10.000000Z',
   updated_at: '2022-06-20T08:08:10.000000Z',
+  admin: true,
+  front: true,
   config: {
     title: '博客',
     name: 'Blog',
     version: '1.0',
     author: '后盾人',
     admin: true,
+    front: true,
   },
   permission: [
     {

@@ -7,8 +7,8 @@ const { currentSite, site } = useSite()
 await Promise.all([currentSite(), get()])
 
 //跳转到模块后台
-const redirectModuleAdmin = (module: ModuleModel) => {
-  window.open(env.VITE_MOCK_ENABLE ? '/admin' : `/${module.name}/admin`)
+const redirect = (url: string) => {
+  window.open(url)
 }
 
 const setDefaultModule = async (id: any) => {
@@ -23,6 +23,7 @@ const setDefaultModule = async (id: any) => {
       { label: '站点列表', route: { name: 'site.index' } },
       { label: `【${site}】站点模块设置`, route: { name: `site.module.index` } },
     ]" />
+
   <CoreModuleSelectModule @select="add" class="mb-2" v-if="isSuperAdmin()" />
 
   <section v-if="modules.data.length">
@@ -31,8 +32,19 @@ const setDefaultModule = async (id: any) => {
       <h4>{{ module.title }}</h4>
       <div class="py-2 bg-gray-200 border-t mt-3 w-full flex justify-center">
         <el-button-group>
-          <el-button type="primary" size="small" @click="redirectModuleAdmin(module)" v-if="module.config.admin">
-            进入模块
+          <el-button
+            type="primary"
+            size="small"
+            @click="$router.push(env.VITE_MOCK_ENABLE ? { name: 'admin' } : `/${module.name}/admin`)"
+            v-if="module.admin">
+            模块后台
+          </el-button>
+          <el-button
+            type="success"
+            size="small"
+            @click="$router.push(env.VITE_MOCK_ENABLE ? { name: 'front' } : `/${module.name}/front`)"
+            v-if="module.front">
+            访问前台
           </el-button>
           <el-button type="danger" size="small" @click="del(module.id)" v-if="isSuperAdmin()"> 删除模块 </el-button>
           <template v-if="access('system-module-set-default', site!)">
@@ -43,7 +55,7 @@ const setDefaultModule = async (id: any) => {
               v-if="module.id == site?.module_id">
               默认模块
             </el-button>
-            <el-button type="info" size="small" @click="setDefaultModule(module.id)" v-else> 设为默认模块 </el-button>
+            <el-button type="info" size="small" @click="setDefaultModule(module.id)" v-else> 默认模块 </el-button>
           </template>
         </el-button-group>
       </div>
@@ -56,7 +68,7 @@ const setDefaultModule = async (id: any) => {
 
 <style lang="scss" scoped>
 section {
-  @apply grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-2;
+  @apply grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2;
   > div {
     @apply border flex flex-col items-center rounded-md hover:shadow-lg duration-300;
     h4 {

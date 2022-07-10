@@ -83,8 +83,18 @@ export const moduleForm = [
     type: 'radio',
     value: true,
     options: [
-      ['是', true],
-      ['否', false],
+      ['有', true],
+      ['无', false],
+    ],
+  },
+  {
+    title: '前台访问',
+    name: 'front',
+    type: 'radio',
+    value: true,
+    options: [
+      ['有', true],
+      ['无', false],
     ],
   },
 ] as FormFieldType[]

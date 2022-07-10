@@ -8,7 +8,7 @@ function autoloadModuleRoutes(): RouteRecordNormalized[] {
 
   if (env.DEV || (!env.DEV && env.VITE_BUILD_CORE_ROUTE)) {
     register(routes, import.meta.globEager('./module/**/*.ts'))
-    register(routes, import.meta.globEager('./admin/**/*.ts'))
+    register(routes, import.meta.globEager('./addon/**/*.ts'))
   }
   register(routes, import.meta.globEager('../../src/router/*.ts'))
 
