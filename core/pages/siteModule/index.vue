@@ -21,7 +21,7 @@ const setDefaultModule = async (id: any) => {
   <CoreHdTab
     :tabs="[
       { label: '站点列表', route: { name: 'site.index' } },
-      { label: `【${site}】站点模块设置`, route: { name: `site.module.index` } },
+      { label: `【${site?.title}】站点模块设置`, route: { name: `site.module.index` } },
     ]" />
 
   <CoreModuleSelectModule @select="add" class="mb-2" v-if="isSuperAdmin()" />
@@ -35,29 +35,21 @@ const setDefaultModule = async (id: any) => {
           <el-button
             type="primary"
             size="small"
-            @click="
-              $router.push(
-                env.VITE_MOCK_ENABLE ? { name: 'admin', query: { sid: 1 } } : `/${module.name}/admin?sid=${site?.id}`,
-              )
-            "
+            @click="redirect(`/${module.name}/admin?sid=${site?.id}`)"
             v-if="module.admin">
             模块后台
           </el-button>
           <el-button
             type="success"
             size="small"
-            @click="
-              $router.push(
-                env.VITE_MOCK_ENABLE ? { name: 'home', query: { sid: 1 } } : `/${module.name}?sid=${site?.id}`,
-              )
-            "
+            @click="redirect(`/${module.name}?sid=${site?.id}`)"
             v-if="module.front">
             访问前台
           </el-button>
           <el-button type="danger" size="small" @click="del(module.id)" v-if="isSuperAdmin()"> 删除模块 </el-button>
           <template v-if="access('system-module-set-default', site!)">
             <el-button
-              type="success"
+              type="warning"
               size="small"
               @click="setDefaultModule(module.id)"
               v-if="module.id == site?.module_id">
