@@ -10,14 +10,13 @@ export function addSite(data: Record<string, any>) {
     .then((r) => r.data)
 }
 
-export function updateSite(data: Record<string, any>) {
-  return http
-    .request<SiteModel>({
-      url: `/site/${data.id}`,
-      method: 'PUT',
-      data,
-    })
-    .then((r) => r.data)
+export async function updateSite(data: Record<string, any>) {
+  const r = await http.request<SiteModel>({
+    url: `/site/${data.id}`,
+    method: 'PUT',
+    data,
+  })
+  return r.data
 }
 
 export function getSiteList() {
