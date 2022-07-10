@@ -14,22 +14,22 @@ export default {
     {
       name: 'site.index',
       path: '',
-      component: () => import('@@/views/site/index.vue'),
+      component: () => import('@@/pages/site/index.vue'),
     },
     {
       name: 'site.add',
       path: 'add',
-      component: () => import('@@/views/site/add.vue'),
+      component: () => import('@@/pages/site/add.vue'),
     },
     {
       name: 'site.edit',
-      path: ':sid',
-      component: () => import('@@/views/site/edit.vue'),
+      path: 'edit',
+      component: () => import('@@/pages/site/edit.vue'),
     },
     {
       name: 'site.config',
-      path: 'config/:sid',
-      component: () => import('@@/views/site/config.vue'),
+      path: 'config',
+      component: () => import('@@/pages/site/config.vue'),
     },
   ],
 } as RouteRecordRaw

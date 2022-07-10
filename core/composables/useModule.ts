@@ -5,7 +5,7 @@ import router from '@@/router'
 export default () => {
   const modules = ref<ResponsePageResult<ModuleModel>>()
   const module = ref<ModuleModel>()
-  const sid = router.currentRoute.value.params.sid as any
+  const sid = router.currentRoute.value.query.sid as any
 
   const load = async () => {
     modules.value = await api.getModuleList()

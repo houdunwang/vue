@@ -12,7 +12,7 @@ export default (plugins: Plugin[], isBuild: boolean, env: ImportMetaEnv) => {
       imports: ['vue', 'vue-router'],
       //composables目录文件按需加载
       dirs: ['src/composables', 'core/composables'],
-      dts: 'types/auto-imports.d.ts',
+      dts: 'core/types/auto-imports.d.ts',
     }),
     Components({
       resolvers: [
@@ -32,7 +32,7 @@ export default (plugins: Plugin[], isBuild: boolean, env: ImportMetaEnv) => {
       //组件名称包含目录，防止同名组件冲突
       directoryAsNamespace: true,
       //指定类型声明文件，为true时在项目根目录创建
-      dts: 'types/components.d.ts',
+      dts: 'core/types/components.d.ts',
     }),
   )
 }

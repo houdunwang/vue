@@ -7,19 +7,19 @@ export default {
     {
       path: '/login',
       name: 'login',
-      component: () => import('@@/views/auth/login.vue'),
+      component: () => import('@@/pages/auth/login.vue'),
       meta: { guest: true },
     },
     {
       path: '/register',
       name: 'register',
-      component: () => import('@@/views/auth/register.vue'),
+      component: () => import('@@/pages/auth/register.vue'),
       meta: { guest: true },
     },
     {
       path: '/password',
       name: 'password',
-      component: () => import('@@/views/auth/password.vue'),
+      component: () => import('@@/pages/auth/password.vue'),
       meta: { guest: true },
     },
   ],

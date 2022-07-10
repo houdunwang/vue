@@ -8,12 +8,12 @@ export default {
     {
       name: 'module.index',
       path: 'index',
-      component: () => import('@@/views/module/index.vue'),
+      component: () => import('@@/pages/module/index.vue'),
     },
     {
       name: 'module.design',
       path: 'design',
-      component: () => import('@@/views/module/design.vue'),
+      component: () => import('@@/pages/module/design.vue'),
     },
   ],
 } as RouteRecordRaw

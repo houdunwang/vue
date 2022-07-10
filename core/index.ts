@@ -4,6 +4,7 @@ import plugin from '@@/plugins'
 import directive from '@@/directives'
 import App from './App.vue'
 import '@@/styles/global.scss'
+import '@/styles/global.scss'
 import 'animate.css'
 
 class Main {

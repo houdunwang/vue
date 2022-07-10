@@ -5,8 +5,8 @@ import { ElMessageBox } from 'element-plus'
 export default () => {
   const roles = ref<ResponsePageResult<RoleModel>>()
   const role = ref<RoleModel>()
-  const sid = router.currentRoute.value.params.sid as any
-  const id = router.currentRoute.value.params.id as any
+  const sid = router.currentRoute.value.query.sid as any
+  const id = router.currentRoute.value.query.id as any
 
   const load = async (page: number = 1, params: any = {}) => {
     roles.value = await api.getRoleList(sid, page, params)
@@ -20,12 +20,12 @@ export default () => {
 
   const add = async (model: RoleModel) => {
     await api.addRole(sid, model)
-    router.push({ name: 'role.index' })
+    router.push({ name: 'role.index', query: { sid } })
   }
 
   const update = async () => {
     await api.updateRole(sid, role.value!)
-    router.push({ name: 'role.index' })
+    router.push({ name: 'role.index', query: { sid } })
   }
 
   const find = async (id: any) => {

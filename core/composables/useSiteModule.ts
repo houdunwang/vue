@@ -5,7 +5,7 @@ import { Ref } from 'vue'
 
 export default () => {
   const modules = ref() as unknown as Ref<ResponsePageResult<ModuleModel>>
-  const sid = router.currentRoute.value.params.sid as any
+  const sid = router.currentRoute.value.query.sid as any
 
   //获取站点模块
   const get = async () => {

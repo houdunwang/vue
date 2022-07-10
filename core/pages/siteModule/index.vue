@@ -4,7 +4,7 @@ import { isSuperAdmin, access } from '@@/utils/helper'
 
 const { add, get, modules, setDefault, del } = useSiteModule()
 const { currentSite, site } = useSite()
-await Promise.all([currentSite(), get()])
+await Promise.all([currentSite(), get(), currentSite()])
 
 //跳转到模块后台
 const redirect = (url: string) => {
@@ -35,14 +35,22 @@ const setDefaultModule = async (id: any) => {
           <el-button
             type="primary"
             size="small"
-            @click="$router.push(env.VITE_MOCK_ENABLE ? { name: 'admin' } : `/${module.name}/admin`)"
+            @click="
+              $router.push(
+                env.VITE_MOCK_ENABLE ? { name: 'admin', query: { sid: 1 } } : `/${module.name}/admin?sid=${site?.id}`,
+              )
+            "
             v-if="module.admin">
             模块后台
           </el-button>
           <el-button
             type="success"
             size="small"
-            @click="$router.push(env.VITE_MOCK_ENABLE ? { name: 'front' } : `/${module.name}/front`)"
+            @click="
+              $router.push(
+                env.VITE_MOCK_ENABLE ? { name: 'home', query: { sid: 1 } } : `/${module.name}?sid=${site?.id}`,
+              )
+            "
             v-if="module.front">
             访问前台
           </el-button>

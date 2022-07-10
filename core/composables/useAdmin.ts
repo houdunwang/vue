@@ -5,11 +5,11 @@ import { ElMessageBox } from 'element-plus'
 export default () => {
   const admins = ref<ResponsePageResult<UserModel>>()
   const admin = ref<UserModel>()
-  const sid = router.currentRoute.value.params.sid as unknown as number
-  const id = router.currentRoute.value.params.id as any
+  const sid = router.currentRoute.value.query.sid as unknown as number
+  const id = router.currentRoute.value.query.id as any
 
-  const load = async (page: number = 1, params: any = {}) => {
-    admins.value = await api.getAdminList(sid, page, params)
+  const load = async (page: number = 1, query: any = {}) => {
+    admins.value = await api.getAdminList(sid, page, query)
   }
 
   const del = async (model: UserModel) => {
@@ -29,7 +29,7 @@ export default () => {
 
   const setRole = async (id: any, roles: any[]) => {
     await api.syncAdminRole(sid, id, roles)
-    router.push({ name: 'site.admin.index', params: { sid } })
+    router.push({ name: 'site.admin.index', query: { sid } })
   }
   const current = async () => {
      await find(id)

@@ -3,7 +3,7 @@ import router from '@@/router'
 
 export default () => {
   const permissions = ref()
-  const sid = router.currentRoute.value.params.sid as any
+  const sid = router.currentRoute.value.query.sid as any
 
   const getPermission = async () => {
     permissions.value = await getSitePermission(sid)

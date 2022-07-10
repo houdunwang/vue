@@ -12,7 +12,7 @@ const buttons = [
   {
     title: '设置角色',
     action(model: UserModel) {
-      router.push({ name: `site.admin.role`, params: { sid: siteService.sid, id: model.id } })
+      router.push({ name: `site.admin.role`, query: { sid: siteService.sid, id: model.id } })
     },
   },
   {

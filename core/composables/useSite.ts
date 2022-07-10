@@ -4,7 +4,7 @@ import router from '@@/router'
 export default () => {
   const sites = ref<ResponsePageResult<SiteModel>>()
   const site = ref<SiteModel>()
-  const sid = router.currentRoute.value.params.sid as any
+  const sid = router.currentRoute.value.query.sid as any
 
   const load = async () => {
     sites.value = await getSiteList()
@@ -12,7 +12,6 @@ export default () => {
 
   //根据参数获取站点
   const currentSite = async () => {
-    const sid = router.currentRoute.value.params.sid
     site.value = await siteFind(sid)
   }
 

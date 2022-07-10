@@ -11,17 +11,17 @@ export default {
     {
       name: 'system.index',
       path: 'index',
-      component: () => import('@@/views/system/index.vue'),
+      component: () => import('@@/pages/system/index.vue'),
     },
     {
       name: 'user.index',
       path: 'user',
-      component: () => import('@@/views/user/index.vue'),
+      component: () => import('@@/pages/user/index.vue'),
     },
     {
       name: 'system.edit',
       path: 'edit',
-      component: () => import('@@/views/system/edit.vue'),
+      component: () => import('@@/pages/system/edit.vue'),
     },
   ],
 } as RouteRecordRaw

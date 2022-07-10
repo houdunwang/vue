@@ -1,7 +1,7 @@
 import { RouteRecordRaw } from 'vue-router'
 export default {
   //Blog需要替换为你的模块名
-  path: '/Blog/front',
+  path: '/Blog',
   component: () => import('@/App.vue'),
   children: [
     {

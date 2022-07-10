@@ -16,13 +16,13 @@ const props = defineProps<{ site: SiteModel }>()
         <div
           class="ml-2 text-gray-600 font-normal cursor-pointer"
           v-if="site.module"
-          @click="$router.push({ name: 'site.module.index', params: { sid: props.site.id } })">
+          @click="$router.push({ name: 'site.module.index', query: { sid: props.site.id } })">
           <el-tag type="success" size="small" effect="dark">{{ site.module.title }}</el-tag>
         </div>
       </section>
       <section
         class="cursor-pointer"
-        @click="$router.push({ name: 'site.module.index', params: { sid: props.site.id } })">
+        @click="$router.push({ name: 'site.module.index', query: { sid: props.site.id } })">
         <icon-config theme="outline" fill="#333" strokeLinejoin="bevel" strokeLinecap="butt" class="mr-1" />
         扩展模块
       </section>
@@ -46,18 +46,18 @@ const props = defineProps<{ site: SiteModel }>()
           <icon-home theme="outline" strokeLinejoin="bevel" strokeLinecap="butt" />
           访问首页
         </a>
-        <router-link :to="{ name: 'role.index', params: { sid: site.id } }" v-access:role-list="site">
+        <router-link :to="{ name: 'role.index', query: { sid: site.id } }" v-access:role-list="site">
           <icon-permissions theme="outline" strokeLinejoin="bevel" strokeLinecap="butt" />
           角色管理
         </router-link>
-        <router-link :to="{ name: 'site.admin.index', params: { sid: site.id } }" v-access:admin-list="site">
+        <router-link :to="{ name: 'site.admin.index', query: { sid: site.id } }" v-access:admin-list="site">
           <icon-avatar theme="outline" strokeLinejoin="bevel" strokeLinecap="butt" />
           管理员设置
         </router-link>
-        <router-link :to="{ name: 'site.config', params: { sid: site.id } }" v-access:site-config="site">
+        <router-link :to="{ name: 'site.config', query: { sid: site.id } }" v-access:site-config="site">
           <icon-config theme="outline" strokeLinejoin="bevel" strokeLinecap="butt" /> 站点配置
         </router-link>
-        <router-link :to="{ name: 'site.edit', params: { sid: site.id } }" v-access:site-edit="site">
+        <router-link :to="{ name: 'site.edit', query: { sid: site.id } }" v-access:site-edit="site">
           <icon-editor theme="outline" strokeLinejoin="bevel" strokeLinecap="butt" />
           编辑站点
         </router-link>

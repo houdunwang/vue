@@ -9,12 +9,12 @@ const { site, role } = defineProps<{ site?: SiteModel; role?: RoleModel }>()
       { label: '站点列表', route: { name: 'site.index' } },
       {
         label: `站点角色列表`,
-        route: { name: 'role.index', params: { sid: site.id } },
+        route: { name: 'role.index', query: { sid: site.id } },
         permission: { name: 'role-list', site },
       },
       {
         label: `添加角色`,
-        route: { name: 'role.add', params: { sid: site.id } },
+        route: { name: 'role.add', query: { sid: site.id } },
         permission: { name: 'role-add', site },
       },
       {
@@ -31,12 +31,12 @@ const { site, role } = defineProps<{ site?: SiteModel; role?: RoleModel }>()
       },
       {
         label: `管理员列表`,
-        route: { name: 'site.admin.index', params: { sid: site.id } },
+        route: { name: 'site.admin.index', query: { sid: site.id } },
         permission: { name: 'admin-list', site },
       },
       {
         label: `权限设置`,
-        route: { name: 'site.role.permission', params: { sid: site.id } },
+        route: { name: 'site.role.permission', query: { sid: site.id } },
         permission: { name: 'admin-list', site },
         current: true,
       },
