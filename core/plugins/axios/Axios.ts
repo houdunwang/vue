@@ -78,17 +78,17 @@ export default class Axios {
             errorStore().setErrors(error.response.data.errors)
             break
           case 403:
-            ElMessage({ type: 'error', message: '没有操作权限' })
+            ElMessage({ type: 'error', message: message ?? '没有操作权限' })
             break
           case 404:
             // router.push('404')
             break
           case 429:
-            ElMessage({ type: 'error', message: '请示过于频繁，请稍候再试' })
+            ElMessage({ type: 'error', message: message ?? '请示过于频繁，请稍候再试' })
             break
           default:
             if (message) {
-              ElMessage({ type: 'error', message: '服务器错误' })
+              ElMessage({ type: 'error', message: message ?? '服务器错误' })
             }
         }
         return Promise.reject(error)
