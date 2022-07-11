@@ -49,6 +49,9 @@ const emit = defineEmits<{
               class="w-[200px] rounded-sm" />
           </div>
         </template>
+        <template v-else-if="f.type == 'wangeditor'">
+          <CoreEditorWangEditor v-model="model[f.name]" />
+        </template>
         <template v-else>
           <el-input
             @keyup.enter="emit('submit', model)"

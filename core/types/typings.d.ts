@@ -2,7 +2,7 @@ interface FormFieldType {
   title: string
   name: string
   error_name?: string
-  type?: 'input' | 'textarea' | 'image' | 'preview' | 'radio'
+  type?: 'input' | 'textarea' | 'image' | 'preview' | 'radio' | 'wangeditor' | 'markdown'
   options?: Record<keyof any, any>
   readonly?: boolean
   disabled?: boolean
