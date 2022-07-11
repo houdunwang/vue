@@ -7,7 +7,6 @@ const { update } = useRolePermission()
 const { getPermission, permissions: sitePermissons } = useSitePermission()
 await Promise.all([await currentSite(), current(), getPermission()])
 const permissions = ref(role.value?.permissions.map((p) => p.name) ?? [])
-console.log(sitePermissons.value.data)
 </script>
 
 <template>

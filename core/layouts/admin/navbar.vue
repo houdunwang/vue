@@ -1,8 +1,5 @@
 <script setup lang="ts">
 const { show } = useMenu()
-watch(show, () => {
-  console.log(show.value)
-})
 </script>
 
 <template>

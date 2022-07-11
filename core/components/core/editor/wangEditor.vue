@@ -15,7 +15,6 @@ const editorConfig: Partial<any> = {
     },
   },
   onChange: (editor: any) => {
-    console.log('html', editor.getHtml())
     emit('update:modelValue', editor.getHtml())
   },
 }
