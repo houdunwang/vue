@@ -12,12 +12,6 @@ const redirect = (url: any) => {
     <section>
       <img src="/images/xj8.jpg" class="w-full rounded-full w-32 h-32 object-cover" />
       <h2>恭喜！安装成功</h2>
-      <div class="text-left py-3 text-gray-700">接着执行以下步骤</div>
-      <ol class="text-gray-700 text-sm">
-        <li>1. 访问后台将当前域名设置给某个站点</li>
-        <li>2. 并为站点设置默认模块</li>
-      </ol>
-
       <div class="flex flex-row">
         <el-button type="success" size="default" @click="redirect('/core')" class="mt-5"> 访问后台 </el-button>
         <el-button
