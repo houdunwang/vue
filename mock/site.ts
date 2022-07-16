@@ -99,18 +99,6 @@ export default [
         message: '站点删除成功',
       }
     },
-    // rawResponse: async (req, res) => {
-    //   let reqbody = ''
-    //   await new Promise((resolve) => {
-    //     req.on('data', (chunk) => {
-    //       reqbody += chunk
-    //     })
-    //     req.on('end', () => resolve(undefined))
-    //   })
-    //   res.setHeader('Content-Type', 'text/plain')
-    //   res.statusCode = 200
-    //   res.end(`hello, ${reqbody}`)
-    // },
   },
   {
     url: '/api/update_all_site_data',
