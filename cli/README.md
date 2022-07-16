@@ -19,7 +19,7 @@ houdunren-vue 帮助大家加快前端项目的开发，本项目提供了前端
 
 **在线文档**
 
-请查看[在线手册](https://doc.houdunren.com)学习使用，[后盾人](https://www.houdunren.com/) 也提供了丰富的视频教程。
+请查看[在线手册](https://doc.houdunren.com)学习使用，同时 [后盾人](https://www.houdunren.com/) 也提供了丰富的视频教程。
 
 
 
