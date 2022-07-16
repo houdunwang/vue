@@ -4,7 +4,6 @@ import plugin from '@/plugins'
 import directive from '@/directives'
 import App from './App.vue'
 import '@/styles/global.scss'
-import 'animate.css'
 
 async function bootstrap() {
   const app = createApp(App)
@@ -15,4 +14,4 @@ async function bootstrap() {
   app.mount('#app')
 }
 
-await void bootstrap()
+void bootstrap()
