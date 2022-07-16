@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ECharts } from 'echarts/core'
 import { ref, nextTick } from 'vue'
 import { echart1, echart2, echart3, echart4 } from './echart'
 

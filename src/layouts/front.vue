@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import siteStore from '#/store/siteStore'
+import siteStore from '@/store/siteStore'
 
 const store = siteStore()
 await store.getCurrentSite()
@@ -8,5 +8,3 @@ await store.getCurrentSite()
 <template>
   <router-view />
 </template>
-
-<style lang="scss"></style>

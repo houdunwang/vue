@@ -1,7 +1,7 @@
 import { defineConfig, loadEnv } from 'vite'
-import alias from './core/vite/alias'
-import { parseEnv } from './core/vite/util'
-import setupPlugins from './core/vite/plugins'
+import alias from './vite/alias'
+import { parseEnv } from './vite/util'
+import setupPlugins from './vite/plugins'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
 export default defineConfig(({ command, mode }) => {
@@ -9,12 +9,7 @@ export default defineConfig(({ command, mode }) => {
   const env = parseEnv(loadEnv(mode, process.cwd()))
 
   return {
-    plugins: [
-      ...setupPlugins(isBuild, env),
-      vueJsx({
-        // options are passed on to @vue/babel-plugin-jsx
-      }),
-    ],
+    plugins: [...setupPlugins(isBuild, env), vueJsx({})],
     //静态文件 url 前缀
     base: isBuild ? '/core/' : '/',
     resolve: {
