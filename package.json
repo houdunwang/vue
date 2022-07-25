@@ -42,7 +42,6 @@
     },
     "devDependencies": {
         "@types/babel__core": "^7.1.19",
-        "@types/echarts": "^4.9.16",
         "@types/lodash": "^4.14.182",
         "@types/mockjs": "^1.0.6",
         "@types/prismjs": "^1.26.0",

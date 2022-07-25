@@ -6,7 +6,6 @@ specifiers:
   '@kangc/v-md-editor': ^2.3.15
   '@toast-ui/editor': ^3.1.8
   '@types/babel__core': ^7.1.19
-  '@types/echarts': ^4.9.16
   '@types/lodash': ^4.14.182
   '@types/mockjs': ^1.0.6
   '@types/prismjs': ^1.26.0
@@ -89,7 +88,6 @@ dependencies:
 
 devDependencies:
   '@types/babel__core': 7.1.19
-  '@types/echarts': 4.9.16
   '@types/lodash': 4.14.182
   '@types/mockjs': 1.0.6
   '@types/prismjs': 1.26.0
@@ -673,12 +671,6 @@ packages:
       '@babel/types': 7.18.8
     dev: true
 
-  /@types/echarts/4.9.16:
-    resolution: {integrity: sha512-bfiagfPw3dWauAIJ9fgoJQoL4hLWlGcltqwbE6LGye0NIY5xnbZau+mDmadCzGojic3MWuFDCUiO25kl4sRGeA==}
-    dependencies:
-      '@types/zrender': 4.0.3
-    dev: true
-
   /@types/eslint-scope/3.7.4:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
@@ -800,10 +792,6 @@ packages:
     dependencies:
       '@types/node': 18.0.5
     dev: false
-
-  /@types/zrender/4.0.3:
-    resolution: {integrity: sha512-EPI269lkHNsObwILJ1k1z7znLjKyePuWRy/XKK0shSGpBb9cIX307arcwJV4+2NeZj5wEjN06r4D8yFv7sI06g==}
-    dev: true
 
   /@uppy/companion-client/2.2.1:
     resolution: {integrity: sha512-Y3E10NJLMfp/wjgthNhx3gJtT67fzFCPNPFwpNNRs5iJsW6PANhJ420eyMUFzfmEZ56ZzGYxr5pzJZx8YxHICQ==}
@@ -1102,7 +1090,7 @@ packages:
       snabbdom: ^3.1.0
     dependencies:
       '@wangeditor/core': 1.1.7_6defkpso6v3lhnex4qgberr6xy
-      dom7: mirrors.tencent.com/dom7/3.0.0
+      dom7: 3.0.0
       is-url: 1.2.4
       lodash.throttle: 4.1.1
       nanoid: 3.3.4
@@ -1146,7 +1134,7 @@ packages:
       '@types/event-emitter': 0.3.3
       '@uppy/core': 2.3.1
       '@uppy/xhr-upload': 2.1.2_@uppy+core@2.3.1
-      dom7: mirrors.tencent.com/dom7/3.0.0
+      dom7: 3.0.0
       event-emitter: 0.3.5
       html-void-elements: 2.0.1
       i18next: 20.6.1
@@ -5202,14 +5190,6 @@ packages:
     resolution: {integrity: sha512-8IiYdfwHj2rx0UeIGZGGU4WEVSDEdeVCaIg/fomejg1Xu6OifAL1GVzIPHg2D+MyUkbNgPWji90t0a8IDk+39w==}
     dependencies:
       tslib: mirrors.tencent.com/tslib/2.3.0
-    dev: false
-
-  mirrors.tencent.com/dom7/3.0.0:
-    resolution: {integrity: sha512-oNlcUdHsC4zb7Msx7JN3K0Nro1dzJ48knvBOnDPKJ2GV9wl1i5vydJZUSyOfrkKFDZEud/jBsTk92S/VGSAe/g==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/dom7/-/dom7-3.0.0.tgz}
-    name: dom7
-    version: 3.0.0
-    dependencies:
-      ssr-window: 3.0.0
     dev: false
 
   mirrors.tencent.com/tslib/2.3.0:

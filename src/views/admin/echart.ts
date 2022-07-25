@@ -1,4 +1,4 @@
-import * as echarts from 'echarts/core'
+import * as echarts from 'echarts'
 
 export const echart1 = {
   title: {
@@ -17,6 +17,7 @@ export const echart1 = {
     },
   ],
 }
+
 export const echart2 = {
   color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
   title: {
@@ -67,19 +68,6 @@ export const echart2 = {
         width: 0,
       },
       showSymbol: false,
-      areaStyle: {
-        opacity: 0.8,
-        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-          {
-            offset: 0,
-            color: 'rgb(128, 255, 165)',
-          },
-          {
-            offset: 1,
-            color: 'rgb(1, 191, 236)',
-          },
-        ]),
-      },
       emphasis: {
         focus: 'series',
       },
@@ -94,19 +82,6 @@ export const echart2 = {
         width: 0,
       },
       showSymbol: false,
-      areaStyle: {
-        opacity: 0.8,
-        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-          {
-            offset: 0,
-            color: 'rgb(0, 221, 255)',
-          },
-          {
-            offset: 1,
-            color: 'rgb(77, 119, 255)',
-          },
-        ]),
-      },
       emphasis: {
         focus: 'series',
       },
@@ -121,19 +96,6 @@ export const echart2 = {
         width: 0,
       },
       showSymbol: false,
-      areaStyle: {
-        opacity: 0.8,
-        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-          {
-            offset: 0,
-            color: 'rgb(55, 162, 255)',
-          },
-          {
-            offset: 1,
-            color: 'rgb(116, 21, 219)',
-          },
-        ]),
-      },
       emphasis: {
         focus: 'series',
       },
