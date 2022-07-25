@@ -1,6 +1,53 @@
 <script setup lang="ts">
 import { ref, nextTick } from 'vue'
 import { echart1, echart2, echart3, echart4 } from './echart'
+import * as echarts from 'echarts/core'
+import {
+  BarChart,
+  // 系列类型的定义后缀都为 SeriesOption
+  BarSeriesOption,
+  LineChart,
+  LineSeriesOption,
+} from 'echarts/charts'
+import {
+  TitleComponent,
+  // 组件类型的定义后缀都为 ComponentOption
+  TitleComponentOption,
+  TooltipComponent,
+  TooltipComponentOption,
+  GridComponent,
+  GridComponentOption,
+  // 数据集组件
+  DatasetComponent,
+  DatasetComponentOption,
+  // 内置数据转换器组件 (filter, sort)
+  TransformComponent,
+} from 'echarts/components'
+import { LabelLayout, UniversalTransition } from 'echarts/features'
+import { CanvasRenderer } from 'echarts/renderers'
+
+// 通过 ComposeOption 来组合出一个只有必须组件和图表的 Option 类型
+type ECOption = echarts.ComposeOption<
+  | BarSeriesOption
+  | LineSeriesOption
+  | TitleComponentOption
+  | TooltipComponentOption
+  | GridComponentOption
+  | DatasetComponentOption
+>
+
+// 注册必须的组件
+echarts.use([
+  TitleComponent,
+  TooltipComponent,
+  GridComponent,
+  DatasetComponent,
+  TransformComponent,
+  BarChart,
+  LabelLayout,
+  UniversalTransition,
+  CanvasRenderer,
+])
 
 interface ICard {
   title: string
@@ -45,13 +92,11 @@ const cards = ref<ICard[]>([
   },
 ])
 
-const echarts = window.echarts
-
 nextTick(() => {
-  echarts.init(document.getElementById('echart1') as HTMLDivElement).setOption(echart1)
-  echarts.init(document.getElementById('echart2') as HTMLDivElement).setOption(echart2)
-  echarts.init(document.getElementById('echart3') as HTMLDivElement).setOption(echart3)
-  echarts.init(document.getElementById('echart4') as HTMLDivElement).setOption(echart4)
+  echarts.init(document.getElementById('echart1') as HTMLDivElement).setOption(echart1 as ECOption)
+  echarts.init(document.getElementById('echart2') as HTMLDivElement).setOption(echart2 as ECOption)
+  echarts.init(document.getElementById('echart3') as HTMLDivElement).setOption(echart3 as ECOption)
+  echarts.init(document.getElementById('echart4') as HTMLDivElement).setOption(echart4 as ECOption)
 })
 </script>
 

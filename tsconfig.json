@@ -18,13 +18,6 @@
     },
     "types": ["element-plus/global", "echarts", "lodash", "web-bluetooth", "naive-ui/volar"]
   },
-  "include": [
-    "vite.config.ts",
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.vue",
-    "types/*.d.ts",
-    "types/*.ts",
-  ],
+  "include": ["vite.config.ts", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue", "types/*.d.ts", "types/*.ts"],
   "exclude": ["node_modules", "dist"]
 }

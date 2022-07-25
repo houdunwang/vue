@@ -1,5 +1,3 @@
-const echarts = window.echarts
-
 export const echart1 = {
   title: {
     text: 'ECharts 入门示例',

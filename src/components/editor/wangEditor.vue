@@ -1,49 +1,71 @@
 <script lang="ts" setup>
 import { uploadImage } from '@/apis/upload'
-const { modelValue, height = '300px' } = defineProps<{ modelValue: string; height?: string }>()
+import { IDomEditor, IEditorConfig, IToolbarConfig } from '@wangeditor/editor'
+import { Editor, Toolbar } from '@wangeditor/editor-for-vue'
+import '@wangeditor/editor/dist/css/style.css'
+import { onBeforeUnmount, ref, shallowRef, watch } from 'vue'
+
+interface IProps {
+  modelValue?: any
+}
+const props = withDefaults(defineProps<IProps>(), {
+  modelValue: '',
+})
+
 const emit = defineEmits(['update:modelValue'])
 
-const editorConfig: Partial<any> = {
+// 编辑器实例，必须用 shallowRef
+const editorRef = shallowRef<IDomEditor>()
+
+// 内容 HTML
+const valueHtml = ref(props.modelValue)
+
+// 组件销毁时，也及时销毁编辑器
+onBeforeUnmount(() => {
+  const editor = editorRef.value
+  if (editor == null) return
+  editor.destroy()
+})
+
+const handleCreated = (editor: IDomEditor) => {
+  editorRef.value = editor
+}
+
+watch([valueHtml], (value: any) => {
+  emit('update:modelValue', editorRef.value?.getHtml())
+})
+
+// 创建工具栏
+const mode = ref('default')
+
+const toolbarConfig: Partial<IToolbarConfig> = {
+  excludeKeys: ['group-video', 'undo', 'redo'],
+}
+
+const editorConfig: Partial<IEditorConfig> = {
   MENU_CONF: {
     uploadImage: {
+      //   server: '/api/upload/image',
       async customUpload(file: File, insertFn: any) {
         const form = new FormData()
         form.append('file', file, file.name)
-        const response = await uploadImage(form)
-        insertFn(response.data.url, '', '')
+        const res = await uploadImage(form)
+        insertFn(res.data.url, '', res.data.url)
       },
     },
   },
-  onChange: (editor: any) => {
-    emit('update:modelValue', editor.getHtml())
-  },
 }
-// 工具栏配置
-const toolbarConfig: Partial<any> = {}
-const win = window as any
-
-nextTick(() => {
-  // 创建编辑器
-  const editor = win.wangEditor.createEditor({
-    selector: '#editor-container',
-    config: editorConfig,
-    mode: 'default',
-  })
-  editor.setHtml(modelValue)
-  // 创建工具栏
-  const toolbar = win.wangEditor.createToolbar({
-    editor,
-    selector: '#toolbar-container',
-    config: toolbarConfig,
-    mode: 'default',
-  })
-})
 </script>
 
 <template>
   <div style="border: 1px solid #ccc">
-    <div id="toolbar-container" class="border-b"></div>
-    <div id="editor-container" :style="{ height }"></div>
+    <Toolbar style="border-bottom: 1px solid #ccc" :editor="editorRef" :defaultConfig="toolbarConfig" :mode="mode" />
+    <Editor
+      style="height: 500px; overflow-y: hidden"
+      v-model="valueHtml"
+      :defaultConfig="editorConfig"
+      :mode="mode"
+      @onCreated="handleCreated" />
   </div>
 </template>
 
