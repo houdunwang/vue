@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, nextTick } from 'vue'
 import { echart1, echart2, echart3, echart4 } from './echart'
-import * as echarts from 'echarts/core'
+import * as echarts from 'echarts'
 import {
   BarChart,
   // 系列类型的定义后缀都为 SeriesOption
