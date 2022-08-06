@@ -3,17 +3,10 @@ import dayjs from 'dayjs'
 import { ArrowDown } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
 
-const {
-  data,
-  buttons,
-  buttonWidth,
-  buttonType = 'drop',
-  columns,
-} = defineProps<{
+const { data, buttons, buttonWidth, columns } = defineProps<{
   data?: Record<string, any>[]
   buttons?: TableButton[]
   buttonWidth?: number
-  buttonType?: 'drop' | 'default'
   columns: TableColumnsType[]
 }>()
 
@@ -26,7 +19,12 @@ const emit = defineEmits<{
 let searchFields = $ref(columns && columns.filter((item) => item.search == true).map((item) => item.prop))
 let searchContent = $ref('')
 const search = async () => {
-  if (!searchFields.length) return ElMessage.error('请选择搜索类型')
+  if (!searchFields.length) {
+    return ElMessage({ type: 'error', message: '请选择搜索类型', grouping: true })
+  }
+  if (!searchContent) {
+    return ElMessage({ type: 'error', message: '请输入搜索内容', grouping: true })
+  }
   emit('search', { searchFields: searchFields, searchContent: searchContent })
 }
 
@@ -97,13 +95,7 @@ const buttonClientEvent = async (args: any) => {
         </template>
       </el-table-column>
 
-      <el-table-column
-        align="center"
-        width="110"
-        #default="{ row }"
-        v-if="buttons && buttonType == 'drop'"
-        fixed="right"
-        id="buttonGroup">
+      <el-table-column align="center" width="110" #default="{ row }" v-if="buttons" fixed="right" id="buttonGroup">
         <el-dropdown @command="buttonClientEvent">
           <el-button type="primary">
             操作

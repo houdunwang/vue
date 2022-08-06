@@ -1,11 +1,11 @@
 import { http } from '@/plugins/axios'
 
-export type ResponseData = {
+type ResponseData = {
   user: UserModel
   token: string
 }
 
-export function login(data: { account: string; password: string }) {
+export function login(data: { mobile: string; password: string }) {
   return http.request<ResponseData>({
     url: `login`,
     method: 'post',
@@ -13,14 +13,7 @@ export function login(data: { account: string; password: string }) {
   })
 }
 
-export interface RegisterFormData {
-  account: string
-  password: string
-  password_confirmation: string
-  code: string
-}
-
-export function register(data: RegisterFormData) {
+export function register(data: { mobile: string, password: string, password_confirmation: string }) {
   return http.request<ResponseData>({
     url: `register`,
     method: 'post',
@@ -28,16 +21,9 @@ export function register(data: RegisterFormData) {
   })
 }
 
-export interface ForgetPasswordFormData {
-  account: string
-  password: string
-  password_confirmation: string
-  code: string
-}
-
-export function forgetPassword(data: any) {
+export function forgetPassword(data: { mobile: string, password: string, password_confirmation: string }) {
   return http.request<ResponseData>({
-    url: 'account/forget-password',
+    url: 'forget-password',
     method: 'post',
     data,
   })

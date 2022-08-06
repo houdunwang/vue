@@ -13,25 +13,16 @@ export default {
       meta: { menu: { title: '工作台' } },
     },
     {
-      name: 'install',
-      path: '/install',
-      component: () => import('@/views/install/index.vue'),
-      meta: { menu: { title: '安装界面' } },
+      name: 'table',
+      path: 'table',
+      component: () => import('@/views/admin/table.vue'),
+      meta: { menu: { title: '表格展示' } },
     },
     {
-      name: 'install.info',
-      path: 'info',
-      component: () => import('@/views/install/info.vue'),
-    },
-    {
-      name: 'install.migrate',
-      path: 'migrate',
-      component: () => import('@/views/install/migrate.vue'),
-    },
-    {
-      name: 'install.finish',
-      path: 'finish',
-      component: () => import('@/views/install/finish.vue'),
+      name: 'form',
+      path: 'form',
+      component: () => import('@/views/admin/form.vue'),
+      meta: { menu: { title: '表单提交' } },
     },
   ],
 } as RouteRecordRaw

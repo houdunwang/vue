@@ -14,13 +14,24 @@ const show = ref(true)
 const history = ref<RouteRecordRaw[]>([])
 
 export default () => {
-  //路由跳转
-  const go = (route: RouteRecordRaw) => {
+  //记录历史路由（菜单）
+  const recordHistory = (route: RouteRecordRaw) => {
     if (history.value.length == 20) history.value.pop()
     const isExist = history.value.find((h) => h.name == route.name)
-    if (!isExist) history.value.unshift(route)
+    if (!isExist && !route.meta?.menu?.blank) history.value.unshift(route)
+  }
+  //路由跳转
+  const go = (route: RouteRecordRaw) => {
+    recordHistory(route)
+
+    if (route.meta?.menu?.blank) {
+      const url = router.getRoutes().find(r => r.name == route.name)?.path
+      return window.open(url)
+    }
 
     router.push(route)
   }
+
+
   return { routes, show, go, history }
 }

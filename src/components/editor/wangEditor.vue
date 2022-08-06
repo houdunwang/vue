@@ -7,9 +7,11 @@ import { onBeforeUnmount, ref, shallowRef, watch } from 'vue'
 
 interface IProps {
   modelValue?: any
+  height: number
 }
 const props = withDefaults(defineProps<IProps>(), {
   modelValue: '',
+  height: 300,
 })
 
 const emit = defineEmits(['update:modelValue'])
@@ -61,7 +63,7 @@ const editorConfig: Partial<IEditorConfig> = {
   <div style="border: 1px solid #ccc">
     <Toolbar style="border-bottom: 1px solid #ccc" :editor="editorRef" :defaultConfig="toolbarConfig" :mode="mode" />
     <Editor
-      style="height: 500px; overflow-y: hidden"
+      :style="`height: ${props.height}px; overflow-y: hidden`"
       v-model="valueHtml"
       :defaultConfig="editorConfig"
       :mode="mode"

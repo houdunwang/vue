@@ -5,5 +5,3 @@
     <component :is="Component" />
   </router-view>
 </template>
-
-<style lang="scss"></style>

@@ -1,14 +1,18 @@
+import { user } from './data';
 import { Random } from 'mockjs'
+import _ from 'lodash';
 
-export function create(config: Record<string, any>, num = 1) {
-  const data: Record<string, any>[] = []
+export function create(num = 1) {
+  const data: UserModel[] = []
   for (let i = 1; i <= num; i++) {
-    config.id = i
-    config.created_at = Random.datetime()
-    config.updated_at = Random.datetime()
-    config.avatar = image()
-    config.preview = image()
-    data.push(config)
+    const model = _.cloneDeep(user)
+    model.id = i
+    model.sex = _.random(1, 2)
+    model.avatar = Random.image('200x200')
+    model.nickname = Random.cname()
+    model.created_at = Random.datetime()
+    model.updated_at = Random.datetime()
+    data.push(model)
   }
   return data
 }
@@ -17,8 +21,8 @@ export function image() {
   return '/images/xj.jpg'
 }
 
-export function createPaginate(config: Record<string, any>, num = 1) {
-  const data = create(config, num)
+export function createPaginate(num = 1) {
+  const data = create(num)
   return {
     data,
     links: {
@@ -50,8 +54,8 @@ export function createPaginate(config: Record<string, any>, num = 1) {
       ],
       path: '/api/user',
       per_page: 10,
-      to: 2,
-      total: 2,
+      to: 5,
+      total: 50,
     },
   }
 }

@@ -1,27 +1,14 @@
 import { http } from '@/plugins/axios'
 
-export function getUserList(page = 1, params: Record<any, any> = {}) {
-  return http.request<UserModel[], ResponsePageResult<UserModel>>({
-    url:
-      `user?page=${page}&` +
-      Object.entries(params)
-        .map(([k, v]) => `${k}=${v}`)
-        .join('&'),
-  })
+export async function currentUserInfo() {
+  const r = await http
+    .request<UserModel>({
+      url: `user/current`,
+    })
+  return r.data
 }
 
-export function currentUserInfo() {
-  return http
-    .request<UserModel>({
-      url: `current_user_info`,
-    })
-    .then((r) => r.data)
+export async function userList() {
+  return await http.request<UserModel, ResponsePageResult<UserModel>>({ url: `user`, })
 }
 
-export function getUser(id: number) {
-  return http
-    .request<UserModel>({
-      url: `user/${id}`,
-    })
-    .then((r) => r.data)
-}

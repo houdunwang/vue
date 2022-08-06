@@ -2,10 +2,9 @@
 import MenuComponet from './admin/menu.vue'
 import Navbar from './admin/navbar.vue'
 import HistoryLink from './admin/historyLink.vue'
-import systemStore from '@/store/systemStore'
 import userStore from '@/store/userStore'
 
-await Promise.all([userStore().getUserInfo(), systemStore().load()])
+await Promise.all([userStore().getUserInfo()])
 </script>
 
 <template>
@@ -20,10 +19,11 @@ await Promise.all([userStore().getUserInfo(), systemStore().load()])
         <router-view #default="{ Component, route }">
           <Transition
             appear
+            mode="out-in"
             class="animate__animated"
             :enter-active-class="route.meta.enterClass ?? 'animate__fadeInRight'"
             :leave-active-class="route.meta.leaveClass ?? 'animate__fadeOutLeft'">
-            <div class="absolute w-full">
+            <div class="">
               <component :is="Component" />
             </div>
           </Transition>

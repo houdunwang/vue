@@ -1,9 +1,10 @@
-import { RouteEnum } from '@/enum/RouteEnum'
 import { CacheEnum } from '@/enum/CacheEnum'
-import store from '@/utils/store'
+import { HttpEnum } from '@/enum/httpEnum'
+import { RouteEnum } from '@/enum/RouteEnum'
 import router from '@/router/register'
-import axios, { AxiosRequestConfig } from 'axios'
 import errorStore from '@/store/errorStore'
+import store from '@/utils/store'
+import axios, { AxiosRequestConfig } from 'axios'
 import { ElLoading, ElMessage } from 'element-plus'
 
 export default class Axios {
@@ -70,20 +71,20 @@ export default class Axios {
         const { message } = data
 
         switch (status) {
-          case 401:
+          case HttpEnum.UNAUTHORIZED:
             store.remove(CacheEnum.TOKEN_NAME)
             router.push({ name: RouteEnum.LOGIN })
             break
-          case 422:
+          case HttpEnum.BAD_REQUEST:
             errorStore().setErrors(error.response.data.errors)
             break
-          case 403:
+          case HttpEnum.FORBIDDEN:
             ElMessage({ type: 'error', message: message ?? '没有操作权限' })
             break
-          case 404:
-            // router.push('404')
+          case HttpEnum.NOT_FOUND:
+            router.push({ name: RouteEnum.NOT_FOUND })
             break
-          case 429:
+          case HttpEnum.TOO_MANY_REQUESTS:
             ElMessage({ type: 'error', message: message ?? '请示过于频繁，请稍候再试' })
             break
           default:

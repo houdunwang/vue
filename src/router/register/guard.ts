@@ -4,7 +4,7 @@ import { RouteLocationNormalized, Router } from 'vue-router'
 import errorStore from '@/store/errorStore'
 
 class Guard {
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   public async run() {
     this.router.beforeEach(this.beforeEach.bind(this))

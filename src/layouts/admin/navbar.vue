@@ -12,8 +12,6 @@ const { show } = useMenu()
       <HdBreadcrumb class="hidden md:block" />
     </div>
     <div class="flex justify-center items-center relative cursor-pointer">
-      <router-link to="/" class="mr-2 text-sm text-gray-600 md:hidden">网站首页</router-link>
-      <router-link :to="{ name: 'core' }" class="mr-2 text-sm text-gray-600">系统平台</router-link>
       <HdFullscreen class="hidden md:flex mr-3 text-gray-600" />
       <UserDrop class="text-gray-500" />
     </div>

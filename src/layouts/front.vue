@@ -1,9 +1,4 @@
-<script setup lang="ts">
-import siteStore from '@/store/siteStore'
-
-const store = siteStore()
-await store.getCurrentSite()
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <router-view />
