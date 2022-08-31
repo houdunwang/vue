@@ -1,6 +1,5 @@
-import { Router, RouteRecordRaw, RouteRecordNormalized } from 'vue-router'
 import userStore from '@/store/userStore'
-import env from '@/utils/env'
+import { Router, RouteRecordNormalized, RouteRecordRaw } from 'vue-router'
 
 //注册路由
 function autoloadModuleRoutes(): RouteRecordNormalized[] {
@@ -23,7 +22,7 @@ export default (router: Router) => {
     //根据权限过滤
     route.children = route.children?.filter((r: RouteRecordRaw) => {
       const permission = r.meta?.permission
-      return permission ? user.permissions.find((p) => p.name == permission) : true
+      return permission ? user.permissions.find((p) => p == permission) : true
     })
     return route
   })

@@ -12,7 +12,7 @@ const user = userStore()
         :src="user.info?.avatar"
         fit="cover"
         class="w-8 h-8 rounded-full border-white" />
-      <span class="ml-1 text-sm">{{ user.info?.name }}</span>
+      <span class="ml-1 text-sm">{{ user.info?.nickname }}</span>
     </div>
     <section
       class="group-hover:block absolute right-0 top-full z-50 bg-white shadow-sm px-5 whitespace-nowrap border rounded-md hidden">

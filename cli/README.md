@@ -5,16 +5,15 @@ houdunren-vue 帮助大家加快前端项目的开发，本项目提供了前端
 **项目特点**
 
 - 组件自动加载
-- 提供丰富的组件
+- 提供组件扩展能力
 - 支持 typescript
 - 使用 vue3+pinia 等新技术
 - 项目结构清晰，方便快速开发
 - 全局表单验证
 - tailwindcss 与 element-plus 样式控制
-- 多个后台管理界面
+- 后台菜单自定义控制
+- 路由权限、图标等自定义控制
 - 移动端自适应用
-- 基于 token 身份验证
-
 
 
 **在线文档**
@@ -67,8 +66,8 @@ pnpm add -g houdunren-vue
 ? 请输入目录名 hd
 ✔ 项目创建成功，请依次执行以下命令
 cd hd
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 修改.env文件: VITE_MOCK_ENABLE=true
 ```
 
@@ -77,8 +76,6 @@ npm run dev
 你可以执行以下命令获取 `houdunren-vue` 获取更新
 
 ```
-npm update -g
-#或
 pnpm update -g
 ```
 
@@ -92,8 +89,6 @@ pnpm update -g
 
 ```
 pnpm add houdunren-vue
-#或
-npm install houdunren-vue
 ```
 
 然后执行命令安装项目
@@ -119,8 +114,6 @@ $ npm run dev
 ## 项目预览
 
 ![image-20220424180043074](https://git-readme-image.oss-cn-hangzhou.aliyuncs.com/houdunren-vue-cli/image-202204241800430745.jpg)
-
-![image-20220706223510626](https://git-readme-image.oss-cn-hangzhou.aliyuncs.com/houdunren-vue-cli/image-20220706223510625.jpg)
 
 ![image-20220424193919149](https://git-readme-image.oss-cn-hangzhou.aliyuncs.com/houdunren-vue-cli/image-20220706223604418.jpg)
 

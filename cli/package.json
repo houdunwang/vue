@@ -1,8 +1,13 @@
 {
     "name": "houdunren-vue",
     "description": "后盾人前端脚手架",
-    "version": "1.0.37",
+    "version": "1.0.44",
     "license": "MIT",
+    "homepage": "https://www.houdunren.com",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/houdunwang/vue"
+    },
     "bin": {
         "houdunren-vue": "index.js"
     },

@@ -10,14 +10,10 @@ export default defineConfig(({ command, mode }) => {
 
   return {
     plugins: [...setupPlugins(isBuild, env), vueJsx({})],
-    //静态文件 url 前缀
-    base: isBuild ? '/core/' : '/',
     resolve: {
       alias,
     },
     build: {
-      //编译文件生成目录
-      outDir: '../dist',
       emptyOutDir: true,
       rollupOptions: {
         output: {

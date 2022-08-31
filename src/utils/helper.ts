@@ -23,7 +23,7 @@ export async function loginCallback(token: string) {
 }
 
 /**
- * 限制点击频繁请求
+ * 限制点击频繁
  * @param fn 回调函数
  * @returns
  */

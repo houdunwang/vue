@@ -46,9 +46,8 @@ figlet('houdunren.com', async function (err, data) {
           text: '项目创建成功，请依次执行以下命令',
         })
         console.log(chalk.white(`cd ${message.dirname}`))
-        console.log(chalk.white('npm install'))
-        console.log(chalk.white('npm run dev'))
-        console.log(chalk.white('修改.env文件: VITE_MOCK_ENABLE=true'))
+        console.log(chalk.white('pnpm i'))
+        console.log(chalk.white('pnpm run dev'))
         return
       }
     })

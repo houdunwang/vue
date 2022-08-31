@@ -13,7 +13,7 @@ export function login(data: { mobile: string; password: string }) {
   })
 }
 
-export function register(data: { mobile: string, password: string, password_confirmation: string }) {
+export function register(data: { mobile: string; password: string; password_confirmation: string }) {
   return http.request<ResponseData>({
     url: `register`,
     method: 'post',
@@ -21,7 +21,7 @@ export function register(data: { mobile: string, password: string, password_conf
   })
 }
 
-export function forgetPassword(data: { mobile: string, password: string, password_confirmation: string }) {
+export function forgetPassword(data: { mobile: string; password: string; password_confirmation: string }) {
   return http.request<ResponseData>({
     url: 'forget-password',
     method: 'post',

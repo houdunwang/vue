@@ -1,9 +1,9 @@
-import { App as AppType, createApp } from 'vue'
-import router, { setupRouter } from '@/router/register/index'
-import plugin from '@/plugins'
 import directive from '@/directives'
-import App from './App.vue'
+import plugin from '@/plugins'
+import router, { setupRouter } from '@/router/register/index'
 import '@/styles/global.scss'
+import { createApp } from 'vue'
+import App from './App.vue'
 
 async function bootstrap() {
   const app = createApp(App)
