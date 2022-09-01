@@ -10,9 +10,10 @@ export const userTableColumns = [
     align: 'center',
     type: 'radio',
     options: [
-      ['男', 1],
-      ['女', 2],
+      { label: '男', value: 1 },
+      { label: '女', value: 2 },
     ],
+    tag_field: 'ee',
     width: 80,
   },
   { prop: 'created_at', label: '注册时间', type: 'date', width: 120 },

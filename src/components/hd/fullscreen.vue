@@ -16,5 +16,3 @@ document.addEventListener('fullscreenchange', (e) => {
     <icon-full-screen-one theme="outline" size="18" @click="fullScreen" v-else />
   </div>
 </template>
-
-<style lang="scss"></style>

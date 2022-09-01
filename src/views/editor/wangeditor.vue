@@ -5,7 +5,7 @@ const content = ref('后盾人')
 
 <template>
   <div class>
-    <EditorWangEditor v-model="content" :height="300" />
+    <HdWangEditor v-model="content" :height="300" />
     <div class="bg-gray-100 mt-3 border p-3">{{ content }}</div>
   </div>
 </template>

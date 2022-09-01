@@ -1,5 +1,9 @@
 <script setup lang="ts">
+import userStore from '@/store/userStore'
+import { logout } from '@/utils/helper'
+
 const { show } = useMenu()
+const user = userStore()
 </script>
 
 <template>
@@ -13,7 +17,23 @@ const { show } = useMenu()
     </div>
     <div class="flex justify-center items-center relative cursor-pointer">
       <HdFullscreen class="hidden md:flex mr-3 text-gray-600" />
-      <UserDrop class="text-gray-500" />
+      <el-dropdown>
+        <span class="el-dropdown-link flex items-center">
+          <ElImage
+            v-if="user.info?.avatar"
+            :src="user.info?.avatar"
+            fit="cover"
+            class="w-8 h-8 rounded-full border-white" />
+          <span class="ml-1 text-sm">{{ user.info?.nickname }}</span>
+        </span>
+        <template #dropdown>
+          <el-dropdown-menu>
+            <el-dropdown-item>文档资料</el-dropdown-item>
+            <el-dropdown-item>网站首页</el-dropdown-item>
+            <el-dropdown-item divided @click="logout">退出登录</el-dropdown-item>
+          </el-dropdown-menu>
+        </template>
+      </el-dropdown>
     </div>
   </div>
 </template>

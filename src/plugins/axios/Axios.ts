@@ -34,9 +34,11 @@ export default class Axios {
   private interceptorsRequest() {
     this.instance.interceptors.request.use(
       (config: AxiosRequestConfig) => {
-        this.loading = this.loading ?? ElLoading.service({
-          background: 'rgba(255,255,255,0.1)',
-        })
+        this.loading =
+          this.loading ??
+          ElLoading.service({
+            background: 'rgba(255,255,255,0.1)',
+          })
         errorStore().resetError()
         config.headers = {
           Accept: 'application/json',

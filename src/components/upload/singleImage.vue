@@ -26,10 +26,12 @@ const request = async (options: any) => {
   <div class="">
     <el-upload action="" class="avatar-uploader" :http-request="request" :show-file-list="false">
       <img v-if="imageUrl" :src="imageUrl" class="avatar" />
-      <el-icon v-else class="avatar-uploader-icon"><Plus /></el-icon>
+      <el-icon v-else class="avatar-uploader-icon">
+        <Plus />
+      </el-icon>
     </el-upload>
 
-    <FormError name="file" />
+    <HdError name="file" />
   </div>
 </template>
 

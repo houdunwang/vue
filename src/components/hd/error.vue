@@ -2,7 +2,6 @@
 import errorStore from '@/store/errorStore'
 
 const { name } = defineProps<{ name: string }>()
-
 const store = errorStore()
 </script>
 

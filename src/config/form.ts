@@ -6,8 +6,8 @@ export const userForm = [
     name: 'sex',
     type: 'radio',
     options: [
-      ['男', 1],
-      ['女', 2],
+      { label: '男', value: 1 },
+      { label: '女', value: 2 },
     ],
   },
   { title: '手机号', name: 'mobile' },

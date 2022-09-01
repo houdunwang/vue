@@ -6,11 +6,10 @@ const mobile = ref('')
   <div class="">
     <div class="flex justify-between items-center">
       <FormInputComponent v-model="mobile" placeholder="请输入验证码" class="mr-1" required />
-
       <ElButton class="ml-1" plain size="large" shape="circle">
         <span>发送验证码</span>
       </ElButton>
     </div>
-    <FormError name="code" />
+    <HdError name="code" />
   </div>
 </template>

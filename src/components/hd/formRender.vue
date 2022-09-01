@@ -1,13 +1,8 @@
 <script setup lang="ts">
 import _ from 'lodash'
-const {
-  fields,
-  model: PropsModel,
-  showButton = true,
-} = defineProps<{
+const { fields, model: PropsModel } = defineProps<{
   fields: FormFieldType[]
   model?: any
-  showButton?: boolean
 }>()
 
 const model = $ref(
@@ -29,12 +24,12 @@ const emit = defineEmits<{
       <template v-if="f.type == 'image'">
         <div class="flex flex-col">
           <UploadSingleImage v-model="model[f.name]" />
-          <FormError :name="f.error_name || f.name" />
+          <HdError :name="f.error_name || f.name" />
         </div>
       </template>
       <template v-else-if="f.type == 'radio'">
         <el-radio-group v-model="model[f.name]" class="ml-4" :disabled="f.disabled">
-          <el-radio :label="val[1]" size="large" v-for="val in f.options"> {{ val[0] }} </el-radio>
+          <el-radio :label="val.value" size="large" v-for="val in f.options"> {{ val.label }} </el-radio>
         </el-radio-group>
       </template>
       <template v-else-if="f.type == 'preview'">
@@ -49,7 +44,7 @@ const emit = defineEmits<{
         </div>
       </template>
       <template v-else-if="f.type == 'wangeditor'">
-        <EditorWangEditor v-model="model[f.name]" />
+        <HdWangEditor v-model="model[f.name]" />
       </template>
       <template v-else>
         <el-input
@@ -60,7 +55,7 @@ const emit = defineEmits<{
           :readonly="f.readonly"
           :disabled="f.disabled" />
 
-        <FormError :name="f.error_name || f.name" />
+        <HdError :name="f.error_name || f.name" />
       </template>
     </el-form-item>
     <el-form-item>

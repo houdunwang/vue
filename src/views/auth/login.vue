@@ -20,7 +20,7 @@ const onSubmit = request(async () => {
           <h2 class="text-center text-gray-700 text-lg mt-3">用户登录</h2>
           <div class="mt-8">
             <FormInputComponent v-model="form.mobile" placeholder="请输入手机号" />
-            <FormError name="account" />
+            <HdError name="account" />
 
             <FormInputComponent
               v-model="form.password"
@@ -28,7 +28,7 @@ const onSubmit = request(async () => {
               type="password"
               placeholder="请输入登录密码"
               v-clearError="'password'" />
-            <FormError name="password" />
+            <HdError name="password" />
           </div>
 
           <FormButtonComponent class="w-full mt-3 primary">登录</FormButtonComponent>

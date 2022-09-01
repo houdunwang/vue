@@ -25,10 +25,10 @@ const onSubmit = async () => {
           <h2 class="text-center text-gray-700 text-lg mt-3">找回密码</h2>
           <div class="mt-8">
             <FormInputComponent v-model="form.mobile" placeholder="请输入手机号" v-clearError="'account'" />
-            <FormError name="account" />
+            <HdError name="account" />
 
             <FormInputComponent v-model="form.password" class="mt-3" type="password" placeholder="请输入新密码" />
-            <FormError name="password" />
+            <HdError name="password" />
 
             <FormInputComponent
               v-model="form.password_confirmation"

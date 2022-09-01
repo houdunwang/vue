@@ -1,15 +1,12 @@
 <script setup lang="ts">
 import { userList } from '@/apis/user'
-import TableComponent from '@/components/hd/tableComponent.vue'
 import { userTableColumns } from '@/config/table'
-import Pagination from '@/components/hd/pagination.vue'
 
 const result = await userList()
-console.log(result)
 </script>
 
 <template>
-  <TableComponent
+  <HdTableRender
     :data="result.data.splice(0, 10)"
     :columns="userTableColumns"
     :button-type="'default'"
@@ -18,5 +15,12 @@ console.log(result)
       { title: '删除', type: 'danger' },
     ]" />
 
-  <Pagination :total="result.meta.total" :size="10" class="bg-white !py-2 rounded-sm rounded-md" />
+  <el-pagination
+    background
+    layout="prev, pager, next"
+    :total="result.meta.total"
+    :hide-on-single-page="true"
+    @current-change="userList"
+    :page-size="10"
+    class="bg-white !py-2 rounded-md" />
 </template>

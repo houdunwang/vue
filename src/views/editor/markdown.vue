@@ -3,7 +3,7 @@ const text = ref('')
 </script>
 
 <template>
-  <EditorMarkdown v-model="text" />
+  <HdMarkdown v-model="text" />
   <div class="p-3 border bg-gray-100">
     {{ text }}
   </div>

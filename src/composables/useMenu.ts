@@ -25,13 +25,12 @@ export default () => {
     recordHistory(route)
 
     if (route.meta?.menu?.blank) {
-      const url = router.getRoutes().find(r => r.name == route.name)?.path
+      const url = router.getRoutes().find((r) => r.name == route.name)?.path
       return window.open(url)
     }
 
     router.push(route)
   }
-
 
   return { routes, show, go, history }
 }

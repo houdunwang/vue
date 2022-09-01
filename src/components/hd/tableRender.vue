@@ -78,8 +78,8 @@ const buttonClientEvent = async (args: any) => {
             class="w-10 h-10 rounded-lg" />
         </template>
         <template v-else-if="col.type === 'radio'">
-          <span v-for="c in col.options" v-show="c[1] == row[col.prop]">
-            <el-tag>{{ c[0] }}</el-tag>
+          <span v-for="c in col.options" v-show="c.value == row[col.prop]">
+            <el-tag>{{ c.label }}</el-tag>
           </span>
         </template>
         <template v-else-if="col.type === 'tag'">
