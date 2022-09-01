@@ -10,7 +10,7 @@ await Promise.all([userStore().getUserInfo()])
 <template>
   <div class="admin h-screen w-screen grid md:grid-cols-[auto_1fr]">
     <MenuComponet />
-    <div class="content bg-gray-100 grid grid-rows-[auto_1fr]">
+    <div class="content bg-gray-100 grid grid-rows-[auto_1fr] overflow-hidden">
       <div>
         <Navbar />
         <HistoryLink />
@@ -23,9 +23,7 @@ await Promise.all([userStore().getUserInfo()])
             class="animate__animated"
             :enter-active-class="route.meta.enterClass ?? 'animate__fadeInRight'"
             :leave-active-class="route.meta.leaveClass ?? 'animate__fadeOutLeft'">
-            <div class="">
-              <component :is="Component" />
-            </div>
+            <component :is="Component" />
           </Transition>
         </router-view>
       </div>

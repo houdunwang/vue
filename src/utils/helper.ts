@@ -40,3 +40,7 @@ export function request(fn: (args: any) => Promise<any>) {
 export function className() {
   return router.currentRoute.value.fullPath.replace(/\//g, '-').replace(/^\-|\-$/g, '')
 }
+
+export function open(url) {
+  window.open(url)
+}

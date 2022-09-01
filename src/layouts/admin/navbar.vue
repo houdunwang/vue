@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import userStore from '@/store/userStore'
-import { logout } from '@/utils/helper'
-
+import { logout, open } from '@/utils/helper'
 const { show } = useMenu()
 const user = userStore()
 </script>
@@ -28,8 +27,9 @@ const user = userStore()
         </span>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item>文档资料</el-dropdown-item>
-            <el-dropdown-item>网站首页</el-dropdown-item>
+            <el-dropdown-item @click="open('https://doc.houdunren.com')">文档资料</el-dropdown-item>
+            <el-dropdown-item @click="open('https://www.houdunren.com')">在线视频</el-dropdown-item>
+            <el-dropdown-item @click="$router.push('/')">网站首页</el-dropdown-item>
             <el-dropdown-item divided @click="logout">退出登录</el-dropdown-item>
           </el-dropdown-menu>
         </template>
