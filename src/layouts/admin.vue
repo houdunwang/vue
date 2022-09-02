@@ -21,8 +21,8 @@ await Promise.all([userStore().getUserInfo()])
             appear
             mode="out-in"
             class="animate__animated"
-            :enter-active-class="route.meta.enterClass ?? 'animate__fadeInRight'"
-            :leave-active-class="route.meta.leaveClass ?? 'animate__fadeOutLeft'">
+            :enter-active-class="route.meta.enterClass ?? ''"
+            :leave-active-class="route.meta.leaveClass ?? ''">
             <component :is="Component" />
           </Transition>
         </router-view>

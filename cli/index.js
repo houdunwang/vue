@@ -17,7 +17,7 @@ figlet('houdunren.com', async function (err, data) {
   //打印文字图案
   console.log(data)
   //可点击链接
-  console.log(chalk.green(`欢迎使用后盾人前端脚手架，向军大叔每晚8点在抖音与B站直播，请搜索【后盾人】关注`))
+  console.log(chalk.green(`欢迎使用后盾人前端脚手架，向军大叔每晚8点在抖音与B站直播，请搜索【后盾人】关注。\n如果下载失败请访问 https://gitee.com/houdunren/vue`))
 
   //询问用户
   const message = await inquirer.prompt({

@@ -3,7 +3,11 @@ import { RouteRecordRaw } from 'vue-router'
 export default {
   path: '/upload',
   component: () => import('@/layouts/admin.vue'),
-  meta: { order: 1, auth: true, menu: { title: '文件上传', icon: ImageFiles } },
+  meta: {
+    order: 1,
+    auth: true,
+    menu: { title: '文件上传', icon: ImageFiles },
+  },
   children: [
     {
       name: 'upload.singleImage',
