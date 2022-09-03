@@ -6,7 +6,7 @@ import '@wangeditor/editor/dist/css/style.css'
 import { onBeforeUnmount, ref, shallowRef, watch } from 'vue'
 
 interface IProps {
-  modelValue?: any
+  modelValue: string
   height: number
 }
 const props = withDefaults(defineProps<IProps>(), {
@@ -20,7 +20,7 @@ const emit = defineEmits(['update:modelValue'])
 const editorRef = shallowRef<IDomEditor>()
 
 // 内容 HTML
-const valueHtml = ref(props.modelValue)
+const valueHtml = ref(props.modelValue.startsWith('<p>') ? props.modelValue : `<p>${props.modelValue}</p>`)
 
 // 组件销毁时，也及时销毁编辑器
 onBeforeUnmount(() => {
