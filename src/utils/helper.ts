@@ -41,6 +41,6 @@ export function className() {
   return router.currentRoute.value.fullPath.replace(/\//g, '-').replace(/^\-|\-$/g, '')
 }
 
-export function open(url) {
+export function open(url:string) {
   window.open(url)
 }

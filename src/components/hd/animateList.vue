@@ -21,7 +21,6 @@ const beforeEnter = (el: RendererElement) => {
 }
 
 const enter = (el: RendererElement) => {
-  console.log(el.dataset.index)
   gsap.to(el, {
     opacity: 1,
     duration: props.duration,
