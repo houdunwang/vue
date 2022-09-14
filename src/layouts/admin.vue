@@ -20,7 +20,6 @@ await Promise.all([userStore().getUserInfo()])
           <Transition
             appear
             mode="out-in"
-            class="animate__animated"
             :enter-active-class="route.meta.enterClass ?? ''"
             :leave-active-class="route.meta.leaveClass ?? ''">
             <component :is="Component" />

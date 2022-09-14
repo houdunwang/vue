@@ -6,7 +6,7 @@ const result = await userList()
 </script>
 
 <template>
-  <div>
+  <main>
     <HdTableRender
       :data="result.data.splice(0, 10)"
       :columns="userTableColumns"
@@ -24,5 +24,5 @@ const result = await userList()
       @current-change="userList"
       :page-size="10"
       class="bg-white !py-2 rounded-md" />
-  </div>
+  </main>
 </template>
