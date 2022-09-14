@@ -3,8 +3,10 @@ const text = ref('')
 </script>
 
 <template>
-  <HdMarkdown v-model="text" />
-  <div class="p-3 border bg-gray-100">
-    {{ text }}
-  </div>
+  <main>
+    <HdMarkdown v-model="text" />
+    <div class="p-3 border bg-gray-100">
+      {{ text }}
+    </div>
+  </main>
 </template>

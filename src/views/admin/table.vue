@@ -6,7 +6,7 @@ const result = await userList()
 </script>
 
 <template>
-  <div class="">
+  <div>
     <HdTableRender
       :data="result.data.splice(0, 10)"
       :columns="userTableColumns"
