@@ -36,11 +36,39 @@ export function request(fn: (args: any) => Promise<any>) {
   }
 }
 
+/**
+ * 间隔多久执行函数
+ * @param time 倒计时响应式时间
+ * @param fn 函数
+ * @returns
+ */
+export function timeoutRequest(time: number = 60, fn: (...args: any[]) => any) {
+  time = store.get('_timeout_request', time)
+  store.set('_timeout_request', time)
+  const countdown = ref(time)
+  return {
+    countdown,
+    fn: (...args: any[]) => {
+      const id = setInterval(() => {
+        store.set('_timeout_request', --countdown.value)
+        console.log(33)
+        if (countdown.value == 0) {
+          clearInterval(id)
+          store.remove('_timeout_request')
+        }
+      }, 1000)
+
+      if (time == 0) return
+      fn.apply(null, args)
+    },
+  }
+}
+
 //根据URL生成样式类名
 export function className() {
   return router.currentRoute.value.fullPath.replace(/\//g, '-').replace(/^\-|\-$/g, '')
 }
 
-export function open(url:string) {
+export function open(url: string) {
   window.open(url)
 }

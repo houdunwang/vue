@@ -29,5 +29,11 @@ export default {
       component: () => import('@/views/admin/animateList.vue'),
       meta: { menu: { title: '动态列表' } },
     },
+    {
+      name: 'admin.util',
+      path: 'admin/util',
+      component: () => import('@/views/admin/util.vue'),
+      meta: { menu: { title: '工具库' } },
+    },
   ],
 } as RouteRecordRaw
