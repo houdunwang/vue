@@ -33,7 +33,7 @@ export default {
       name: 'admin.util',
       path: 'admin/util',
       component: () => import('@/views/admin/util.vue'),
-      meta: { menu: { title: '工具库' } },
+      meta: { menu: { title: '组合API' } },
     },
   ],
 } as RouteRecordRaw
