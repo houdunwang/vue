@@ -47,6 +47,7 @@ declare global {
   const useAttrs: typeof import('vue')['useAttrs']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
+  const useIntervalRequest: typeof import('../src/composables/useIntervalRequest')['default']
   const useMenu: typeof import('../src/composables/useMenu')['default']
   const useRoute: typeof import('vue-router')['useRoute']
   const useRouter: typeof import('vue-router')['useRouter']
