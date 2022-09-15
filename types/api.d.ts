@@ -1,5 +1,5 @@
 //请求响应结构
-interface ResponseResult<T> {
+interface ApiData<T> {
   code: number
   message: string
   status: 'success' | 'error'
@@ -7,7 +7,7 @@ interface ResponseResult<T> {
 }
 
 //分页请求响应结构
-interface ResponsePageResult<T> {
+interface ApiPage<T> {
   data: T[]
   links: { url?: string; label: string; active: boolean }
   meta: {

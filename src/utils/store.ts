@@ -5,9 +5,9 @@ export interface IData {
 
 export default {
   set(key: string, data: any, expire?: number): void {
-    let cache: IData = { data }
+    let cache: IData = { data, expire }
     if (expire) {
-      cache.expire = new Date().getTime() + data.expire * 1000
+      cache.expire = new Date().getTime() + expire * 1000
     }
     localStorage.setItem(key, JSON.stringify(cache))
   },

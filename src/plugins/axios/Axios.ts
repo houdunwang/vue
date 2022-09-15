@@ -15,7 +15,7 @@ export default class Axios {
     this.interceptors()
   }
 
-  public async request<T, D = ResponseResult<T>>(config: AxiosRequestConfig) {
+  public async request<T, D = ApiData<T>>(config: AxiosRequestConfig) {
     return new Promise(async (resolve, reject) => {
       try {
         const response = await this.instance.request<D>(config)

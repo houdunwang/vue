@@ -8,5 +8,5 @@ export async function currentUserInfo() {
 }
 
 export async function userList() {
-  return await http.request<UserModel, ResponsePageResult<UserModel>>({ url: `user` })
+  return await http.request<UserModel, ApiPage<UserModel>>({ url: `user` })
 }

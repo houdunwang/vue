@@ -1,9 +1,13 @@
 <script setup lang="ts">
 import { userForm } from '@/config/form'
-import userStore from '@/store/userStore'
-
-const store = userStore()
-const user = ref(store.info)
+const user = reactive({
+  nickname: '向军大叔',
+  email: '2300071698@qq.com',
+  mobile: 19999999999,
+  sex: 1,
+  avatar: '/images/xj.jpg',
+  home: 'https://www.houdunren.com',
+})
 </script>
 
 <template>

@@ -51,7 +51,6 @@ export function timeoutRequest(time: number = 60, fn: (...args: any[]) => any) {
     fn: (...args: any[]) => {
       const id = setInterval(() => {
         store.set('_timeout_request', --countdown.value)
-        console.log(33)
         if (countdown.value == 0) {
           clearInterval(id)
           store.remove('_timeout_request')

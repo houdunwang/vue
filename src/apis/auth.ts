@@ -1,12 +1,12 @@
 import { http } from '@/plugins/axios'
 
-type ResponseData = {
+type Result = {
   user: UserModel
   token: string
 }
 
 export function login(data: { mobile: string; password: string }) {
-  return http.request<ResponseData>({
+  return http.request<Result>({
     url: `login`,
     method: 'post',
     data,
@@ -14,7 +14,7 @@ export function login(data: { mobile: string; password: string }) {
 }
 
 export function register(data: { mobile: string; password: string; password_confirmation: string }) {
-  return http.request<ResponseData>({
+  return http.request<Result>({
     url: `register`,
     method: 'post',
     data,
@@ -22,7 +22,7 @@ export function register(data: { mobile: string; password: string; password_conf
 }
 
 export function forgetPassword(data: { mobile: string; password: string; password_confirmation: string }) {
-  return http.request<ResponseData>({
+  return http.request<Result>({
     url: 'forget-password',
     method: 'post',
     data,
