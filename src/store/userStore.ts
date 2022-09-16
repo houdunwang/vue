@@ -1,17 +1,13 @@
-import { defineStore } from 'pinia'
 import { currentUserInfo } from '@/apis/user'
+import { defineStore } from 'pinia'
+import { ref } from 'vue'
 
-export default defineStore('userStore', {
-  state: () => {
-    return {
-      info: {} as UserModel,
-      permissions: [] as string[],
-    }
-  },
+export default defineStore('userStore', () => {
+  const user = ref<UserModel>({})
 
-  actions: {
-    async getUserInfo() {
-      this.info = await currentUserInfo()
-    },
-  },
+  const getUser = async () => {
+    user.value = await currentUserInfo()
+  }
+
+  return { user, getUser }
 })

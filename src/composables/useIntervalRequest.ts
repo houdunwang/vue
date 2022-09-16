@@ -1,4 +1,4 @@
-import store from '@/utils/store'
+import storage from '@/utils/storage'
 import dayjs from 'dayjs'
 const key = 'interval_exec_time'
 
@@ -8,8 +8,8 @@ export default (timeout: number, fn: () => void) => {
   setTimer()
   function handle() {
     setTimer()
-    if (store.get(key)) return
-    store.set(key, dayjs(), timeout)
+    if (storage.get(key)) return
+    storage.set(key, dayjs(), timeout)
     fn()
   }
 
@@ -17,7 +17,7 @@ export default (timeout: number, fn: () => void) => {
     if (intervalId) return
 
     intervalId = setInterval(() => {
-      const cache = dayjs(store.get(key)).add(timeout, 'second')
+      const cache = dayjs(storage.get(key)).add(timeout, 'second')
       time.value = cache.diff(dayjs(), 'second')
       if (time.value == 0) {
         clearInterval(intervalId)

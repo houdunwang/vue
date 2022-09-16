@@ -2,7 +2,7 @@
 import userStore from '@/store/userStore'
 import { logout, open } from '@/utils/helper'
 const { show } = useMenu()
-const user = userStore()
+const { user } = userStore()
 </script>
 
 <template>
@@ -18,12 +18,8 @@ const user = userStore()
       <HdFullscreen class="hidden md:flex mr-3 text-gray-600" />
       <el-dropdown>
         <span class="el-dropdown-link flex items-center">
-          <ElImage
-            v-if="user.info?.avatar"
-            :src="user.info?.avatar"
-            fit="cover"
-            class="w-8 h-8 rounded-full border-white" />
-          <span class="ml-1 text-sm">{{ user.info?.nickname }}</span>
+          <ElImage v-if="user?.avatar" :src="user?.avatar" fit="cover" class="w-8 h-8 rounded-full border-white" />
+          <span class="ml-1 text-sm">{{ user?.nickname }}</span>
         </span>
         <template #dropdown>
           <el-dropdown-menu>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouteEnum } from '@/enum/RouteEnum'
+import { RouteName } from '@/enum/RouteName'
 import { isLogin } from '@/utils/helper'
 </script>
 
@@ -8,7 +8,7 @@ import { isLogin } from '@/utils/helper'
     <img src="/images/xj.jpg" class="w-40 h-40 object-cover rounded-full border-8 border-white mb-5" />
     <div>
       <FormButtonComponent @click="$router.push({ name: 'admin' })" class="danger ml-2"> 访问后台 </FormButtonComponent>
-      <FormButtonComponent v-if="!isLogin()" class="primary ml-2" @click="$router.push({ name: RouteEnum.LOGIN })">
+      <FormButtonComponent v-if="!isLogin()" class="primary ml-2" @click="$router.push({ name: RouteName.LOGIN })">
         用户登录
       </FormButtonComponent>
     </div>

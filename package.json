@@ -1,7 +1,7 @@
 {
   "name": "vue",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.1",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -13,6 +13,7 @@
     "@kangc/v-md-editor": "^2.3.15",
     "@types/gsap": "^3.0.0",
     "@types/lodash": "^4.14.185",
+    "@types/mockjs": "^1.0.6",
     "@vee-validate/i18n": "^4.6.7",
     "@vee-validate/rules": "^4.6.7",
     "@vitejs/plugin-vue-jsx": "^2.0.1",

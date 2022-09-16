@@ -1,11 +1,11 @@
-import { CacheEnum } from '@/enum/CacheEnum'
-import { HttpEnum } from '@/enum/httpEnum'
-import { RouteEnum } from '@/enum/RouteEnum'
+import { HttpStatus } from '@/enum/HttpStatus'
+import { RouteName } from '@/enum/RouteName'
 import router from '@/router'
 import errorStore from '@/store/errorStore'
-import store from '@/utils/store'
+import storage from '@/utils/storage'
 import axios, { AxiosRequestConfig } from 'axios'
 import { ElLoading, ElMessage } from 'element-plus'
+import { CacheKey } from './../../enum/CacheKey'
 
 export default class Axios {
   private instance
@@ -42,7 +42,7 @@ export default class Axios {
         errorStore().resetError()
         config.headers = {
           Accept: 'application/json',
-          Authorization: `Bearer ${store.get(CacheEnum.TOKEN_NAME)}`,
+          Authorization: `Bearer ${storage.get(CacheKey.TOKEN_NAME)}`,
         }
         return config
       },
@@ -73,20 +73,20 @@ export default class Axios {
         const { message } = data
 
         switch (status) {
-          case HttpEnum.UNAUTHORIZED:
-            store.remove(CacheEnum.TOKEN_NAME)
-            router.push({ name: RouteEnum.LOGIN })
+          case HttpStatus.UNAUTHORIZED:
+            storage.remove(CacheKey.TOKEN_NAME)
+            router.push({ name: RouteName.LOGIN })
             break
-          case HttpEnum.BAD_REQUEST:
+          case HttpStatus.UNPROCESSABLE_ENTITY:
             errorStore().setErrors(error.response.data.errors)
             break
-          case HttpEnum.FORBIDDEN:
+          case HttpStatus.FORBIDDEN:
             ElMessage({ type: 'error', message: message ?? '没有操作权限' })
             break
-          case HttpEnum.NOT_FOUND:
-            router.push({ name: RouteEnum.NOT_FOUND })
+          case HttpStatus.NOT_FOUND:
+            router.push({ name: RouteName.NOT_FOUND })
             break
-          case HttpEnum.TOO_MANY_REQUESTS:
+          case HttpStatus.TOO_MANY_REQUESTS:
             ElMessage({ type: 'error', message: message ?? '请示过于频繁，请稍候再试' })
             break
           default:

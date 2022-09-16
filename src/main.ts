@@ -5,7 +5,6 @@ import '@/styles/global.scss'
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
 import App from './App.vue'
-
 function bootstrap() {
   const app = createApp(App)
   app.use(createPinia())

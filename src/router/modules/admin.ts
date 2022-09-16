@@ -7,9 +7,9 @@ export default {
   children: [
     {
       name: 'admin',
-      path: '',
+      path: '/admin',
       component: () => import('@/views/admin/index.vue'),
-      meta: { menu: { title: '工作台' }, enterClass: 'animate__fadeInRight', leaveClass: 'animate__fadeOutLeft' },
+      meta: { menu: { title: '工作台' } },
     },
     {
       name: 'admin.table',

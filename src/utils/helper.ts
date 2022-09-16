@@ -1,15 +1,16 @@
-import { CacheEnum } from '@/enum/CacheEnum'
+import { CacheKey } from '@/enum/CacheKey'
+
 import router from '@/router'
-import store from '@/utils/store'
+import storage from '@/utils/storage'
 
 //是否登录
 export function isLogin(): boolean {
-  return !!store.get(CacheEnum.TOKEN_NAME)
+  return !!storage.get(CacheKey.TOKEN_NAME)
 }
 
 //退出登录
 export async function logout() {
-  store.remove(CacheEnum.TOKEN_NAME)
+  storage.remove(CacheKey.TOKEN_NAME)
   location.href = '/'
 }
 
@@ -18,8 +19,8 @@ export async function logout() {
  * @param token
  */
 export async function loginCallback(token: string) {
-  store.set(CacheEnum.TOKEN_NAME, token)
-  location.href = store.get(CacheEnum.REDIRECT_ROUTE_NAME, '/')
+  storage.set(CacheKey.TOKEN_NAME, token)
+  location.href = storage.get(CacheKey.REDIRECT_ROUTE_NAME, '/')
 }
 
 /**
@@ -43,17 +44,17 @@ export function request(fn: (args: any) => Promise<any>) {
  * @returns
  */
 export function timeoutRequest(time: number = 60, fn: (...args: any[]) => any) {
-  time = store.get('_timeout_request', time)
-  store.set('_timeout_request', time)
+  time = storage.get('_timeout_request', time)
+  storage.set('_timeout_request', time)
   const countdown = ref(time)
   return {
     countdown,
     fn: (...args: any[]) => {
       const id = setInterval(() => {
-        store.set('_timeout_request', --countdown.value)
+        storage.set('_timeout_request', --countdown.value)
         if (countdown.value == 0) {
           clearInterval(id)
-          store.remove('_timeout_request')
+          storage.remove('_timeout_request')
         }
       }, 1000)
 
