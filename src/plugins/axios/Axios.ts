@@ -1,7 +1,7 @@
 import { CacheEnum } from '@/enum/CacheEnum'
 import { HttpEnum } from '@/enum/httpEnum'
 import { RouteEnum } from '@/enum/RouteEnum'
-import router from '@/router/register'
+import router from '@/router'
 import errorStore from '@/store/errorStore'
 import store from '@/utils/store'
 import axios, { AxiosRequestConfig } from 'axios'

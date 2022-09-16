@@ -1,6 +1,6 @@
 import { RouteRecordRaw } from 'vue-router'
 import { ref } from 'vue'
-import router from '@/router/register'
+import router from '@/router'
 
 const routes = router
   .getRoutes()

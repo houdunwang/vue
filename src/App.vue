@@ -15,7 +15,9 @@ const resolve = () => {
     <router-view #default="{ Component }">
       <suspense @resolve="resolve">
         <template #default>
-          <component :is="Component" />
+          <div>
+            <component :is="Component" />
+          </div>
         </template>
       </suspense>
     </router-view>

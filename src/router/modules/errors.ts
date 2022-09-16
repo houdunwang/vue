@@ -1,4 +1,4 @@
-import { RouteEnum } from './../enum/RouteEnum';
+import { RouteEnum } from '@/enum/RouteEnum'
 import { ErrorComputer } from '@icon-park/vue-next'
 import { RouteRecordRaw } from 'vue-router'
 

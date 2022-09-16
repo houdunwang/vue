@@ -1,6 +1,6 @@
 import { CacheEnum } from '@/enum/CacheEnum'
-import router from '@/router/register'
-import store from './store'
+import router from '@/router'
+import store from '@/utils/store'
 
 //是否登录
 export function isLogin(): boolean {
