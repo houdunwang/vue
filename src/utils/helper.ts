@@ -20,7 +20,8 @@ export async function logout() {
  */
 export async function loginCallback(token: string) {
   storage.set(CacheKey.TOKEN_NAME, token)
-  location.href = storage.get(CacheKey.REDIRECT_ROUTE_NAME, '/')
+  router.push(storage.get(CacheKey.REDIRECT_ROUTE_NAME, '/'))
+  storage.remove(CacheKey.REDIRECT_ROUTE_NAME)
 }
 
 /**
