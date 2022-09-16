@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { userForm } from '@/config/form'
+import { reactive } from 'vue'
 const user = reactive({
   nickname: '向军大叔',
   email: '2300071698@qq.com',

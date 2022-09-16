@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { uploadImage } from '@/apis/upload'
+import { ref, watch } from 'vue'
 const { modelValue } = defineProps<{
   modelValue: any
 }>()

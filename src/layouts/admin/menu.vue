@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import useMenu from '@/composables/useMenu'
 import { RouteName } from '@/enum/RouteName'
+import { onMounted } from 'vue'
+import { ApplicationOne } from '@icon-park/vue-next'
 const { routes, show, go } = useMenu()
 
 onMounted(() => {
@@ -13,7 +16,7 @@ onMounted(() => {
   <div class="admin-menu">
     <div class="menu" :class="{ hidden: !show }">
       <div class="logo cursor-pointer">
-        <icon-application-one
+        <application-one
           theme="outline"
           size="18"
           fill="#dcdcdc"

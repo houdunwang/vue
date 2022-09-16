@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import useMenu from '@/composables/useMenu'
 import userStore from '@/store/userStore'
 import { logout, open } from '@/utils/helper'
+import { MenuUnfoldOne, MenuFoldOne } from '@icon-park/vue-next'
+
 const { show } = useMenu()
 const { user } = userStore()
 </script>
@@ -9,8 +12,8 @@ const { user } = userStore()
   <div class="bg-white relative shadow-sm z-50 p-2 border-b-1 px-5 flex justify-between items-center">
     <div class="flex items-center">
       <div class="mr-2" @click.stop="show = !show">
-        <icon-menu-unfold-one theme="filled" size="24" fill="#10ad57" class="cursor-pointer duration-300" v-if="show" />
-        <icon-menu-fold-one theme="filled" size="24" fill="#10ad57" class="cursor-pointer duration-300" v-else />
+        <MenuUnfoldOne theme="filled" size="24" fill="#10ad57" class="cursor-pointer duration-300" v-if="show" />
+        <MenuFoldOne theme="filled" size="24" fill="#10ad57" class="cursor-pointer duration-300" v-else />
       </div>
       <HdBreadcrumb class="hidden md:block" />
     </div>
