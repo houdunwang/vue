@@ -1,38 +1,44 @@
 import { DashboardOne } from '@icon-park/vue-next'
 import { RouteRecordRaw } from 'vue-router'
+import Index from '@/views/admin/index.vue'
+import Table from '@/views/admin/table.vue'
+import form from '@/views/admin/form.vue'
+import animateList from '@/views/admin/animateList.vue'
+import util from '@/views/admin/util.vue'
+import adminVue from '@/layouts/admin.vue'
 export default {
   path: '/admin',
-  component: () => import('@/layouts/admin.vue'),
+  component: adminVue,
   meta: { order: 1, auth: true, menu: { title: 'Dashboard', icon: DashboardOne } },
   children: [
     {
       name: 'admin',
       path: '/admin',
-      component: () => import('@/views/admin/index.vue'),
+      component: Index,
       meta: { menu: { title: '工作台' } },
     },
     {
       name: 'admin.table',
       path: 'table',
-      component: () => import('@/views/admin/table.vue'),
+      component: Table,
       meta: { menu: { title: '表格展示' } },
     },
     {
       name: 'admin.form',
       path: 'form',
-      component: () => import('@/views/admin/form.vue'),
+      component: form,
       meta: { menu: { title: '表单提交' } },
     },
     {
       name: 'admin.animateList',
       path: 'animateList',
-      component: () => import('@/views/admin/animateList.vue'),
+      component: animateList,
       meta: { menu: { title: '动态列表' } },
     },
     {
       name: 'admin.util',
       path: 'admin/util',
-      component: () => import('@/views/admin/util.vue'),
+      component: util,
       meta: { menu: { title: '组合API' } },
     },
   ],

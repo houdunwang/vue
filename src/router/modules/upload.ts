@@ -1,8 +1,11 @@
-import { DashboardOne, ImageFiles } from '@icon-park/vue-next'
+import adminVue from '@/layouts/admin.vue'
+import singleImageVue from '@/views/upload/singleImage.vue'
+import { ImageFiles } from '@icon-park/vue-next'
 import { RouteRecordRaw } from 'vue-router'
+
 export default {
   path: '/upload',
-  component: () => import('@/layouts/admin.vue'),
+  component: adminVue,
   meta: {
     order: 1,
     auth: true,
@@ -12,7 +15,7 @@ export default {
     {
       name: 'upload.singleImage',
       path: '',
-      component: () => import('@/views/upload/singleImage.vue'),
+      component: singleImageVue,
       meta: { menu: { title: '图片上传' } },
     },
   ],

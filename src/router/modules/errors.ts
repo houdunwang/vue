@@ -1,10 +1,11 @@
+import AppVue from '@/App.vue'
 import { RouteName } from '@/enum/RouteName'
 import { ErrorComputer } from '@icon-park/vue-next'
 import { RouteRecordRaw } from 'vue-router'
 
 export default {
   path: '/error',
-  component: () => import('@/App.vue'),
+  component: AppVue,
   meta: { order: 3, auth: true, menu: { title: '错误页面', icon: ErrorComputer } },
   children: [
     {

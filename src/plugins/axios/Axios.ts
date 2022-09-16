@@ -5,7 +5,7 @@ import errorStore from '@/store/errorStore'
 import storage from '@/utils/storage'
 import axios, { AxiosRequestConfig } from 'axios'
 import { ElLoading, ElMessage } from 'element-plus'
-import { CacheKey } from './../../enum/CacheKey'
+import { CacheKey } from '@/enum/CacheKey'
 
 export default class Axios {
   private instance
