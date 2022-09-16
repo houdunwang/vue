@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { login } from '@/apis/auth'
 import { loginCallback, request } from '@/utils/helper'
+import { reactive } from 'vue'
 import Footer from './components/footer.vue'
+import { Wechat } from '@icon-park/vue-next'
 
 const form = reactive({ mobile: '1999999999999', password: 'admin888', captcha_code: '', captcha_key: '' })
 
@@ -34,7 +36,7 @@ const onSubmit = request(async () => {
           <FormButtonComponent class="w-full mt-3 primary">登录</FormButtonComponent>
 
           <div class="flex justify-center mt-3">
-            <icon-wechat
+            <wechat
               theme="outline"
               size="24"
               fill="#fff"

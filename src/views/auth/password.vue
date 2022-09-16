@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { forgetPassword } from '@/apis/auth'
+import { Wechat } from '@icon-park/vue-next'
+import { reactive } from 'vue'
 import Footer from './components/footer.vue'
 
 const form = reactive({
@@ -42,7 +44,7 @@ const onSubmit = async () => {
           <FormButtonComponent class="w-full primary mt-2">确定修改</FormButtonComponent>
 
           <div class="flex justify-center mt-3">
-            <icon-wechat
+            <Wechat
               theme="outline"
               size="24"
               fill="#fff"

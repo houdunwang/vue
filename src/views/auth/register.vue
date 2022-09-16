@@ -2,7 +2,9 @@
 import { register } from '@/apis/auth'
 import errorStore from '@/store/errorStore'
 import { loginCallback } from '@/utils/helper'
+import { reactive, watch } from 'vue'
 import Footer from './components/footer.vue'
+import { Wechat } from '@icon-park/vue-next'
 
 const form = reactive({
   mobile: '199999999999',
@@ -47,7 +49,7 @@ const onSubmit = async () => {
           <FormButtonComponent class="w-full primary mt-2">注册</FormButtonComponent>
 
           <div class="flex justify-center mt-3">
-            <icon-wechat
+            <Wechat
               theme="outline"
               size="24"
               fill="#fff"
