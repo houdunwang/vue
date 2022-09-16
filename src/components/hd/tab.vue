@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { TabsPaneContext } from 'element-plus'
+import { computed } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 const router = useRouter()
 const route = useRoute()
