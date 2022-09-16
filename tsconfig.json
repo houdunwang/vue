@@ -17,19 +17,7 @@
       "@/*": ["./src/*"],
       "#/*": ["./types/*"]
     },
-    "types": [
-      "element-plus/global",
-      "echarts",
-      "lodash",
-      "web-bluetooth",
-      "vite.config.ts",
-      "src/**/*.ts",
-      "src/**/*.d.ts",
-      "src/**/*.vue",
-      "types/*.d.ts",
-      "types/*.ts",
-      "mock/**/*.ts"
-    ]
+    "types": ["element-plus/global", "echarts", "lodash"]
   },
   "exclude": ["node_modules", "dist"],
   "include": [
@@ -37,7 +25,6 @@
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "vite.config.ts",
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.vue",

@@ -7,6 +7,7 @@ specifiers:
   '@types/gsap': ^3.0.0
   '@types/lodash': ^4.14.185
   '@types/mockjs': ^1.0.6
+  '@types/prismjs': ^1.26.0
   '@vee-validate/i18n': ^4.6.7
   '@vee-validate/rules': ^4.6.7
   '@vitejs/plugin-vue': ^3.1.0
@@ -52,6 +53,7 @@ dependencies:
   '@types/gsap': 3.0.0
   '@types/lodash': 4.14.185
   '@types/mockjs': 1.0.6
+  '@types/prismjs': 1.26.0
   '@vee-validate/i18n': 4.6.7
   '@vee-validate/rules': 4.6.7
   '@vitejs/plugin-vue-jsx': 2.0.1_vite@3.1.1+vue@3.2.39
@@ -660,6 +662,10 @@ packages:
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
+    dev: false
+
+  /@types/prismjs/1.26.0:
+    resolution: {integrity: sha512-ZTaqn/qSqUuAq1YwvOFQfVW1AR/oQJlLSZVustdjwI+GZ8kr0MSHBj0tsXPW1EqHubx50gtBEjbPGsdZwQwCjQ==}
     dev: false
 
   /@types/resolve/1.17.1:
