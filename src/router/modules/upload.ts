@@ -11,7 +11,7 @@ export default {
   children: [
     {
       name: 'upload.singleImage',
-      path: 'single-image',
+      path: '',
       component: () => import('@/views/upload/singleImage.vue'),
       meta: { menu: { title: '图片上传' } },
     },
