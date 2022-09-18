@@ -16,6 +16,7 @@ declare module '@vue/runtime-core' {
     HdFormRender: typeof import('./../../src/components/hd/formRender.vue')['default']
     HdFullscreen: typeof import('./../../src/components/hd/fullscreen.vue')['default']
     HdMarkdown: typeof import('./../../src/components/hd/markdown.vue')['default']
+    HdMarkdownPreview: typeof import('./../../src/components/hd/markdownPreview.vue')['default']
     HdTab: typeof import('./../../src/components/hd/tab.vue')['default']
     HdTableRender: typeof import('./../../src/components/hd/tableRender.vue')['default']
     HdWangEditor: typeof import('./../../src/components/hd/wangEditor.vue')['default']

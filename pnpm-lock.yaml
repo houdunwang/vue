@@ -5,6 +5,7 @@ specifiers:
   '@icon-park/vue-next': ^1.4.2
   '@kangc/v-md-editor': ^2.3.15
   '@types/gsap': ^3.0.0
+  '@types/highlight.js': ^10.1.0
   '@types/lodash': ^4.14.185
   '@types/mockjs': ^1.0.6
   '@types/prismjs': ^1.26.0
@@ -22,6 +23,7 @@ specifiers:
   echarts: ^5.3.3
   element-plus: ^2.2.17
   gsap: ^3.11.1
+  highlight.js: ^11.6.0
   lodash: ^4.17.21
   mockjs: ^1.1.0
   node-sass: ^7.0.3
@@ -66,6 +68,7 @@ dependencies:
   echarts: 5.3.3
   element-plus: 2.2.17_vue@3.2.39
   gsap: 3.11.1
+  highlight.js: 11.6.0
   lodash: 4.17.21
   mockjs: 1.1.0
   node-sass: 7.0.3
@@ -86,6 +89,7 @@ dependencies:
   zh_CN.json: link:@vee-validate/i18n/dist/locale/zh_CN.json
 
 devDependencies:
+  '@types/highlight.js': 10.1.0
   '@vitejs/plugin-vue': 3.1.0_vite@3.1.1+vue@3.2.39
   autoprefixer: 10.4.11_postcss@8.4.16
   postcss: 8.4.16
@@ -633,6 +637,13 @@ packages:
     dependencies:
       gsap: 3.11.1
     dev: false
+
+  /@types/highlight.js/10.1.0:
+    resolution: {integrity: sha512-77hF2dGBsOgnvZll1vymYiNUtqJ8cJfXPD6GG/2M0aLRc29PkvB7Au6sIDjIEFcSICBhCh2+Pyq6WSRS7LUm6A==}
+    deprecated: This is a stub types definition. highlight.js provides its own type definitions, so you do not need this installed.
+    dependencies:
+      highlight.js: 11.6.0
+    dev: true
 
   /@types/lodash-es/4.17.6:
     resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
@@ -3173,6 +3184,10 @@ packages:
   /highlight.js/10.7.3:
     resolution: {integrity: sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==}
     dev: false
+
+  /highlight.js/11.6.0:
+    resolution: {integrity: sha512-ig1eqDzJaB0pqEvlPVIpSSyMaO92bH1N2rJpLMN/nX396wTpDA4Eq0uK+7I/2XG17pFaaKE0kjV/XPeGt7Evjw==}
+    engines: {node: '>=12.0.0'}
 
   /hosted-git-info/2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
