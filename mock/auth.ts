@@ -1,4 +1,4 @@
-import { user } from './helper/data';
+import { user } from './helper/data'
 import { Random } from 'mockjs'
 import { MockMethod } from 'vite-plugin-mock'
 
@@ -26,7 +26,8 @@ export default [
         message: '注册成功',
         status: 'success',
         data: {
-          user, token: Random.string(10)
+          user,
+          token: Random.string(10),
         },
       }
     },

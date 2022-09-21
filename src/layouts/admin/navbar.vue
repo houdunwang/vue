@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import useMenu from '@/composables/useMenu'
+import useUtil from '@/composables/system/useUtil'
 import userStore from '@/store/userStore'
-import { logout, open } from '@/utils/helper'
-import { MenuUnfoldOne, MenuFoldOne } from '@icon-park/vue-next'
+import { MenuFoldOne, MenuUnfoldOne } from '@icon-park/vue-next'
+import useMenu from './useMenu'
 
+const { logout, open } = useUtil()
 const { show } = useMenu()
 const { user } = userStore()
 </script>

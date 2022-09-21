@@ -4,8 +4,8 @@ import HistoryLink from './admin/historyLink.vue'
 import MenuComponet from './admin/menu.vue'
 import Navbar from './admin/navbar.vue'
 
-const { getUser } = userStore()
-await getUser()
+const { getCurrentUser } = userStore()
+await getCurrentUser()
 </script>
 
 <template>

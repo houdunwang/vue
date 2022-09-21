@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { login } from '@/apis/auth'
-import { loginCallback, request } from '@/utils/helper'
+import useUtil from '@/composables/system/useUtil'
+import useAuth from '@/composables/useAuth'
+import { Wechat } from '@icon-park/vue-next'
 import { reactive } from 'vue'
 import Footer from './components/footer.vue'
-import { Wechat } from '@icon-park/vue-next'
-
-const form = reactive({ mobile: '1999999999999', password: 'admin888', captcha_code: '', captcha_key: '' })
+const { login } = useAuth()
+const { request } = useUtil()
+const form = reactive({ mobile: '1999999999999', password: 'admin888' })
 
 const onSubmit = request(async () => {
-  const { data } = await login(form)
-  loginCallback(data.token)
+  await login(form)
 })
 </script>
 
@@ -22,7 +22,7 @@ const onSubmit = request(async () => {
           <h2 class="text-center text-gray-700 text-lg mt-3">用户登录</h2>
           <div class="mt-8">
             <FormInputComponent v-model="form.mobile" placeholder="请输入手机号" />
-            <HdError name="account" />
+            <HdError name="mobile" />
 
             <FormInputComponent
               v-model="form.password"

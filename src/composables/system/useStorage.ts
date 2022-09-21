@@ -3,15 +3,16 @@ export interface IData {
   expire?: number
 }
 
-export default {
-  set(key: string, data: any, expire?: number): void {
+export default () => {
+  function set(key: string, data: any, expire?: number): void {
     let cache: IData = { data, expire }
     if (expire) {
       cache.expire = new Date().getTime() + expire * 1000
     }
     localStorage.setItem(key, JSON.stringify(cache))
-  },
-  get(key: string, defaultValue: any = null): any {
+  }
+
+  function get(key: string, defaultValue: any = null): any {
     const cacheStore = localStorage.getItem(key)
     if (cacheStore) {
       const cache = JSON.parse(cacheStore)
@@ -23,8 +24,11 @@ export default {
       return cache.data
     }
     return defaultValue
-  },
-  remove(key: string) {
+  }
+
+  function remove(key: string) {
     localStorage.removeItem(key)
-  },
+  }
+
+  return { set, get, remove }
 }

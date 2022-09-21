@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { uploadImage } from '@/apis/upload'
+import useUpload from '@/composables/useUpload'
 import { IDomEditor, IEditorConfig, IToolbarConfig } from '@wangeditor/editor'
 import { Editor, Toolbar } from '@wangeditor/editor-for-vue'
 import '@wangeditor/editor/dist/css/style.css'
 import { onBeforeUnmount, ref, shallowRef, watch } from 'vue'
-
+const { uploadImage } = useUpload()
 interface IProps {
   modelValue: string
   height: number

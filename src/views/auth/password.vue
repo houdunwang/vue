@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { forgetPassword } from '@/apis/auth'
+import useAuth from '@/composables/useAuth'
 import { Wechat } from '@icon-park/vue-next'
 import { reactive } from 'vue'
 import Footer from './components/footer.vue'
+const { forgetPassword } = useAuth()
 
 const form = reactive({
   mobile: '199999999999',
@@ -12,9 +13,7 @@ const form = reactive({
 })
 
 const onSubmit = async () => {
-  try {
-    await forgetPassword(form)
-  } catch (error) {}
+  await forgetPassword(form)
 }
 </script>
 

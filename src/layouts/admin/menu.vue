@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import useMenu from '@/composables/useMenu'
+import useMenu from './useMenu'
 import { RouteName } from '@/enum/RouteName'
 import { onMounted } from 'vue'
 import { ApplicationOne } from '@icon-park/vue-next'

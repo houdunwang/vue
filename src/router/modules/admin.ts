@@ -18,18 +18,6 @@ export default {
       meta: { menu: { title: '工作台' } },
     },
     {
-      name: 'admin.table',
-      path: 'table',
-      component: Table,
-      meta: { menu: { title: '表格展示' } },
-    },
-    {
-      name: 'admin.form',
-      path: 'form',
-      component: form,
-      meta: { menu: { title: '表单提交' } },
-    },
-    {
       name: 'admin.animateList',
       path: 'animateList',
       component: animateList,

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import useMenu from '@/composables/useMenu'
+import useMenu from './useMenu'
 
 const { history } = useMenu()
 </script>

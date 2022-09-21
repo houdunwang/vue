@@ -1,7 +1,8 @@
-import storage from '@/utils/storage'
 import dayjs from 'dayjs'
 import { ref } from 'vue'
+import useStorage from './useStorage'
 const key = 'interval_exec_time'
+const storage = useStorage()
 
 export default (timeout: number, fn: () => void) => {
   const time = ref<number>(0)

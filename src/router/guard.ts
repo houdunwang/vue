@@ -1,8 +1,8 @@
+import useStorage from '@/composables/system/useStorage'
 import { CacheKey } from '@/enum/CacheKey'
 import { RouteName } from '@/enum/RouteName'
-import storage from '@/utils/storage'
 import { RouteLocationNormalized, Router } from 'vue-router'
-
+const storage = useStorage()
 export default (router: Router) => {
   router.beforeEach(beforeEach)
 }

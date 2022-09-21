@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import useIntervalRequest from '@/composables/useIntervalRequest'
+import useIntervalRequest from '@/composables/system/useIntervalRequest'
 
 const { handle, time } = useIntervalRequest(10, () => {
-  console.log('abc')
+  console.log('houdunren.com')
 })
 </script>
 

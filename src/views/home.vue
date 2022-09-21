@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import useUtil from '@/composables/system/useUtil'
 import { RouteName } from '@/enum/RouteName'
-import { isLogin } from '@/utils/helper'
+const { isLogin } = useUtil()
 </script>
 
 <template>

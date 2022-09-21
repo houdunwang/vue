@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { register } from '@/apis/auth'
+import useAuth from '@/composables/useAuth'
 import errorStore from '@/store/errorStore'
-import { loginCallback } from '@/utils/helper'
+import { Wechat } from '@icon-park/vue-next'
 import { reactive, watch } from 'vue'
 import Footer from './components/footer.vue'
-import { Wechat } from '@icon-park/vue-next'
+const { register } = useAuth()
 
 const form = reactive({
   mobile: '199999999999',
@@ -18,10 +18,7 @@ const store = errorStore()
 watch(form, () => store.resetError())
 
 const onSubmit = async () => {
-  try {
-    const { data } = await register(form)
-    loginCallback(data.token)
-  } catch (error) {}
+  await register(form)
 }
 </script>
 
