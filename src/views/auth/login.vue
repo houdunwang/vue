@@ -6,7 +6,7 @@ import { reactive } from 'vue'
 import Footer from './components/footer.vue'
 const { login } = useAuth()
 const { request } = useUtil()
-const form = reactive({ mobile: '1999999999999', password: 'admin888' })
+const form = reactive({ mobile: '19999999999', password: 'admin888' })
 
 const onSubmit = request(async () => {
   await login(form)
