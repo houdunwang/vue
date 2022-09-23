@@ -1,20 +1,27 @@
 import dayjs from 'dayjs'
-import { ref } from 'vue'
+import { Ref, ref } from 'vue'
 import useStorage from './useStorage'
 const key = 'interval_exec_time'
 const storage = useStorage()
 
-export default (timeout: number, fn: () => void) => {
+export default (timeout: number, fn: (check: () => boolean, time: Ref<number>) => void) => {
   const time = ref<number>(0)
   let intervalId: NodeJS.Timer | undefined
   setTimer()
-  function handle() {
+  //检测是否可执行
+  function check() {
     setTimer()
-    if (storage.get(key)) return
+    if (storage.get(key)) return false
     storage.set(key, dayjs(), timeout)
-    fn()
+    return true
   }
 
+  //执行函数
+  function exec() {
+    fn(check, time)
+  }
+
+  //定时器处理
   function setTimer() {
     if (intervalId) return
 
@@ -25,8 +32,8 @@ export default (timeout: number, fn: () => void) => {
         clearInterval(intervalId)
         intervalId = undefined
       }
-    }, 1000)
+    }, 100)
   }
 
-  return { time, handle }
+  return { time, check, exec }
 }

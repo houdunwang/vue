@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import useIntervalRequest from '@/composables/system/useIntervalRequest'
+import { ElMessage } from 'element-plus'
 
-const { handle, time } = useIntervalRequest(10, () => {
-  console.log('houdunren.com')
+const { exec, time } = useIntervalRequest(10, (check, time) => {
+  if (!check()) return false
+  else ElMessage.success('执行成功')
 })
 </script>
 
@@ -11,7 +13,7 @@ const { handle, time } = useIntervalRequest(10, () => {
     <el-card shadow="always" :body-style="{ padding: '20px' }">
       <template #header> 延时执行 </template>
       <el-button disabled size="default" v-if="time">请{{ time }}后操作</el-button>
-      <el-button type="primary" size="default" @click="handle" v-else>发送验证码</el-button>
+      <el-button type="primary" size="default" @click="exec" v-else>发送验证码</el-button>
     </el-card>
   </div>
 </template>
