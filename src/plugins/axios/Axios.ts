@@ -34,11 +34,9 @@ export default class Axios {
   private interceptorsRequest() {
     this.instance.interceptors.request.use(
       (config: AxiosRequestConfig) => {
-        this.loading =
-          this.loading ??
-          ElLoading.service({
-            background: 'rgba(255,255,255,0.1)',
-          })
+        if (!this.loading) {
+          this.loading = ElLoading.service({ background: 'rgba(255,255,255,0.1)', fullscreen: true })
+        }
         errorStore().resetError()
         config.headers = {
           Accept: 'application/json',
@@ -54,7 +52,10 @@ export default class Axios {
   private interceptorsResponse() {
     this.instance.interceptors.response.use(
       (response) => {
-        this.loading.close()
+        if (this.loading) {
+          this.loading.close()
+          this.loading = undefined
+        }
         if (response.data?.message) {
           ElMessage({
             type: 'success',
@@ -66,7 +67,10 @@ export default class Axios {
         return response
       },
       (error) => {
-        this.loading.close()
+        if (this.loading) {
+          this.loading.close()
+          this.loading = undefined
+        }
         const {
           response: { status, data },
         } = error
