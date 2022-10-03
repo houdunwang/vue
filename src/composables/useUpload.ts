@@ -1,5 +1,5 @@
 import { http } from '@/plugins/axios'
-type Result = { url: string }
+type Result = { data: { url: string } }
 
 export default () => {
   function uploadImage(data: FormData) {

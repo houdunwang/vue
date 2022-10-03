@@ -9,7 +9,7 @@ export default defineStore('userStore', () => {
   const storage = useStorage()
   const getCurrentUser = async () => {
     if (storage.get(CacheKey.TOKEN_NAME)) {
-      const res = await http.request<UserModel>({
+      const res = await http.request<ApiData<UserModel>>({
         url: `user/current`,
       })
       user.value = res.data
