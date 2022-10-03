@@ -14,4 +14,4 @@ export const user = {
   github: null,
   qq: null,
   wakatime: null,
-} as UserModel
+} as any

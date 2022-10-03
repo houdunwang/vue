@@ -1,9 +1,9 @@
-import { user } from './data';
+import { user } from './data'
 import { Random } from 'mockjs'
-import _ from 'lodash';
+import _ from 'lodash'
 
 export function create(num = 1) {
-  const data: UserModel[] = []
+  const data: any[] = []
   for (let i = 1; i <= num; i++) {
     const model = _.cloneDeep(user)
     model.id = i
