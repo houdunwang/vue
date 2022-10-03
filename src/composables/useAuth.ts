@@ -5,11 +5,13 @@ import userStore from '@/store/userStore'
 import useStorage from './system/useStorage'
 const storage = useStorage()
 type Result = {
-  user: UserModel
-  token: string
+  data: {
+    user: UserModel
+    token: string
+  }
 }
 export default () => {
-  async function login(data: { mobile: string; password: string }) {
+  async function login(data: any) {
     const res = await http.request<Result>({
       url: `login`,
       method: 'post',
@@ -18,7 +20,7 @@ export default () => {
     loginCallback(res.data.token)
   }
 
-  async function register(data: { mobile: string; password: string; password_confirmation: string }) {
+  async function register(data: any) {
     const res = await http.request<Result>({
       url: `register`,
       method: 'post',
@@ -27,7 +29,7 @@ export default () => {
     loginCallback(res.data.token)
   }
 
-  async function forgetPassword(data: { mobile: string; password: string; password_confirmation: string }) {
+  async function forgetPassword(data: any) {
     const res = await http.request<Result>({
       url: 'forget-password',
       method: 'post',

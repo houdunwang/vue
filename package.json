@@ -33,6 +33,7 @@
     "node-sass": "^7.0.3",
     "pinia": "^2.0.22",
     "prismjs": "^1.29.0",
+    "relativeTime": "link:dayjs/plugin/relativeTime",
     "rollup-plugin-visualizer": "^5.8.1",
     "sass": "^1.54.9",
     "unplugin-auto-import": "^0.11.2",

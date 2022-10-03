@@ -15,15 +15,15 @@ export default class Axios {
     this.interceptors()
   }
 
-  public async request<T, D = ApiData<T>>(config: AxiosRequestConfig) {
+  public async request<T>(config: AxiosRequestConfig) {
     return new Promise(async (resolve, reject) => {
       try {
-        const response = await this.instance.request<D>(config)
+        const response = await this.instance.request<T>(config)
         resolve(response.data)
       } catch (error) {
         reject(error)
       }
-    }) as Promise<D>
+    }) as Promise<T>
   }
 
   private interceptors() {

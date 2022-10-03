@@ -1,7 +1,7 @@
 {
     "name": "houdunren-vue",
     "description": "后盾人前端脚手架",
-    "version": "1.0.46",
+    "version": "1.0.51",
     "license": "MIT",
     "homepage": "https://www.houdunren.com",
     "repository": {
@@ -34,8 +34,11 @@
         "format": "prettier --write \"./**/*.{js,json}\""
     },
     "dependencies": {
+        "adm-zip": "^0.5.9",
+        "axios": "^0.27.2",
         "chalk": "^4.1.2",
         "figlet": "^1.5.2",
+        "fs-extra": "^10.1.0",
         "inquirer": "^9.0.0",
         "nanospinner": "^1.1.0",
         "obtain-git-repo": "^1.0.2",
