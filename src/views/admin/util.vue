@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import useIntervalRequest from '@/composables/system/useIntervalRequest'
+import useIntervalRequest from '@/composables/hd/useIntervalRequest'
 import { ElMessage } from 'element-plus'
 
-const { exec, time } = useIntervalRequest(10, (check, time) => {
-  if (!check()) return false
-  else ElMessage.success('执行成功')
+const { exec, time } = useIntervalRequest(10, async () => {
+  ElMessage.success('执行成功')
 })
 </script>
 
 <template>
-  <div class="grid-cols-3 grid gap-2">
+  <div class="flex flex-col gap-5">
     <el-card shadow="always" :body-style="{ padding: '20px' }">
       <template #header> 延时执行 </template>
       <el-button disabled size="default" v-if="time">请{{ time }}后操作</el-button>
@@ -17,5 +16,3 @@ const { exec, time } = useIntervalRequest(10, (check, time) => {
     </el-card>
   </div>
 </template>
-
-<style lang="scss"></style>

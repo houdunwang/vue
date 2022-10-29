@@ -1,8 +1,6 @@
 import { CacheKey } from '@/enum/CacheKey'
 import { http } from '@/plugins/axios'
-import router from '@/router'
-import userStore from '@/store/userStore'
-import useStorage from './system/useStorage'
+import useStorage from './hd/useStorage'
 const storage = useStorage()
 type Result = {
   data: {
@@ -12,38 +10,39 @@ type Result = {
 }
 export default () => {
   async function login(data: any) {
-    const res = await http.request<Result>({
-      url: `login`,
-      method: 'post',
-      data,
-    })
-    loginCallback(res.data.token)
+    // const res = await http.request<Result>({
+    //   url: `auth/login`,
+    //   method: 'post',
+    //   data,
+    // })
+    await loginCallback('houdunren')
   }
 
   async function register(data: any) {
     const res = await http.request<Result>({
-      url: `register`,
+      url: `auth/register`,
       method: 'post',
       data,
     })
-    loginCallback(res.data.token)
+    await loginCallback(res.data.token)
   }
 
   async function forgetPassword(data: any) {
     const res = await http.request<Result>({
-      url: 'forget-password',
+      url: 'auth/find-password',
       method: 'post',
       data,
     })
-    loginCallback(res.data.token)
+    await loginCallback(res.data.token)
   }
+
   //登录与注册后记录token
   async function loginCallback(token: string) {
     storage.set(CacheKey.TOKEN_NAME, token)
-    router.push(storage.get(CacheKey.REDIRECT_ROUTE_NAME, '/'))
+    const url = storage.get(CacheKey.REDIRECT_ROUTE_NAME, '/')
     storage.remove(CacheKey.REDIRECT_ROUTE_NAME)
-    userStore().getCurrentUser()
+    location.href = url
   }
 
-  return { login, register, forgetPassword }
+  return { login, register, forgetPassword, loginCallback }
 }

@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import useUtil from '@/composables/system/useUtil'
+import useUtil from '@/composables/hd/useUtil'
 import useAuth from '@/composables/useAuth'
 import { Wechat } from '@icon-park/vue-next'
+import { ElMessage } from 'element-plus'
 import { reactive } from 'vue'
 import Footer from './components/footer.vue'
 const { login } = useAuth()
@@ -9,7 +10,8 @@ const { request } = useUtil()
 const form = reactive({ mobile: '19999999999', password: 'admin888' })
 
 const onSubmit = request(async () => {
-  await login(form)
+  if (!form.mobile || !form.password) return ElMessage.error('帐号和密码不能为空')
+  login(form)
 })
 </script>
 
@@ -21,10 +23,10 @@ const onSubmit = request(async () => {
         <div>
           <h2 class="text-center text-gray-700 text-lg mt-3">用户登录</h2>
           <div class="mt-8">
-            <FormInputComponent v-model="form.mobile" placeholder="请输入手机号" />
+            <HdFormInput v-model="form.mobile" placeholder="请输入手机号" />
             <HdError name="mobile" />
 
-            <FormInputComponent
+            <HdFormInput
               v-model="form.password"
               class="mt-3"
               type="password"
@@ -33,7 +35,7 @@ const onSubmit = request(async () => {
             <HdError name="password" />
           </div>
 
-          <FormButtonComponent class="w-full mt-3 primary">登录</FormButtonComponent>
+          <HdFormButton class="w-full mt-3 primary">登录</HdFormButton>
 
           <div class="flex justify-center mt-3">
             <wechat

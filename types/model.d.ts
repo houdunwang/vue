@@ -1,16 +1,24 @@
-//用户模型
-type UserModel = {
-  id?: string | number
-  mobile?: string | number
-  sex?: number
-  email?: string
-  nickname?: any
+interface UserModel {
+  id: number
+  name: string
+  email: string
+  mobile: string
+  sex: number
+  comment_num: number
+  fans_num?: number
+  follower_num?: number
+  real_name?: any
+  address?: any
+  avatar?: any
   home?: any
   weibo?: any
   wechat?: any
-  github?: any
+  github?: string
   qq?: any
-  avatar?: string
-  created_at?: string
-  updated_at?: string
+  wakatime?: string
+  openid?: string
+  unionid?: string
+  email_verified_at: string
+  created_at: string
+  updated_at: string
 }

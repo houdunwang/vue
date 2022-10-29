@@ -1,8 +1,5 @@
 import admin from './admin'
 import auth from './auth'
-import editor from './editor'
-import errors from './errors'
-import home from './home'
-import upload from './upload'
+import front from './front'
 
-export default [admin, auth, editor, errors, home, upload]
+export default [...admin, ...front, auth]

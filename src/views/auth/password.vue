@@ -6,14 +6,14 @@ import Footer from './components/footer.vue'
 const { forgetPassword } = useAuth()
 
 const form = reactive({
-  mobile: '199999999999',
-  password: 'admin888',
-  password_confirmation: 'admin888',
+  mobile: '',
+  password: '',
+  password_confirmation: '',
   code: '',
 })
 
 const onSubmit = async () => {
-  await forgetPassword(form)
+  // await forgetPassword(form)
 }
 </script>
 
@@ -25,22 +25,18 @@ const onSubmit = async () => {
         <div>
           <h2 class="text-center text-gray-700 text-lg mt-3">找回密码</h2>
           <div class="mt-8">
-            <FormInputComponent v-model="form.mobile" placeholder="请输入手机号" v-clearError="'account'" />
+            <HdFormInput v-model="form.mobile" placeholder="请输入手机号" v-clearError="'account'" />
             <HdError name="account" />
 
-            <FormInputComponent v-model="form.password" class="mt-3" type="password" placeholder="请输入新密码" />
+            <HdFormInput v-model="form.password" class="mt-3" type="password" placeholder="请输入新密码" />
             <HdError name="password" />
 
-            <FormInputComponent
-              v-model="form.password_confirmation"
-              class="mt-3"
-              type="password"
-              placeholder="再次输入密码" />
+            <HdFormInput v-model="form.password_confirmation" class="mt-3" type="password" placeholder="再次输入密码" />
 
             <HdCode class="mt-3" />
           </div>
 
-          <FormButtonComponent class="w-full primary mt-2">确定修改</FormButtonComponent>
+          <HdFormButton class="w-full primary mt-2">确定修改</HdFormButton>
 
           <div class="flex justify-center mt-3">
             <Wechat

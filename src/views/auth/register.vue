@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import useAuth from '@/composables/useAuth'
-import errorStore from '@/store/errorStore'
+import errorStore from '@/store/useErrorStore'
 import { Wechat } from '@icon-park/vue-next'
 import { reactive, watch } from 'vue'
 import Footer from './components/footer.vue'
 const { register } = useAuth()
 
 const form = reactive({
-  mobile: '199999999999',
-  password: 'admin888',
-  password_confirmation: 'admin888',
+  mobile: '',
+  password: '',
+  password_confirmation: '',
   code: '',
 })
 
@@ -18,7 +18,7 @@ const store = errorStore()
 watch(form, () => store.resetError())
 
 const onSubmit = async () => {
-  await register(form)
+  // await register(form)
 }
 </script>
 
@@ -30,20 +30,16 @@ const onSubmit = async () => {
         <div>
           <h2 class="text-center text-gray-700 text-lg mt-3">会员注册</h2>
           <div class="mt-8">
-            <FormInputComponent v-model="form.mobile" placeholder="请输入手机号" v-clearError="'account'" />
+            <HdFormInput v-model="form.mobile" placeholder="请输入手机号" v-clearError="'account'" />
             <HdError name="account" />
 
-            <FormInputComponent v-model="form.password" class="mt-3" type="password" placeholder="密码" />
+            <HdFormInput v-model="form.password" class="mt-3" type="password" placeholder="密码" />
             <HdError name="password" />
 
-            <FormInputComponent
-              v-model="form.password_confirmation"
-              class="mt-3"
-              type="password"
-              placeholder="确认密码" />
+            <HdFormInput v-model="form.password_confirmation" class="mt-3" type="password" placeholder="确认密码" />
           </div>
 
-          <FormButtonComponent class="w-full primary mt-2">注册</FormButtonComponent>
+          <HdFormButton class="w-full primary mt-2">注册</HdFormButton>
 
           <div class="flex justify-center mt-3">
             <Wechat

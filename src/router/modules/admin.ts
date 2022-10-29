@@ -1,33 +1,66 @@
-import { DashboardOne } from '@icon-park/vue-next'
+import { DashboardOne, DocDetail, ImageFiles } from '@icon-park/vue-next'
 import { RouteRecordRaw } from 'vue-router'
-import Index from '@/views/admin/index.vue'
-import Table from '@/views/admin/table.vue'
-import form from '@/views/admin/form.vue'
-import animateList from '@/views/admin/animateList.vue'
-import util from '@/views/admin/util.vue'
-import adminVue from '@/layouts/admin.vue'
-export default {
-  path: '/admin',
-  component: adminVue,
-  meta: { order: 1, auth: true, menu: { title: 'Dashboard', icon: DashboardOne } },
-  children: [
-    {
-      name: 'admin',
-      path: '/admin',
-      component: Index,
-      meta: { menu: { title: '工作台' } },
+
+export default [
+  {
+    path: '/admin',
+    component: () => import('@/layouts/admin/index.vue'),
+    meta: { order: 1, auth: true, menu: { title: 'Dashboard', icon: DashboardOne } },
+    children: [
+      {
+        name: 'admin',
+        path: '/admin',
+        component: () => import('@/views/admin/index.vue'),
+        meta: { menu: { title: '工作台' } },
+      },
+      {
+        name: 'admin.animateList',
+        path: 'animateList',
+        component: () => import('@/views/admin/animateList.vue'),
+        meta: { menu: { title: '动态列表' } },
+      },
+      {
+        name: 'admin.util',
+        path: 'admin/util',
+        component: () => import('@/views/admin/util.vue'),
+        meta: { menu: { title: '组合API' } },
+      },
+    ],
+  },
+  {
+    path: '/admin/editor',
+    component: () => import('@/layouts/admin/index.vue'),
+    meta: { order: 2, auth: true, menu: { title: '编辑器', icon: DocDetail } },
+    children: [
+      {
+        name: 'wangEditor',
+        path: '',
+        component: () => import('@/views/admin/wangeditor.vue'),
+        meta: { menu: { title: '富文本编辑器' } },
+      },
+      {
+        name: 'markdown',
+        path: 'markdown',
+        component: () => import('@/views/admin/markdown.vue'),
+        meta: { menu: { title: 'Markdown' } },
+      },
+    ],
+  },
+  {
+    path: '/admin/upload',
+    component: () => import('@/layouts/admin/index.vue'),
+    meta: {
+      order: 1,
+      auth: true,
+      menu: { title: '文件上传', icon: ImageFiles },
     },
-    {
-      name: 'admin.animateList',
-      path: 'animateList',
-      component: animateList,
-      meta: { menu: { title: '动态列表' } },
-    },
-    {
-      name: 'admin.util',
-      path: 'admin/util',
-      component: util,
-      meta: { menu: { title: '组合API' } },
-    },
-  ],
-} as RouteRecordRaw
+    children: [
+      {
+        name: 'upload.singleImage',
+        path: '',
+        component: () => import('@/views/admin/singleImage.vue'),
+        meta: { menu: { title: '图片上传' } },
+      },
+    ],
+  },
+] as RouteRecordRaw[]

@@ -3,7 +3,14 @@ const { default: plugin } = require('tailwindcss')
 module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        page: '1450px',
+      },
+      colors: {
+        'hd-blue': '#62569F',
+      },
+    },
   },
   plugins: [
     function ({ addBase, theme }) {
@@ -13,5 +20,9 @@ module.exports = {
         },
       })
     },
+    require('@tailwindcss/line-clamp'),
   ],
+  variants: {
+    lineClamp: ['responsive', 'hover'],
+  },
 }

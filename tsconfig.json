@@ -30,6 +30,7 @@
     "src/**/*.vue",
     "types/*.d.ts",
     "types/**/*.d.ts",
+    "types/system/*.d.ts",
     "mock/**/*.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]

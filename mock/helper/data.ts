@@ -1,17 +1,14 @@
-import { Random } from 'mockjs'
-
 export const user = {
-  id: Random.id(),
-  mobile: Random.integer(10000),
+  id: 1,
+  name: '向军大叔',
+  email: '2300071698@qq.com',
+  sex: 1,
   avatar: '/images/xj.jpg',
-  nickname: '向军大叔',
-  sex: Random.range(1, 2, 1)[0],
-  email: Random.email(),
-  real_name: null,
-  home: 'https://www.houdunren.com',
+  home: 'http://www.houdunren.com',
   weibo: null,
-  wechat: null,
-  github: null,
-  qq: null,
-  wakatime: null,
+  wechat: 'houdunren2021',
+  github: 'http://github.com/houdunwang',
+  qq: '2300071698',
+  created_at: '2019-03-13T20:50:56.000000Z',
+  updated_at: '2022-10-23T15:19:54.000000Z',
 } as any

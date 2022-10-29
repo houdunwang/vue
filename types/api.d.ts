@@ -1,8 +1,8 @@
 //请求响应结构
 interface ApiData<T> {
+  message?: string
   code: number
-  message: string
-  status: 'success' | 'error'
+  status?: 'success' | 'error'
   data: T
 }
 

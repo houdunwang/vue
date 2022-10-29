@@ -1,20 +1,37 @@
 <script setup lang="ts">
-import useMenu from './useMenu'
 import { RouteName } from '@/enum/RouteName'
 import { onMounted } from 'vue'
 import { ApplicationOne } from '@icon-park/vue-next'
-const { routes, show, go } = useMenu()
+import router from '@/router'
+import useMenuStore from '@/layouts/admin/useMenuStore'
+import { RouteRecordRaw } from 'vue-router'
+const routes = router
+  .getRoutes()
+  .filter((r) => r.children.length)
+  .filter((r) => r.meta.menu)
+  .sort((a, b) => {
+    return (a.meta.order ?? 100) - (b.meta.order ?? 100)
+  })
+//控制移动端与PC端菜单显示隐藏
+const menuStore = useMenuStore()
 
 onMounted(() => {
   document.documentElement.addEventListener('click', (e) => {
-    if (document.documentElement.clientWidth < 640) show.value = false
+    if (document.documentElement.clientWidth < 640) menuStore.menuState = false
   })
 })
+
+const go = (route: RouteRecordRaw) => {
+  const menu = route.meta?.menu
+  if (menu?.url) window.open(menu?.url)
+  else if (menu?.blank) window.open(router.resolve(route).fullPath)
+  else router.push({ name: route.name })
+}
 </script>
 
 <template>
   <div class="admin-menu">
-    <div class="menu" :class="{ hidden: !show }">
+    <div class="menu" :class="{ hidden: !menuStore.menuState }">
       <div class="logo cursor-pointer">
         <application-one
           theme="outline"
@@ -22,7 +39,9 @@ onMounted(() => {
           fill="#dcdcdc"
           class="mr-2"
           @click="$router.push({ name: RouteName.HOME })" />
-        <span class="text-md cursor-pointer" @click="$router.push({ name: RouteName.ADMIN })">晚八点直播</span>
+        <span class="text-md cursor-pointer" @click="$router.push({ name: RouteName.ADMIN })">
+          晚八点直播
+        </span>
       </div>
       <!-- 菜单 -->
       <div class="container">

@@ -1,11 +1,10 @@
-import { RouteRecordRaw } from 'vue-router'
 import login from '@/views/auth/login.vue'
-import register from '@/views/auth/register.vue'
 import password from '@/views/auth/password.vue'
-import authVue from '@/layouts/auth.vue'
+import register from '@/views/auth/register.vue'
+import { RouteRecordRaw } from 'vue-router'
 export default {
   path: '/auth',
-  component: authVue,
+  component: () => import('@/layouts/auth/index.vue'),
   meta: { guest: true },
   children: [
     {
