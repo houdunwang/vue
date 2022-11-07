@@ -3,6 +3,14 @@
     "private": false,
     "version": "1.0.52",
     "description": "后盾人前端脚手架",
+    "keywords": [
+        "vue3",
+        "pinia",
+        "typescript",
+        "脚手架",
+        "后盾人",
+        "向军大叔"
+    ],
     "license": "MIT",
     "scripts": {
         "dev": "vite",
