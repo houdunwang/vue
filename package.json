@@ -1,7 +1,8 @@
 {
     "name": "houdunren-vue",
     "private": false,
-    "version": "1.0.52",
+    "version": "1.0.55",
+    "homepage": "https://www.houdunren.com",
     "description": "后盾人前端脚手架",
     "keywords": [
         "vue3",
