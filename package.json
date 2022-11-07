@@ -1,7 +1,9 @@
 {
-    "name": "vue",
-    "private": true,
+    "name": "houdunren-vue",
+    "private": false,
     "version": "1.0.52",
+    "description": "后盾人前端脚手架",
+    "license": "MIT",
     "scripts": {
         "dev": "vite",
         "build": "vue-tsc --noEmit && vite build",
