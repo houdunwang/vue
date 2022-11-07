@@ -4,7 +4,6 @@ import { onMounted } from 'vue'
 import { ApplicationOne } from '@icon-park/vue-next'
 import router from '@/router'
 import useMenuStore from '@/layouts/admin/useMenuStore'
-import { RouteRecordRaw } from 'vue-router'
 const routes = router
   .getRoutes()
   .filter((r) => r.children.length)
@@ -20,13 +19,6 @@ onMounted(() => {
     if (document.documentElement.clientWidth < 640) menuStore.menuState = false
   })
 })
-
-const go = (route: RouteRecordRaw) => {
-  const menu = route.meta?.menu
-  if (menu?.url) window.open(menu?.url)
-  else if (menu?.blank) window.open(router.resolve(route).fullPath)
-  else router.push({ name: route.name })
-}
 </script>
 
 <template>
@@ -39,9 +31,7 @@ const go = (route: RouteRecordRaw) => {
           fill="#dcdcdc"
           class="mr-2"
           @click="$router.push({ name: RouteName.HOME })" />
-        <span class="text-md cursor-pointer" @click="$router.push({ name: RouteName.ADMIN })">
-          晚八点直播
-        </span>
+        <span class="text-md cursor-pointer" @click="$router.push({ name: RouteName.ADMIN })">晚八点直播</span>
       </div>
       <!-- 菜单 -->
       <div class="container">
@@ -56,7 +46,7 @@ const go = (route: RouteRecordRaw) => {
             <div
               v-for="(r, key) of route.children"
               :key="key"
-              @click="go(r)"
+              @click="router.push(r)"
               :class="{ active: $route.name == r.name }"
               v-show="r.meta?.menu">
               {{ r.meta?.menu?.title }}

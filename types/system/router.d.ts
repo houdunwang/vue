@@ -6,7 +6,6 @@ export type RouteMenu = {
   title?: string
   icon?: DefineComponent<IIconProps>
   blank?: boolean
-  url?: string
 }
 
 declare module 'vue-router' {

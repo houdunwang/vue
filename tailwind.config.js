@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         'hd-blue': '#62569F',
       },
+      screens: {},
     },
   },
   plugins: [

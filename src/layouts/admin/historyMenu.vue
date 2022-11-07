@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import useStorage from '@/composables/hd/useStorage'
 import router from '@/router'
+import { RouteLocationNormalized } from 'vue-router'
+import useStorage from '@/composables/hd/useStorage'
 const storage = useStorage()
 const routes = ref<{ title: string; name: string }[]>(storage.get('admin-history-menu', []))
 router.beforeResolve(async (to) => {
   if (Object.keys(to.query).length > 0 || Object.keys(to.params).length > 0) return
   if (!to.meta.title || routes.value.find((r) => r.name == to.name)) return
-  if (routes.value.length > 30) routes.value.shift()
+  if (!to.fullPath.startsWith('/admin')) return
+  if (routes.value.length > 10) {
+    routes.value.splice(0, 10)
+  }
   routes.value.unshift({ name: to.name as string, title: to.meta.title })
   storage.set('admin-history-menu', routes.value)
 })

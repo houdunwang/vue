@@ -1,4 +1,4 @@
-import errorStore from '@/store/useErrorStore'
+import errorStore from '@/store/hd/useErrorStore'
 import { App } from 'vue'
 
 export default (app: App) => {

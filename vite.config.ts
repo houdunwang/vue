@@ -49,7 +49,11 @@ export default defineConfig(({ command, mode }) => {
           target: env.VITE_API_URL,
           changeOrigin: true,
         },
-        '/captcha/api/math': {
+        '/wechat/app/autologin': {
+          target: env.VITE_API_URL,
+          changeOrigin: true,
+        },
+        '/captcha': {
           target: env.VITE_API_URL,
           changeOrigin: true,
         },

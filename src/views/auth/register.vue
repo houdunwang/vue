@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import useAuth from '@/composables/useAuth'
-import errorStore from '@/store/useErrorStore'
+import errorStore from '@/store/hd/useErrorStore'
 import { Wechat } from '@icon-park/vue-next'
 import { reactive, watch } from 'vue'
 import Footer from './components/footer.vue'
-const { register } = useAuth()
 
 const form = reactive({
   mobile: '',

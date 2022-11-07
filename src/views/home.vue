@@ -5,7 +5,7 @@ const { isLogin, logout } = useUtil()
 </script>
 
 <template>
-  <div class="h-screen w-screen bg-gray-700 flex flex-col justify-center items-center">
+  <div class="h-screen !w-screen bg-gray-700 flex flex-col justify-center items-center !-mt-0">
     <img src="/images/xj.jpg" class="w-40 h-40 object-cover rounded-full border-8 border-white mb-5" />
     <div>
       <HdFormButton @click="$router.push({ name: 'admin' })" class="danger ml-2"> 访问后台 </HdFormButton>

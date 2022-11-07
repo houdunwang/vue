@@ -2,12 +2,19 @@
 const props = defineProps<{
   modelValue: any
 }>()
+
+onMounted(() => {
+  setTimeout(() => {
+    document.querySelectorAll('input').forEach((input) => input.removeAttribute('readonly'))
+  }, 500)
+})
 </script>
 
 <template>
   <input
     type="text"
     class="hd-input"
+    readonly
     :value="props.modelValue"
     @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)" />
 </template>

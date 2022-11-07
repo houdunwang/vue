@@ -14,25 +14,24 @@ const props = withDefaults(defineProps<props>(), {
   delay: 0.2,
 })
 
-const onBeforeEnter = (el: RendererElement) => {
+const beforeEnter = (el: RendererElement) => {
   gsap.set(el, {
     opacity: 0,
   })
 }
 
-const onEnter = (el: RendererElement, done: () => void) => {
+const enter = (el: RendererElement) => {
   gsap.to(el, {
     opacity: 1,
     duration: props.duration,
     delay: el.dataset.index * props.delay ?? 0,
-    onComplete: done,
   })
 }
 </script>
 
 <template>
   <div class="animate-list">
-    <TransitionGroup :tag="props.tag" appear name="animate" @before-enter="onBeforeEnter" @enter="onEnter">
+    <TransitionGroup :tag="props.tag" appear name="animate" @before-enter="beforeEnter" @enter="enter">
       <slot />
     </TransitionGroup>
   </div>

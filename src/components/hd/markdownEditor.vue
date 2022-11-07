@@ -3,7 +3,7 @@ import useUpload from '@/composables/hd/useUpload'
 import VueMarkdownEditor from '@kangc/v-md-editor'
 import { ref, watch } from 'vue'
 const { uploadImage } = useUpload()
-const { modelValue, height = 300 } = defineProps<{
+const { modelValue, height = 400 } = defineProps<{
   modelValue: any
   height?: number
 }>()

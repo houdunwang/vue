@@ -1,6 +1,6 @@
 import { CacheKey } from '@/enum/CacheKey'
 import { http } from '@/plugins/axios'
-import useStorage from './hd/useStorage'
+import useStorage from './useStorage'
 const storage = useStorage()
 type Result = {
   data: {
@@ -10,12 +10,12 @@ type Result = {
 }
 export default () => {
   async function login(data: any) {
-    // const res = await http.request<Result>({
-    //   url: `auth/login`,
-    //   method: 'post',
-    //   data,
-    // })
-    await loginCallback('houdunren')
+    const res = await http.request<Result>({
+      url: `auth/login`,
+      method: 'post',
+      data,
+    })
+    await loginCallback(res.data.token)
   }
 
   async function register(data: any) {
@@ -40,7 +40,7 @@ export default () => {
   async function loginCallback(token: string) {
     storage.set(CacheKey.TOKEN_NAME, token)
     const url = storage.get(CacheKey.REDIRECT_ROUTE_NAME, '/')
-    storage.remove(CacheKey.REDIRECT_ROUTE_NAME)
+    // storage.remove(CacheKey.REDIRECT_ROUTE_NAME)
     location.href = url
   }
 

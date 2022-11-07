@@ -1,7 +1,7 @@
 import { HttpStatus } from '@/enum/HttpStatus'
 import { RouteName } from '@/enum/RouteName'
 import router from '@/router'
-import errorStore from '@/store/useErrorStore'
+import errorStore from '@/store/hd/useErrorStore'
 import axios, { AxiosRequestConfig } from 'axios'
 import { ElLoading, ElMessage } from 'element-plus'
 import { CacheKey } from '@/enum/CacheKey'
@@ -63,8 +63,6 @@ export default class Axios {
           this.loading.close()
           this.loading = undefined
         }
-        this.options = { loading: true, message: true }
-
         if (response.data?.message && this.options.message) {
           ElMessage({
             type: response.data?.code ? 'error' : 'success',
@@ -72,8 +70,11 @@ export default class Axios {
             grouping: true,
             duration: 2000,
           })
-          if (response.data?.code) return Promise.reject()
         }
+        if (response.data?.code) {
+          return Promise.reject(response.data)
+        }
+        this.options = { loading: true, message: true, clearValidateError: true }
         return response
       },
       (error) => {
@@ -81,7 +82,7 @@ export default class Axios {
           this.loading.close()
           this.loading = undefined
         }
-        this.options = { loading: true, message: true }
+        this.options = { loading: true, message: true, clearValidateError: true }
         const {
           response: { status, data },
         } = error
@@ -100,6 +101,7 @@ export default class Axios {
             break
           case HttpStatus.NOT_FOUND:
             ElMessage.error('请求资源不存在')
+            router.push({ name: RouteName.HOME })
             break
           case HttpStatus.TOO_MANY_REQUESTS:
             ElMessage({ type: 'error', message: '请求过于频繁，请稍候再试' })

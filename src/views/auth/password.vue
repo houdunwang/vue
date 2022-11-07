@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import useAuth from '@/composables/useAuth'
+import useAuth from '@/composables/hd/useAuth'
 import { Wechat } from '@icon-park/vue-next'
 import { reactive } from 'vue'
 import Footer from './components/footer.vue'

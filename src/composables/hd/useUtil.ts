@@ -1,6 +1,13 @@
+import { user } from './../../../mock/helper/data'
 import useStorage from '@/composables/hd/useStorage'
 import { CacheKey } from '@/enum/CacheKey'
-import userStore from '@/store/useUserStore'
+import router from '@/router'
+import useConfigStore from '@/store/hd/useConfigStore'
+import useUserStore from '@/store/hd/useUserStore'
+import userStore from '@/store/hd/useUserStore'
+import { onBeforeRouteLeave, RouteLocationRaw } from 'vue-router'
+import { http } from '@/plugins/axios'
+import { ElMessageBox } from 'element-plus'
 const storage = useStorage()
 
 export default () => {
@@ -16,12 +23,19 @@ export default () => {
 
   //登录检测
   function isLogin(): boolean {
-    return !!storage.get(CacheKey.TOKEN_NAME)
+    return useStorage().get(CacheKey.TOKEN_NAME)
+    // const userStore = useUserStore()
+    // return !!userStore.user
   }
 
   //退出登录
-  function logout() {
+  async function logout() {
     storage.remove(CacheKey.TOKEN_NAME)
+    return (location.href = '/')
+    await http.request({
+      url: `auth/logout`,
+      method: 'POST',
+    })
     location.href = '/'
   }
 
@@ -39,17 +53,56 @@ export default () => {
   async function initSite() {
     const route = useRoute()
     const storeUser = userStore()
-    await Promise.all([storeUser.getCurrentUser()])
+    await Promise.all([storeUser.getCurrentUser(), useConfigStore().get()])
     watchEffect(() => {
       useTitle(route.meta.title)
     })
   }
+
+  //根据路由访问页面
+  function open(route: RouteLocationRaw, target = '_self') {
+    const url = router.resolve(route).fullPath
+    if (target == '_blank') window.open(url)
+    else location.href = url
+  }
+
+  //是否为微信客户端
+  function isWechat() {
+    var ua = navigator.userAgent.toLowerCase()
+    return ua.match(/MicroMessenger/i)
+  }
+
+  //路由 Query 参数
+  const routeQuery = (name: string, defaultValue?: any) => {
+    return useRoute().query[name] || defaultValue
+  }
+
+  const routeParams = (name: string, defaultValue?: any) => {
+    return useRoute().params[name] || defaultValue
+  }
+
+  //离开页面确认
+  const routeLeaveConfirm = async (message = '确定离开吗？') => {
+    onBeforeRouteLeave(async () => {
+      try {
+        await ElMessageBox.confirm(message, '温馨提示')
+        return true
+      } catch {
+        return false
+      }
+    })
+  }
   return {
+    routeQuery,
+    open,
     isLogin,
     logout,
     request,
     isAdministrator,
     authorize,
     initSite,
+    isWechat,
+    routeParams,
+    routeLeaveConfirm,
   }
 }
