@@ -21,7 +21,9 @@ import zhCn from 'element-plus/lib/locale/lang/zh-cn'
               <icon-up-square theme="filled" size="40" fill="#e66767" />
             </div>
           </el-backtop>
-          <component :is="Component"></component>
+          <Suspense>
+            <component :is="Component"></component>
+          </Suspense>
         </template>
       </RouterView>
     </ElConfigProvider>

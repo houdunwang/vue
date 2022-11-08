@@ -14,9 +14,7 @@ import Navbar from '@/layouts/admin/navbar.vue'
       </div>
       <div class="overflow-y-auto pb-32">
         <router-view #default="{ Component, route }">
-          <Suspense>
-            <component :is="Component" class="m-5" :key="route.fullPath" />
-          </Suspense>
+          <component :is="Component" class="m-5" :key="route.fullPath" />
         </router-view>
       </div>
     </section>

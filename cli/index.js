@@ -8,7 +8,6 @@
 import chalk from 'chalk'
 import inquirer from 'inquirer'
 import fs from 'fs-extra'
-import { download } from 'obtain-git-repo'
 import { createSpinner } from 'nanospinner'
 import figlet from 'figlet'
 import terminalLink from 'terminal-link'

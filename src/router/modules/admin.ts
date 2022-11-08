@@ -1,4 +1,3 @@
-import indexVue from '@/views/admin/index.vue'
 import { DashboardOne, DocDetail, ImageFiles } from '@icon-park/vue-next'
 import { RouteRecordRaw } from 'vue-router'
 import adminLayout from '@/layouts/admin/index.vue'

@@ -1,7 +1,6 @@
 {
     "name": "houdunren-vue",
-    "private": false,
-    "version": "1.0.55",
+    "private": true,
     "homepage": "https://www.houdunren.com",
     "description": "后盾人前端脚手架",
     "keywords": [
