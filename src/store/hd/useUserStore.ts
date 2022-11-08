@@ -1,8 +1,5 @@
-import useStorage from '@/composables/hd/useStorage'
 import useUtil from '@/composables/hd/useUtil'
-import { CacheKey } from '@/enum/CacheKey'
 import { http } from '@/plugins/axios'
-import router from '@/router'
 import { defineStore } from 'pinia'
 
 export default defineStore('user', {

@@ -8,7 +8,7 @@ export const user = {
   weibo: null,
   wechat: 'houdunren2021',
   github: 'http://github.com/houdunwang',
-  qq: '2300071698',
+  qq: '',
   created_at: '2019-03-13T20:50:56.000000Z',
   updated_at: '2022-10-23T15:19:54.000000Z',
 } as any

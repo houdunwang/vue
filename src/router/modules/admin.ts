@@ -5,7 +5,7 @@ export default [
   {
     path: '/admin',
     component: () => import('@/layouts/admin/index.vue'),
-    meta: { order: 1, auth: true, menu: { title: 'Dashboard', icon: DashboardOne } },
+    meta: { auth: true, menu: { title: 'Dashboard', icon: DashboardOne, order: 100 } },
     children: [
       {
         name: 'admin',
@@ -30,7 +30,7 @@ export default [
   {
     path: '/admin/editor',
     component: () => import('@/layouts/admin/index.vue'),
-    meta: { order: 2, auth: true, menu: { title: '编辑器', icon: DocDetail } },
+    meta: { auth: true, menu: { title: '编辑器', icon: DocDetail } },
     children: [
       {
         name: 'wangEditor',
@@ -50,7 +50,6 @@ export default [
     path: '/admin/upload',
     component: () => import('@/layouts/admin/index.vue'),
     meta: {
-      order: 1,
       auth: true,
       menu: { title: '文件上传', icon: ImageFiles },
     },

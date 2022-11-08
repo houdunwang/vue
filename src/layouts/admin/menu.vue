@@ -9,7 +9,7 @@ const routes = router
   .filter((r) => r.children.length)
   .filter((r) => r.meta.menu)
   .sort((a, b) => {
-    return (a.meta.order ?? 100) - (b.meta.order ?? 100)
+    return (b.meta.menu?.order ?? 0) - (a.meta.menu?.order ?? 0)
   })
 //控制移动端与PC端菜单显示隐藏
 const menuStore = useMenuStore()

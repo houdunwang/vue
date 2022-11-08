@@ -6,13 +6,13 @@ export type RouteMenu = {
   title?: string
   icon?: DefineComponent<IIconProps>
   blank?: boolean
+  order?: number
 }
 
 declare module 'vue-router' {
   interface RouteMeta {
     menu?: RouteMenu
     title?: string
-    order?: number
     auth?: boolean
     admin?: boolean
     guest?: boolean

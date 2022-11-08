@@ -3,7 +3,7 @@ import errorStore from '@/store/hd/useErrorStore'
 import { Wechat } from '@icon-park/vue-next'
 import { reactive, watch } from 'vue'
 import Footer from './components/footer.vue'
-
+const store = errorStore()
 const form = reactive({
   mobile: '',
   password: '',
@@ -11,13 +11,9 @@ const form = reactive({
   code: '',
 })
 
-const store = errorStore()
-
 watch(form, () => store.resetError())
-
-const onSubmit = async () => {
-  // await register(form)
-}
+//请自行完善逻辑
+const onSubmit = async () => {}
 </script>
 
 <template>

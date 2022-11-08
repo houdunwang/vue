@@ -19,28 +19,10 @@ const active = ref('')
             资料修改
           </router-link>
           <router-link
-            :to="{ name: 'member.info' }"
+            :to="{ name: 'member.password' }"
             :class="{ active: active == 'user.password' }"
             @click="active = 'user.password'">
             修改密码
-          </router-link>
-          <router-link
-            :to="{ name: 'member.info' }"
-            :class="{ active: active == 'user.email' }"
-            @click="active = 'user.email'">
-            绑定邮箱
-          </router-link>
-          <router-link
-            :to="{ name: 'member.info' }"
-            :class="{ active: active == 'user.mobile' }"
-            @click="active = 'user.mobile'">
-            手机号
-          </router-link>
-          <router-link
-            :to="{ name: 'member.info' }"
-            :class="{ active: active == 'user.wechat' }"
-            @click="active = 'user.wechat'">
-            微信绑定
           </router-link>
         </div>
       </div>

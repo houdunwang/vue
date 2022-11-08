@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import useAuth from '@/composables/hd/useAuth'
 import { Wechat } from '@icon-park/vue-next'
 import { reactive } from 'vue'
 import Footer from './components/footer.vue'
-const { forgetPassword } = useAuth()
 
 const form = reactive({
   mobile: '',
@@ -12,9 +10,8 @@ const form = reactive({
   code: '',
 })
 
-const onSubmit = async () => {
-  // await forgetPassword(form)
-}
+//请自行完善逻辑
+const onSubmit = async () => {}
 </script>
 
 <template>
@@ -26,13 +23,9 @@ const onSubmit = async () => {
           <div class="mt-8">
             <HdFormInput v-model="form.mobile" placeholder="请输入手机号" v-clearError="'account'" />
             <HdError name="account" />
-
             <HdFormInput v-model="form.password" class="mt-3" type="password" placeholder="请输入新密码" />
             <HdError name="password" />
-
             <HdFormInput v-model="form.password_confirmation" class="mt-3" type="password" placeholder="再次输入密码" />
-
-            <HdCode class="mt-3" />
           </div>
 
           <HdFormButton class="w-full primary mt-2">确定修改</HdFormButton>

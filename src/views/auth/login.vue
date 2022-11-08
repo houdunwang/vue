@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import useAuth from '@/composables/hd/useAuth'
 import useStorage from '@/composables/hd/useStorage'
 import useUtil from '@/composables/hd/useUtil'
 import { CacheKey } from '@/enum/CacheKey'
@@ -8,10 +7,10 @@ import { ElMessage } from 'element-plus'
 import { reactive } from 'vue'
 import Footer from './components/footer.vue'
 const storage = useStorage()
-const { login } = useAuth()
 const { request } = useUtil()
 const form = reactive({ mobile: '19999999999', password: 'admin888' })
 
+//请自行完善逻辑
 const onSubmit = request(async () => {
   if (!form.mobile || !form.password) return ElMessage.error('帐号和密码不能为空')
   storage.set(CacheKey.TOKEN_NAME, 'houdunren.com')
@@ -28,7 +27,6 @@ const onSubmit = request(async () => {
           <div class="mt-8">
             <HdFormInput v-model="form.mobile" placeholder="请输入手机号" />
             <HdError name="mobile" />
-
             <HdFormInput
               v-model="form.password"
               class="mt-3"
@@ -37,9 +35,7 @@ const onSubmit = request(async () => {
               v-clearError="'password'" />
             <HdError name="password" />
           </div>
-
           <HdFormButton class="w-full mt-3 primary">登录</HdFormButton>
-
           <div class="flex justify-center mt-3">
             <wechat
               theme="outline"

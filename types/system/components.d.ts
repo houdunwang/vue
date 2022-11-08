@@ -73,6 +73,7 @@ declare module '@vue/runtime-core' {
     HdUserAvatar: typeof import('./../../src/components/hd/userAvatar.vue')['default']
     HdUserAvatarMenu: typeof import('./../../src/components/hd/userAvatarMenu.vue')['default']
     HdUserBlock: typeof import('./../../src/components/hd/user-block.vue')['default']
+    HdUserIcon: typeof import('./../../src/components/hd/user-icon.vue')['default']
     HdVideoPlayer: typeof import('./../../src/components/hd/videoPlayer.vue')['default']
     HdWangEditor: typeof import('./../../src/components/hd/wangEditor.vue')['default']
     IconAlarm: typeof import('@icon-park/vue-next')['Alarm']

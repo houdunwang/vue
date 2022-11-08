@@ -6,9 +6,14 @@ export default {
   meta: { auth: true },
   children: [
     {
-      path: 'info',
+      path: 'member/info',
       name: 'member.info',
       component: () => import('@/views/member/info.vue'),
+    },
+    {
+      path: 'member/password',
+      name: 'member.password',
+      component: () => import('@/views/member/password.vue'),
     },
   ],
 } as RouteRecordRaw
