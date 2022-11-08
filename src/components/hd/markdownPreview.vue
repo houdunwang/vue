@@ -3,9 +3,7 @@ import hljs from 'highlight.js'
 import '@/styles/highlightjs.scss'
 import '@/styles/markdown.scss'
 
-const { text } = defineProps<{
-  text: string
-}>()
+const { text } = defineProps<{ text: string }>()
 const html = ref<HTMLDivElement>()
 html.value = document.createElement('div') as HTMLDivElement
 html.value.insertAdjacentHTML('afterbegin', text.replace('class="language-language"', ''))
@@ -15,8 +13,8 @@ html.value.querySelectorAll('pre code').forEach((el: any) => {
 </script>
 
 <template>
-  <main class="markdown-preview" v-if="html">
-    <div v-html="html.innerHTML"></div>
+  <main class="markdown-preview">
+    <div v-html="html?.innerHTML"></div>
   </main>
 </template>
 

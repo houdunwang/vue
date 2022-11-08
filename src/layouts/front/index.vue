@@ -1,7 +1,10 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import Footer from '@/components/footer.vue'
+import TopMenu from './topMenu.vue'
+</script>
 <template>
   <main>
-    <FrontTopMenu />
+    <TopMenu />
     <RouterView v-slot="{ Component, route }">
       <template v-if="Component">
         <KeepAlive>
@@ -11,6 +14,7 @@
         </KeepAlive>
       </template>
     </RouterView>
+
     <Footer />
   </main>
 </template>

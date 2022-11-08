@@ -1,4 +1,5 @@
 import _ from 'lodash'
+
 export function parseEnv(env: Record<string, any>): ImportMetaEnv {
   const envs: any = _.cloneDeep(env)
 

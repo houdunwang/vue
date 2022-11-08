@@ -3,9 +3,11 @@ import { ref } from 'vue'
 const text = ref('')
 const previewContent = ref(
   `
-<pre><code>import { ref } from 'vue'
-const text = ref('')
-const previewContent = ref('')</code></pre>
+  <pre><code>
+    import { ref } from 'vue'
+    const text = ref('')
+    const previewContent = ref('')
+  </code></pre>
 `,
 )
 </script>
@@ -20,8 +22,9 @@ const previewContent = ref('')</code></pre>
       </div>
     </el-card>
 
-    <el-card shadow="always" :body-style="{ padding: '20px' }" class="mt-3">
+    <el-card shadow="always" class="mt-3">
       <template #header> 预览组件 </template>
+      <v-md-preview :text="previewContent"></v-md-preview>
       <HdMarkdownPreview :text="previewContent" />
     </el-card>
   </main>

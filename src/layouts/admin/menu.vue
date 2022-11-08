@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import useUtil from '@/composables/hd/useUtil'
 import { RouteName } from '@/enum/RouteName'
-import { onMounted } from 'vue'
-import { ApplicationOne } from '@icon-park/vue-next'
-import router from '@/router'
 import useMenuStore from '@/layouts/admin/useMenuStore'
+import router from '@/router'
+import { ApplicationOne } from '@icon-park/vue-next'
+import { onMounted } from 'vue'
+import { RouteRecordRaw } from 'vue-router'
+const { open } = useUtil()
 const routes = router
   .getRoutes()
   .filter((r) => r.children.length)
@@ -19,6 +22,14 @@ onMounted(() => {
     if (document.documentElement.clientWidth < 640) menuStore.menuState = false
   })
 })
+
+const go = (route: RouteRecordRaw) => {
+  if (route.meta?.menu?.blank) {
+    open(route, '_blank')
+  } else {
+    router.push(route)
+  }
+}
 </script>
 
 <template>
@@ -46,7 +57,7 @@ onMounted(() => {
             <div
               v-for="(r, key) of route.children"
               :key="key"
-              @click="router.push(r)"
+              @click="go(r)"
               :class="{ active: $route.name == r.name }"
               v-show="r.meta?.menu">
               {{ r.meta?.menu?.title }}

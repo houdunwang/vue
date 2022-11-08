@@ -64,6 +64,7 @@ export default () => {
     return useRoute().query[name] || defaultValue
   }
 
+  //路由 Params 参数
   const routeParams = (name: string, defaultValue?: any) => {
     return useRoute().params[name] || defaultValue
   }
@@ -79,6 +80,7 @@ export default () => {
       }
     })
   }
+
   return {
     routeQuery,
     open,

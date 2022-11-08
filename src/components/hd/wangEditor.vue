@@ -13,12 +13,10 @@ const props = withDefaults(defineProps<IProps>(), {
   modelValue: '',
   height: 300,
 })
-
 const emit = defineEmits(['update:modelValue'])
 
 // 编辑器实例，必须用 shallowRef
 const editorRef = shallowRef<IDomEditor>()
-
 // 内容 HTML
 const valueHtml = ref(props.modelValue.startsWith('<p>') ? props.modelValue : `<p>${props.modelValue}</p>`)
 
@@ -39,7 +37,6 @@ watch([valueHtml], (value: any) => {
 
 // 创建工具栏
 const mode = ref('default')
-
 const toolbarConfig: Partial<IToolbarConfig> = {
   excludeKeys: ['group-video', 'undo', 'redo'],
 }
@@ -47,7 +44,6 @@ const toolbarConfig: Partial<IToolbarConfig> = {
 const editorConfig: Partial<IEditorConfig> = {
   MENU_CONF: {
     uploadImage: {
-      //   server: '/api/upload/image',
       async customUpload(file: File, insertFn: any) {
         const form = new FormData()
         form.append('file', file, file.name)
