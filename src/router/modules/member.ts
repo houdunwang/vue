@@ -6,7 +6,7 @@ export default {
   meta: { auth: true },
   children: [
     {
-      path: 'member/info',
+      path: '',
       name: 'member.info',
       component: () => import('@/views/member/info.vue'),
     },

@@ -6,7 +6,6 @@ const content = ref('后盾人')
 <template>
   <div class>
     <HdWangEditor v-model="content" :height="300" />
-
     <el-card shadow="always" :body-style="{ padding: '20px' }" class="mt-3">
       <template #header> 预览 </template>
       {{ content }}

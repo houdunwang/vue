@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import Footer from '@/components/footer.vue'
-import UserBlock from '@/components/hd/user-block.vue'
+import UserBlock from '@/components/userBlock.vue'
 import useUserStore from '@/store/hd/useUserStore'
 const userStore = useUserStore()
-const active = ref('')
+const active = ref('member.info')
 </script>
 <template>
   <main class="flex flex-col flex-1 justify-start" v-if="userStore.user">

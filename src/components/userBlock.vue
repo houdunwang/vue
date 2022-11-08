@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import dayjs from 'dayjs'
-
 const { user } = defineProps<{ user: UserModel }>()
 </script>
 

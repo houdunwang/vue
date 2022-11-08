@@ -4,18 +4,6 @@ import { createPaginate } from './helper'
 
 export default [
   {
-    url: '/api/user/info',
-    method: 'get',
-    response: () => {
-      return {
-        code: 200,
-        message: '请示成功',
-        status: 'success',
-        data: user,
-      }
-    },
-  },
-  {
     url: '/api/user/current',
     method: 'get',
     response: () => {
@@ -25,13 +13,6 @@ export default [
         message: '',
         data: user,
       }
-    },
-  },
-  {
-    url: '/api/user',
-    method: 'get',
-    response: () => {
-      return createPaginate(20)
     },
   },
 ] as MockMethod[]

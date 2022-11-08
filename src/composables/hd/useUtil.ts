@@ -1,13 +1,10 @@
-import { user } from './../../../mock/helper/data'
 import useStorage from '@/composables/hd/useStorage'
 import { CacheKey } from '@/enum/CacheKey'
-import router from '@/router'
-import useConfigStore from '@/store/hd/useConfigStore'
-import useUserStore from '@/store/hd/useUserStore'
-import userStore from '@/store/hd/useUserStore'
-import { onBeforeRouteLeave, RouteLocationRaw } from 'vue-router'
 import { http } from '@/plugins/axios'
+import router from '@/router'
+import userStore from '@/store/hd/useUserStore'
 import { ElMessageBox } from 'element-plus'
+import { onBeforeRouteLeave, RouteLocationRaw } from 'vue-router'
 const storage = useStorage()
 
 export default () => {
@@ -47,16 +44,6 @@ export default () => {
       isSubmit = true
       return fn(args).finally(() => (isSubmit = false))
     }
-  }
-
-  //初始站点
-  async function initSite() {
-    const route = useRoute()
-    const storeUser = userStore()
-    await Promise.all([storeUser.getCurrentUser(), useConfigStore().get()])
-    watchEffect(() => {
-      useTitle(route.meta.title)
-    })
   }
 
   //根据路由访问页面
@@ -100,7 +87,6 @@ export default () => {
     request,
     isAdministrator,
     authorize,
-    initSite,
     isWechat,
     routeParams,
     routeLeaveConfirm,

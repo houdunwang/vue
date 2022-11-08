@@ -1,8 +1,4 @@
-<script setup lang="ts">
-import useConfigStore from '@/store/hd/useConfigStore'
-
-const configStore = useConfigStore()
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <main>
@@ -36,8 +32,6 @@ const configStore = useConfigStore()
           <span class="pr-2"> 微信: houdunren2021 </span>
           <span class="pr-2"> 邮箱：2300071698@qq.com</span>
         </div>
-        <div>Copyright © 2010-2022 houdunren.com All Rights Reserved</div>
-        <a href="https://beian.miit.gov.cn/" target="_blank"> ICP证: xxx </a>
       </div>
       <div class="footer-bg"></div>
     </div>

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import useUpload from '@/composables/hd/useUpload'
+import useUpload from '@/composables/useUpload'
 import { IDomEditor, IEditorConfig, IToolbarConfig } from '@wangeditor/editor'
 import { Editor, Toolbar } from '@wangeditor/editor-for-vue'
 import '@wangeditor/editor/dist/css/style.css'

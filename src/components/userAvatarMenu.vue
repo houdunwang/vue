@@ -2,8 +2,7 @@
 import useUtil from '@/composables/hd/useUtil'
 import userStore from '@/store/hd/useUserStore'
 import dayjs from 'dayjs'
-import { Wechat } from '@icon-park/vue-next'
-const { isAdministrator, logout, isWechat } = useUtil()
+const { isAdministrator, logout } = useUtil()
 const storeUser = userStore()
 </script>
 
@@ -37,18 +36,17 @@ const storeUser = userStore()
         </template>
       </el-dropdown>
     </section>
-    <section v-else class="flex items-stretch">
+    <section v-else class="flex items-stretch gap-2">
       <router-link
         to="/login"
-        class="px-3 py-1 mr-2 border shadow-sm rounded-md hover:bg-indigo-600 hover:shadow-lg bg-indigo-500 !text-white duration-300">
+        class="px-3 py-2 flex items-center border shadow-sm rounded-md bg-slate-100 hover:bg-indigo-500 hover:!text-white duration-300">
         登录
       </router-link>
-      <!-- <router-link
-        v-if="!isWechat()"
+      <router-link
         to="/register"
-        class="px-3 py-2 border shadow-sm rounded-md bg-slate-100 hover:bg-indigo-500 hover:!text-white duration-300">
+        class="px-3 py-2 flex items-center border shadow-sm rounded-md bg-slate-100 hover:bg-indigo-500 hover:!text-white duration-300">
         注册
-      </router-link> -->
+      </router-link>
     </section>
   </main>
 </template>

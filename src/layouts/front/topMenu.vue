@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import useConfigStore from '@/store/hd/useConfigStore'
+import UserAvatarMenu from '@/components/userAvatarMenu.vue'
 import MenuList from './menu-list.vue'
-const configStore = useConfigStore()
 const showMenu = ref(true)
 document.addEventListener('click', () => (showMenu.value = true))
 </script>
@@ -40,7 +39,7 @@ document.addEventListener('click', () => (showMenu.value = true))
       <!-- 移动端中间标志 END-->
       <!-- 头像与站内消息 -->
       <section class="flex gap-3 items-center md:mt-0">
-        <HdUserAvatarMenu />
+        <UserAvatarMenu />
       </section>
       <!-- 头像与站内消息 END-->
     </div>

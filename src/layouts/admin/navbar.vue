@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import UserAvatarMenu from '@/components/userAvatarMenu.vue'
 import useMenuStore from '@/layouts/admin/useMenuStore'
 import { MenuFoldOne, MenuUnfoldOne } from '@icon-park/vue-next'
 const menuStore = useMenuStore()
@@ -19,7 +20,7 @@ const menuStore = useMenuStore()
       <HdBreadcrumb class="hidden md:block" />
     </div>
     <div class="flex justify-center items-center relative cursor-pointer">
-      <HdUserAvatarMenu />
+      <UserAvatarMenu />
     </div>
   </div>
 </template>
