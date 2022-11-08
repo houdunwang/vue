@@ -24,11 +24,8 @@ onMounted(() => {
 })
 
 const go = (route: RouteRecordRaw) => {
-  if (route.meta?.menu?.blank) {
-    open(route, '_blank')
-  } else {
-    router.push(route)
-  }
+  if (route.meta?.menu?.blank) open(route, '_blank')
+  else router.push(route)
 }
 </script>
 
