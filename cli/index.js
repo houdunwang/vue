@@ -9,6 +9,7 @@ import chalk from 'chalk'
 import inquirer from 'inquirer'
 import fs from 'fs-extra'
 import { createSpinner } from 'nanospinner'
+import { download } from 'obtain-git-repo'
 import figlet from 'figlet'
 import terminalLink from 'terminal-link'
 import axios from 'axios'
@@ -43,26 +44,38 @@ async function run() {
       //显示下载动画
       const spinner = createSpinner('开始下载...').start()
       //下载压缩包
-      const { data } = await axios({
-        url: 'https://houdunren-soft.oss-cn-hangzhou.aliyuncs.com/vue-master.zip',
-        timeout: 10000,
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-        responseType: 'arraybuffer',
-      })
-      await fs.promises.writeFile(`vue-master.zip`, data, 'binary')
+      // const { data } = await axios({
+      //   url: 'https://houdunren-soft.oss-cn-hangzhou.aliyuncs.com/vue-master.zip',
+      //   timeout: 10000,
+      //   headers: {
+      //     'Content-Type': 'multipart/form-data',
+      //   },
+      //   responseType: 'arraybuffer',
+      // })
+      // await fs.promises.writeFile(`vue-master.zip`, data, 'binary')
       //解压缩
-      const unzip = new adm_zip('vue-master.zip')
-      unzip.extractAllTo('.', true)
-      fs.unlinkSync('vue-master.zip')
+      // const unzip = new adm_zip('vue-master.zip')
+      // unzip.extractAllTo('.', true)
+      // fs.unlinkSync('vue-master.zip')
       //移动解压缩文件
-      fs.moveSync('vue-master', message.dirname, { overwrite: true })
-      spinner.success({ text: '项目创建成功，请依次执行以下命令' })
+      // fs.moveSync('vue-master', message.dirname, { overwrite: true })
+      // spinner.success({ text: '项目创建成功，请依次执行以下命令' })
 
-      console.log(chalk.white(`cd ${message.dirname}`))
-      console.log(chalk.white('pnpm i'))
-      console.log(chalk.white('pnpm run dev'))
+      //下载git代码
+      download('direct:https://gitee.com/houdunren/vue', message.dirname, { clone: true }, function (err) {
+        if (err) {
+          spinner.error({ text: '下载失败' })
+        } else {
+          spinner.success({
+            text: '项目创建成功，请依次执行以下命令',
+          })
+          console.log(chalk.white(`cd ${message.dirname}`))
+          console.log(chalk.white('pnpm i'))
+          console.log(chalk.white('pnpm run dev'))
+          return
+        }
+      })
+
       return
     }
   })
