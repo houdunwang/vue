@@ -19,7 +19,7 @@ export default defineConfig(({ command, mode }) => {
         languages: 'all',
       }),
     ],
-    base: isBuild ? '/vue/' : '/',
+    base: isBuild ? '/' : '/',
     resolve: {
       alias: {
         '@': path.resolve(__dirname, 'src'),
@@ -41,22 +41,10 @@ export default defineConfig(({ command, mode }) => {
     server: {
       host: true,
       proxy: {
-        '/api': {
-          target: env.VITE_API_URL,
-          changeOrigin: true,
-        },
-        '/assets': {
-          target: env.VITE_API_URL,
-          changeOrigin: true,
-        },
-        '/wechat/app/autologin': {
-          target: env.VITE_API_URL,
-          changeOrigin: true,
-        },
-        '/captcha': {
-          target: env.VITE_API_URL,
-          changeOrigin: true,
-        },
+        // '/api': {
+        //   target: env.VITE_API_URL,
+        //   changeOrigin: true,
+        // },
       },
     },
   }
