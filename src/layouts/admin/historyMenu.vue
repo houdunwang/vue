@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import router from '@/router'
 import useStorage from '@/composables/hd/useStorage'
-const storage = useStorage()
-const routes = ref<{ title: string; name: string }[]>(storage.get('admin-history-menu', []))
+// const storage = useStorage()
+const routes = ref<{ title: string; name: string }[]>([])
 router.beforeResolve(async (to) => {
   if (Object.keys(to.query).length > 0 || Object.keys(to.params).length > 0) return
   if (!to.meta.menu?.title || routes.value.find((r) => r.name == to.name)) return
@@ -11,7 +11,7 @@ router.beforeResolve(async (to) => {
     routes.value.splice(0, 10)
   }
   routes.value.unshift({ name: to.name as string, title: to.meta.menu?.title })
-  storage.set('admin-history-menu', routes.value)
+  // storage.set('admin-history-menu', routes.value)
 })
 </script>
 
