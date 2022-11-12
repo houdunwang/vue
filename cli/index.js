@@ -21,7 +21,7 @@ async function run() {
     //可点击链接
     console.log(
       chalk.green(
-        `欢迎使用后盾人前端脚手架，向军大叔每晚8点在抖音与B站直播，请搜索【后盾人】关注。\n如果下载失败请访问 https://gitee.com/houdunren/vue`,
+        `欢迎使用后盾人前端脚手架，向军大叔每晚8点在抖音与B站直播，请搜索【后盾人】关注。\n 下载来源于 Github，如果下载失败请访问 https://gitee.com/houdunren/vue`,
       ),
     )
 
@@ -31,7 +31,7 @@ async function run() {
       type: 'input',
       message: '请输入目录名',
       default() {
-        return 'houdunren-vue'
+        return 'vue'
       },
     })
 
@@ -62,7 +62,7 @@ async function run() {
       // spinner.success({ text: '项目创建成功，请依次执行以下命令' })
 
       //下载git代码
-      download('direct:https://gitee.com/houdunren/vue', message.dirname, { clone: true }, function (err) {
+      download('direct:https://github.com/houdunwang/vue', message.dirname, { clone: true }, function (err) {
         if (err) {
           spinner.error({ text: '下载失败' })
         } else {
@@ -75,8 +75,6 @@ async function run() {
           return
         }
       })
-
-      return
     }
   })
 }
