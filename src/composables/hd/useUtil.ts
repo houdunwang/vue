@@ -1,41 +1,8 @@
-import useStorage from '@/composables/hd/useStorage'
-import { CacheKey } from '@/enum/CacheKey'
-import { http } from '@/plugins/axios'
 import router from '@/router'
-import userStore from '@/store/hd/useUserStore'
 import { ElMessageBox } from 'element-plus'
 import { onBeforeRouteLeave, RouteLocationRaw } from 'vue-router'
-const storage = useStorage()
 
 export default () => {
-  //模型权限验证
-  function authorize(userId: any) {
-    return isAdministrator() || userId == userStore().user?.id
-  }
-
-  //超级管理员
-  function isAdministrator() {
-    return userStore().user?.id == 1
-  }
-
-  //登录检测
-  function isLogin(): boolean {
-    return useStorage().get(CacheKey.TOKEN_NAME)
-    // const userStore = useUserStore()
-    // return !!userStore.user
-  }
-
-  //退出登录
-  async function logout() {
-    storage.remove(CacheKey.TOKEN_NAME)
-    return (location.href = '/')
-    await http.request({
-      url: `auth/logout`,
-      method: 'POST',
-    })
-    location.href = '/'
-  }
-
   //限制点击频繁
   function request(fn: (args: any) => Promise<any>) {
     let isSubmit = false
@@ -84,11 +51,7 @@ export default () => {
   return {
     routeQuery,
     open,
-    isLogin,
-    logout,
     request,
-    isAdministrator,
-    authorize,
     isWechat,
     routeParams,
     routeLeaveConfirm,

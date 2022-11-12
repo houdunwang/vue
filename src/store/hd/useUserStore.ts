@@ -1,4 +1,4 @@
-import useUtil from '@/composables/hd/useUtil'
+import useAuth from '@/composables/useAuth'
 import { defineStore } from 'pinia'
 
 export default defineStore('user', {
@@ -15,7 +15,7 @@ export default defineStore('user', {
       this.user = data
     },
     async getCurrentUser() {
-      if (useUtil().isLogin()) {
+      if (useAuth().isLogin()) {
         this.user = {
           id: 1,
           name: '向军大叔',

@@ -2,7 +2,7 @@
 import useUtil from '@/composables/hd/useUtil'
 import userStore from '@/store/hd/useUserStore'
 import dayjs from 'dayjs'
-const { isAdministrator, logout } = useUtil()
+const { logout } = useUtil()
 const storeUser = userStore()
 </script>
 
@@ -20,7 +20,7 @@ const storeUser = userStore()
         </span>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item v-if="isAdministrator()">
+            <el-dropdown-item>
               <router-link :to="{ name: 'admin' }"> 后台管理 </router-link>
             </el-dropdown-item>
             <el-dropdown-item>

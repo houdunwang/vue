@@ -1,6 +1,5 @@
 <template>
   <main>
-    <FrontTopMenu />
     <RouterView v-slot="{ Component, route }">
       <template v-if="Component">
         <Suspense>
@@ -10,6 +9,5 @@
         </Suspense>
       </template>
     </RouterView>
-    <Footer />
   </main>
 </template>
