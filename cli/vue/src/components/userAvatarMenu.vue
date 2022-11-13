@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import useUtil from '@/composables/hd/useUtil'
 import userStore from '@/store/hd/useUserStore'
 import dayjs from 'dayjs'
-const { logout } = useAuth()
+const { logout } = useUtil()
 const storeUser = userStore()
 </script>
 
