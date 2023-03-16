@@ -8,7 +8,14 @@ on:
 
 jobs:
   release:
-    runs-on: ubuntu-latest
+    name: build and release electron app
+    runs-on: ${{ matrix.os }}
+
+    if: startsWith(github.ref, 'refs/tags/')
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
 
     steps:
       - name: Check out git repository
