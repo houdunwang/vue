@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import useUtil from '@/composables/hd/useUtil'
-import { RouteName } from '@/enum/RouteName'
 import useMenuStore from '@/layouts/admin/useMenuStore'
 import router from '@/router'
 import { ApplicationOne } from '@icon-park/vue-next'
-import { onMounted } from 'vue'
 import { RouteRecordRaw } from 'vue-router'
 const { open } = useUtil()
 const routes = router

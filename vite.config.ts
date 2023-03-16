@@ -1,20 +1,18 @@
-import { defineConfig, loadEnv } from 'vite'
-import { parseEnv } from './vite/util'
-import setupPlugins from './vite/plugins'
-import vueJsx from '@vitejs/plugin-vue-jsx'
-import path from 'path'
 import vue from '@vitejs/plugin-vue'
+import path from 'path'
+import { defineConfig, loadEnv } from 'vite'
 import prismjs from 'vite-plugin-prismjs'
+import autoImport from './vite/auto-import'
+import { parseEnv } from './vite/util'
 
 export default defineConfig(({ command, mode }) => {
   const isBuild = command == 'build'
-  const env = parseEnv(loadEnv(mode, process.cwd()))
+  // const env = parseEnv(loadEnv(mode, process.cwd()))
 
   return {
     plugins: [
-      ...setupPlugins(isBuild, env),
-      vueJsx({}),
-      vue({ reactivityTransform: true }),
+      ...autoImport,
+      vue(),
       prismjs({
         languages: 'all',
       }),

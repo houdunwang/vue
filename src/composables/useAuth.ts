@@ -1,37 +1,39 @@
-import useStorage from '@/composables/hd/useStorage'
-import { CacheKey } from '@/enum/CacheKey'
-import { http } from '@/plugins/axios'
-import userStore from '@/store/hd/useUserStore'
+// import { userStore } from '@/store/hd/useUserStore'
+// import useStorage from '@/composables/hd/useStorage'
+// import { CacheKey } from '@/enum/CacheKey'
+import router from '@/router'
+// import userStore from '@/store/useUserStore'
 const storage = useStorage()
 
 export default () => {
-  //模型权限验证
-  function authorize(userId: any) {
-    return isAdministrator() || userId == userStore().user?.id
-  }
+  const form = reactive({
+    mobile: '19999999999',
+    password: 'admin888',
+    password_confirmation: 'admin888',
+  })
 
-  //超级管理员
-  function isAdministrator() {
-    return userStore().user?.id == 1
+  //模型权限验证
+  function authorize(userId: undefined | number) {
+    return userId == useUserStore().user?.id
   }
 
   //登录检测
   function isLogin(): boolean {
     return useStorage().get(CacheKey.TOKEN_NAME)
-    // const userStore = useUserStore()
-    // return !!userStore.user
   }
 
   //退出登录
   async function logout() {
     storage.remove(CacheKey.TOKEN_NAME)
     return (location.href = '/')
-    await http.request({
-      url: `auth/logout`,
-      method: 'POST',
-    })
-    location.href = '/'
   }
 
-  return { authorize, isAdministrator, isLogin, logout }
+  //登录
+  const login = useUtil().request(async () => {
+    storage.set(CacheKey.TOKEN_NAME, 'houdunren.com')
+    const route = router.resolve({ name: RouteName.ADMIN })
+    location.href = route.fullPath
+  })
+
+  return { authorize, isLogin, logout, login, form }
 }

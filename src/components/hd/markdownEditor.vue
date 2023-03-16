@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import useUpload from '@/composables/useUpload'
 import VueMarkdownEditor from '@kangc/v-md-editor'
-import { ref, watch } from 'vue'
 const { uploadImage } = useUpload()
 const { modelValue, height = 400 } = defineProps<{
   modelValue: any

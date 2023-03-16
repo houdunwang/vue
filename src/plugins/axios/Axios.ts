@@ -1,11 +1,6 @@
-import { HttpStatus } from '@/enum/HttpStatus'
-import { RouteName } from '@/enum/RouteName'
 import router from '@/router'
-import errorStore from '@/store/hd/useErrorStore'
-import axios, { AxiosRequestConfig } from 'axios'
+import axios, { AxiosRequestConfig, InternalAxiosRequestConfig } from 'axios'
 import { ElLoading, ElMessage } from 'element-plus'
-import { CacheKey } from '@/enum/CacheKey'
-import useStorage from '@/composables/hd/useStorage'
 interface IOptions {
   loading?: boolean
   message?: boolean
@@ -40,15 +35,14 @@ export default class Axios {
 
   private interceptorsRequest() {
     this.instance.interceptors.request.use(
-      (config: AxiosRequestConfig) => {
+      (config: InternalAxiosRequestConfig) => {
         if (!this.loading && this.options.loading) {
           this.loading = ElLoading.service({ background: 'rgba(255,255,255,0.1)', fullscreen: true })
         }
-        if (this.options.clearValidateError) errorStore().resetError()
-        config.headers = {
-          Accept: 'application/json',
-          Authorization: `Bearer ${storage.get(CacheKey.TOKEN_NAME)}`,
-        }
+        if (this.options.clearValidateError) useErrorStore().resetError()
+        config.headers.Accept = 'application/json'
+        config.headers.Authorization = `Bearer ${storage.get(CacheKey.TOKEN_NAME)}`
+
         return config
       },
       (error: any) => {
@@ -94,7 +88,7 @@ export default class Axios {
             router.push({ name: RouteName.LOGIN })
             break
           case HttpStatus.UNPROCESSABLE_ENTITY:
-            errorStore().setErrors(error.response.data.errors)
+            useErrorStore().setErrors(error.response.data.errors)
             break
           case HttpStatus.FORBIDDEN:
             ElMessage({ type: 'error', message: message ?? '没有操作权限' })

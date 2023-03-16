@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import useStorage from './useStorage'
 const key = 'interval_exec_time'
 const storage = useStorage()
-let intervalId: NodeJS.Timer | undefined
+let intervalId: undefined | number = 0
 const time = ref<number>(0)
 
 export default (timeout: number, fn: () => Promise<void>) => {

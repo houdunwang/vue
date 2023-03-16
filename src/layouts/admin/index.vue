@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import HistoryMenu from '@/layouts/admin/historyMenu.vue'
-import MenuComponet from '@/layouts/admin/menu.vue'
+import leftMenu from '@/layouts/admin/leftMenu.vue'
 import Navbar from '@/layouts/admin/navbar.vue'
 </script>
 
 <template>
   <main class="admin h-screen w-screen grid md:grid-cols-[auto_1fr]">
-    <MenuComponet />
+    <leftMenu />
     <section class="content bg-gray-100 grid grid-rows-[auto_1fr] overflow-hidden">
       <div>
         <Navbar />

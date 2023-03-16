@@ -1,10 +1,11 @@
-import useStorage from '@/composables/hd/useStorage'
-import useAuth from '@/composables/useAuth'
-import { CacheKey } from '@/enum/CacheKey'
-import { RouteName } from '@/enum/RouteName'
-import useUserStore from '@/store/hd/useUserStore'
-import { ElMessage } from 'element-plus'
+// import useAuth from '@/composables/useAuth'
+// import useStorage from '@/composables/useStorage'
+// import { CacheKey } from '@/enum/CacheKey'
+// import { RouteName } from '@/enum/RouteName'
+// import useUserStore from '@/store/useUserStore'
+// import { ElMessage } from 'element-plus'
 import { RouteLocationNormalized, Router } from 'vue-router'
+import { useTitle } from '@vueuse/core'
 
 let isInit = false
 export default (router: Router) => {

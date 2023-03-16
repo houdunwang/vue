@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import router from '@/router'
-import useStorage from '@/composables/hd/useStorage'
-// const storage = useStorage()
+
 const routes = ref<{ title: string; name: string }[]>([])
 router.beforeResolve(async (to) => {
   if (Object.keys(to.query).length > 0 || Object.keys(to.params).length > 0) return
@@ -11,7 +10,6 @@ router.beforeResolve(async (to) => {
     routes.value.splice(0, 10)
   }
   routes.value.unshift({ name: to.name as string, title: to.meta.menu?.title })
-  // storage.set('admin-history-menu', routes.value)
 })
 </script>
 
@@ -22,10 +20,16 @@ router.beforeResolve(async (to) => {
         v-for="(route, index) of routes"
         :key="index"
         :to="{ name: route.name }"
-        class="border inline-flex items-center jusc hover:bg-teal-600 hover:text-white duration-300 bg-white rounded-md shadow-sm py-2 px-3 text-xs"
-        :class="{ 'bg-teal-600 text-white': $route.name == route.name }">
+        class="border inline-flex items-center hover:bg-teal-600 hover:text-white duration-300 rounded-md shadow-sm py-2 px-3 text-xs"
+        :class="{ 'action-bg ': $route.name == route.name }">
         {{ route.title }}
       </router-link>
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.action-bg {
+  @apply bg-slate-600 text-white;
+}
+</style>

@@ -1,21 +1,11 @@
 <script setup lang="ts">
 import { Wechat } from '@icon-park/vue-next'
-import { reactive } from 'vue'
 import Footer from './components/footer.vue'
-
-const form = reactive({
-  mobile: '',
-  password: '',
-  password_confirmation: '',
-  code: '',
-})
-
-//请自行完善逻辑
-const onSubmit = async () => {}
+const { login, form } = useAuth()
 </script>
 
 <template>
-  <form @submit.prevent="onSubmit">
+  <form @submit.prevent="login">
     <div class="w-[720px] bg-gray-50 md:grid grid-cols-2 rounded-md shadow-md overflow-hidden">
       <div class="p-6 flex flex-col justify-between">
         <div>

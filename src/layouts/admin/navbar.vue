@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import UserAvatarMenu from '@/components/userAvatarMenu.vue'
+import UserAvatarMenu from '@/components/hd/userAvatarMenu.vue'
 import useMenuStore from '@/layouts/admin/useMenuStore'
 import { MenuFoldOne, MenuUnfoldOne } from '@icon-park/vue-next'
 const menuStore = useMenuStore()

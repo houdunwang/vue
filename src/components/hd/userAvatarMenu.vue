@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import userStore from '@/store/hd/useUserStore'
+// 用户头像菜单
 import dayjs from 'dayjs'
 const { logout } = useAuth()
-const storeUser = userStore()
+const storeUser = useUserStore()
 </script>
 
 <template>
   <main class="flex items-center">
-    <HdFullscreen class="hidden 2xl:flex mr-3 text-gray-600" />
+    <HdFullScreen class="hidden 2xl:flex mr-3 text-gray-600" />
     <section v-if="!!storeUser.user" class="flex items-center">
       <el-dropdown trigger="click">
         <span class="el-dropdown-link flex items-center">

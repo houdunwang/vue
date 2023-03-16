@@ -1,4 +1,4 @@
-import useAuth from '@/composables/useAuth'
+// import useAuth from '@/composables/useAuth'
 import { defineStore } from 'pinia'
 
 export default defineStore('user', {
@@ -6,9 +6,6 @@ export default defineStore('user', {
     return {
       user: undefined as UserModel | undefined,
     }
-  },
-  getters: {
-    isAdministrator: (state) => state.user?.id == 1,
   },
   actions: {
     setUser(data: UserModel) {

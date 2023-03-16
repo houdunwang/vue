@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import useIntervalRequest from '@/composables/hd/useIntervalRequest'
-import { ElMessage } from 'element-plus'
+// import useIntervalRequest from '@/composables/useIntervalRequest.js'
+// import { ElMessage } from 'element-plus'
 
 const { exec, time } = useIntervalRequest(10, async () => {
   ElMessage.success('执行成功')
