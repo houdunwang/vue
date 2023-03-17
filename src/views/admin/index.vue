@@ -29,7 +29,7 @@ const cards = ref<ICard[]>([
     totalTitle: '总销售额',
   },
   {
-    title: '订单数',
+    title: '订单量',
     price: 63803,
     iconColor: 'text-blue-500',
     icon: 'fas fa-award',
@@ -56,7 +56,7 @@ nextTick(() => {
 
 <template>
   <div>
-    <div class="grid md:grid-cols-4 gap-3 bg-gray-100">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 bg-gray-100">
       <el-card
         shadow="hover"
         :body-style="{ padding: '20px' }"
@@ -81,30 +81,22 @@ nextTick(() => {
       </el-card>
     </div>
 
-    <div class="mt-5 grid md:grid-cols-2 gap-3">
-      <el-card shadow="always" :body-style="{ padding: '20px' }">
-        <template #header>
-          <div>用户统计</div>
-        </template>
-        <div id="echart1" class="h-72 w-full"></div>
+    <div class="mt-5 grid grid-cols-1 lg:grid-cols-2 gap-3">
+      <el-card shadow="hover" :body-style="{ padding: '20px' }">
+        <template #header> 用户统计 </template>
+        <div id="echart1" class="h-72"></div>
       </el-card>
-      <el-card shadow="always" :body-style="{ padding: '20px' }">
-        <template #header>
-          <div>销售客</div>
-        </template>
-        <div id="echart2" class="h-72 w-full"></div>
+      <el-card shadow="hover" :body-style="{ padding: '20px' }">
+        <template #header> 销售额 </template>
+        <div id="echart2" class="h-72"></div>
       </el-card>
-      <el-card shadow="always" :body-style="{ padding: '20px' }">
-        <template #header>
-          <div>用户统计</div>
-        </template>
-        <div id="echart3" class="h-72 w-full"></div>
+      <el-card shadow="hover" :body-style="{ padding: '20px' }">
+        <template #header> 搜索来源 </template>
+        <div id="echart3" class="h-72"></div>
       </el-card>
-      <el-card shadow="always" :body-style="{ padding: '20px' }">
-        <template #header>
-          <div>销售客</div>
-        </template>
-        <div id="echart4" class="h-72 w-full"></div>
+      <el-card shadow="hover" :body-style="{ padding: '20px' }">
+        <template #header> 订单分析 </template>
+        <div id="echart4" class="h-72"></div>
       </el-card>
     </div>
   </div>

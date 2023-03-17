@@ -6,7 +6,7 @@ const { login, form } = useAuth()
 
 <template>
   <form @submit.prevent="login">
-    <div class="w-[720px] bg-gray-50 md:grid grid-cols-2 rounded-md shadow-md overflow-hidden">
+    <div class="lg:w-[720px] bg-gray-50 md:grid grid-cols-2 rounded-md shadow-md overflow-hidden">
       <div class="p-6 flex flex-col justify-between">
         <div>
           <h2 class="text-center text-gray-700 text-lg mt-3">找回密码</h2>

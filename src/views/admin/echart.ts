@@ -2,7 +2,7 @@ import * as echarts from 'echarts'
 
 export const echart1 = {
   title: {
-    text: 'ECharts 入门示例',
+    text: '',
   },
   tooltip: {},
   xAxis: {
@@ -21,7 +21,7 @@ export const echart1 = {
 export const echart2 = {
   color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
   title: {
-    text: 'Gradient Stacked Area Chart',
+    text: '',
   },
   tooltip: {
     trigger: 'axis',
@@ -189,14 +189,6 @@ export const echart3 = {
   ],
   series: [
     {
-      name: 'Direct',
-      type: 'bar',
-      emphasis: {
-        focus: 'series',
-      },
-      data: [320, 332, 301, 334, 390, 330, 320],
-    },
-    {
       name: 'Email',
       type: 'bar',
       stack: 'Ad',
@@ -222,20 +214,6 @@ export const echart3 = {
         focus: 'series',
       },
       data: [150, 232, 201, 154, 190, 330, 410],
-    },
-    {
-      name: 'Search Engine',
-      type: 'bar',
-      data: [862, 1018, 964, 1026, 1679, 1600, 1570],
-      emphasis: {
-        focus: 'series',
-      },
-      markLine: {
-        lineStyle: {
-          type: 'dashed',
-        },
-        data: [[{ type: 'min' }, { type: 'max' }]],
-      },
     },
     {
       name: 'Baidu',
@@ -264,15 +242,6 @@ export const echart3 = {
         focus: 'series',
       },
       data: [60, 72, 71, 74, 190, 130, 110],
-    },
-    {
-      name: 'Others',
-      type: 'bar',
-      stack: 'Search Engine',
-      emphasis: {
-        focus: 'series',
-      },
-      data: [62, 82, 91, 84, 109, 110, 120],
     },
   ],
 }
