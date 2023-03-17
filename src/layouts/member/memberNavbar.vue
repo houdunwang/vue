@@ -1,15 +1,30 @@
 <script setup lang="ts">
 import UserAvatarMenu from '@/components/hd/userAvatarMenu.vue'
-import { Home } from '@icon-park/vue-next'
+import { Home, HamburgerButton } from '@icon-park/vue-next'
+import menuData from './menuData'
 
 const { open } = useUtil()
 </script>
 
 <template>
   <main class="bg-white">
-    <section class="2xl:w-page m-auto relative shadow-sm z-50 p-2 border-b-1 px-5 flex justify-between items-center">
+    <section class="2xl:w-page m-auto relative shadow-sm z-50 p-2 border-b-1 flex justify-between items-center">
       <div class="flex items-center">
-        <home theme="outline" size="24" fill="#10ad57" @click="open('/')" class="cursor-pointer" />
+        <home theme="outline" size="24" fill="#10ad57" @click="open('/')" class="cursor-pointer hidden md:block" />
+
+        <el-dropdown trigger="click" size="default" class="md:hidden">
+          <hamburger-button theme="outline" size="24" fill="#10ad57" />
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item
+                v-for="(menu, index) in menuData"
+                :key="index"
+                @click="$router.push({ name: menu.routeName })">
+                {{ menu.title }}
+              </el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
       </div>
       <div class="flex justify-center items-center relative cursor-pointer">
         <UserAvatarMenu />
