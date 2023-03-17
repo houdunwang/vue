@@ -1,13 +1,9 @@
-// import { userStore } from '@/store/hd/useUserStore'
-// import useStorage from '@/composables/hd/useStorage'
-// import { CacheKey } from '@/enum/CacheKey'
 import router from '@/router'
-// import userStore from '@/store/useUserStore'
 const storage = useStorage()
 
 export default () => {
   const form = reactive({
-    mobile: '19999999999',
+    email: '2300071698@qq.com',
     password: 'admin888',
     password_confirmation: 'admin888',
   })
