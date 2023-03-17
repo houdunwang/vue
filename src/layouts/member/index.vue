@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import navbar from './memberNavbar.vue'
+import memberNavbar from './memberNavbar.vue'
 import UserBlock from './userBlock.vue'
 
 const active = ref('')
 </script>
 <template>
   <main class="flex flex-col flex-1 justify-start">
-    <navbar />
+    <memberNavbar />
     <section class="2xl:w-page 2xl:mx-auto mt-5 flex flex-col md:flex-row md:items-start gap-5 p-2">
       <div class="md:w-[200px]">
         <UserBlock class="hidden lg:block" />
