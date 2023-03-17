@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import useStorage from '@/composables/hd/useStorage'
 import Player from 'xgplayer'
 const storage = useStorage()
 const { url, urlList } = defineProps<{
   url: string
   urlList?: string[]
 }>()
-// ['b.mp4','c.mp4']
-const player = ref<Player>()
+const player = ref<any>()
 const emit = defineEmits(['playNextVideo'])
 //视频列表，不包括当前视频
 const urls = urlList ? urlList.splice(urlList.findIndex((u) => url == u) + 1) : undefined
@@ -27,12 +25,12 @@ onMounted(() => {
   })
 
   //播放下一个
-  player.value.on('playerNext', (index) => {
+  player.value.on('playerNext', (index: number) => {
     emit('playNextVideo', urls ? urls[index - 1] : undefined)
   })
 
   //更改播放速度
-  player.value.on('playbackrateChange', function (v) {
+  player.value.on('playbackrateChange', function (v: any) {
     storage.set('playbackrateChange', v.to)
   })
 })
