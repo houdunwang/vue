@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import guard from './guard'
-import routes from './modules/index'
+import routes from './routes'
 
 const router = createRouter({
   history: createWebHistory(),

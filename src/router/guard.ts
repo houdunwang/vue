@@ -1,11 +1,6 @@
-// import useAuth from '@/composables/useAuth'
-// import useStorage from '@/composables/useStorage'
-// import { CacheKey } from '@/enum/CacheKey'
-// import { RouteName } from '@/enum/RouteName'
-// import useUserStore from '@/store/useUserStore'
-// import { ElMessage } from 'element-plus'
 import { RouteLocationNormalized, Router } from 'vue-router'
 import { useTitle } from '@vueuse/core'
+import kernel from '@/kernel'
 
 let isInit = false
 export default (router: Router) => {
@@ -32,6 +27,5 @@ async function beforeEach(to: RouteLocationNormalized, from: RouteLocationNormal
 async function init() {
   if (isInit === true) return
   isInit = true
-  const userStore = useUserStore()
-  await Promise.all([userStore.getCurrentUser()])
+  await Promise.all(kernel.middleware.map((middleware) => middleware()))
 }
