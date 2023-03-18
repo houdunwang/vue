@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <main class="borde shadow-md bg-white overflow-hidden rounded-lg">
+  <main class="bg-white overflow-hidden rounded-md">
     <el-image src="/images/xj.jpg" fit="cover" :lazy="true" class="w-full" />
     <div class="flex flex-col items-center justify-center py-3 text-slate-700">
       <h2 class="font-bold">后盾人</h2>

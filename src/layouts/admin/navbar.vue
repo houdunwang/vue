@@ -15,7 +15,7 @@ const menuStore = useMenuStore()
           fill="#10ad57"
           class="cursor-pointer duration-300"
           v-if="menuStore.menuState" />
-        <MenuFoldOne theme="filled" size="24" fill="#10ad57" class="cursor-pointer duration-300" v-else />
+        <MenuFoldOne theme="filled" size="26" fill="#10ad57" class="cursor-pointer duration-300" v-else />
       </div>
       <HdBreadcrumb class="hidden md:block" />
     </div>

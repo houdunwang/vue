@@ -7,7 +7,7 @@ const form = reactive({ password: '', password_confirmation: '' })
   <main>
     <el-tabs v-model="tab" type="card" tab-position="top" @tab-click="">
       <el-tab-pane label="修改密码" name="password">
-        <el-form label-width="80px" :inline="false" size="large" class="border p-5 rounded-2xl">
+        <el-form label-width="80px" class="border p-5 rounded-lg">
           <el-form-item label="新密码">
             <el-input type="password" v-model="form.password"></el-input>
             <HdError name="password" />

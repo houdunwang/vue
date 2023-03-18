@@ -6,7 +6,7 @@ const tab = ref('password')
   <main>
     <el-tabs v-model="tab" type="card" tab-position="top" @tab-click="">
       <el-tab-pane label="修改密码" name="password">
-        <el-form label-width="80px" :inline="false" size="large" class="border p-5 rounded-2xl">
+        <el-form label-width="80px" class="border p-5 rounded-lg">
           <el-form-item label="昵称">
             <el-input placeholder="起个有个性的昵称吧"></el-input>
             <HdError name="name" />
