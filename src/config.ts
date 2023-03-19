@@ -7,7 +7,7 @@ export default {
   member: {
     menu: [
       {
-        routeName: 'member.info',
+        routeName: 'member',
         title: '资料修改',
       },
       {
