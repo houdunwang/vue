@@ -9,7 +9,7 @@ export default [
     children: [
       {
         name: 'admin',
-        path: '/admin',
+        path: '',
         component: () => import('@/views/admin/index.vue'),
         meta: { title: '工作台', menu: { title: '工作台' } },
       },
