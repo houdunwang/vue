@@ -6,7 +6,7 @@ export default {
     {
       name: 'home',
       path: '/',
-      component: () => import('@/views/home.vue'),
+      component: () => import('@/views/front/index.vue'),
     },
   ],
 } as RouteRecordRaw
