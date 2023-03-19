@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import UserAvatarMenu from '@/components/hd/userAvatarMenu.vue'
-import { Home, HamburgerButton, AllApplication } from '@icon-park/vue-next'
-import menuData from './menuData'
+import { Home, AllApplication } from '@icon-park/vue-next'
+import config from '@/config'
 
 const { open } = useUtil()
 </script>
@@ -13,11 +13,11 @@ const { open } = useUtil()
         <home theme="outline" size="26" fill="#e66767" @click="open('/')" class="cursor-pointer hidden md:block" />
 
         <el-dropdown trigger="click" size="default" class="md:hidden">
-          <AllApplication theme="outline" size="26" fill="#e66767" />
+          <AllApplication theme="outline" size="26" fill="#e66767" class="md:hidden" />
           <template #dropdown>
             <el-dropdown-menu>
               <el-dropdown-item
-                v-for="(menu, index) in menuData"
+                v-for="(menu, index) in config.member.menu"
                 :key="index"
                 @click="$router.push({ name: menu.routeName })">
                 {{ menu.title }}

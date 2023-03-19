@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import memberNavbar from './memberNavbar.vue'
 import UserBlock from './userBlock.vue'
-import menuData from './menuData'
+import config from '@/config'
 const active = ref('')
 </script>
 <template>
@@ -12,7 +12,7 @@ const active = ref('')
         <UserBlock />
         <div class="menu">
           <router-link
-            v-for="(menu, index) of menuData"
+            v-for="(menu, index) of config.member.menu"
             :key="index"
             :to="{ name: menu.routeName }"
             :class="{ active: $route.name == menu.routeName }"

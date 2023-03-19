@@ -7,7 +7,7 @@ export default {
   children: [
     {
       path: 'info',
-      name: 'member.info',
+      name: 'member',
       component: () => import('@/views/member/info.vue'),
     },
     {
