@@ -21,7 +21,7 @@ const storeUser = useUserStore()
         <template #dropdown>
           <el-dropdown-menu>
             <el-dropdown-item v-for="(menu, index) of config.user.avatarMenu" :key="index">
-              <router-link :to="{ name: menu.routeName }"> {{ menu.title }} </router-link>
+              <router-link :to="menu.routeName"> {{ menu.title }} </router-link>
             </el-dropdown-item>
             <el-dropdown-item divided @click="logout">退出登录</el-dropdown-item>
           </el-dropdown-menu>
@@ -30,12 +30,12 @@ const storeUser = useUserStore()
     </section>
     <section v-else class="flex items-stretch gap-2">
       <router-link
-        to="/login"
+        :to="{ name: RouteName.LOGIN }"
         class="px-3 py-2 flex items-center border shadow-sm rounded-md bg-slate-100 hover:bg-indigo-500 hover:!text-white duration-300">
         登录
       </router-link>
       <router-link
-        to="/register"
+        :to="{ name: RouteName.REGISTER }"
         class="px-3 py-2 flex items-center border shadow-sm rounded-md bg-slate-100 hover:bg-indigo-500 hover:!text-white duration-300">
         注册
       </router-link>
