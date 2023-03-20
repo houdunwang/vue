@@ -1,4 +1,5 @@
 import vue from '@vitejs/plugin-vue'
+import { viteMockServe } from 'vite-plugin-mock'
 import path from 'path'
 import { defineConfig, loadEnv } from 'vite'
 import prismjs from 'vite-plugin-prismjs'
@@ -7,12 +8,16 @@ import { parseEnv } from './vite/util'
 
 export default defineConfig(({ command, mode }) => {
   const isBuild = command == 'build'
-  // const env = parseEnv(loadEnv(mode, process.cwd()))
+  const env = parseEnv(loadEnv(mode, process.cwd()))
 
   return {
     plugins: [
       ...autoImport,
       vue(),
+      viteMockServe({
+        mockPath: 'mock',
+        localEnabled: command === 'serve',
+      }),
       prismjs({
         languages: 'all',
       }),
@@ -39,10 +44,14 @@ export default defineConfig(({ command, mode }) => {
     server: {
       host: true,
       proxy: {
-        // '/api': {
-        //   target: env.VITE_API_URL,
-        //   changeOrigin: true,
-        // },
+        '/api': {
+          target: env.VITE_API_URL,
+          changeOrigin: true,
+        },
+        '/captcha': {
+          target: env.VITE_API_URL,
+          changeOrigin: true,
+        },
       },
     },
   }

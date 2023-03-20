@@ -1,34 +1,32 @@
 <script setup lang="ts">
-import { Wechat } from '@icon-park/vue-next'
 import Footer from './components/footer.vue'
-const { login, form } = useAuth()
+const { form, register } = useAuth()
 </script>
 
 <template>
-  <form @submit.prevent="login">
+  <form class @submit.prevent="register">
     <div class="lg:w-[720px] bg-gray-50 md:grid grid-cols-2 rounded-md shadow-md overflow-hidden">
       <div class="p-6 flex flex-col justify-between">
         <div>
           <h2 class="text-center text-gray-700 text-lg mt-3">会员注册</h2>
           <div class="mt-8">
-            <HdFormInput v-model="form.email" placeholder="请输入邮箱" v-clearError="'email'" />
-            <HdError name="email" />
-
-            <HdFormInput v-model="form.password" class="mt-3" type="password" placeholder="密码" />
+            <HdFormInput v-model="form.account" placeholder="请输入邮箱" v-clearError="'account'" />
+            <HdError name="account" />
+            <HdFormInput
+              v-model="form.password"
+              class="mt-3"
+              type="password"
+              placeholder="请输入密码"
+              v-clearError="'password'" />
             <HdError name="password" />
-
-            <HdFormInput v-model="form.password_confirmation" class="mt-3" type="password" placeholder="确认密码" />
+            <HdFormInput
+              v-model="form.password_confirmation"
+              class="mt-3"
+              type="password"
+              placeholder="请输入确认密码"
+              v-clearError="'password'" />
           </div>
-
-          <HdFormButton class="w-full primary mt-2">注册</HdFormButton>
-
-          <div class="flex justify-center mt-3">
-            <Wechat
-              theme="outline"
-              size="24"
-              fill="#fff"
-              class="fab fa-weixin bg-green-600 text-white rounded-full p-1 cursor-pointer" />
-          </div>
+          <HdFormButton class="w-full mt-3 primary">注册</HdFormButton>
         </div>
         <Footer />
       </div>
