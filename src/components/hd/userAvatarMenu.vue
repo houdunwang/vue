@@ -2,6 +2,7 @@
 // 用户头像菜单
 import dayjs from 'dayjs'
 import config from '@/config'
+
 const { logout } = useAuth()
 const storeUser = useUserStore()
 </script>
@@ -12,8 +13,8 @@ const storeUser = useUserStore()
     <section v-if="!!storeUser.user" class="flex items-center">
       <el-dropdown trigger="click">
         <span class="el-dropdown-link flex items-center">
-          <ElImage :src="storeUser.user.avatar" fit="cover" class="w-10 h-10 rounded-md" />
-          <div class="flex flex-col text-sm ml-2 text-gray-600 font-light">
+          <ElImage :src="storeUser.user.avatar" fit="cover" class="w-8 h-8 rounded-md" />
+          <div class="flex flex-col text-xs ml-2 text-gray-600 font-light">
             {{ storeUser.user?.name }}
             <span>注册于 {{ dayjs(storeUser.user?.created_at).fromNow() }} </span>
           </div>
@@ -30,12 +31,12 @@ const storeUser = useUserStore()
     </section>
     <section v-else class="flex items-stretch gap-2">
       <router-link
-        :to="{ name: RouteName.LOGIN }"
+        to="/login"
         class="px-3 py-2 flex items-center border shadow-sm rounded-md bg-slate-100 hover:bg-indigo-500 hover:!text-white duration-300">
         登录
       </router-link>
       <router-link
-        :to="{ name: RouteName.REGISTER }"
+        to="/register"
         class="px-3 py-2 flex items-center border shadow-sm rounded-md bg-slate-100 hover:bg-indigo-500 hover:!text-white duration-300">
         注册
       </router-link>

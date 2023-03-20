@@ -17,3 +17,7 @@ interface UserModel {
   created_at: string
   updated_at: string
 }
+
+interface ConfigModel {
+  [key: string]: Record<string, any>
+}
