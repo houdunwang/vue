@@ -21,7 +21,7 @@ const storeUser = useUserStore()
         <template #dropdown>
           <el-dropdown-menu>
             <el-dropdown-item v-for="(menu, index) of config.user.avatarMenu" :key="index">
-              <router-link :to="menu.routeName"> {{ menu.title }} </router-link>
+              <router-link :to="{ name: menu.routeName }"> {{ menu.title }} </router-link>
             </el-dropdown-item>
             <el-dropdown-item divided @click="logout">退出登录</el-dropdown-item>
           </el-dropdown-menu>

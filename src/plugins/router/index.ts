@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import guard from './guard'
-import routes from './routes'
+import routes from '@/routes'
 import config from '@/config'
+import { App } from 'vue'
 
 //添加路由前缀
 routes.forEach((route) => {
@@ -20,4 +21,8 @@ const router = createRouter({
 
 guard(router)
 
+const setup = (app: App) => {
+  app.use(router)
+}
+export { setup }
 export default router
