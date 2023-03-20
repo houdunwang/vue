@@ -16,7 +16,7 @@ export default defineConfig(({ command, mode }) => {
       vue(),
       viteMockServe({
         mockPath: 'mock',
-        localEnabled: command === 'serve',
+        localEnabled: !isBuild && !env.VITE_API_URL,
       }),
       prismjs({
         languages: 'all',
