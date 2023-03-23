@@ -5,26 +5,24 @@ export default {
     prefix: '',
   },
   member: {
+    //修改资料菜单
     menu: [
       {
-        routeName: 'member',
+        routeName: 'detail',
         title: '资料修改',
       },
       {
-        routeName: 'member.password',
+        routeName: 'detail.password',
         title: '修改密码',
       },
     ],
   },
   user: {
+    //顶部头像下拉菜单项
     avatarMenu: [
       {
         routeName: RouteName.ADMIN,
         title: '后台管理',
-      },
-      {
-        routeName: RouteName.MEMBER,
-        title: '会员中心',
       },
       {
         routeName: RouteName.HOME,

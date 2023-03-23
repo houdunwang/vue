@@ -1,3 +1,4 @@
+import { ElMessage } from 'element-plus'
 import { RouteLocationNormalized, Router } from 'vue-router'
 import { useTitle } from '@vueuse/core'
 import config from '@/config'

@@ -22,8 +22,8 @@ export default () => {
    * @param route 路由
    * @param target 跳转方式 _self当前页 _blank 新窗口
    */
-  function open(route: RouteLocationRaw, target = '_self') {
-    const url = router.resolve(route).fullPath
+  function open(url: RouteLocationRaw | string, target = '_self') {
+    if (typeof url != 'string') url = router.resolve(url).fullPath
     if (target == '_blank') window.open(url)
     else location.href = url
   }
