@@ -1,42 +1,72 @@
 <script lang="ts" setup>
 import { Plus } from '@element-plus/icons-vue'
+import { ElMessage } from 'element-plus'
 const { uploadImage } = useUpload()
 
 const props = withDefaults(
   defineProps<{
     modelValue: string
     url?: string
+    allow_width?: number
+    allow_height?: number
+    size_error?: string
+    name?: string
   }>(),
-  { url: `upload/image` },
+  { url: `upload/image`, name: 'file', allow_width: 2000, allow_height: 2000, size_error: '文件尺寸过大' },
 )
+
 const imageUrl = ref(props.modelValue)
+watch(
+  () => props.modelValue,
+  (url) => {
+    imageUrl.value = url
+  },
+)
 const emit = defineEmits<{
   (e: 'update:modelValue', url: string): void
   (e: 'finish'): void
 }>()
 
-const request = async (options: any) => {
-  const form = new FormData()
-  form.append('file', options.file)
+//文件类型检测
+const checkSize = (file: any, callback: (file: any) => void) => {
+  const reader = new FileReader()
+  reader.readAsDataURL(file)
+  reader.onload = (e: any) => {
+    const data = e.target.result
+    const image = new Image()
+    image.src = data
+    image.onload = async () => {
+      if (image.width > props.allow_width || image.height > props.allow_height) {
+        return ElMessage.error(props.size_error)
+      }
+      callback(file)
+    }
+  }
+}
 
-  const { url } = await uploadImage(form, props.url)
+//上传到服务器
+const upload = async (file: any) => {
+  const form = new FormData()
+  form.append(props.name, file)
+
+  const { url } = await uploadImage(form, props.url + `?name=${props.name}`)
   imageUrl.value = url
   emit('update:modelValue', imageUrl.value!)
   emit('finish')
 }
+
+const request = async (options: any) => {
+  checkSize(options.file, upload)
+}
 </script>
 
 <template>
-  <div class="">
-    <el-upload action="" class="avatar-uploader" :http-request="request" :show-file-list="false">
-      <img v-if="imageUrl" :src="imageUrl" class="avatar" />
-      <el-icon v-else class="avatar-uploader-icon">
-        <Plus />
-      </el-icon>
-    </el-upload>
-
-    <HdError name="file" />
-  </div>
+  <el-upload action="" class="avatar-uploader" :http-request="request" :show-file-list="false">
+    <img v-if="imageUrl" :src="imageUrl" class="avatar" />
+    <el-icon v-else class="avatar-uploader-icon">
+      <Plus />
+    </el-icon>
+  </el-upload>
 </template>
 
 <style scoped>

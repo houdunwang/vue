@@ -1,16 +1,27 @@
 <script setup lang="ts">
 import VueMarkdownEditor from '@kangc/v-md-editor'
 const { uploadImage } = useUpload()
-const { modelValue, height = 400 } = defineProps<{
-  modelValue: any
-  height?: number
-}>()
+const props = withDefaults(
+  defineProps<{
+    modelValue: any
+    height?: number
+  }>(),
+  {
+    height: 300,
+  },
+)
+const { modelValue, height = 400 } = props
 
 const emit = defineEmits<{
   (e: 'update:modelValue', value: any): void
 }>()
 const text = ref(modelValue)
-
+watch(
+  () => props.modelValue,
+  (content) => {
+    text.value = content
+  },
+)
 watch(text, (value) => {
   emit('update:modelValue', value)
 })
