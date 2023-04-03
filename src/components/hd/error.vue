@@ -6,18 +6,13 @@ const store = errorStore()
 
 <template>
   <div class="hd-error" v-show="store.getError(name)">
-    <el-alert
-      :title="store.getError(name)"
-      type="warning"
-      effect="light"
-      show-icon
-      :closable="false"
-      class="border border-gray-100" />
+    <icon-info theme="outline" />
+    {{ store.getError(name) }}
   </div>
 </template>
 
 <style lang="scss" scoped>
 .hd-error {
-  @apply rounded-md text-[#d35400] text-sm mt-2 opacity-80;
+  @apply rounded-sm bg-[#e74c3c] text-white py-1 px-2 text-xs mt-1 opacity-60  font-bold flex items-center gap-1;
 }
 </style>
