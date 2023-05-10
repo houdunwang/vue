@@ -41,18 +41,4 @@ const { config } = useConfigStore()
   </main>
 </template>
 
-<style lang="scss" scoped>
-.footer-bg {
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-  background-image: url('/images/mohammad.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  transform: scale(1.3);
-  filter: blur(2px);
-  opacity: 1;
-  @apply top-0 left-0 right-0 bottom-0;
-}
-</style>
+<style lang="scss" scoped></style>
