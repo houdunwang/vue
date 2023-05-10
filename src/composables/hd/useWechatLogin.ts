@@ -1,4 +1,4 @@
-import { CacheKey } from '@/enum/CacheKey'
+import { CacheEnum } from '@/enum/CacheEnum'
 import { http } from '@/plugins/axios'
 const storage = useStorage()
 
@@ -16,9 +16,9 @@ export default () => {
       { loading: false },
     )
     if (token) {
-      storage.set(CacheKey.TOKEN_NAME, token)
-      const url = storage.get(CacheKey.REDIRECT_ROUTE_NAME, '/')
-      storage.remove(CacheKey.REDIRECT_ROUTE_NAME)
+      storage.set(CacheEnum.TOKEN_NAME, token)
+      const url = storage.get(CacheEnum.REDIRECT_ROUTE_NAME, '/')
+      storage.remove(CacheEnum.REDIRECT_ROUTE_NAME)
       location.href = url
     }
   }

@@ -41,7 +41,7 @@ export default class Axios {
         }
         if (this.options.clearValidateError) useErrorStore().resetError()
         config.headers.Accept = 'application/json'
-        config.headers.Authorization = `Bearer ${storage.get(CacheKey.TOKEN_NAME)}`
+        config.headers.Authorization = `Bearer ${storage.get(CacheEnum.TOKEN_NAME)}`
 
         return config
       },
@@ -82,21 +82,21 @@ export default class Axios {
         const message = data.error ?? data.message
 
         switch (status) {
-          case HttpStatus.UNAUTHORIZED:
-            storage.remove(CacheKey.TOKEN_NAME)
+          case HttpCodeEnum.UNAUTHORIZED:
+            storage.remove(CacheEnum.TOKEN_NAME)
             router.push({ name: RouteEnum.LOGIN })
             break
-          case HttpStatus.UNPROCESSABLE_ENTITY:
+          case HttpCodeEnum.UNPROCESSABLE_ENTITY:
             useErrorStore().setErrors(error.response.data.errors ?? error.response.data)
             break
-          case HttpStatus.FORBIDDEN:
+          case HttpCodeEnum.FORBIDDEN:
             ElMessage({ type: 'error', message: message ?? '没有操作权限' })
             break
-          case HttpStatus.NOT_FOUND:
+          case HttpCodeEnum.NOT_FOUND:
             ElMessage.error('请求资源不存在')
             router.push({ name: RouteEnum.HOME })
             break
-          case HttpStatus.TOO_MANY_REQUESTS:
+          case HttpCodeEnum.TOO_MANY_REQUESTS:
             ElMessage({ type: 'error', message: '请求过于频繁，请稍候再试' })
             break
           default:

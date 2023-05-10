@@ -19,12 +19,12 @@ export default () => {
 
   //登录检测
   function isLogin(): boolean {
-    return useStorage().get(CacheKey.TOKEN_NAME)
+    return useStorage().get(CacheEnum.TOKEN_NAME)
   }
 
   //退出登录
   async function logout() {
-    storage.remove(CacheKey.TOKEN_NAME)
+    storage.remove(CacheEnum.TOKEN_NAME)
     location.href = '/'
   }
 
@@ -36,7 +36,7 @@ export default () => {
         method: 'post',
         data: form,
       })
-      storage.set(CacheKey.TOKEN_NAME, token)
+      storage.set(CacheEnum.TOKEN_NAME, token)
       const route = router.resolve({ name: RouteEnum.ADMIN })
       location.href = route.fullPath
     } catch (error) {
@@ -52,7 +52,7 @@ export default () => {
         method: 'POST',
         data: form,
       })
-      storage.set(CacheKey.TOKEN_NAME, token)
+      storage.set(CacheEnum.TOKEN_NAME, token)
       const route = router.resolve({ name: RouteEnum.ADMIN })
       location.href = route.fullPath
     } catch (error) {
@@ -68,7 +68,7 @@ export default () => {
         method: 'POST',
         data: form,
       })
-      storage.set(CacheKey.TOKEN_NAME, token)
+      storage.set(CacheEnum.TOKEN_NAME, token)
       const route = router.resolve({ name: RouteEnum.ADMIN })
       location.href = route.fullPath
     } catch (error) {
