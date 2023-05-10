@@ -19,6 +19,6 @@
     "types": ["element-plus/global", "echarts", "lodash"]
   },
   "exclude": ["node_modules", "dist"],
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "types/**/*.d.ts", "dev/types/**/*.d.ts"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "types/**/*.d.ts", "core/**/*.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
