@@ -2,9 +2,9 @@ import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import { defineConfig, loadEnv } from 'vite'
 import prismjs from 'vite-plugin-prismjs'
-import autoImport from './dev/auto-import'
-import mock from './dev/mock'
-import { parseEnv } from './dev/util'
+import autoImport from './core/auto-import'
+import mock from './core/mock'
+import { parseEnv } from './core/util'
 
 export default defineConfig(({ command, mode }) => {
   const isBuild = command == 'build'

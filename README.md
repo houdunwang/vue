@@ -102,22 +102,22 @@ npx houdunren-vue
 
 ## 项目预览
 
-![image-20220424180043074](./dev/assets/image-202204241800430745.jpg)
+![image-20220424180043074](./core/assets/image-202204241800430745.jpg)
 
-![image-20220424193919149](./dev/assets/image-20220706223604418.jpg)
+![image-20220424193919149](./core/assets/image-20220706223604418.jpg)
 
-![image-20220706223650063](./dev/assets/image-20220706223650063.jpg)
+![image-20220706223650063](./core/assets/image-20220706223650063.jpg)
 
-<img src="./dev/assets/2023-03-18_03.03.43.jpeg" alt="image-20220706223650063" style="zoom:65%;" />
+<img src="./core/assets/2023-03-18_03.03.43.jpeg" alt="image-20220706223650063" style="zoom:65%;" />
 
 ## 每晚直播
 
 向军大叔会在每晚八点进行直播，与大家交流技术与生活。
 
-<img src="./dev/assets/xj.jpg" alt="image-20210216220804022" style="zoom:50%;" />
+<img src="./core/assets/xj.jpg" alt="image-20210216220804022" style="zoom:50%;" />
 
 请扫描下方二维码进入直播间，我们一起交流成长。
 
-| 抖音                                                | Bilibili                                             |
-| --------------------------------------------------- | ---------------------------------------------------- |
-| ![image-20210216220804022](./dev/assets/douyin.jpg) | ![image-20210216220804022](./dev/assets/bilibli.jpg) |
+| 抖音                                                 | Bilibili                                              |
+| ---------------------------------------------------- | ----------------------------------------------------- |
+| ![image-20210216220804022](./core/assets/douyin.jpg) | ![image-20210216220804022](./core/assets/bilibli.jpg) |
