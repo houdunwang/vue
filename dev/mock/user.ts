@@ -1,5 +1,5 @@
-import { ApiEnum } from './../src/enum/ApiEnum'
 import { MockMethod } from 'vite-plugin-mock'
+import { ApiEnum } from '../../src/enum/ApiEnum'
 
 export default [
   {

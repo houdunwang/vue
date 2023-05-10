@@ -1,10 +1,10 @@
 import vue from '@vitejs/plugin-vue'
-import { viteMockServe } from 'vite-plugin-mock'
 import path from 'path'
 import { defineConfig, loadEnv } from 'vite'
 import prismjs from 'vite-plugin-prismjs'
-import autoImport from './vite/auto-import'
-import { parseEnv } from './vite/util'
+import autoImport from './dev/auto-import'
+import mock from './dev/mock'
+import { parseEnv } from './dev/util'
 
 export default defineConfig(({ command, mode }) => {
   const isBuild = command == 'build'
@@ -14,10 +14,7 @@ export default defineConfig(({ command, mode }) => {
     plugins: [
       ...autoImport,
       vue(),
-      viteMockServe({
-        mockPath: 'mock',
-        localEnabled: !isBuild && !env.VITE_API_URL,
-      }),
+      mock(isBuild, env),
       prismjs({
         languages: 'all',
       }),

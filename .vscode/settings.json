@@ -14,8 +14,20 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "tsconfig.json": "*.json, *.config.js, *.config.ts,*.cjs",
+    "tsconfig.json": "*.json, *.config.js, *.config.ts,*.cjs,README.md,.env,index.html",
     "README.md": ".git*, .eslint*, .prettier*, .stylelint*, commitlint*, .editorconfig,LICENSE,pnpm*,.npm*"
   },
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "dist": true
+    // ".vscode": true
+    // "dev": true,
+    // "public": true
+  }
 }
