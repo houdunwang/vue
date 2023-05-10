@@ -37,7 +37,7 @@ export default () => {
         data: form,
       })
       storage.set(CacheKey.TOKEN_NAME, token)
-      const route = router.resolve({ name: RouteName.ADMIN })
+      const route = router.resolve({ name: RouteEnum.ADMIN })
       location.href = route.fullPath
     } catch (error) {
       // useCaptcha().getCaptcha()
@@ -53,7 +53,7 @@ export default () => {
         data: form,
       })
       storage.set(CacheKey.TOKEN_NAME, token)
-      const route = router.resolve({ name: RouteName.ADMIN })
+      const route = router.resolve({ name: RouteEnum.ADMIN })
       location.href = route.fullPath
     } catch (error) {
       // useCaptcha().getCaptcha()
@@ -69,7 +69,7 @@ export default () => {
         data: form,
       })
       storage.set(CacheKey.TOKEN_NAME, token)
-      const route = router.resolve({ name: RouteName.ADMIN })
+      const route = router.resolve({ name: RouteEnum.ADMIN })
       location.href = route.fullPath
     } catch (error) {
       // useCaptcha().getCaptcha()

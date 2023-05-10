@@ -21,11 +21,11 @@ export default {
     //顶部头像下拉菜单项
     avatarMenu: [
       {
-        routeName: RouteName.ADMIN,
+        routeName: RouteEnum.ADMIN,
         title: '后台管理',
       },
       {
-        routeName: RouteName.HOME,
+        routeName: RouteEnum.HOME,
         title: '网站首页',
       },
     ],

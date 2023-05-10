@@ -1,4 +1,4 @@
-export enum RouteName {
+export enum RouteEnum {
   HOME = 'home',
   LOGIN = 'login',
   REGISTER = 'register',

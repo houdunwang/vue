@@ -31,12 +31,12 @@ const storeUser = useUserStore()
     </section>
     <section v-else class="flex items-stretch gap-2">
       <router-link
-        :to="{ name: RouteName.LOGIN }"
+        :to="{ name: RouteEnum.LOGIN }"
         class="px-3 py-1 flex text-sm items-center border shadow-sm rounded-md bg-slate-100 hover:bg-indigo-500 hover:!text-white duration-300">
         登录
       </router-link>
       <router-link
-        :to="{ name: RouteName.REGISTER }"
+        :to="{ name: RouteEnum.REGISTER }"
         class="px-3 py-1 flex text-sm items-center border shadow-sm rounded-md bg-slate-100 hover:bg-indigo-500 hover:!text-white duration-300">
         注册
       </router-link>

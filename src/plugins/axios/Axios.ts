@@ -84,7 +84,7 @@ export default class Axios {
         switch (status) {
           case HttpStatus.UNAUTHORIZED:
             storage.remove(CacheKey.TOKEN_NAME)
-            router.push({ name: RouteName.LOGIN })
+            router.push({ name: RouteEnum.LOGIN })
             break
           case HttpStatus.UNPROCESSABLE_ENTITY:
             useErrorStore().setErrors(error.response.data.errors ?? error.response.data)
@@ -94,7 +94,7 @@ export default class Axios {
             break
           case HttpStatus.NOT_FOUND:
             ElMessage.error('请求资源不存在')
-            router.push({ name: RouteName.HOME })
+            router.push({ name: RouteEnum.HOME })
             break
           case HttpStatus.TOO_MANY_REQUESTS:
             ElMessage({ type: 'error', message: '请求过于频繁，请稍候再试' })
