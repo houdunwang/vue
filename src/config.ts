@@ -8,11 +8,11 @@ export default {
     //修改资料菜单
     menu: [
       {
-        routeName: 'detail',
+        routeName: 'member',
         title: '资料修改',
       },
       {
-        routeName: 'detail.password',
+        routeName: 'member.password',
         title: '修改密码',
       },
     ],

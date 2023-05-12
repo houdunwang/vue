@@ -4,7 +4,7 @@ export enum RouteEnum {
   REGISTER = 'register',
   FORGOT_PASSWORD = 'forgot_password',
   ADMIN = 'admin',
-  DETAIL = 'detail',
+  MEMBER = 'member',
   NOT_FOUND = 'error.404',
   FORBIDDEN = 'error.403',
   INTERNAL_SERVER_ERROR = 'error.500',

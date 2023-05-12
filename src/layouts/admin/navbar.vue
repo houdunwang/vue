@@ -25,7 +25,7 @@ const { open } = useUtil()
         theme="outline"
         size="22"
         class="cursor-pointer text-gray-700 hover:text-gray-500"
-        @click="open('/detail')" />
+        @click="open('/member')" />
       <HdFullScreen class="hidden 2xl:flex text-gray-600" />
       <UserAvatarMenu />
     </div>
