@@ -1,9 +1,9 @@
 {
   "name": "houdunren-vue",
+  "version": "1.0.62",
   "private": false,
   "homepage": "https://www.houdunren.com",
   "description": "后盾人前端脚手架",
-  "version": "1.0.62",
   "keywords": [
     "vue3",
     "pinia",

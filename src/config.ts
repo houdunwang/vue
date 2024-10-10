@@ -28,6 +28,10 @@ export default {
         routeName: RouteEnum.HOME,
         title: '网站首页',
       },
+      {
+        routeName: RouteEnum.HOME,
+        title: 'abc',
+      },
     ],
   },
 }

@@ -29,5 +29,6 @@
     // ".vscode": true
     // "core": true,
     // "public": true
-  }
+  },
+  "editor.unfoldOnClickAfterEndOfLine": false
 }

@@ -40,15 +40,16 @@ export default defineConfig(({ command, mode }) => {
     },
     server: {
       host: true,
+      port: 4178,
       proxy: {
-        '/api': {
-          target: env.VITE_API_URL,
-          changeOrigin: true,
-        },
-        '/captcha': {
-          target: env.VITE_API_URL,
-          changeOrigin: true,
-        },
+        // '/': {
+        //   target: env.VITE_API_URL,
+        //   changeOrigin: true,
+        // },
+        // '/captcha': {
+        //   target: env.VITE_API_URL,
+        //   changeOrigin: true,
+        // },
       },
     },
   }

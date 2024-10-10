@@ -10,3 +10,7 @@ body {
 .el-form-item__error {
   @apply hidden;
 }
+
+.el-backtop:hover {
+  background-color: transparent !important;
+}
